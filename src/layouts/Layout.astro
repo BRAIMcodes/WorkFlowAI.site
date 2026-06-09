@@ -57,6 +57,9 @@ const navLinks = [
   </head>
   <body class="bg-[#070A13] text-gray-300 font-sans antialiased flex flex-col min-h-screen">
     
+    <!-- Skip to content — accessibility fundamental -->
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
     <!-- Read Progress Bar -->
     <div id="read-progress" class="fixed top-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500 z-[100] transition-all duration-150 ease-out" style="width: 0%;"></div>
     
@@ -121,7 +124,7 @@ const navLinks = [
               class="btn btn-primary text-xs px-4 py-2.5"
               aria-label="Subscribe for free"
             >
-              Get Free Access
+              Subscribe Free
             </button>
           </div>
 
@@ -172,7 +175,7 @@ const navLinks = [
               onclick="window.openSubscribeModal()" 
               class="btn btn-primary w-full justify-center py-3"
             >
-              Get Free Access
+              Subscribe Free
             </button>
           </div>
         </nav>
@@ -180,12 +183,14 @@ const navLinks = [
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow">
+    <main class="flex-grow" id="main-content">
       <slot />
     </main>
 
     <!-- Premium Dark Footer -->
     <footer class="bg-[#040609] border-t border-white/5 pt-16 pb-8 mt-auto">
+      <!-- Subtle top shimmer for visual separation -->
+      <div class="footer-shimmer mb-0 -mt-px"></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mb-14">
           
@@ -317,6 +322,17 @@ const navLinks = [
 
     <SubscribeModal />
 
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
+
     <script is:inline>
       // ---- Nav Active Header Scroll Effect ----
       const header = document.getElementById('site-header');
@@ -358,6 +374,21 @@ const navLinks = [
         });
       }
 
+      // ---- Back to Top ----
+      const backToTop = document.getElementById('back-to-top');
+      if (backToTop) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 400) {
+            backToTop.classList.add('visible');
+          } else {
+            backToTop.classList.remove('visible');
+          }
+        }, { passive: true });
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
       // ---- Cookie Consent Controller ----
       const consentBanner = document.getElementById('cookie-consent-banner');
       const acceptBtn = document.getElementById('accept-cookies');
@@ -366,9 +397,26 @@ const navLinks = [
       if (consentBanner && acceptBtn && declineBtn) {
         const consent = localStorage.getItem('cookie-consent');
         if (!consent) {
-          setTimeout(() => {
-            consentBanner.classList.remove('hidden');
-          }, 1500);
+          // Show after scroll 40% OR 12 seconds, whichever comes first
+          let bannerShown = false;
+          const showBanner = () => {
+            if (!bannerShown) {
+              bannerShown = true;
+              consentBanner.classList.remove('hidden');
+            }
+          };
+
+          const scrollTimer = setTimeout(showBanner, 12000);
+
+          const scrollHandler = () => {
+            const scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            if (scrollPct > 40) {
+              clearTimeout(scrollTimer);
+              showBanner();
+              window.removeEventListener('scroll', scrollHandler);
+            }
+          };
+          window.addEventListener('scroll', scrollHandler, { passive: true });
         }
 
         acceptBtn.addEventListener('click', () => {
