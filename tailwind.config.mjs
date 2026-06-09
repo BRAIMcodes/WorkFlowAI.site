@@ -5,6 +5,22 @@ export default {
     './src/components/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
     './src/layouts/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'
   ],
+  // Safelist any classes constructed dynamically at runtime
+  safelist: [
+    'category-card-sales',
+    'category-card-marketing',
+    'category-card-recruiting',
+    'category-card-customer-support',
+    'category-card-operations',
+    'difficulty-beginner',
+    'difficulty-intermediate',
+    'difficulty-advanced',
+    'badge-indigo',
+    'badge-emerald',
+    'badge-amber',
+    'badge-rose',
+    'badge-slate',
+  ],
   theme: {
     extend: {
       colors: {
@@ -48,3 +64,4 @@ export default {
     require('@tailwindcss/typography'),
   ],
 };
+

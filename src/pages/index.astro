@@ -25,8 +25,8 @@ const uniquePersonas = [...new Set(workflows.map(w => w.data.persona))];
 
 const stats = [
   { value: workflows.length + '+', label: 'Verified Recipes', icon: 'check' },
-  { value: '5+', label: 'Automation Tools', icon: 'settings' },
-  { value: '100%', label: 'Free to Use', icon: 'shield' },
+  { value: uniqueTools.length + '+', label: 'Automation Tools', icon: 'settings' },
+  { value: '100%', label: 'Free Forever', icon: 'shield' },
   { value: '5hrs+', label: 'Saved per Week', icon: 'clock' },
 ];
 ---

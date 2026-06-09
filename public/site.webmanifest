@@ -1,0 +1,21 @@
+{
+  "name": "WorkFlowAI",
+  "short_name": "WorkFlowAI",
+  "description": "The Wikipedia of AI Workflows & Automation Blueprints",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070A13",
+  "theme_color": "#6366F1",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

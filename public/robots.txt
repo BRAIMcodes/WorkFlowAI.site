@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
-Sitemap: https://workflowai.com/sitemap-index.xml
+Disallow: /api/
+
+Sitemap: https://workflowai.site/sitemap-index.xml
