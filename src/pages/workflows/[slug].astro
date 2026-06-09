@@ -265,14 +265,14 @@ const difficultyClass =
       </div>
       <div class="flex gap-2">
         <button 
-          onclick="this.textContent='✅ Awesome! Thanks'; this.disabled=true; this.style.opacity='0.7';" 
+          onclick="this.disabled=true; this.style.opacity='0.6'; window.showToast && window.showToast('Thanks for the feedback! Blueprint verified ✓', 'success');" 
           class="btn btn-secondary text-xs px-4 py-2.5"
           aria-label="Mark as working"
         >
           <Icon name="thumbs-up" class="w-3.5 h-3.5" /> Works!
         </button>
         <button 
-          onclick="this.textContent='🔎 Flagged for review'; this.disabled=true; this.style.opacity='0.7';"
+          onclick="this.disabled=true; this.style.opacity='0.6'; window.showToast && window.showToast('Flagged for review. We\u2019ll update this soon.', 'error');"
           class="px-4 py-2.5 border border-red-500/20 rounded-xl text-xs font-bold hover:bg-red-950/20 text-red-400/80 transition-colors"
           aria-label="Mark as broken or outdated"
         >

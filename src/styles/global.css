@@ -830,3 +830,100 @@ article.glass-card:hover {
     0 0 0 0.5px rgba(99, 102, 241, 0.12),
     inset 0 1px 0 rgba(255,255,255,0.05);
 }
+
+/* =========================================================
+   SKELETON SHIMMER — loading state for cards
+   ========================================================= */
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.04) 25%,
+    rgba(255,255,255,0.08) 50%,
+    rgba(255,255,255,0.04) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease infinite;
+  border-radius: var(--radius-md);
+}
+
+/* =========================================================
+   TOAST NOTIFICATION SYSTEM
+   ========================================================= */
+
+#toast-container {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.5rem;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: all;
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  transform: translateY(1rem);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast.toast-success { border-left: 3px solid #10B981; }
+.toast.toast-error   { border-left: 3px solid #F43F5E; }
+.toast.toast-info    { border-left: 3px solid #6366F1; }
+
+/* =========================================================
+   STICKY SIDEBAR (catalog page)
+   ========================================================= */
+
+@media (min-width: 1024px) {
+  .sticky-sidebar {
+    position: sticky;
+    top: 5.5rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.06) transparent;
+  }
+
+  .sticky-sidebar::-webkit-scrollbar { width: 4px; }
+  .sticky-sidebar::-webkit-scrollbar-track { background: transparent; }
+  .sticky-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.08);
+    border-radius: 2px;
+  }
+}
+
+/* =========================================================
+   MOBILE REFINEMENTS
+   ========================================================= */
+
+@media (max-width: 640px) {
+  #back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
