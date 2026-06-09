@@ -710,3 +710,123 @@ input:focus, select:focus, textarea:focus {
   height: 1px;
   width: 100%;
 }
+
+/* =========================================================
+   SCROLL REVEAL — IntersectionObserver driven
+   Elements get .reveal class, JS adds .revealed when in view
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 100ms; }
+.reveal-delay-2 { transition-delay: 200ms; }
+.reveal-delay-3 { transition-delay: 300ms; }
+.reveal-delay-4 { transition-delay: 400ms; }
+
+/* =========================================================
+   FOCUS VISIBLE — keyboard navigation polish
+   Remove focus ring on mouse, show it on keyboard
+   ========================================================= */
+
+:focus { outline: none; }
+
+:focus-visible {
+  outline: 2px solid rgba(99, 102, 241, 0.7);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* =========================================================
+   REDUCED MOTION — respect user accessibility preference
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .text-gradient {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   IMAGE LAZY LOAD FADE-IN
+   ========================================================= */
+
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* =========================================================
+   SELECTION + PRINT
+   ========================================================= */
+
+@media print {
+  #site-header,
+  footer,
+  #cookie-consent-banner,
+  #back-to-top,
+  .btn-primary {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+/* =========================================================
+   LOADING PULSE — for dynamic content states
+   ========================================================= */
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* =========================================================
+   WORKFLOW CARD HOVER LIFT — stronger on featured cards
+   ========================================================= */
+
+article.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 40px -8px rgba(99, 102, 241, 0.2),
+    0 0 0 0.5px rgba(99, 102, 241, 0.12),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}

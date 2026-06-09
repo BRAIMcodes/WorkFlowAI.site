@@ -1,0 +1,3 @@
+# Cloudflare Pages — custom 404 handler
+# Cloudflare Pages auto-serves /404.html for unknown routes, this just makes it explicit
+/404    /404.html    404

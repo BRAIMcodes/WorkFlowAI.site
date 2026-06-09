@@ -46,11 +46,11 @@ const navLinks = [
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#6366F1" />
-    <link rel="canonical" href={Astro.url} />
+    <link rel="canonical" href={Astro.url.href} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     
     <!-- Google Fonts — Premium display + body combination -->
@@ -433,6 +433,33 @@ const navLinks = [
           consentBanner.classList.add('hidden');
         });
       }
+
+      // ---- Scroll Reveal (IntersectionObserver) ----
+      const revealEls = document.querySelectorAll('.reveal');
+      if (revealEls.length > 0 && 'IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(el => revealObserver.observe(el));
+      } else {
+        // Fallback: immediately reveal if no IntersectionObserver support
+        revealEls.forEach(el => el.classList.add('revealed'));
+      }
+
+      // ---- Lazy Image Fade-In ----
+      const lazyImgs = document.querySelectorAll('img[loading="lazy"]');
+      lazyImgs.forEach(img => {
+        if (img.complete) {
+          img.classList.add('loaded');
+        } else {
+          img.addEventListener('load', () => img.classList.add('loaded'));
+        }
+      });
     </script>
   </body>
 </html>
