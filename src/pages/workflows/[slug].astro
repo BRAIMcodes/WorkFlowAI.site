@@ -39,104 +39,153 @@ const schemaObj = {
   },
   "tool": [
     { "@type": "HowToTool", "name": data.primaryTool },
-    ...data.connectedApps.map(app => ({ "@type": "HowToTool", "name": app }))
+    ...data.connectedApps.map((app: string) => ({ "@type": "HowToTool", "name": app }))
   ],
-  "step": data.steps.map(step => ({
+  "step": data.steps.map((step: any) => ({
     "@type": "HowToStep",
     "position": step.stepNumber,
     "name": step.title,
     "text": step.description
   }))
 };
+
+const difficultyClass = 
+  data.difficulty === 'Beginner' ? 'difficulty-beginner' :
+  data.difficulty === 'Advanced' ? 'difficulty-advanced' :
+  'difficulty-intermediate';
 ---
 
 <Layout title={`${data.title} | ${data.primaryTool} Recipe`} description={data.description}>
   <!-- Safe JSON-LD Schema Injection -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaObj)} />
 
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <!-- Page Layout -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
     <!-- Breadcrumbs -->
-    <nav class="text-xs text-gray-500 mb-6 flex items-center gap-2">
+    <nav class="flex items-center gap-1.5 text-xs text-gray-600 mb-8" aria-label="Breadcrumb">
       <a href="/" class="hover:text-indigo-400 transition-colors">Home</a>
-      <span>/</span>
+      <span class="text-gray-700" aria-hidden="true">/</span>
       <a href="/workflows" class="hover:text-indigo-400 transition-colors">Workflows</a>
-      <span>/</span>
-      <span class="text-gray-300 font-medium truncate">{data.title}</span>
+      <span class="text-gray-700" aria-hidden="true">/</span>
+      <span class="text-gray-400 font-medium truncate max-w-[200px]" aria-current="page">{data.title}</span>
     </nav>
 
-    <!-- Header Section -->
-    <header class="border-b border-gray-800/80 pb-8 mb-10">
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="px-2.5 py-0.5 bg-slate-900/60 border border-slate-800/80 text-[11px] font-semibold rounded-md text-slate-400">
-          📂 {data.category}
-        </span>
-        <span class="px-2.5 py-0.5 bg-slate-900/60 border border-slate-800/80 text-[11px] font-semibold rounded-md text-slate-400">
-          👤 For {data.persona}
-        </span>
-        <span class="px-2.5 py-0.5 bg-slate-900/60 border border-slate-800/80 text-[11px] font-semibold rounded-md text-slate-400">
-          🔥 Level: {data.difficulty}
-        </span>
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="mb-10">
+      <!-- Badge row -->
+      <div class="flex flex-wrap gap-2 mb-5">
+        <span class="badge badge-indigo">📂 {data.category}</span>
+        <span class="badge badge-slate">👤 For {data.persona}</span>
+        <span class={`badge ${difficultyClass}`}>🔥 {data.difficulty}</span>
       </div>
 
-      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+      <!-- Title -->
+      <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
         {data.title}
       </h1>
       
-      <p class="text-gray-400 text-base leading-relaxed mb-6">
+      <!-- Description -->
+      <p class="text-gray-400 text-base leading-relaxed mb-7 max-w-2xl">
         {data.description}
       </p>
 
-      <!-- Key Metrics Box -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-900/40 border border-slate-800/80 rounded-2xl p-5">
-        <div class="text-center sm:text-left border-b sm:border-b-0 sm:border-r border-slate-800/60 pb-4 sm:pb-0 sm:pr-4">
-          <span class="text-[10px] text-gray-500 font-semibold uppercase tracking-wider block mb-1">⏱️ Est. Time Saved</span>
-          <span class="text-lg font-bold text-emerald-400">{data.timeSaved}</span>
+      <!-- Key Metrics Triptych -->
+      <div class="grid grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5">
+        <div class="bg-[#0B0F19] p-5 hover:bg-[#0F1525] transition-colors">
+          <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest block mb-2">Est. Time Saved</span>
+          <span class="text-lg font-extrabold text-emerald-400 font-display">{data.timeSaved}</span>
         </div>
-        <div class="text-center sm:text-left border-b sm:border-b-0 sm:border-r border-slate-800/60 pb-4 sm:pb-0 sm:px-4">
-          <span class="text-[10px] text-gray-500 font-semibold uppercase tracking-wider block mb-1">⚙️ Core Platform</span>
-          <span class="text-lg font-bold text-white">{data.primaryTool}</span>
+        <div class="bg-[#0B0F19] p-5 hover:bg-[#0F1525] transition-colors">
+          <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest block mb-2">Core Platform</span>
+          <span class="text-lg font-extrabold text-white font-display">{data.primaryTool}</span>
         </div>
-        <div class="text-center sm:text-left sm:pl-4">
-          <span class="text-[10px] text-gray-500 font-semibold uppercase tracking-wider block mb-1">💰 Estimated Run Cost</span>
-          <span class="text-lg font-bold text-indigo-300">{data.costToRun}</span>
+        <div class="bg-[#0B0F19] p-5 hover:bg-[#0F1525] transition-colors">
+          <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest block mb-2">Run Cost</span>
+          <span class="text-lg font-extrabold text-indigo-300 font-display">{data.costToRun}</span>
         </div>
       </div>
     </header>
 
-    <!-- Download Blueprint Box -->
-    <section class="bg-gradient-to-r from-indigo-950/20 to-violet-950/20 border border-indigo-500/15 rounded-2xl p-6 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="text-left">
-        <h3 class="font-bold text-white text-md mb-1">Download Integration Assets</h3>
-        <p class="text-xs text-gray-400">Import this verified blueprint file directly into your {data.primaryTool} dashboard.</p>
+    <!-- ============================================================
+         DOWNLOAD BLUEPRINT CTA
+         ============================================================ -->
+    <section class="relative rounded-2xl overflow-hidden mb-12" aria-labelledby="download-heading">
+      <div class="absolute inset-0 bg-gradient-to-r from-indigo-950/50 to-violet-950/30"></div>
+      <div class="absolute inset-0 border border-indigo-500/15 rounded-2xl"></div>
+      <div class="relative z-10 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+        <div>
+          <h2 id="download-heading" class="font-display font-bold text-white text-base mb-1">Download Integration Assets</h2>
+          <p class="text-xs text-gray-500">Import this verified blueprint directly into your {data.primaryTool} dashboard.</p>
+        </div>
+        <a 
+          href={data.downloadUrl} 
+          download 
+          class="btn btn-primary text-xs flex-shrink-0"
+          aria-label={`Download ${data.primaryTool} blueprint for ${data.title}`}
+        >
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          Download Blueprint
+        </a>
       </div>
-      <a href={data.downloadUrl} download class="inline-flex justify-center items-center px-5 py-3 bg-indigo-600 hover:bg-indigo-550 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-600/10 transition-all shrink-0 hover:-translate-y-0.5 btn-scale">
-        📥 Download Blueprint
-      </a>
     </section>
 
-    <!-- Step-by-Step Vertical Connectors Timeline -->
-    <section class="mb-12">
-      <h2 class="text-xl md:text-2xl font-bold text-white mb-6">Execution Steps</h2>
-      
-      <!-- Connectors using dashed line -->
-      <ol class="relative border-l border-slate-800 ml-4 space-y-6">
-        {data.steps.map((step) => (
-          <li class="relative pl-8" itemscope itemtype="https://schema.org/HowToStep">
-            <!-- Numerical dot -->
-            <span class="absolute flex items-center justify-center w-7 h-7 bg-gradient-to-tr from-indigo-600 to-violet-500 rounded-full -left-[14px] top-0 text-[10px] font-extrabold text-white shadow-md shadow-indigo-500/15">
+    <!-- ============================================================
+         CONNECTED APPS
+         ============================================================ -->
+    {data.connectedApps && data.connectedApps.length > 0 && (
+      <section class="mb-12">
+        <h2 class="text-xs font-bold text-gray-600 uppercase tracking-widest mb-4">Connected Apps</h2>
+        <div class="flex flex-wrap gap-2">
+          {data.connectedApps.map((app: string) => (
+            <span class="badge badge-slate">{app}</span>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- ============================================================
+         STEP-BY-STEP TIMELINE
+         ============================================================ -->
+    <section class="mb-14" aria-labelledby="steps-heading">
+      <h2 id="steps-heading" class="font-display text-xl md:text-2xl font-bold text-white mb-8">Execution Steps</h2>
+
+      <ol class="relative space-y-4 ml-3" aria-label="Workflow steps">
+        {data.steps.map((step: any, index: number) => (
+          <li class="relative pl-12" itemscope itemtype="https://schema.org/HowToStep">
+            <!-- Timeline left-side vertical line -->
+            {index < data.steps.length - 1 && (
+              <div class="step-connector" aria-hidden="true"></div>
+            )}
+            
+            <!-- Step number bubble -->
+            <div 
+              class="absolute left-0 top-0 w-8 h-8 bg-gradient-to-br from-indigo-600 to-violet-600 rounded-xl flex items-center justify-center text-[10px] font-extrabold text-white shadow-lg shadow-indigo-600/20 z-10"
+              aria-hidden="true"
+            >
               {step.stepNumber}
-            </span>
-            <div class="glass-panel p-5 rounded-2xl border border-gray-800/80">
-              <h3 class="text-sm font-bold text-white mb-1.5" itemprop="name">
-                {step.title}
-              </h3>
-              <p class="text-xs text-gray-400 leading-relaxed mb-3" itemprop="text">
-                {step.description}
-              </p>
+            </div>
+
+            <!-- Step card -->
+            <div class="glass-card rounded-2xl p-5 border border-white/4 group">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1 min-w-0">
+                  <h3 class="text-sm font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors" itemprop="name">
+                    {step.title}
+                  </h3>
+                  <p class="text-xs text-gray-500 leading-relaxed" itemprop="text">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
               {step.tool && (
-                <span class="inline-block px-2 py-0.5 bg-gray-950 border border-gray-800 rounded text-[9px] text-gray-500 font-semibold uppercase">
-                  🔧 App: {step.tool}
-                </span>
+                <div class="mt-3 pt-3 border-t border-white/4">
+                  <span class="badge badge-slate">🔧 {step.tool}</span>
+                </div>
               )}
             </div>
           </li>
@@ -144,27 +193,32 @@ const schemaObj = {
       </ol>
     </section>
 
-    <!-- Copyable AI System Prompt Code Block & Sandbox -->
+    <!-- ============================================================
+         PROMPT SANDBOX
+         ============================================================ -->
     {data.promptSnippet && (
-      <section class="mb-12">
-        <h2 class="text-xl md:text-2xl font-bold text-white mb-6">Prompt Customizer Sandbox</h2>
+      <section class="mb-14" aria-labelledby="sandbox-heading">
+        <h2 id="sandbox-heading" class="font-display text-xl md:text-2xl font-bold text-white mb-6">
+          Prompt Customizer Sandbox
+        </h2>
         
-        <div class={data.promptVariables ? "grid grid-cols-1 lg:grid-cols-3 gap-8" : "block"}>
+        <div class={data.promptVariables ? "grid grid-cols-1 lg:grid-cols-3 gap-6" : "block"}>
           
-          <!-- Variables Inputs (Form) -->
+          <!-- Variables Form -->
           {data.promptVariables && (
-            <div class="lg:col-span-1 glass-panel p-5 rounded-2xl border border-gray-800/80 space-y-4 h-fit">
-              <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2">Variables</h3>
-              {data.promptVariables.map(v => (
+            <div class="lg:col-span-1 glass-panel p-5 rounded-2xl border border-white/5 space-y-4 h-fit">
+              <h3 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Variables</h3>
+              {data.promptVariables.map((v: any) => (
                 <div>
-                  <label for={`var-${v.name}`} class="block text-[10px] font-semibold text-gray-400 mb-1.5">{v.label}</label>
+                  <label for={`var-${v.name}`} class="block text-[11px] font-semibold text-gray-500 mb-1.5 uppercase tracking-wider">{v.label}</label>
                   <input 
                     type="text" 
                     id={`var-${v.name}`} 
                     data-var-name={v.name}
                     placeholder={v.placeholder}
                     value={v.defaultValue}
-                    class="prompt-var-input w-full bg-gray-950 border border-gray-800/80 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500/80 transition-colors"
+                    class="prompt-var-input w-full bg-[#141C2E] border border-white/6 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500/50 transition-colors placeholder-gray-600"
+                    aria-label={v.label}
                   />
                 </div>
               ))}
@@ -174,83 +228,112 @@ const schemaObj = {
           <!-- Code Preview -->
           <div class={data.promptVariables ? "lg:col-span-2 space-y-3" : "w-full space-y-3"}>
             <div class="flex items-center justify-between">
-              <span class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Prompt Preview</span>
+              <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">Prompt Preview</span>
               <button 
                 id="copyBtn" 
-                data-prompt={data.promptSnippet} 
-                class="text-xs font-bold px-3 py-2 bg-gray-900 hover:bg-gray-850 border border-gray-800 text-gray-300 hover:text-white rounded-xl transition-all btn-scale"
+                data-prompt={data.promptSnippet}
+                class="btn btn-secondary text-xs px-3.5 py-2"
+                aria-label="Copy prompt to clipboard"
               >
-                📋 Copy Prompt
+                <svg class="w-3.5 h-3.5 copy-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                <span class="copy-label">Copy Prompt</span>
               </button>
             </div>
-            <pre class="bg-gray-950 text-gray-300 p-5 rounded-2xl overflow-x-auto text-xs leading-relaxed whitespace-pre-wrap select-all border border-gray-800/80 font-mono"><code id="promptCode">{data.promptSnippet}</code></pre>
+            <pre class="bg-[#0A0E1A] text-gray-300 p-5 rounded-2xl overflow-x-auto text-xs leading-relaxed whitespace-pre-wrap border border-white/5 font-mono min-h-[120px]" aria-label="Prompt preview"><code id="promptCode">{data.promptSnippet}</code></pre>
           </div>
         </div>
       </section>
     )}
 
-    <!-- Main Markdown Body (Additional setups / configs) -->
-    <section class="prose prose-invert prose-indigo max-w-none mb-12 border-t border-gray-800/80 pt-8 text-sm">
+    <!-- ============================================================
+         MARKDOWN CONTENT
+         ============================================================ -->
+    <section class="prose prose-invert prose-indigo max-w-none mb-14 pt-8 border-t border-white/5 text-sm leading-relaxed">
       <Content />
     </section>
 
-    <!-- Flag/Works Feedback loop -->
-    <footer class="border-t border-gray-800/80 pt-8 mt-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <!-- ============================================================
+         FEEDBACK LOOP
+         ============================================================ -->
+    <div class="border-t border-white/5 pt-8 mb-14 flex flex-col sm:flex-row items-center justify-between gap-5">
       <div>
-        <p class="text-sm text-gray-300 font-semibold mb-1">Did this blueprint break?</p>
-        <p class="text-xs text-gray-500">AI integrations change quickly. Help us keep them working.</p>
+        <p class="text-sm font-bold text-gray-300 mb-0.5">Did this blueprint work for you?</p>
+        <p class="text-xs text-gray-600">AI integrations change fast. Help keep recipes accurate.</p>
       </div>
       <div class="flex gap-2">
-        <button onclick="alert('Awesome! Glad to hear the recipe is working for you.')" class="px-4 py-2 border border-gray-800 rounded-xl text-xs font-semibold hover:bg-gray-900 text-gray-300 transition-colors btn-scale">
-          👍 Works Perfect
+        <button 
+          onclick="this.textContent='✅ Awesome! Thanks'; this.disabled=true; this.style.opacity='0.7';" 
+          class="btn btn-secondary text-xs px-4 py-2.5"
+          aria-label="Mark as working"
+        >
+          👍 Works!
         </button>
-        <button onclick="alert('Thanks for the alert! Our community moderators will inspect and update this blueprint JSON.')" class="px-4 py-2 border border-red-950/40 rounded-xl text-xs font-semibold hover:bg-red-950/20 text-red-400 transition-colors btn-scale">
-          🚨 Broken/Outdated
+        <button 
+          onclick="this.textContent='🔎 Flagged for review'; this.disabled=true; this.style.opacity='0.7';"
+          class="px-4 py-2.5 border border-red-500/20 rounded-xl text-xs font-bold hover:bg-red-950/20 text-red-400/80 transition-colors"
+          aria-label="Mark as broken or outdated"
+        >
+          🚨 Broken
         </button>
       </div>
-    </footer>
+    </div>
 
-    <!-- Cross-Linking Block (SEO Topic Authority) -->
-    <section class="border-t border-gray-800/80 pt-12 mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Related by Tool -->
-      {relatedByTool.length > 0 && (
-        <div>
-          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Other {data.primaryTool} Blueprints</h3>
-          <ul class="space-y-3">
-            {relatedByTool.map(rel => (
-              <li>
-                <a href={`/workflows/${rel.id}`} class="block glass-panel p-4 rounded-xl border border-gray-800/80 text-xs text-gray-300 hover:text-white hover:border-gray-700 transition-all">
-                  <span class="font-bold block mb-1">{rel.data.title}</span>
-                  <span class="text-xs text-gray-500 line-clamp-1">{rel.data.description}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+    <!-- ============================================================
+         RELATED WORKFLOWS
+         ============================================================ -->
+    {(relatedByTool.length > 0 || relatedByPersona.length > 0) && (
+      <section class="border-t border-white/5 pt-10" aria-labelledby="related-heading">
+        <h2 id="related-heading" class="font-display text-lg font-bold text-white mb-7">Related Blueprints</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Related by Tool -->
+          {relatedByTool.length > 0 && (
+            <div>
+              <h3 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3">More {data.primaryTool} Blueprints</h3>
+              <ul class="space-y-2">
+                {relatedByTool.map(rel => (
+                  <li>
+                    <a 
+                      href={`/workflows/${rel.id}`} 
+                      class="block glass-card rounded-xl p-4 border border-white/4 text-xs text-gray-400 hover:text-white transition-all group"
+                    >
+                      <span class="font-bold block mb-1 text-gray-200 group-hover:text-indigo-300 transition-colors">{rel.data.title}</span>
+                      <span class="text-gray-600 line-clamp-1">{rel.data.description}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-      <!-- Related by Persona -->
-      {relatedByPersona.length > 0 && (
-        <div>
-          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Recommended for {data.persona}</h3>
-          <ul class="space-y-3">
-            {relatedByPersona.map(rel => (
-              <li>
-                <a href={`/workflows/${rel.id}`} class="block glass-panel p-4 rounded-xl border border-gray-800/80 text-xs text-gray-300 hover:text-white hover:border-gray-700 transition-all">
-                  <span class="font-bold block mb-1">{rel.data.title}</span>
-                  <span class="text-xs text-gray-500 line-clamp-1">{rel.data.description}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <!-- Related by Persona -->
+          {relatedByPersona.length > 0 && (
+            <div>
+              <h3 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3">Recommended for {data.persona}</h3>
+              <ul class="space-y-2">
+                {relatedByPersona.map(rel => (
+                  <li>
+                    <a 
+                      href={`/workflows/${rel.id}`} 
+                      class="block glass-card rounded-xl p-4 border border-white/4 text-xs text-gray-400 hover:text-white transition-all group"
+                    >
+                      <span class="font-bold block mb-1 text-gray-200 group-hover:text-indigo-300 transition-colors">{rel.data.title}</span>
+                      <span class="text-gray-600 line-clamp-1">{rel.data.description}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
-      )}
-    </section>
+      </section>
+    )}
   </div>
 </Layout>
 
 <script>
-  const copyBtn = document.getElementById('copyBtn');
+  const copyBtn = document.getElementById('copyBtn') as HTMLButtonElement;
   const codeEl = document.getElementById('promptCode');
   const varInputs = document.querySelectorAll('.prompt-var-input') as NodeListOf<HTMLInputElement>;
   
@@ -282,15 +365,27 @@ const schemaObj = {
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
       const textToCopy = copyBtn.getAttribute('data-prompt') || '';
+      const copyLabel = copyBtn.querySelector('.copy-label');
+      const copyIcon = copyBtn.querySelector('.copy-icon');
+
       navigator.clipboard.writeText(textToCopy).then(() => {
-        copyBtn.textContent = '✅ Copied!';
-        copyBtn.classList.add('bg-emerald-950', 'text-emerald-400', 'border-emerald-800');
+        if (copyLabel) copyLabel.textContent = 'Copied!';
+        if (copyIcon) {
+          (copyIcon as HTMLElement).innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />`;
+        }
+        copyBtn.classList.add('border-emerald-500/25', 'text-emerald-400');
+        copyBtn.classList.remove('text-gray-300');
+        
         setTimeout(() => {
-          copyBtn.textContent = '📋 Copy Prompt';
-          copyBtn.classList.remove('bg-emerald-950', 'text-emerald-400', 'border-emerald-800');
+          if (copyLabel) copyLabel.textContent = 'Copy Prompt';
+          if (copyIcon) {
+            (copyIcon as HTMLElement).innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />`;
+          }
+          copyBtn.classList.remove('border-emerald-500/25', 'text-emerald-400');
+          copyBtn.classList.add('text-gray-300');
         }, 2000);
       }).catch(err => {
-        console.error('Failed to copy: ', err);
+        console.error('Failed to copy:', err);
       });
     });
   }

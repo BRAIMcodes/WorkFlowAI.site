@@ -6,173 +6,349 @@ const workflows = await getCollection('workflows');
 const featuredWorkflows = workflows.slice(0, 3);
 
 const categoriesList = [
-  { name: 'Sales', icon: '💰', desc: 'Lead qualification, CRM synchronization, and outreach hooks.' },
-  { name: 'Marketing', icon: '📢', desc: 'YouTube transcript summaries, blog writing, and social campaigns.' },
-  { name: 'Recruiting', icon: '🤝', desc: 'Resume screening, candidate pipelines, and outreach drafts.' },
-  { name: 'Customer Support', icon: '💬', desc: 'Urgency triage, outage alerts, and auto-reply drafts.' },
-  { name: 'Operations', icon: '⚙️', desc: 'Process automations, cross-app sync, and data audits.' }
+  { name: 'Sales', icon: '💰', desc: 'Lead qualification, CRM sync, and outreach automation.', color: 'from-amber-500/10 to-amber-500/5', accent: 'rgba(245,158,11,0.3)' },
+  { name: 'Marketing', icon: '📢', desc: 'YouTube summaries, blog writing, and social campaigns.', color: 'from-rose-500/10 to-rose-500/5', accent: 'rgba(244,63,94,0.3)' },
+  { name: 'Recruiting', icon: '🤝', desc: 'Resume screening, pipelines, and outreach drafts.', color: 'from-violet-500/10 to-violet-500/5', accent: 'rgba(124,58,237,0.3)' },
+  { name: 'Customer Support', icon: '💬', desc: 'Urgency triage, outage alerts, and auto-reply drafts.', color: 'from-sky-500/10 to-sky-500/5', accent: 'rgba(14,165,233,0.3)' },
+  { name: 'Operations', icon: '⚙️', desc: 'Process automations, cross-app sync, and data audits.', color: 'from-emerald-500/10 to-emerald-500/5', accent: 'rgba(16,185,129,0.3)' }
+];
+
+const howItWorksSteps = [
+  { step: '01', title: 'Browse the Library', desc: 'Search by tool, department, or role. Every workflow solves a specific real-world bottleneck.', icon: '🔍' },
+  { step: '02', title: 'Copy the Recipe', desc: 'Grab the system prompt, download the JSON blueprint, or read the step-by-step breakdown.', icon: '📋' },
+  { step: '03', title: 'Deploy & Save Hours', desc: 'Import into n8n, Make.com, or your preferred tool. Start saving time from day one.', icon: '🚀' },
 ];
 
 const uniqueTools = [...new Set(workflows.map(w => w.data.primaryTool))];
 const uniquePersonas = [...new Set(workflows.map(w => w.data.persona))];
+
+const stats = [
+  { value: workflows.length + '+', label: 'Verified Recipes' },
+  { value: '5+', label: 'Automation Tools' },
+  { value: '100%', label: 'Free to Use' },
+  { value: '5hrs+', label: 'Saved per Week' },
+];
 ---
 
-<Layout title="WorkFlowAI - Download AI Automation Blueprints & JSON Recipes">
-  <!-- Glowing Background Effects -->
-  <div class="relative overflow-hidden pt-16 pb-28 md:pt-28 md:pb-36">
-    <div class="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-indigo-600/5 blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-[-5%] right-[-5%] w-[600px] h-[600px] rounded-full bg-violet-600/5 blur-[130px] pointer-events-none"></div>
+<Layout title="WorkFlowAI — Download AI Automation Blueprints & JSON Recipes">
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="relative overflow-hidden" aria-labelledby="hero-heading">
+    <!-- Ambient glow orbs -->
+    <div class="glow-orb glow-orb-indigo" style="width:700px;height:700px;top:-200px;left:-200px;opacity:0.8;"></div>
+    <div class="glow-orb glow-orb-violet" style="width:600px;height:600px;top:-100px;right:-150px;opacity:0.6;"></div>
+    <div class="glow-orb glow-orb-emerald" style="width:400px;height:400px;bottom:0;left:40%;opacity:0.4;"></div>
 
-    <!-- Hero Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-950/40 border border-indigo-500/20 rounded-full text-indigo-300 text-xs font-semibold tracking-wide uppercase mb-6">
-        🚀 The Wikipedia of AI Workflows
+    <!-- Grid pattern overlay -->
+    <div 
+      class="absolute inset-0 pointer-events-none opacity-[0.025]"
+      style="background-image: linear-gradient(rgba(99,102,241,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.4) 1px, transparent 1px); background-size: 60px 60px;"
+    ></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 md:pt-32 md:pb-28 text-center">
+
+      <!-- Eyebrow badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-indigo-300 text-xs font-semibold tracking-widest uppercase mb-8 animate-fade-in">
+        <span class="relative flex h-1.5 w-1.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-indigo-400"></span>
+        </span>
+        The Wikipedia of AI Workflows
       </div>
-      
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-none max-w-4xl mx-auto">
-        Stop building automations <br />
-        <span class="text-gradient">from scratch.</span>
+
+      <!-- Main headline -->
+      <h1 
+        id="hero-heading"
+        class="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.05] max-w-4xl mx-auto animate-fade-in-up"
+        style="animation-delay:100ms"
+      >
+        Stop building AI automations
+        <span class="block text-gradient">from scratch.</span>
       </h1>
-      
-      <p class="max-w-xl mx-auto text-base sm:text-lg text-gray-400 mb-10 leading-relaxed">
-        Download verified, production-ready AI workflows, copy system prompts, and get Make.com blueprints or n8n JSON files for free.
+
+      <!-- Subheadline -->
+      <p 
+        class="max-w-2xl mx-auto text-base sm:text-lg text-gray-400 mb-10 leading-relaxed animate-fade-in-up"
+        style="animation-delay:200ms"
+      >
+        Download verified, production-ready AI workflow blueprints. Copy system prompts,
+        import <strong class="text-gray-300 font-semibold">n8n JSON</strong> files, or grab 
+        <strong class="text-gray-300 font-semibold">Make.com</strong> blueprints — completely free.
       </p>
 
-      <!-- Raycast-Style Command Search Bar -->
-      <div class="max-w-2xl mx-auto mb-20">
-        <form action="/workflows" method="GET" class="relative flex items-center bg-gray-900/60 backdrop-blur-md border border-gray-800/80 p-1.5 rounded-2xl shadow-2xl shadow-indigo-500/5 focus-within:border-indigo-500/60 focus-within:shadow-indigo-500/10 transition-all duration-300">
-          <span class="pl-4 text-gray-500 shrink-0">
-            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      <!-- Search Bar -->
+      <div 
+        class="max-w-2xl mx-auto mb-5 animate-fade-in-up"
+        style="animation-delay:300ms"
+      >
+        <form action="/workflows" method="GET" class="relative flex items-center bg-[#0B0F19] border border-white/8 rounded-2xl shadow-[0_4px_40px_-12px_rgba(99,102,241,0.2)] focus-within:border-indigo-500/40 focus-within:shadow-[0_4px_40px_-8px_rgba(99,102,241,0.3)] transition-all duration-300 p-1.5" role="search">
+          <span class="pl-3 text-gray-500 shrink-0 flex-shrink-0" aria-hidden="true">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </span>
           <input 
             type="text" 
             name="search" 
-            placeholder="Search e.g., 'Lead Qualification' or 'n8n'..." 
-            class="w-full bg-transparent text-white border-0 focus:ring-0 outline-none px-4 py-3 text-sm placeholder-gray-500" 
+            id="hero-search"
+            placeholder="Search e.g. 'Lead Qualification', 'n8n email', 'Claude...'"
+            class="w-full bg-transparent text-white border-0 focus:ring-0 outline-none px-4 py-2.5 text-sm placeholder-gray-600"
+            aria-label="Search workflows"
           />
-          <button type="submit" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-550 text-white text-xs font-bold rounded-xl transition-all shadow-md shadow-indigo-600/20 btn-scale shrink-0">
-            Find Recipe
+          <button 
+            type="submit" 
+            class="btn btn-primary text-xs px-5 py-2.5 flex-shrink-0"
+          >
+            Find Recipe →
           </button>
         </form>
+
+        <!-- Quick tags -->
+        <div class="flex flex-wrap justify-center gap-2 mt-3">
+          {['Lead Qualification', 'Email Drafting', 'YouTube Summary', 'CRM Sync'].map(tag => (
+            <a 
+              href={`/workflows?search=${encodeURIComponent(tag.toLowerCase())}`}
+              class="px-3 py-1 bg-white/4 hover:bg-white/8 border border-white/6 hover:border-white/10 rounded-full text-[11px] text-gray-500 hover:text-gray-300 transition-all"
+            >
+              {tag}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Stats Bar -->
+      <div 
+        class="max-w-2xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5 animate-fade-in-up"
+        style="animation-delay:400ms"
+        aria-label="Site statistics"
+      >
+        {stats.map((stat, i) => (
+          <div class="bg-[#0B0F19] px-4 py-4 text-center hover:bg-[#0F1525] transition-colors">
+            <div class="stat-number text-xl">{stat.value}</div>
+            <div class="text-[10px] text-gray-600 font-semibold uppercase tracking-widest mt-1">{stat.label}</div>
+          </div>
+        ))}
       </div>
     </div>
+  </section>
 
-    <!-- Category Grid Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-28 relative z-10">
-      <div class="text-center md:text-left mb-10">
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">Browse by Automation Focus</h2>
-        <p class="text-sm text-gray-400">Tactical AI recipes structured to solve specific department bottlenecks.</p>
+  <!-- ============================================================
+       HOW IT WORKS
+       ============================================================ -->
+  <section class="py-20 border-t border-white/5" aria-labelledby="how-it-works-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <p class="text-[11px] font-bold text-indigo-400 uppercase tracking-widest mb-3">Process</p>
+        <h2 id="how-it-works-heading" class="font-display text-2xl md:text-3xl font-extrabold text-white mb-3">
+          Up and running in minutes
+        </h2>
+        <p class="text-sm text-gray-500 max-w-md mx-auto">
+          Every workflow is pre-built and documented. No courses, no tutorials — just copy and go.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+        <!-- Connector line (desktop only) -->
+        <div class="hidden md:block absolute top-10 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-px bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent pointer-events-none" aria-hidden="true"></div>
+
+        {howItWorksSteps.map((step, idx) => (
+          <div class="relative glass-card rounded-2xl p-7 text-left group">
+            <!-- Step number -->
+            <div class="w-10 h-10 rounded-xl bg-indigo-600/10 border border-indigo-500/20 flex items-center justify-center mb-5 group-hover:bg-indigo-600/20 transition-colors">
+              <span class="font-display text-xs font-bold text-indigo-400 tracking-widest">{step.step}</span>
+            </div>
+            <div class="text-2xl mb-3">{step.icon}</div>
+            <h3 class="text-base font-bold text-white mb-2">{step.title}</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CATEGORY GRID
+       ============================================================ -->
+  <section class="py-20 border-t border-white/5" aria-labelledby="categories-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-10 gap-4">
+        <div>
+          <p class="text-[11px] font-bold text-indigo-400 uppercase tracking-widest mb-3">Departments</p>
+          <h2 id="categories-heading" class="font-display text-2xl md:text-3xl font-extrabold text-white mb-2">
+            Browse by Automation Focus
+          </h2>
+          <p class="text-sm text-gray-500">Tactical AI recipes structured around specific department bottlenecks.</p>
+        </div>
+        <a href="/workflows" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition-colors flex-shrink-0 group">
+          View all recipes
+          <span class="group-hover:translate-x-1 transition-transform inline-block">→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         {categoriesList.map(cat => (
-          <a href={`/workflows?category=${cat.name}`} class="glass-card rounded-2xl p-6 flex flex-col justify-between text-left group">
+          <a 
+            href={`/workflows?category=${cat.name}`} 
+            class="glass-card rounded-2xl p-6 flex flex-col justify-between text-left group h-full"
+            aria-label={`Browse ${cat.name} workflows`}
+          >
             <div>
-              <div class="w-12 h-12 bg-indigo-950/40 border border-indigo-500/10 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:bg-indigo-600 group-hover:border-indigo-500 group-hover:text-white transition-all duration-300">
+              <div 
+                class="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-4 bg-gradient-to-br border border-white/5 transition-all duration-300 group-hover:scale-110"
+                style={`background: linear-gradient(135deg, ${cat.accent.replace('0.3','0.12')}, transparent); border-color: ${cat.accent.replace('0.3','0.15')};`}
+              >
                 {cat.icon}
               </div>
-              <h3 class="text-md font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+              <h3 class="text-sm font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">
                 {cat.name}
               </h3>
-              <p class="text-xs text-gray-400 leading-relaxed line-clamp-3">
+              <p class="text-xs text-gray-500 leading-relaxed line-clamp-3">
                 {cat.desc}
               </p>
             </div>
-            <span class="text-xs text-indigo-400 font-bold group-hover:text-indigo-300 mt-4 flex items-center gap-1 transition-colors">
-              Explore {cat.name} &rarr;
+            <span class="text-xs text-indigo-500 font-bold group-hover:text-indigo-300 mt-5 flex items-center gap-1 transition-colors">
+              Explore →
             </span>
           </a>
         ))}
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Trending Blueprints Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-28 relative z-10">
+  <!-- ============================================================
+       FEATURED BLUEPRINTS
+       ============================================================ -->
+  <section class="py-20 border-t border-white/5" aria-labelledby="featured-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-10 gap-4">
         <div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">Trending AI Blueprints</h2>
-          <p class="text-sm text-gray-400">Tested, ready-to-run automation structures with downloadable JSON assets.</p>
+          <p class="text-[11px] font-bold text-indigo-400 uppercase tracking-widest mb-3">Featured</p>
+          <h2 id="featured-heading" class="font-display text-2xl md:text-3xl font-extrabold text-white mb-2">
+            Trending AI Blueprints
+          </h2>
+          <p class="text-sm text-gray-500">Tested, ready-to-run automation structures with downloadable JSON assets.</p>
         </div>
-        <a href="/workflows" class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-semibold text-xs group transition-colors">
-          Explore all workflows
-          <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+        <a href="/workflows" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition-colors flex-shrink-0 group">
+          All workflows
+          <span class="group-hover:translate-x-1 transition-transform inline-block">→</span>
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {featuredWorkflows.map(item => (
-          <article class="glass-card rounded-2xl p-6 flex flex-col justify-between group">
-            <div>
-              <!-- Tool Tag & Metric -->
-              <div class="flex justify-between items-center mb-4">
-                <span class="px-2.5 py-0.5 bg-indigo-950/40 border border-indigo-500/20 text-indigo-300 text-[11px] font-semibold rounded-md">
-                  ⚙️ {item.data.primaryTool}
-                </span>
-                <span class="text-xs text-emerald-400 font-medium">
-                  ⏱️ {item.data.timeSaved} saved
-                </span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {featuredWorkflows.map((item, index) => {
+          const difficultyClass = 
+            item.data.difficulty === 'Beginner' ? 'difficulty-beginner' :
+            item.data.difficulty === 'Advanced' ? 'difficulty-advanced' :
+            'difficulty-intermediate';
+          
+          return (
+            <article class="glass-card rounded-2xl p-6 flex flex-col justify-between group">
+              <div>
+                <!-- Header row -->
+                <div class="flex justify-between items-center mb-5">
+                  <span class="badge badge-indigo">
+                    {item.data.primaryTool}
+                  </span>
+                  <span class={`badge ${difficultyClass}`}>
+                    {item.data.difficulty}
+                  </span>
+                </div>
+
+                <!-- Title -->
+                <h3 class="text-base font-bold text-white mb-2.5 group-hover:text-indigo-300 transition-colors leading-snug">
+                  <a href={`/workflows/${item.id}`} class="focus:outline-none focus:text-indigo-400">
+                    {item.data.title}
+                  </a>
+                </h3>
+
+                <!-- Description -->
+                <p class="text-sm text-gray-500 leading-relaxed mb-5 line-clamp-2">
+                  {item.data.description}
+                </p>
+
+                <!-- Key metrics -->
+                <div class="flex items-center gap-4 text-xs text-gray-600">
+                  <span class="flex items-center gap-1.5">
+                    <span class="text-emerald-500">⏱</span>
+                    <span class="text-emerald-400/80 font-semibold">{item.data.timeSaved} saved</span>
+                  </span>
+                  <span class="flex items-center gap-1.5">
+                    <span>💰</span>
+                    <span>{item.data.costToRun}</span>
+                  </span>
+                </div>
               </div>
 
-              <!-- Title -->
-              <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors line-clamp-1">
-                <a href={`/workflows/${item.id}`}>{item.data.title}</a>
-              </h3>
-
-              <!-- Description -->
-              <p class="text-sm text-gray-400 leading-relaxed mb-6 line-clamp-2">
-                {item.data.description}
-              </p>
-            </div>
-
-            <!-- Footer Meta & CTA -->
-            <div class="pt-4 border-t border-slate-800/60 flex items-center justify-between">
-              <span class="text-[11px] text-gray-500 font-medium">
-                💰 Run cost: {item.data.costToRun}
-              </span>
-              <a href={`/workflows/${item.id}`} class="text-xs font-bold text-white group-hover:text-indigo-400 flex items-center gap-1 transition-colors">
-                Get Recipe
-                <span class="group-hover:translate-x-0.5 transition-transform">&rarr;</span>
-              </a>
-            </div>
-          </article>
-        ))}
+              <!-- Footer CTA -->
+              <div class="pt-5 mt-5 border-t border-white/5 flex items-center justify-between">
+                <div class="flex -space-x-1">
+                  {item.data.connectedApps?.slice(0, 3).map((app: string) => (
+                    <div 
+                      class="w-6 h-6 rounded-full bg-white/5 border border-white/8 flex items-center justify-center text-[9px] text-gray-400 font-bold"
+                      title={app}
+                    >
+                      {app.charAt(0)}
+                    </div>
+                  ))}
+                </div>
+                <a 
+                  href={`/workflows/${item.id}`}
+                  class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 group-hover:translate-x-0.5 transition-all"
+                >
+                  Get Recipe →
+                </a>
+              </div>
+            </article>
+          );
+        })}
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Programmatic SEO Hub Intersections -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="glass-panel rounded-3xl p-8 md:p-12 relative overflow-hidden border border-gray-800/80">
-        <div class="absolute top-0 right-0 w-80 h-80 bg-indigo-600/5 blur-[80px] pointer-events-none"></div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-          <div class="col-span-1 lg:col-span-1">
-            <h2 class="text-xl md:text-2xl font-bold text-white mb-3">
-              Integrated Platforms & Roles
+  <!-- ============================================================
+       TOOLS & PERSONAS CROSS-LINKS (SEO Hub)
+       ============================================================ -->
+  <section class="py-20 border-t border-white/5" aria-labelledby="integrations-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-panel rounded-3xl p-8 md:p-12 border border-white/5 relative overflow-hidden">
+        <!-- Decorative glow -->
+        <div class="glow-orb glow-orb-violet absolute -top-10 -right-10 w-60 h-60 opacity-60 pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start relative z-10">
+          <div class="lg:col-span-2">
+            <p class="text-[11px] font-bold text-indigo-400 uppercase tracking-widest mb-3">Integrations</p>
+            <h2 id="integrations-heading" class="font-display text-xl md:text-2xl font-extrabold text-white mb-3">
+              Find recipes by platform or role
             </h2>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              We compile integrations programmatically. Click below to view all blueprints filtered by specific platforms or target departments.
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Every blueprint is tagged by the tool it runs on and the role that benefits most. Click to filter instantly.
             </p>
           </div>
 
-          <div class="col-span-1 lg:col-span-2 space-y-6">
+          <div class="lg:col-span-3 space-y-7">
             <div>
-              <h4 class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-3">AI & Automation Tools</h4>
+              <h3 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3">Automation Tools</h3>
               <div class="flex flex-wrap gap-2">
                 {uniqueTools.map(tool => (
-                  <a href={`/tools/${tool.toLowerCase().replace(/\s+/g, '-')}`} class="px-3.5 py-1.5 bg-slate-900/60 hover:bg-slate-900 border border-slate-800/80 hover:border-slate-700 text-xs font-semibold rounded-xl text-gray-300 hover:text-white transition-all">
-                    {tool} Recipes
+                  <a 
+                    href={`/tools/${tool.toLowerCase().replace(/\s+/g, '-')}`}
+                    class="px-3.5 py-1.5 bg-white/4 hover:bg-indigo-600/10 border border-white/6 hover:border-indigo-500/25 text-[11px] font-semibold rounded-xl text-gray-400 hover:text-indigo-300 transition-all"
+                  >
+                    {tool}
                   </a>
                 ))}
               </div>
             </div>
 
             <div>
-              <h4 class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-3">Target Roles</h4>
+              <h3 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3">Target Roles</h3>
               <div class="flex flex-wrap gap-2">
                 {uniquePersonas.map(persona => (
-                  <a href={`/personas/${persona.toLowerCase().replace(/\s+/g, '-')}`} class="px-3.5 py-1.5 bg-slate-900/60 hover:bg-slate-900 border border-slate-800/80 hover:border-slate-700 text-xs font-semibold rounded-xl text-gray-300 hover:text-white transition-all">
+                  <a 
+                    href={`/personas/${persona.toLowerCase().replace(/\s+/g, '-')}`}
+                    class="px-3.5 py-1.5 bg-white/4 hover:bg-indigo-600/10 border border-white/6 hover:border-indigo-500/25 text-[11px] font-semibold rounded-xl text-gray-400 hover:text-indigo-300 transition-all"
+                  >
                     For {persona}
                   </a>
                 ))}
@@ -181,6 +357,38 @@ const uniquePersonas = [...new Set(workflows.map(w => w.data.persona))];
           </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BOTTOM CTA BANNER
+       ============================================================ -->
+  <section class="py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative rounded-3xl overflow-hidden">
+        <!-- Gradient background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-950/60 via-[#0B0F19] to-violet-950/40"></div>
+        <div class="absolute inset-0" style="background-image: linear-gradient(rgba(99,102,241,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.06) 1px, transparent 1px); background-size: 40px 40px;"></div>
+        <div class="glow-orb glow-orb-indigo absolute -top-20 -left-20 w-80 h-80 opacity-50"></div>
+        <div class="glow-orb glow-orb-violet absolute -bottom-20 -right-20 w-80 h-80 opacity-40"></div>
+        
+        <div class="relative z-10 text-center py-16 px-6">
+          <h2 class="font-display text-2xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
+            Get new blueprints in your inbox
+          </h2>
+          <p class="text-gray-400 text-sm md:text-base max-w-md mx-auto mb-8">
+            We publish 2–3 new verified AI workflow recipes every week. Subscribe free — no spam, unsubscribe anytime.
+          </p>
+          <button 
+            onclick="window.openSubscribeModal()"
+            class="btn btn-primary px-8 py-3.5 text-sm"
+            aria-label="Subscribe for free to get new recipes weekly"
+          >
+            Subscribe Free →
+          </button>
+          <p class="text-xs text-gray-600 mt-4">No credit card required. 100% free forever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

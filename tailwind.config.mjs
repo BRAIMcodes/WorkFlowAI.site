@@ -8,16 +8,38 @@ export default {
   theme: {
     extend: {
       colors: {
-        'zapier-orange': '#FF4F00',
-        'zapier-black': '#2D2E2E',
-        'zapier-beige': '#FDF8F4',
-        'zapier-stone': '#F4F4F4',
-        primary: '#FF4F00', // Map primary to Zapier Orange
-        secondary: '#2D2E2E', // Map secondary to Zapier Black
+        // Surface system
+        surface: {
+          0: '#070A13',
+          1: '#0B0F19',
+          2: '#0F1525',
+          3: '#141C2E',
+          4: '#1A2238',
+        },
+        // Brand
+        brand: {
+          indigo: '#6366F1',
+          violet: '#7C3AED',
+          purple: '#A855F7',
+          emerald: '#10B981',
+        }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
-        serif: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'], // Override serif to use Inter as well, just in case
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'Outfit', 'system-ui', 'sans-serif'],
+      },
+      animation: {
+        'fade-in-up': 'fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'fade-in': 'fadeIn 0.5s ease forwards',
+        'gradient-shift': 'gradient-shift 6s ease infinite',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      boxShadow: {
+        'glow-indigo': '0 0 40px -10px rgba(99, 102, 241, 0.4)',
+        'glow-violet': '0 0 40px -10px rgba(124, 58, 237, 0.3)',
       },
     },
   },
