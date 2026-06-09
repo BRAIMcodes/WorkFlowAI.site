@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
 <Layout title="About WorkFlowAI - Our Mission" description="Learn about WorkFlowAI's mission to empower professionals with practical AI automation blueprints.">
@@ -11,7 +12,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- Title -->
       <div class="text-center mb-16">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-indigo-300 text-[11px] font-semibold tracking-widest uppercase mb-4">
-          ✨ Our Philosophy
+          <Icon name="sparkles" class="w-3.5 h-3.5" /> Our Philosophy
         </div>
         <h1 class="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
           Empowering the <span class="text-gradient">Automators</span>
@@ -36,17 +37,17 @@ import Layout from '../layouts/Layout.astro';
           <h2 class="font-display text-2xl font-bold text-white mb-4">Our Values</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="glass-card p-6 rounded-2xl border border-white/6">
-              <span class="text-3xl block mb-3">🛠️</span>
+              <Icon name="wrench" class="w-6 h-6 text-indigo-400 mb-3" />
               <h3 class="font-bold text-white mb-2">Immediate Utility</h3>
               <p class="text-xs text-gray-500 leading-relaxed">No generic listicles. Every page includes copy-paste assets and download links.</p>
             </div>
             <div class="glass-card p-6 rounded-2xl border border-white/6">
-              <span class="text-3xl block mb-3">🔒</span>
+              <Icon name="shield" class="w-6 h-6 text-indigo-400 mb-3" />
               <h3 class="font-bold text-white mb-2">Unbiased & Free</h3>
               <p class="text-xs text-gray-500 leading-relaxed">All blueprints are open-source and free to import without paywalls or subscriptions.</p>
             </div>
             <div class="glass-card p-6 rounded-2xl border border-white/6">
-              <span class="text-3xl block mb-3">👥</span>
+              <Icon name="users" class="w-6 h-6 text-indigo-400 mb-3" />
               <h3 class="font-bold text-white mb-2">Community Driven</h3>
               <p class="text-xs text-gray-500 leading-relaxed">Workflows are built in public based on real Reddit and community automation requests.</p>
             </div>

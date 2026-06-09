@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import Icon from '../../components/Icon.astro';
 
 const workflows = await getCollection('workflows');
 
@@ -180,11 +181,12 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
                 <div class="pt-4 border-t border-white/4 flex items-center justify-between">
                   <div class="flex items-center gap-3 text-[11px]">
                     <span class="text-emerald-400/80 font-semibold flex items-center gap-1">
-                      <span>⏱</span>
+                      <Icon name="clock" class="w-3 h-3" />
                       {item.data.timeSaved}
                     </span>
-                    <span class="text-gray-500">
-                      💰 {item.data.costToRun}
+                    <span class="text-gray-500 flex items-center gap-1">
+                      <Icon name="dollar-sign" class="w-3 h-3" />
+                      {item.data.costToRun}
                     </span>
                   </div>
                   <a 
@@ -206,7 +208,7 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
             role="status"
             aria-live="polite"
           >
-            <div class="text-4xl mb-4">🔍</div>
+            <div class="mb-4 flex justify-center"><Icon name="search" class="w-10 h-10 text-gray-500" /></div>
             <p class="text-base text-gray-400 font-bold mb-2">No workflows match your filters</p>
             <p class="text-sm text-gray-500 mb-5">Try broadening your search or adjusting the filters.</p>
             <button id="clear-filters-empty" class="btn btn-secondary text-xs px-5 py-2.5">

@@ -48,6 +48,19 @@
     --space-12: 48px;
     --space-16: 64px;
 
+    /* Card padding — standardized across all card types */
+    --card-padding-sm: 20px;   /* filter panels, small inline cards */
+    --card-padding: 24px;      /* standard cards (glass-card default) */
+    --card-padding-lg: 32px;   /* hero panels, full-width feature blocks */
+
+    /* Section vertical rhythm */
+    --section-gap: 80px;       /* py-20 — standard content sections */
+    --section-gap-sm: 48px;    /* compact sections, footer top */
+
+    /* Grid gaps — pick one per context, don't mix */
+    --grid-gap-tight: 16px;    /* gap-4 — dense grids (5-col categories) */
+    --grid-gap: 24px;          /* gap-6 — standard card grids */
+
     /* Radii */
     --radius-sm: 8px;
     --radius-md: 12px;

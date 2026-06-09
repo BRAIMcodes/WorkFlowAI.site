@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
 <Layout 
@@ -16,7 +17,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- Header -->
       <div class="text-center mb-12">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-indigo-300 text-[11px] font-semibold uppercase tracking-widest mb-6">
-          📥 Community Contributions
+          <Icon name="inbox" class="w-3.5 h-3.5" /> Community Contributions
         </div>
         <h1 class="font-display text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
           Submit an AI Workflow
@@ -81,17 +82,21 @@ import Layout from '../layouts/Layout.astro';
       <div class="glass-panel rounded-2xl p-5 border border-white/5 mb-10">
         <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">What happens after you submit</h3>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {[
-            { icon: '🔍', title: 'We review it', desc: 'Our team verifies it works end-to-end within 48–72 hours.' },
-            { icon: '✍️', title: 'We document it', desc: 'We format it with a proper step guide, metadata, and tags.' },
-            { icon: '🚀', title: 'It goes live', desc: 'Your recipe is published and attributed to you in the library.' },
-          ].map(step => (
-            <div class="text-center">
-              <div class="text-2xl mb-2">{step.icon}</div>
-              <p class="text-xs font-bold text-gray-300 mb-1">{step.title}</p>
-              <p class="text-[11px] text-gray-500 leading-relaxed">{step.desc}</p>
-            </div>
-          ))}
+          <div class="text-center">
+            <div class="text-2xl mb-2"><Icon name="search" class="w-5 h-5 text-indigo-400" /></div>
+            <p class="text-xs font-bold text-gray-300 mb-1">We review it</p>
+            <p class="text-[11px] text-gray-500 leading-relaxed">Our team verifies it works end-to-end within 48–72 hours.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl mb-2"><Icon name="edit" class="w-5 h-5 text-indigo-400" /></div>
+            <p class="text-xs font-bold text-gray-300 mb-1">We document it</p>
+            <p class="text-[11px] text-gray-500 leading-relaxed">We format it with a proper step guide, metadata, and tags.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl mb-2"><Icon name="rocket" class="w-5 h-5 text-indigo-400" /></div>
+            <p class="text-xs font-bold text-gray-300 mb-1">It goes live</p>
+            <p class="text-[11px] text-gray-500 leading-relaxed">Your recipe is published and attributed to you in the library.</p>
+          </div>
         </div>
       </div>
 
