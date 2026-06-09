@@ -1,0 +1,144 @@
+---
+---
+
+<div id="subscribe-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <!-- Backdrop -->
+  <div class="fixed inset-0 bg-gray-900/75 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop"></div>
+
+  <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+      <!-- Modal Panel -->
+      <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" id="modal-panel">
+        
+        <!-- Close Button -->
+        <div class="absolute right-4 top-4">
+          <button type="button" id="close-modal-btn" class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none">
+            <span class="sr-only">Close</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+          <div class="sm:flex sm:items-start">
+            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
+              <h3 class="text-2xl font-bold leading-6 text-zapier-black text-center mb-2" id="modal-title">Subscribe</h3>
+              <div class="mt-2">
+                <p class="text-sm text-gray-500 text-center mb-8">
+                  Stay updated with weekly AI News and Insights delivered to your inbox.
+                </p>
+
+                <form id="subscribe-form" class="space-y-4">
+                  <div>
+                    <label for="email" class="sr-only">Email address</label>
+                    <input type="email" name="email" id="email" class="block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-zapier-orange sm:text-sm sm:leading-6" placeholder="Email address" required>
+                  </div>
+
+                  <div class="flex items-start">
+                    <div class="flex h-6 items-center">
+                      <input id="consent" name="consent" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-zapier-orange focus:ring-zapier-orange" checked>
+                    </div>
+                    <div class="ml-3 text-sm leading-6">
+                      <label for="consent" class="font-medium text-gray-600">Keep me updated on the latest news, courses, and workshops.</label>
+                    </div>
+                  </div>
+
+                  <button type="submit" id="submit-btn" class="flex w-full justify-center rounded-md bg-zapier-orange px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zapier-orange transition-all duration-200">
+                    Subscribe
+                  </button>
+                  <p id="form-message" class="text-center text-sm mt-2 font-medium"></p>
+                </form>
+                
+                <p class="mt-4 text-center text-xs text-gray-400">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('subscribe-modal');
+  const backdrop = document.getElementById('modal-backdrop');
+  const panel = document.getElementById('modal-panel');
+  const closeBtn = document.getElementById('close-modal-btn');
+  const form = document.getElementById('subscribe-form');
+  const message = document.getElementById('form-message');
+  const btn = document.getElementById('submit-btn');
+
+  function openModal() {
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+      backdrop.classList.remove('opacity-0');
+      panel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+      panel.classList.add('opacity-100', 'translate-y-0', 'sm:scale-100');
+    }, 10);
+  }
+
+  function closeModal() {
+    backdrop.classList.add('opacity-0');
+    panel.classList.remove('opacity-100', 'translate-y-0', 'sm:scale-100');
+    panel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+    
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      if (message) {
+        message.innerText = '';
+        message.className = 'text-center text-sm mt-2 font-medium';
+      }
+    }, 300);
+  }
+
+  // Form Submission Logic
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const originalText = btn.innerText;
+    btn.innerText = "Joining...";
+    btn.disabled = true;
+    message.innerText = '';
+
+    const formData = new FormData(e.target);
+    
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        message.innerText = "✅ You're in! Check your inbox.";
+        message.className = "text-center text-sm mt-2 font-medium text-green-600";
+        form.reset();
+        setTimeout(() => {
+           closeModal();
+        }, 2000);
+      } else {
+        const data = await response.json();
+        message.innerText = `❌ ${data.message || 'Something went wrong.'}`;
+        message.className = "text-center text-sm mt-2 font-medium text-red-600";
+      }
+    } catch (err) {
+      message.innerText = "❌ Error connecting. Check your internet.";
+      message.className = "text-center text-sm mt-2 font-medium text-red-600";
+    } finally {
+      btn.innerText = originalText;
+      btn.disabled = false;
+    }
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  
+  modal.addEventListener('click', (e) => {
+    if (e.target === backdrop || e.target.closest('#modal-backdrop')) {
+      closeModal();
+    }
+  });
+
+  window.openSubscribeModal = openModal;
+</script>

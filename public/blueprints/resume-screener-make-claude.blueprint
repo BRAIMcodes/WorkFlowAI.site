@@ -1,0 +1,41 @@
+{
+  "name": "AI Resume Screener with Claude",
+  "flow": [
+    {
+      "id": 1,
+      "module": "google-drive:watch-files-in-folder",
+      "title": "Watch Folder for Uploads",
+      "parameters": {
+        "folderId": "incoming-resumes-folder"
+      },
+      "next": [2]
+    },
+    {
+      "id": 2,
+      "module": "pdf-parser:extract-text",
+      "title": "Extract PDF Text",
+      "parameters": {
+        "file": "{{ 1.fileData }}"
+      },
+      "next": [3]
+    },
+    {
+      "id": 3,
+      "module": "anthropic-claude:score-resume",
+      "title": "Score Candidate via Claude",
+      "parameters": {
+        "model": "claude-3-5-sonnet",
+        "system_prompt": "Evaluate candidate resume against JD..."
+      },
+      "next": [4]
+    },
+    {
+      "id": 4,
+      "module": "google-sheets:add-candidate-row",
+      "title": "Log Candidate Details",
+      "parameters": {
+        "spreadsheet_id": "candidate-screening-sheet"
+      }
+    }
+  ]
+}

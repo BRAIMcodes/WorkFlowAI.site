@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const workflows = await getCollection('workflows');
+  
+  // Extract all unique personas
+  const personasSet = new Set<string>();
+  workflows.forEach(w => {
+    personasSet.add(w.data.persona);
+  });
+
+  return Array.from(personasSet).map(persona => {
+    const slug = persona.toLowerCase().replace(/\s+/g, '-');
+    return {
+      params: { slug },
+      props: { persona },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+const { persona } = Astro.props;
+
+// Fetch workflows matching this persona
+const allWorkflows = await getCollection('workflows');
+const filteredWorkflows = allWorkflows.filter(w => 
+  w.data.persona.toLowerCase() === persona.toLowerCase()
+);
+---
+
+<Layout title={`AI Workflows for ${persona} - WorkFlowAI`} description={`Discover free downloadable automation blueprints, JSON configs, and GPT prompts curated for ${persona}.`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumbs -->
+    <nav class="text-xs text-gray-500 mb-6 flex items-center gap-2">
+      <a href="/" class="hover:text-indigo-400 transition-colors">Home</a>
+      <span>/</span>
+      <a href="/personas" class="hover:text-indigo-400 transition-colors">Personas</a>
+      <span>/</span>
+      <span class="text-gray-300 font-medium">For {persona}</span>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="border-b border-gray-800 pb-8 mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-500/10 border border-indigo-500/30 rounded-full text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        👤 For Roles
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
+        Workflows for {persona}
+      </h1>
+      <p class="text-gray-400 text-lg max-w-3xl">
+        Download verified blueprint JSON files and system prompts designed to automate the repetitive parts of a {persona}'s daily workload.
+      </p>
+    </div>
+
+    <!-- Grid of Workflows -->
+    {filteredWorkflows.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredWorkflows.map(item => (
+          <article class="glass-card rounded-2xl p-6 flex flex-col justify-between group">
+            <div>
+              <div class="flex justify-between items-center mb-4">
+                <span class="px-2.5 py-0.5 bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold rounded-md">
+                  {item.data.primaryTool}
+                </span>
+                <span class="text-xs text-emerald-400 font-medium">
+                  ⏱️ {item.data.timeSaved} saved
+                </span>
+              </div>
+
+              <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                <a href={`/workflows/${item.id}`}>{item.data.title}</a>
+              </h3>
+
+              <p class="text-xs text-gray-400 leading-relaxed mb-6 line-clamp-3">
+                {item.data.description}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between">
+              <span class="text-[11px] text-gray-500 font-medium">
+                💰 Cost: {item.data.costToRun}
+              </span>
+              <a href={`/workflows/${item.id}`} class="text-xs font-bold text-white group-hover:text-indigo-400 flex items-center gap-1 transition-colors">
+                Get Blueprint &rarr;
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <div class="py-20 text-center glass-panel rounded-2xl border border-dashed border-gray-800">
+        <p class="text-lg text-gray-400 font-semibold mb-2">No workflows found for {persona}</p>
+        <p class="text-sm text-gray-600">Check back later as we add new blueprints weekly.</p>
+      </div>
+    )}
+  </div>
+</Layout>

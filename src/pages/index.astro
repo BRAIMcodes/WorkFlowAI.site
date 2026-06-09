@@ -1,0 +1,184 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const workflows = await getCollection('workflows');
+const featuredWorkflows = workflows.slice(0, 3);
+
+// Dynamically compile categories and tools from workflows collection
+const categoriesList = [
+  { name: 'Sales', icon: '💰', desc: 'Lead qualification, CRM sync, sales hooks' },
+  { name: 'Marketing', icon: '📢', desc: 'YouTube summaries, blog writing, social posts' },
+  { name: 'Recruiting', icon: '🤝', desc: 'Resume screening, candidate pipelines' },
+  { name: 'Customer Support', icon: '💬', desc: 'Ticket classification, auto-responders' },
+  { name: 'Operations', icon: '⚙️', desc: 'Process automation, data orchestration' }
+];
+
+const uniqueTools = [...new Set(workflows.map(w => w.data.primaryTool))];
+const uniquePersonas = [...new Set(workflows.map(w => w.data.persona))];
+---
+
+<Layout title="WorkFlowAI - Download AI Automation Blueprints & JSON Recipes">
+  <!-- Glowing Background Effects -->
+  <div class="relative overflow-hidden pt-12 pb-24 md:pt-20 md:pb-32">
+    <div class="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-indigo-500/10 blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-violet-600/10 blur-[130px] pointer-events-none"></div>
+
+    <!-- Hero Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-500/10 border border-indigo-500/30 rounded-full text-indigo-300 text-xs font-semibold tracking-wider uppercase mb-6 animate-pulse">
+        🚀 The Wikipedia of AI Workflows
+      </div>
+      
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.05]">
+        Stop building automations <br />
+        <span class="text-gradient">from scratch.</span>
+      </h1>
+      
+      <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
+        Download verified, production-ready AI workflows, copy system prompts, and get Make.com blueprints or n8n JSON files for free.
+      </p>
+
+      <!-- Instant Interactive Search -->
+      <div class="max-w-2xl mx-auto mb-16">
+        <form action="/workflows" method="GET" class="relative flex items-center bg-gray-900/50 backdrop-blur border border-gray-800 focus-within:border-indigo-500/80 p-2 rounded-2xl shadow-xl transition-all duration-300">
+          <span class="pl-4 text-gray-500">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </span>
+          <input 
+            type="text" 
+            name="search" 
+            placeholder="Search e.g., 'LinkedIn Lead Scoring' or 'n8n'..." 
+            class="w-full bg-transparent text-white border-0 focus:ring-0 outline-none px-4 py-3 text-md placeholder-gray-500" 
+          />
+          <button type="submit" class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-semibold rounded-xl transition-all shadow-md shadow-indigo-600/10">
+            Find Recipe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Category Grid Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10">
+      <div class="flex justify-between items-end mb-10">
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-2">Browse by Automation Focus</h2>
+          <p class="text-gray-400">Tactical AI recipes structured to solve specific department bottlenecks.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        {categoriesList.map(cat => (
+          <a href={`/workflows?category=${cat.name}`} class="glass-card rounded-2xl p-6 flex flex-col items-start text-left group">
+            <div class="text-3xl mb-4 p-3 bg-gray-900/60 rounded-xl group-hover:scale-110 transition-transform duration-300">
+              {cat.icon}
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+              {cat.name}
+            </h3>
+            <p class="text-xs text-gray-400 leading-relaxed">
+              {cat.desc}
+            </p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Featured Blueprints Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-10 gap-4">
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-2">Trending AI Blueprints</h2>
+          <p class="text-gray-400">Tested, ready-to-run automation structures with downloadable JSON assets.</p>
+        </div>
+        <a href="/workflows" class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-semibold text-sm group transition-colors">
+          Explore all workflows
+          <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {featuredWorkflows.map(item => (
+          <article class="glass-card rounded-2xl p-6 flex flex-col justify-between group">
+            <div>
+              <!-- Tool Tag & Metric -->
+              <div class="flex justify-between items-center mb-4">
+                <span class="px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold rounded-lg">
+                  ⚙️ {item.data.primaryTool}
+                </span>
+                <span class="text-xs text-emerald-400 font-medium">
+                  ⏱️ {item.data.timeSaved} saved
+                </span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                <a href={`/workflows/${item.id}`}>{item.data.title}</a>
+              </h3>
+
+              <!-- Description -->
+              <p class="text-sm text-gray-400 mb-6 line-clamp-3">
+                {item.data.description}
+              </p>
+            </div>
+
+            <!-- Footer Meta & CTA -->
+            <div class="pt-6 border-t border-gray-800/80 flex items-center justify-between">
+              <span class="text-xs text-gray-500 font-medium">
+                💰 Cost: {item.data.costToRun}
+              </span>
+              <a href={`/workflows/${item.id}`} class="text-xs font-bold text-white group-hover:text-indigo-400 flex items-center gap-1 transition-colors">
+                Get Recipe
+                <span class="group-hover:translate-x-0.5 transition-transform">&rarr;</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Programmatic SEO Hub Intersections -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="glass-panel rounded-3xl p-8 md:p-12 relative overflow-hidden border border-gray-800">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-indigo-600/5 blur-[80px] pointer-events-none"></div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+          <div class="col-span-1 lg:col-span-1">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-4">
+              Integrated Platforms & Roles
+            </h2>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              We compile integrations programmatically. Click below to view all blueprints filtered by specific platforms or target departments.
+            </p>
+          </div>
+
+          <div class="col-span-1 lg:col-span-2 space-y-6">
+            <div>
+              <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">AI & Automation Tools</h4>
+              <div class="flex flex-wrap gap-2">
+                {uniqueTools.map(tool => (
+                  <a href={`/tools/${tool.toLowerCase().replace(/\s+/g, '-')}`} class="px-4 py-2 bg-gray-950/80 hover:bg-gray-900 border border-gray-800 hover:border-gray-700 text-xs font-semibold rounded-xl text-gray-300 hover:text-white transition-all">
+                    {tool} Recipes
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Target Roles</h4>
+              <div class="flex flex-wrap gap-2">
+                {uniquePersonas.map(persona => (
+                  <a href={`/personas/${persona.toLowerCase().replace(/\s+/g, '-')}`} class="px-4 py-2 bg-gray-950/80 hover:bg-gray-900 border border-gray-800 hover:border-gray-700 text-xs font-semibold rounded-xl text-gray-300 hover:text-white transition-all">
+                    For {persona}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,32 @@
+---
+// RelatedTools.astro — Display related tools on detail pages
+interface Props {
+  currentJob: string;
+  currentAction: string;
+  tools: Record<string, any>[];
+  limit?: number;
+}
+
+const { currentJob, currentAction, tools, limit = 4 } = Astro.props;
+
+// Find related tools: same profession or similar actions
+const relatedTools = tools
+  .filter(t => (t.job === currentJob && t.action !== currentAction))
+  .slice(0, limit);
+---
+
+{relatedTools.length > 0 && (
+  <section class="mt-12 pt-8 border-t">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Related Tools for {currentJob.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {relatedTools.map((tool) => (
+        <a href={`/${tool.job}/${tool.action}`}
+          class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md hover:border-primary transition-all">
+          <h4 class="font-semibold text-gray-900 mb-2">{tool.title}</h4>
+          <p class="text-sm text-gray-600 mb-4">{tool.description}</p>
+          <span class="text-primary text-sm font-semibold">Explore →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

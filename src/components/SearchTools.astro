@@ -1,0 +1,100 @@
+---
+// SearchTools.astro — Client-side search & filter component
+// Props: tools (array of tool objects)
+interface Props {
+  tools: Record<string, any>[];
+}
+
+const { tools } = Astro.props;
+const professions = [...new Set(tools.map(t => t.job))].sort();
+---
+
+<div class="bg-white rounded-lg shadow-md p-8 mb-8">
+  <h2 class="text-2xl font-bold text-gray-900 mb-6">Find AI Tools for Your Profession</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <div>
+      <label for="profession" class="block text-sm font-semibold text-gray-700 mb-2">
+        Profession
+      </label>
+      <select 
+        id="profession" 
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+      >
+        <option value="">All Professions</option>
+        {professions.map(p => (
+          <option value={p} class="capitalize">{p}</option>
+        ))}
+      </select>
+    </div>
+    
+    <div>
+      <label for="search" class="block text-sm font-semibold text-gray-700 mb-2">
+        Search by Tool or Action
+      </label>
+      <input 
+        type="text" 
+        id="search" 
+        placeholder="e.g., 'draft contracts', 'write emails'" 
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+      />
+    </div>
+  </div>
+
+  <div id="search-results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {tools.map((tool) => (
+      <a href={`/${tool.job}/${tool.action}`}
+        data-profession={tool.job}
+        data-title={tool.title.toLowerCase()}
+        data-action={tool.action.toLowerCase()}
+        class="search-result bg-gray-50 p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow cursor-pointer">
+        <h4 class="font-semibold text-gray-900 mb-2">{tool.title}</h4>
+        <p class="text-sm text-gray-600 mb-3">{tool.description}</p>
+        <div class="flex justify-between items-center">
+          <span class="text-xs bg-blue-100 text-primary px-2 py-1 rounded capitalize">
+            {tool.job}
+          </span>
+          <span class="text-primary text-sm font-semibold">Learn More →</span>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <div id="no-results" class="text-center py-8 hidden">
+    <p class="text-gray-500 text-lg">No tools found matching your search.</p>
+  </div>
+</div>
+
+<script>
+  const professionSelect = document.getElementById('profession');
+  const searchInput = document.getElementById('search');
+  const results = document.querySelectorAll('.search-result');
+  const noResults = document.getElementById('no-results');
+
+  function filterTools() {
+    const professionFilter = (professionSelect as HTMLSelectElement).value.toLowerCase();
+    const searchFilter = (searchInput as HTMLInputElement).value.toLowerCase();
+    let visibleCount = 0;
+
+    results.forEach((result) => {
+      const profession = result.getAttribute('data-profession')?.toLowerCase() || '';
+      const title = result.getAttribute('data-title') || '';
+      const action = result.getAttribute('data-action') || '';
+
+      const professionMatch = !professionFilter || profession === professionFilter;
+      const searchMatch = !searchFilter || title.includes(searchFilter) || action.includes(searchFilter);
+
+      if (professionMatch && searchMatch) {
+        (result as HTMLElement).style.display = 'block';
+        visibleCount++;
+      } else {
+        (result as HTMLElement).style.display = 'none';
+      }
+    });
+
+    noResults?.classList.toggle('hidden', visibleCount > 0);
+  }
+
+  professionSelect?.addEventListener('change', filterTools);
+  searchInput?.addEventListener('input', filterTools);
+</script>

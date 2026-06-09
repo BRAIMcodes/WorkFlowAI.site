@@ -1,0 +1,223 @@
+---
+const { title = "WorkFlowAI - Best AI Tools for Professionals", description = "Find the perfect AI tools for your job. WorkFlowAI helps you discover, compare, and master the best AI software for any task." } = Astro.props;
+import '../styles/global.css';
+import SubscribeModal from '../components/SubscribeModal.astro';
+
+// Hardcoded menu structure for Mega Menu
+const menuStructure = {
+  'AI Tools': ['Generative AI', 'AI Writing', 'AI Marketing', 'Best AI Tools'],
+  'Productivity': ['Time Management', 'Workflow Optimization', 'Focus Tools', 'Productivity Hacks'],
+  'Business Automation': ['Sales Automation', 'HR Tech', 'Finance Automation', 'Small Business Ops'],
+  'Resources': ['Tutorials', 'Case Studies', 'Templates', 'Industry Reports']
+};
+const categories = Object.keys(menuStructure);
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+    <link rel="stylesheet" href="/styles/global.css?v=3.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PLACEHOLDER');
+    </script>
+  </head>
+  <body class="bg-zapier-beige text-zapier-black font-sans antialiased flex flex-col min-h-screen overflow-x-hidden">
+    
+    {/* Header */}
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all duration-300" x-data="{ mobileMenuOpen: false }">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          
+          {/* Logo */}
+          <div class="flex-shrink-0 flex items-center gap-2 group cursor-pointer">
+            <a href="/" class="flex items-center gap-2">
+              <div class="w-10 h-10 bg-zapier-orange rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-orange-200">
+                <span class="text-white text-2xl font-bold">W</span>
+              </div>
+              <span class="text-2xl font-extrabold tracking-tight text-zapier-black group-hover:text-zapier-orange transition-colors">
+                WorkFlow<span class="text-zapier-orange">AI</span>
+              </span>
+            </a>
+          </div>
+
+          {/* Desktop Navigation (Mega Menu) */}
+          <nav class="hidden lg:flex space-x-8 items-center">
+            {categories.map(category => (
+              <div class="relative group">
+                <a href={`/blog/${category.toLowerCase().replace(/\s+/g, '-')}`} class="flex items-center gap-1 text-sm font-semibold text-gray-600 hover:text-zapier-black transition-colors py-2">
+                  {category}
+                  <svg class="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                
+                {/* Dropdown */}
+                <div class="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50 overflow-hidden">
+                  <div class="p-4">
+                    <a href={`/blog/${category.toLowerCase().replace(/\s+/g, '-')}`} class="block mb-4 text-xs font-bold text-zapier-orange uppercase tracking-wider hover:underline">
+                      All {category} &rarr;
+                    </a>
+                    <ul class="space-y-2">
+                      {menuStructure[category].map(tag => (
+                        <li>
+                          <a 
+                            href={`/blog/${category.toLowerCase().replace(/\s+/g, '-')}/${tag.toLowerCase().replace(/\s+/g, '-')}`}
+                            class="block text-sm text-gray-600 hover:text-zapier-black hover:bg-gray-50 px-3 py-2 rounded-lg transition-colors"
+                          >
+                            {tag}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+            
+            <a href="/tools" class="text-sm font-semibold text-gray-600 hover:text-zapier-black transition-colors">Solutions</a>
+            <a href="/about" class="text-sm font-semibold text-gray-600 hover:text-zapier-black transition-colors">About</a>
+          </nav>
+
+          {/* CTA Button */}
+          <div class="hidden lg:flex items-center space-x-4">
+            <button onclick="window.openSubscribeModal()" class="px-6 py-2.5 bg-zapier-orange text-white text-sm font-bold rounded-full hover:bg-orange-600 hover:text-white hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+              Get Weekly Tips
+            </button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div class="lg:hidden flex items-center">
+            <button id="mobile-menu-btn" class="text-gray-600 hover:text-zapier-orange focus:outline-none p-2">
+              <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-200 shadow-xl p-4">
+        <nav class="flex flex-col space-y-4">
+          <a href="/tools" class="text-lg font-semibold text-gray-800">Solutions</a>
+          <a href="/about" class="text-lg font-semibold text-gray-800">About</a>
+          <hr class="border-gray-100" />
+          <div class="space-y-2">
+             <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Categories</p>
+             {categories.map(category => (
+               <a href={`/blog/${category.toLowerCase().replace(/\s+/g, '-')}`} class="block text-gray-600 hover:text-zapier-orange">{category}</a>
+             ))}
+          </div>
+          <button onclick="window.openSubscribeModal()" class="w-full px-6 py-3 bg-zapier-orange text-white font-bold rounded-lg mt-4">
+              Get Weekly Tips
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    {/* Main Content */}
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    {/* Footer */}
+    <footer class="bg-zapier-black text-white pt-20 pb-10 border-t border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          
+          {/* Brand Column */}
+          <div class="col-span-1 md:col-span-1">
+            <a href="/" class="flex items-center gap-2 mb-6 group">
+              <div class="w-8 h-8 bg-zapier-orange rounded-md flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+                <span class="text-white text-lg font-bold">W</span>
+              </div>
+              <span class="text-xl font-bold tracking-tight text-white group-hover:text-zapier-orange transition-colors">WorkFlow<span class="text-zapier-orange group-hover:text-white transition-colors">AI</span></span>
+            </a>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Helping professionals work smarter with the best AI tools, guides, and workflows.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-200">
+                <span class="sr-only">Twitter</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-200">
+                <span class="sr-only">LinkedIn</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" /></svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Links Columns */}
+          <div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-6">Discover</h3>
+            <ul class="space-y-4">
+              <li><a href="/#tool-finder" class="text-gray-400 hover:text-zapier-orange transition-colors text-sm">Find Tools</a></li>
+              <li><a href="/#popular-guides" class="text-gray-400 hover:text-zapier-orange transition-colors text-sm">Popular Guides</a></li>
+              <li><a href="/#latest-stories" class="text-gray-400 hover:text-zapier-orange transition-colors text-sm">Latest Stories</a></li>
+              <li><a href="/tools" class="text-gray-400 hover:text-zapier-orange transition-colors text-sm">New Arrivals</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-6">Company</h3>
+            <ul class="space-y-4">
+              <li><a href="/about" class="text-gray-400 hover:text-zapier-orange transition-colors text-sm">About Us</a></li>
+              <li><a href="/careers" class="text-gray-400 hover:text-zapier-orange transition-colors text-sm">Careers</a></li>
+              <li><a href="/contact" class="text-gray-400 hover:text-zapier-orange transition-colors text-sm">Contact</a></li>
+              <li><a href="/partners" class="text-gray-400 hover:text-zapier-orange transition-colors text-sm">Partners</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-6">Legal</h3>
+            <ul class="space-y-4">
+              <li><a href="/privacy" class="text-gray-400 hover:text-zapier-orange transition-colors text-sm">Privacy Policy</a></li>
+              <li><a href="/terms" class="text-gray-400 hover:text-zapier-orange transition-colors text-sm">Terms of Service</a></li>
+              <li><a href="/cookies" class="text-gray-400 hover:text-zapier-orange transition-colors text-sm">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-xs text-gray-400 mt-8 text-center mb-8">
+          <p>Transparency: WorkflowAI may earn a commission if you purchase through our links. This helps keep our content free. <a href="/affiliate-disclosure" class="underline hover:text-white transition-colors">Read our Affiliate Disclosure</a>.</p>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-gray-500 text-sm">
+            &copy; {new Date().getFullYear()} WorkFlowAI. All rights reserved.
+          </p>
+          <div class="flex items-center gap-2 text-gray-600 text-sm">
+            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            All systems operational
+          </div>
+        </div>
+      </div>
+    </footer>
+    <SubscribeModal />
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      }
+    </script>
+  </body>
+</html>

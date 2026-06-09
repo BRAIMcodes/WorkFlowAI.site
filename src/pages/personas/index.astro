@@ -1,0 +1,73 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const workflows = await getCollection('workflows');
+
+// Compile persona counts dynamically
+const personaCounts: Record<string, number> = {};
+workflows.forEach(w => {
+  const p = w.data.persona;
+  personaCounts[p] = (personaCounts[p] || 0) + 1;
+});
+
+const allPersonas = Object.keys(personaCounts).sort((a, b) => personaCounts[b] - personaCounts[a]);
+
+// Mappings of personas to descriptions and icons for nicer UI styling
+const detailsMap: Record<string, { desc: string; icon: string }> = {
+  "Sales Reps": { desc: "Qualify leads, personalize outreach, and sync CRM pipelines automatically.", icon: "💼" },
+  "Marketers": { desc: "Repurpose video content, write long-form blogs, and schedule social posts.", icon: "📣" },
+  "Recruiters": { desc: "Scan candidate resumes, score applicants, and organize hiring logs.", icon: "🤝" },
+  "Operations Managers": { desc: "Draft email auto-replies, organize databases, and generate progress audits.", icon: "⚙️" },
+  "Support Agents": { desc: "Classify incoming tickets, route system outages, and draft empathy-first replies.", icon: "💬" }
+};
+---
+
+<Layout title="AI Workflows by Professional Role - WorkFlowAI" description="Find custom AI automation blueprints curated for Sales, Marketing, Recruiting, Customer Support, and Operations.">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header Section -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-500/10 border border-indigo-500/30 rounded-full text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        👤 Roles & Departments
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Workflows by Persona</h1>
+      <p class="text-gray-400 text-lg">
+        Unlock immediate time savings with automation recipes tailored specifically to your professional responsibilities.
+      </p>
+    </div>
+
+    <!-- Grid of Personas -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {allPersonas.map(persona => {
+        const slug = persona.toLowerCase().replace(/\s+/g, '-');
+        const count = personaCounts[persona];
+        const uiDetails = detailsMap[persona] || { desc: "Custom workflows built to automate repetitive daily tasks.", icon: "🚀" };
+        
+        return (
+          <a href={`/personas/${slug}`} class="glass-card rounded-3xl p-6 flex flex-col justify-between group h-full">
+            <div>
+              <div class="text-3xl mb-4 p-3 bg-indigo-950/40 border border-indigo-500/10 inline-block rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                {uiDetails.icon}
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                For {persona}
+              </h3>
+              <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                {uiDetails.desc}
+              </p>
+            </div>
+            
+            <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between">
+              <span class="text-xs text-gray-500 font-semibold uppercase">
+                {count} recipe{count === 1 ? '' : 's'} available
+              </span>
+              <span class="text-xs font-bold text-white group-hover:text-indigo-400 transition-colors">
+                View Recipes &rarr;
+              </span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const { title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <h1 class="text-4xl font-extrabold text-zapier-black mb-8">{title}</h1>
+    <div class="prose-zapier">
+      <slot />
+    </div>
+  </div>
+</BaseLayout>

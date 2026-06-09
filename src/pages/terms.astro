@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+const lastUpdated = new Date().toLocaleDateString();
+---
+
+<Layout title="Terms of Service - WorkFlowAI" description="Read our Terms of Service regarding your use of the WorkFlowAI platform.">
+  <div class="relative overflow-hidden pt-12 pb-24">
+    <!-- Glowing background effects -->
+    <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-indigo-500/5 blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="border-b border-gray-800 pb-8 mb-10">
+        <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Terms of Service</h1>
+        <p class="text-gray-500 text-sm">Last Updated: {lastUpdated}</p>
+      </div>
+
+      <div class="glass-panel p-8 rounded-3xl border border-gray-800 space-y-6 text-gray-300">
+        <h3 class="text-lg font-bold text-white">1. Overview</h3>
+        <p class="leading-relaxed">This website is operated by WorkFlowAI. Throughout the site, the terms “we”, “us” and “our” refer to WorkFlowAI. WorkFlowAI offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.</p>
+        
+        <h3 class="text-lg font-bold text-white mt-8">2. Use License & Downloads</h3>
+        <p class="leading-relaxed">Permission is granted to freely download blueprint JSON files, code snippets, and instructions on WorkFlowAI's website for personal or commercial automation setups. This is the grant of a license, not a transfer of title, and under this license you may not resell our template files on commercial marketplaces without attribution.</p>
+        
+        <h3 class="text-lg font-bold text-white mt-8">3. Disclaimer</h3>
+        <p class="leading-relaxed">The materials on WorkFlowAI's website are provided on an 'as is' basis. WorkFlowAI makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+        
+        <h3 class="text-lg font-bold text-white mt-8">4. Limitations</h3>
+        <p class="leading-relaxed">In no event shall WorkFlowAI or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials or download files on WorkFlowAI's website.</p>
+        
+        <h3 class="text-lg font-bold text-white mt-8">5. Governing Law</h3>
+        <p class="leading-relaxed">These terms and conditions are governed by and construed in accordance with the laws of Delaware and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
+      </div>
+    </div>
+  </div>
+</Layout>

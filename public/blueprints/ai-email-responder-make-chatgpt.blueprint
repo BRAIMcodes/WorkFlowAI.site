@@ -1,0 +1,41 @@
+{
+  "name": "AI Email Inbox Auto-Responder",
+  "flow": [
+    {
+      "id": 1,
+      "module": "gmail:watch-emails",
+      "title": "Watch New Emails",
+      "parameters": {
+        "folder": "INBOX"
+      },
+      "next": [2]
+    },
+    {
+      "id": 2,
+      "module": "openai-gpt4:create-draft-reply",
+      "title": "Analyze & Draft with ChatGPT",
+      "parameters": {
+        "model": "gpt-4o",
+        "system_prompt": "You are a customer service assistant..."
+      },
+      "next": [3]
+    },
+    {
+      "id": 3,
+      "module": "google-sheets:add-row",
+      "title": "Log Transaction",
+      "parameters": {
+        "spreadsheet_name": "Email Drafts Audit Log"
+      },
+      "next": [4]
+    },
+    {
+      "id": 4,
+      "module": "gmail:create-draft",
+      "title": "Create Draft or Auto-Send",
+      "parameters": {
+        "threadId": "{{ 1.threadId }}"
+      }
+    }
+  ]
+}

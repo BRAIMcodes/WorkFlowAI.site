@@ -1,0 +1,85 @@
+{
+  "name": "YouTube Video to SEO Blog Post with Llama 3",
+  "nodes": [
+    {
+      "parameters": {
+        "channelId": "UC...",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.youtube",
+      "typeVersion": 1,
+      "position": [100, 300],
+      "id": "youtube-trigger-node",
+      "name": "New Video Detection"
+    },
+    {
+      "parameters": {
+        "operation": "getCaptions",
+        "videoId": "={{ $json.id.videoId }}"
+      },
+      "type": "n8n-nodes-base.youtube",
+      "typeVersion": 1,
+      "position": [300, 300],
+      "id": "youtube-captions-node",
+      "name": "Fetch Transcript"
+    },
+    {
+      "parameters": {
+        "model": "llama3-8b-8192",
+        "prompt": "Rewrite transcript into structured markdown: {{ $json.text }}"
+      },
+      "type": "n8n-nodes-base.groq",
+      "typeVersion": 1,
+      "position": [500, 300],
+      "id": "groq-llama3-node",
+      "name": "Rewrite into Markdown via Llama 3"
+    },
+    {
+      "parameters": {
+        "title": "={{ $json.generatedTitle }}",
+        "content": "={{ $json.markdownContent }}",
+        "status": "draft"
+      },
+      "type": "n8n-nodes-base.wordpress",
+      "typeVersion": 1,
+      "position": [700, 300],
+      "id": "wordpress-node",
+      "name": "Publish to WordPress"
+    }
+  ],
+  "connections": {
+    "New Video Detection": {
+      "main": [
+        [
+          {
+            "node": "Fetch Transcript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Transcript": {
+      "main": [
+        [
+          {
+            "node": "Rewrite into Markdown via Llama 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rewrite into Markdown via Llama 3": {
+      "main": [
+        [
+          {
+            "node": "Publish to WordPress",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

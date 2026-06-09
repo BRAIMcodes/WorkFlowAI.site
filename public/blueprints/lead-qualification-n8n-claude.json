@@ -1,0 +1,110 @@
+{
+  "name": "LinkedIn Lead Qualification with Claude",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "lead-inflow",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300],
+      "id": "webhook-node",
+      "name": "Form Webhook Trigger"
+    },
+    {
+      "parameters": {
+        "url": "https://api.linkedin.com/v2/people-search",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [300, 300],
+      "id": "linkedin-node",
+      "name": "Fetch LinkedIn Data"
+    },
+    {
+      "parameters": {
+        "model": "claude-3-5-sonnet-20241022",
+        "prompt": "Evaluate lead score for company size: {{ $json.company_size }} and title: {{ $json.title }}"
+      },
+      "type": "n8n-nodes-base.anthropic",
+      "typeVersion": 1,
+      "position": [500, 300],
+      "id": "claude-node",
+      "name": "ICP Scoring with Claude"
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "email": "={{ $json.email }}",
+        "additionalFields": {
+          "fit_score": "={{ $json.fitScore }}",
+          "ai_hook": "={{ $json.suggestedHook }}"
+        }
+      },
+      "type": "n8n-nodes-base.hubspot",
+      "typeVersion": 1,
+      "position": [700, 300],
+      "id": "hubspot-node",
+      "name": "Sync with HubSpot"
+    },
+    {
+      "parameters": {
+        "channel": "sales-alerts",
+        "text": "New lead qualified! Fit Score: {{ $json.fitScore }} | Hook: {{ $json.suggestedHook }}"
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2,
+      "position": [900, 300],
+      "id": "slack-node",
+      "name": "Notify Sales in Slack"
+    }
+  ],
+  "connections": {
+    "Form Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch LinkedIn Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch LinkedIn Data": {
+      "main": [
+        [
+          {
+            "node": "ICP Scoring with Claude",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ICP Scoring with Claude": {
+      "main": [
+        [
+          {
+            "node": "Sync with HubSpot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sync with HubSpot": {
+      "main": [
+        [
+          {
+            "node": "Notify Sales in Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,171 @@
+---
+import '../styles/global.css';
+
+const { 
+  title = 'The Batch - AI News & Insights',
+  description = 'Weekly AI news, insights, and analysis on the latest developments in artificial intelligence.',
+  canonical,
+  image,
+  noindex = false,
+  isArticle = false
+} = Astro.props;
+
+const siteUrl = (import.meta.env.SITE || 'https://example.com').replace(/\/$/, '');
+const requestUrl = new URL(Astro.request.url);
+const path = requestUrl.pathname;
+const canonicalUrl = canonical || (siteUrl + path);
+const ogImage = image || `${siteUrl}/social-share.png`;
+const pageType = isArticle ? 'article' : 'website';
+
+const mainNavItems = [
+  { label: 'Weekly Issues', href: '/' },
+  { label: 'Andrew\'s Letters', href: '#' },
+  { label: 'Data Points', href: '#' },
+  { label: 'ML Research', href: '#' },
+  { label: 'Business', href: '#' },
+  { label: 'Science', href: '#' },
+  { label: 'Culture', href: '#' },
+  { label: 'Hardware', href: '#' },
+  { label: 'AI Careers', href: '#' }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={pageType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="The Batch" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": isArticle ? 'Article' : 'WebPage',
+        "headline": title,
+        "description": description,
+        "url": canonicalUrl,
+        "publisher": {
+          "@type": "Organization",
+          "name": "The Batch"
+        },
+        "image": ogImage
+      })}
+    </script>
+
+    <slot name="head" />
+  </head>
+  <body class="bg-white">
+    <!-- Top Header with Logo and CTA -->
+    <header class="border-b border-slate-200 sticky top-0 z-50 bg-white">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <span class="text-3xl">🧠</span>
+          <span class="font-serif">The Batch</span>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-6">
+          <a href="/" class="text-sm text-slate-600 hover:text-slate-900">Explore Courses</a>
+          <a href="#" class="text-sm text-slate-600 hover:text-slate-900">AI Newsletter</a>
+          <a href="#" class="text-sm text-slate-600 hover:text-slate-900">AI Dev</a>
+          <a href="#" class="text-sm text-slate-600 hover:text-slate-900">Community</a>
+          <a href="#" class="bg-red-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-red-600">
+            Start Learning
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Navigation -->
+      <div class="border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex gap-8 overflow-x-auto py-0">
+            {mainNavItems.map((item) => (
+              <a 
+                href={item.href} 
+                class={`text-sm font-medium py-4 border-b-2 transition whitespace-nowrap ${
+                  item.label === 'Weekly Issues' 
+                    ? 'text-red-500 border-red-500' 
+                    : 'text-slate-600 border-transparent hover:text-slate-900 hover:border-slate-300'
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
+            <a href="#" class="text-slate-400 hover:text-slate-900 py-4 ml-auto">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-slate-400 hover:text-slate-900 py-4">
+              About
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="min-h-screen">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white mt-20">
+      <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid grid-cols-4 gap-8 mb-8">
+          <div>
+            <h4 class="font-bold mb-4">About</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#" class="hover:text-white">About Us</a></li>
+              <li><a href="#" class="hover:text-white">Careers</a></li>
+              <li><a href="#" class="hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Resources</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#" class="hover:text-white">Courses</a></li>
+              <li><a href="#" class="hover:text-white">Community</a></li>
+              <li><a href="#" class="hover:text-white">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#" class="hover:text-white">Privacy</a></li>
+              <li><a href="#" class="hover:text-white">Terms</a></li>
+              <li><a href="#" class="hover:text-white">Cookies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Follow</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#" class="hover:text-white">Twitter</a></li>
+              <li><a href="#" class="hover:text-white">LinkedIn</a></li>
+              <li><a href="#" class="hover:text-white">YouTube</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-slate-800 pt-8 text-center text-sm text-slate-400">
+          <p>&copy; 2025 The Batch. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
