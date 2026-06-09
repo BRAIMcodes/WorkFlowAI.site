@@ -35,16 +35,16 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
 
         <!-- Search Widget -->
         <div class="glass-panel p-5 rounded-2xl border border-white/5">
-          <h2 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3">Search</h2>
+          <h2 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Search</h2>
           <div class="relative">
-            <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <input 
               type="text" 
               id="search-input" 
               placeholder="Filter blueprints..." 
-              class="w-full bg-[#0B0F19] border border-white/5 rounded-xl pl-9 pr-4 py-2.5 text-xs text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500/40 transition-colors"
+              class="w-full bg-[#0B0F19] border border-white/5 rounded-xl pl-9 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500/40 transition-colors"
               aria-label="Search workflows"
             />
           </div>
@@ -52,7 +52,7 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
 
         <!-- Tool Filter -->
         <div class="glass-panel p-5 rounded-2xl border border-white/5">
-          <h2 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-4">Automation Tool</h2>
+          <h2 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Automation Tool</h2>
           <div class="space-y-3">
             <label class="flex items-center gap-3 text-xs text-gray-500 hover:text-white cursor-pointer select-none group">
               <input type="radio" name="tool-filter" value="all" checked class="accent-indigo-500 w-3.5 h-3.5 flex-shrink-0" />
@@ -69,7 +69,7 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
 
         <!-- Category Filter -->
         <div class="glass-panel p-5 rounded-2xl border border-white/5">
-          <h2 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-4">Department</h2>
+          <h2 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Department</h2>
           <div class="space-y-3">
             <label class="flex items-center gap-3 text-xs text-gray-500 hover:text-white cursor-pointer select-none group">
               <input type="radio" name="category-filter" value="all" checked class="accent-indigo-500 w-3.5 h-3.5 flex-shrink-0" />
@@ -86,7 +86,7 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
 
         <!-- Persona Filter -->
         <div class="glass-panel p-5 rounded-2xl border border-white/5">
-          <h2 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-4">Target Role</h2>
+          <h2 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Target Role</h2>
           <div class="space-y-3">
             <label class="flex items-center gap-3 text-xs text-gray-500 hover:text-white cursor-pointer select-none group">
               <input type="radio" name="persona-filter" value="all" checked class="accent-indigo-500 w-3.5 h-3.5 flex-shrink-0" />
@@ -120,7 +120,7 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
       <main class="col-span-1 lg:col-span-3" aria-label="Workflow results">
         <!-- Results toolbar -->
         <div class="flex justify-between items-center mb-5 h-8">
-          <span id="results-count" class="text-xs text-gray-600 font-semibold">
+          <span id="results-count" class="text-xs text-gray-500 font-semibold">
             Showing {workflows.length} workflows
           </span>
           <button 
@@ -183,7 +183,7 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
                       <span>⏱</span>
                       {item.data.timeSaved}
                     </span>
-                    <span class="text-gray-600">
+                    <span class="text-gray-500">
                       💰 {item.data.costToRun}
                     </span>
                   </div>
@@ -208,7 +208,7 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
           >
             <div class="text-4xl mb-4">🔍</div>
             <p class="text-base text-gray-400 font-bold mb-2">No workflows match your filters</p>
-            <p class="text-sm text-gray-600 mb-5">Try broadening your search or adjusting the filters.</p>
+            <p class="text-sm text-gray-500 mb-5">Try broadening your search or adjusting the filters.</p>
             <button id="clear-filters-empty" class="btn btn-secondary text-xs px-5 py-2.5">
               Clear All Filters
             </button>

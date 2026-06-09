@@ -63,11 +63,11 @@ const difficultyClass =
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
     <!-- Breadcrumbs -->
-    <nav class="flex items-center gap-1.5 text-xs text-gray-600 mb-8" aria-label="Breadcrumb">
+    <nav class="flex items-center gap-1.5 text-xs text-gray-500 mb-8" aria-label="Breadcrumb">
       <a href="/" class="hover:text-indigo-400 transition-colors">Home</a>
-      <span class="text-gray-700" aria-hidden="true">/</span>
+      <span class="text-gray-500" aria-hidden="true">/</span>
       <a href="/workflows" class="hover:text-indigo-400 transition-colors">Workflows</a>
-      <span class="text-gray-700" aria-hidden="true">/</span>
+      <span class="text-gray-500" aria-hidden="true">/</span>
       <span class="text-gray-400 font-medium truncate max-w-[200px]" aria-current="page">{data.title}</span>
     </nav>
 
@@ -95,15 +95,15 @@ const difficultyClass =
       <!-- Key Metrics Triptych -->
       <div class="grid grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5">
         <div class="bg-[#0B0F19] p-5 hover:bg-[#0F1525] transition-colors">
-          <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest block mb-2">Est. Time Saved</span>
+          <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">Est. Time Saved</span>
           <span class="text-lg font-extrabold text-emerald-400 font-display">{data.timeSaved}</span>
         </div>
         <div class="bg-[#0B0F19] p-5 hover:bg-[#0F1525] transition-colors">
-          <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest block mb-2">Core Platform</span>
+          <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">Core Platform</span>
           <span class="text-lg font-extrabold text-white font-display">{data.primaryTool}</span>
         </div>
         <div class="bg-[#0B0F19] p-5 hover:bg-[#0F1525] transition-colors">
-          <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest block mb-2">Run Cost</span>
+          <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">Run Cost</span>
           <span class="text-lg font-extrabold text-indigo-300 font-display">{data.costToRun}</span>
         </div>
       </div>
@@ -139,7 +139,7 @@ const difficultyClass =
          ============================================================ -->
     {data.connectedApps && data.connectedApps.length > 0 && (
       <section class="mb-12">
-        <h2 class="text-xs font-bold text-gray-600 uppercase tracking-widest mb-4">Connected Apps</h2>
+        <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Connected Apps</h2>
         <div class="flex flex-wrap gap-2">
           {data.connectedApps.map((app: string) => (
             <span class="badge badge-slate">{app}</span>
@@ -207,7 +207,7 @@ const difficultyClass =
           <!-- Variables Form -->
           {data.promptVariables && (
             <div class="lg:col-span-1 glass-panel p-5 rounded-2xl border border-white/5 space-y-4 h-fit">
-              <h3 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Variables</h3>
+              <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Variables</h3>
               {data.promptVariables.map((v: any) => (
                 <div>
                   <label for={`var-${v.name}`} class="block text-[11px] font-semibold text-gray-500 mb-1.5 uppercase tracking-wider">{v.label}</label>
@@ -217,7 +217,7 @@ const difficultyClass =
                     data-var-name={v.name}
                     placeholder={v.placeholder}
                     value={v.defaultValue}
-                    class="prompt-var-input w-full bg-[#141C2E] border border-white/6 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500/50 transition-colors placeholder-gray-600"
+                    class="prompt-var-input w-full bg-[#141C2E] border border-white/6 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500/50 transition-colors placeholder-gray-500"
                     aria-label={v.label}
                   />
                 </div>
@@ -228,7 +228,7 @@ const difficultyClass =
           <!-- Code Preview -->
           <div class={data.promptVariables ? "lg:col-span-2 space-y-3" : "w-full space-y-3"}>
             <div class="flex items-center justify-between">
-              <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">Prompt Preview</span>
+              <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Prompt Preview</span>
               <button 
                 id="copyBtn" 
                 data-prompt={data.promptSnippet}
@@ -260,7 +260,7 @@ const difficultyClass =
     <div class="border-t border-white/5 pt-8 mb-14 flex flex-col sm:flex-row items-center justify-between gap-5">
       <div>
         <p class="text-sm font-bold text-gray-300 mb-0.5">Did this blueprint work for you?</p>
-        <p class="text-xs text-gray-600">AI integrations change fast. Help keep recipes accurate.</p>
+        <p class="text-xs text-gray-500">AI integrations change fast. Help keep recipes accurate.</p>
       </div>
       <div class="flex gap-2">
         <button 
@@ -290,7 +290,7 @@ const difficultyClass =
           <!-- Related by Tool -->
           {relatedByTool.length > 0 && (
             <div>
-              <h3 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3">More {data.primaryTool} Blueprints</h3>
+              <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">More {data.primaryTool} Blueprints</h3>
               <ul class="space-y-2">
                 {relatedByTool.map(rel => (
                   <li>
@@ -299,7 +299,7 @@ const difficultyClass =
                       class="block glass-card rounded-xl p-4 border border-white/4 text-xs text-gray-400 hover:text-white transition-all group"
                     >
                       <span class="font-bold block mb-1 text-gray-200 group-hover:text-indigo-300 transition-colors">{rel.data.title}</span>
-                      <span class="text-gray-600 line-clamp-1">{rel.data.description}</span>
+                      <span class="text-gray-500 line-clamp-1">{rel.data.description}</span>
                     </a>
                   </li>
                 ))}
@@ -310,7 +310,7 @@ const difficultyClass =
           <!-- Related by Persona -->
           {relatedByPersona.length > 0 && (
             <div>
-              <h3 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3">Recommended for {data.persona}</h3>
+              <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Recommended for {data.persona}</h3>
               <ul class="space-y-2">
                 {relatedByPersona.map(rel => (
                   <li>
@@ -319,7 +319,7 @@ const difficultyClass =
                       class="block glass-card rounded-xl p-4 border border-white/4 text-xs text-gray-400 hover:text-white transition-all group"
                     >
                       <span class="font-bold block mb-1 text-gray-200 group-hover:text-indigo-300 transition-colors">{rel.data.title}</span>
-                      <span class="text-gray-600 line-clamp-1">{rel.data.description}</span>
+                      <span class="text-gray-500 line-clamp-1">{rel.data.description}</span>
                     </a>
                   </li>
                 ))}

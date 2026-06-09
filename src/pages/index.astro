@@ -93,7 +93,7 @@ const stats = [
             name="search" 
             id="hero-search"
             placeholder="Search e.g. 'Lead Qualification', 'n8n email', 'Claude...'"
-            class="w-full bg-transparent text-white border-0 focus:ring-0 outline-none px-4 py-2.5 text-sm placeholder-gray-600"
+            class="w-full bg-transparent text-white border-0 focus:ring-0 outline-none px-4 py-2.5 text-sm placeholder-gray-500"
             aria-label="Search workflows"
           />
           <button 
@@ -126,7 +126,7 @@ const stats = [
         {stats.map((stat, i) => (
           <div class="bg-[#0B0F19] px-4 py-4 text-center hover:bg-[#0F1525] transition-colors">
             <div class="stat-number text-xl">{stat.value}</div>
-            <div class="text-[10px] text-gray-600 font-semibold uppercase tracking-widest mt-1">{stat.label}</div>
+            <div class="text-[10px] text-gray-500 font-semibold uppercase tracking-widest mt-1">{stat.label}</div>
           </div>
         ))}
       </div>
@@ -207,7 +207,7 @@ const stats = [
                 {cat.desc}
               </p>
             </div>
-            <span class="text-xs text-indigo-500 font-bold group-hover:text-indigo-300 mt-5 flex items-center gap-1 transition-colors">
+            <span class="text-xs text-indigo-400 font-bold group-hover:text-indigo-300 mt-5 flex items-center gap-1 transition-colors">
               Explore →
             </span>
           </a>
@@ -328,7 +328,7 @@ const stats = [
 
           <div class="lg:col-span-3 space-y-7">
             <div>
-              <h3 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3">Automation Tools</h3>
+              <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Automation Tools</h3>
               <div class="flex flex-wrap gap-2">
                 {uniqueTools.map(tool => (
                   <a 
@@ -342,7 +342,7 @@ const stats = [
             </div>
 
             <div>
-              <h3 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3">Target Roles</h3>
+              <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Target Roles</h3>
               <div class="flex flex-wrap gap-2">
                 {uniquePersonas.map(persona => (
                   <a 
@@ -386,7 +386,7 @@ const stats = [
           >
             Subscribe Free →
           </button>
-          <p class="text-xs text-gray-600 mt-4">No credit card required. 100% free forever.</p>
+          <p class="text-xs text-gray-500 mt-4">No credit card required. 100% free forever.</p>
         </div>
       </div>
     </div>

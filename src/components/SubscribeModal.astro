@@ -3,59 +3,95 @@
 
 <div id="subscribe-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
   <!-- Backdrop -->
-  <div class="fixed inset-0 bg-gray-900/75 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop"></div>
+  <div class="fixed inset-0 bg-black/70 backdrop-blur-md transition-opacity opacity-0" id="modal-backdrop"></div>
 
   <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
     <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-      <!-- Modal Panel -->
-      <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" id="modal-panel">
+      <!-- Modal Panel — Dark theme, matching site design system -->
+      <div 
+        class="relative transform overflow-hidden rounded-2xl text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-md opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        id="modal-panel"
+        style="background: linear-gradient(145deg, rgba(15, 21, 37, 0.95) 0%, rgba(11, 15, 25, 0.98) 100%); border: 1px solid rgba(255,255,255,0.07);"
+      >
+        <!-- Decorative top shimmer -->
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent"></div>
         
+        <!-- Decorative glow -->
+        <div class="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-indigo-600/10 blur-[60px] pointer-events-none"></div>
+
         <!-- Close Button -->
-        <div class="absolute right-4 top-4">
-          <button type="button" id="close-modal-btn" class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none">
-            <span class="sr-only">Close</span>
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <div class="absolute right-4 top-4 z-10">
+          <button 
+            type="button" 
+            id="close-modal-btn" 
+            class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 border border-white/6 flex items-center justify-center text-gray-500 hover:text-white transition-all"
+            aria-label="Close dialog"
+          >
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
 
-        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-          <div class="sm:flex sm:items-start">
-            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
-              <h3 class="text-2xl font-bold leading-6 text-zapier-black text-center mb-2" id="modal-title">Subscribe</h3>
-              <div class="mt-2">
-                <p class="text-sm text-gray-500 text-center mb-8">
-                  Stay updated with weekly AI News and Insights delivered to your inbox.
-                </p>
-
-                <form id="subscribe-form" class="space-y-4">
-                  <div>
-                    <label for="email" class="sr-only">Email address</label>
-                    <input type="email" name="email" id="email" class="block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-zapier-orange sm:text-sm sm:leading-6" placeholder="Email address" required>
-                  </div>
-
-                  <div class="flex items-start">
-                    <div class="flex h-6 items-center">
-                      <input id="consent" name="consent" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-zapier-orange focus:ring-zapier-orange" checked>
-                    </div>
-                    <div class="ml-3 text-sm leading-6">
-                      <label for="consent" class="font-medium text-gray-600">Keep me updated on the latest news, courses, and workshops.</label>
-                    </div>
-                  </div>
-
-                  <button type="submit" id="submit-btn" class="flex w-full justify-center rounded-md bg-zapier-orange px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zapier-orange transition-all duration-200">
-                    Subscribe
-                  </button>
-                  <p id="form-message" class="text-center text-sm mt-2 font-medium"></p>
-                </form>
-                
-                <p class="mt-4 text-center text-xs text-gray-400">
-                  We respect your privacy. Unsubscribe at any time.
-                </p>
-              </div>
+        <div class="relative px-6 pb-6 pt-8 sm:px-8 sm:pb-8 sm:pt-10">
+          <!-- Header -->
+          <div class="text-center mb-6">
+            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-indigo-600/10 border border-indigo-500/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
             </div>
+            <h3 class="font-display text-xl font-bold text-white mb-1.5" id="modal-title">
+              Get Free Weekly Recipes
+            </h3>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              New AI workflow blueprints delivered to your inbox every week. No spam.
+            </p>
           </div>
+
+          <form id="subscribe-form" class="space-y-4">
+            <div>
+              <label for="subscribe-email" class="sr-only">Email address</label>
+              <input 
+                type="email" 
+                name="email" 
+                id="subscribe-email" 
+                class="block w-full bg-[#0B0F19] border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/20 transition-all"
+                placeholder="you@company.com" 
+                required
+                autocomplete="email"
+              >
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="flex h-5 items-center pt-0.5">
+                <input 
+                  id="subscribe-consent" 
+                  name="consent" 
+                  type="checkbox" 
+                  class="h-3.5 w-3.5 rounded border-white/10 bg-white/5 text-indigo-500 focus:ring-indigo-500/30 focus:ring-offset-0 accent-indigo-500"
+                  checked
+                >
+              </div>
+              <label for="subscribe-consent" class="text-xs text-gray-500 leading-relaxed cursor-pointer select-none">
+                Keep me updated with new workflows and automation insights.
+              </label>
+            </div>
+
+            <button 
+              type="submit" 
+              id="subscribe-submit-btn" 
+              class="btn btn-primary w-full justify-center py-3 text-sm"
+            >
+              Subscribe Free
+            </button>
+
+            <p id="subscribe-form-message" class="text-center text-xs mt-1 font-medium min-h-[1.25rem]"></p>
+          </form>
+          
+          <p class="text-center text-[11px] text-gray-600 mt-3">
+            We respect your privacy. Unsubscribe anytime.
+          </p>
         </div>
       </div>
     </div>
@@ -67,20 +103,23 @@
   const backdrop = document.getElementById('modal-backdrop');
   const panel = document.getElementById('modal-panel');
   const closeBtn = document.getElementById('close-modal-btn');
-  const form = document.getElementById('subscribe-form');
-  const message = document.getElementById('form-message');
-  const btn = document.getElementById('submit-btn');
+  const form = document.getElementById('subscribe-form') as HTMLFormElement;
+  const message = document.getElementById('subscribe-form-message');
+  const submitBtn = document.getElementById('subscribe-submit-btn') as HTMLButtonElement;
 
   function openModal() {
+    if (!modal || !backdrop || !panel) return;
     modal.classList.remove('hidden');
-    setTimeout(() => {
+    // Trigger reflow for transition
+    requestAnimationFrame(() => {
       backdrop.classList.remove('opacity-0');
       panel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
       panel.classList.add('opacity-100', 'translate-y-0', 'sm:scale-100');
-    }, 10);
+    });
   }
 
   function closeModal() {
+    if (!modal || !backdrop || !panel) return;
     backdrop.classList.add('opacity-0');
     panel.classList.remove('opacity-100', 'translate-y-0', 'sm:scale-100');
     panel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
@@ -88,22 +127,24 @@
     setTimeout(() => {
       modal.classList.add('hidden');
       if (message) {
-        message.innerText = '';
-        message.className = 'text-center text-sm mt-2 font-medium';
+        message.textContent = '';
+        message.className = 'text-center text-xs mt-1 font-medium min-h-[1.25rem]';
       }
     }, 300);
   }
 
-  // Form Submission Logic
+  // Form submission
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (!submitBtn || !message) return;
     
-    const originalText = btn.innerText;
-    btn.innerText = "Joining...";
-    btn.disabled = true;
-    message.innerText = '';
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Joining...';
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+    message.textContent = '';
 
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.target as HTMLFormElement);
     
     try {
       const response = await fetch('/api/subscribe', {
@@ -112,33 +153,42 @@
       });
 
       if (response.ok) {
-        message.innerText = "✅ You're in! Check your inbox.";
-        message.className = "text-center text-sm mt-2 font-medium text-green-600";
+        message.textContent = "You're in! Check your inbox.";
+        message.className = 'text-center text-xs mt-1 font-medium text-emerald-400';
         form.reset();
-        setTimeout(() => {
-           closeModal();
-        }, 2000);
+        setTimeout(closeModal, 2500);
       } else {
         const data = await response.json();
-        message.innerText = `❌ ${data.message || 'Something went wrong.'}`;
-        message.className = "text-center text-sm mt-2 font-medium text-red-600";
+        message.textContent = data.message || 'Something went wrong. Try again.';
+        message.className = 'text-center text-xs mt-1 font-medium text-red-400';
       }
     } catch (err) {
-      message.innerText = "❌ Error connecting. Check your internet.";
-      message.className = "text-center text-sm mt-2 font-medium text-red-600";
+      message.textContent = 'Connection error. Check your internet.';
+      message.className = 'text-center text-xs mt-1 font-medium text-red-400';
     } finally {
-      btn.innerText = originalText;
-      btn.disabled = false;
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '1';
     }
   });
 
-  closeBtn.addEventListener('click', closeModal);
+  // Close handlers
+  closeBtn?.addEventListener('click', closeModal);
   
-  modal.addEventListener('click', (e) => {
-    if (e.target === backdrop || e.target.closest('#modal-backdrop')) {
+  modal?.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target === backdrop || target.closest('#modal-backdrop')) {
       closeModal();
     }
   });
 
-  window.openSubscribeModal = openModal;
+  // Escape key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  // Expose globally
+  (window as any).openSubscribeModal = openModal;
 </script>

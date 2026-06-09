@@ -79,7 +79,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- What happens next -->
       <div class="glass-panel rounded-2xl p-5 border border-white/5 mb-10">
-        <h3 class="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-4">What happens after you submit</h3>
+        <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">What happens after you submit</h3>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { icon: '🔍', title: 'We review it', desc: 'Our team verifies it works end-to-end within 48–72 hours.' },
@@ -89,7 +89,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="text-center">
               <div class="text-2xl mb-2">{step.icon}</div>
               <p class="text-xs font-bold text-gray-300 mb-1">{step.title}</p>
-              <p class="text-[11px] text-gray-600 leading-relaxed">{step.desc}</p>
+              <p class="text-[11px] text-gray-500 leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -105,24 +105,24 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div>
             <h2 class="font-display text-base font-bold text-white">Recipe Builder Form</h2>
-            <p class="text-[11px] text-gray-600">Fill in the details — we'll format the email for you.</p>
+            <p class="text-[11px] text-gray-500">Fill in the details — we'll format the email for you.</p>
           </div>
         </div>
         
         <form class="space-y-5" novalidate aria-label="Recipe submission form">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
-              <label for="recipe-title" class="block text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2">Workflow Title *</label>
+              <label for="recipe-title" class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Workflow Title *</label>
               <input 
                 type="text" 
                 id="recipe-title" 
                 placeholder="e.g. Lead Qualification with n8n"
-                class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-700 focus:outline-none transition-all" 
+                class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all" 
                 required
               />
             </div>
             <div>
-              <label for="recipe-tool" class="block text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2">Primary Tool *</label>
+              <label for="recipe-tool" class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Primary Tool *</label>
               <select 
                 id="recipe-tool" 
                 class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-gray-300 focus:outline-none transition-all appearance-none"
@@ -139,53 +139,53 @@ import Layout from '../layouts/Layout.astro';
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
-              <label for="recipe-apps" class="block text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2">Connected Apps</label>
+              <label for="recipe-apps" class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Connected Apps</label>
               <input 
                 type="text" 
                 id="recipe-apps" 
                 placeholder="e.g. Claude 3.5, HubSpot, Slack"
-                class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-700 focus:outline-none transition-all" 
+                class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all" 
               />
             </div>
             <div>
-              <label for="recipe-saved" class="block text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2">Time Saved per Week</label>
+              <label for="recipe-saved" class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Time Saved per Week</label>
               <input 
                 type="text" 
                 id="recipe-saved" 
                 placeholder="e.g. 5 hours/week"
-                class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-700 focus:outline-none transition-all" 
+                class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all" 
               />
             </div>
           </div>
 
           <div>
-            <label for="recipe-desc" class="block text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2">Description / Pain Point Solved *</label>
+            <label for="recipe-desc" class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Description / Pain Point Solved *</label>
             <textarea 
               id="recipe-desc" 
               rows="3"
               placeholder="What manual bottleneck does this resolve and how does it help the user?"
-              class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-700 focus:outline-none transition-all resize-none" 
+              class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all resize-none" 
               required
             ></textarea>
           </div>
 
           <div>
-            <label for="recipe-prompt" class="block text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2">System AI Prompt <span class="normal-case text-gray-700">(optional)</span></label>
+            <label for="recipe-prompt" class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">System AI Prompt <span class="normal-case text-gray-500">(optional)</span></label>
             <textarea 
               id="recipe-prompt" 
               rows="3"
               placeholder="Paste the exact LLM prompt instructions used in this workflow..."
-              class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-700 focus:outline-none transition-all font-mono resize-none"
+              class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all font-mono resize-none"
             ></textarea>
           </div>
 
           <div>
-            <label for="recipe-blueprint" class="block text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2">Link to JSON / Blueprint File <span class="normal-case text-gray-700">(optional)</span></label>
+            <label for="recipe-blueprint" class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Link to JSON / Blueprint File <span class="normal-case text-gray-500">(optional)</span></label>
             <input 
               type="url" 
               id="recipe-blueprint" 
               placeholder="Dropbox, GitHub, or Drive link to download the JSON"
-              class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-700 focus:outline-none transition-all" 
+              class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-all" 
             />
           </div>
 
@@ -201,7 +201,7 @@ import Layout from '../layouts/Layout.astro';
               </svg>
               Draft Email Submission
             </button>
-            <p class="text-center text-[11px] text-gray-700 mt-3">
+            <p class="text-center text-[11px] text-gray-500 mt-3">
               This will open your email client with a pre-filled message to our team.
             </p>
           </div>

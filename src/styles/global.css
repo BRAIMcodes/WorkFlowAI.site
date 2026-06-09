@@ -25,7 +25,7 @@
     /* Text tokens */
     --text-primary: #F0F4FF;
     --text-secondary: #94A3B8;
-    --text-muted: #4B5A72;
+    --text-muted: #64748B;
     --text-accent: #818CF8;
 
     /* Brand tokens */
@@ -81,15 +81,18 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     letter-spacing: -0.035em;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--text-primary);
-    line-height: 1.12;
+    line-height: 1.18;
   }
 
   /* Fluid type scale */
-  h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+  }
   h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
   h3 { font-size: clamp(1.2rem, 3vw, 1.6rem); }
 
@@ -566,7 +569,7 @@ input:focus, select:focus, textarea:focus {
    ========================================================= */
 
 .stat-number {
-  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -0.04em;

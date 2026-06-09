@@ -5,18 +5,18 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Contact WorkFlowAI - Get in Touch" description="Contact the WorkFlowAI team for blueprint submissions, feedback, and support inquiries.">
   <div class="relative overflow-hidden pt-12 pb-24">
     <!-- Glowing background effects -->
-    <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-violet-600/5 blur-[120px] pointer-events-none"></div>
+    <div class="glow-orb glow-orb-violet" style="top:-10%;right:-10%"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
       <div class="max-w-2xl mx-auto text-center mb-12">
-        <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-500/10 border border-indigo-500/30 rounded-full text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-indigo-300 text-[11px] font-semibold tracking-widest uppercase mb-4">
           💬 Get in Touch
         </div>
-        <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Contact Our Team</h1>
-        <p class="text-gray-400 text-lg">Have a specific automation request or want to submit a recipe? Shoot us a message.</p>
+        <h1 class="font-display text-3xl md:text-5xl font-extrabold text-white mb-4">Contact Our Team</h1>
+        <p class="text-gray-500 text-lg">Have a specific automation request or want to submit a recipe? Shoot us a message.</p>
       </div>
 
-      <div class="max-w-xl mx-auto glass-panel rounded-3xl p-8 border border-gray-800">
+      <div class="max-w-xl mx-auto glass-panel rounded-3xl p-8 border border-white/6">
         <form class="space-y-6">
           <div>
             <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">Name</label>
@@ -24,7 +24,7 @@ import Layout from '../layouts/Layout.astro';
               type="text" 
               id="name" 
               name="name" 
-              class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500/80 transition-colors" 
+              class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500/80 transition-colors" 
               placeholder="Your Name"
             />
           </div>
@@ -34,7 +34,7 @@ import Layout from '../layouts/Layout.astro';
               type="email" 
               id="email" 
               name="email" 
-              class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500/80 transition-colors" 
+              class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500/80 transition-colors" 
               placeholder="you@company.com"
             />
           </div>
@@ -44,20 +44,20 @@ import Layout from '../layouts/Layout.astro';
               id="message" 
               name="message" 
               rows="4" 
-              class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500/80 transition-colors" 
+              class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500/80 transition-colors" 
               placeholder="Describe your automation goals..."
             ></textarea>
           </div>
           <button 
             type="button" 
             onclick="alert('Thank you! This is a demo form. Please email us directly at hello@workflowai.site')" 
-            class="w-full py-4 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold rounded-xl shadow-lg shadow-indigo-600/10 hover:shadow-indigo-500/20 transition-all"
+            class="btn btn-primary w-full justify-center py-4"
           >
             Send Message
           </button>
         </form>
 
-        <div class="mt-8 pt-8 border-t border-gray-800/80 text-center text-sm text-gray-500">
+        <div class="mt-8 pt-8 border-t border-white/6 text-center text-sm text-gray-500">
           <p>Or email us directly at <a href="mailto:hello@workflowai.site" class="text-indigo-400 hover:underline">hello@workflowai.site</a></p>
         </div>
       </div>
