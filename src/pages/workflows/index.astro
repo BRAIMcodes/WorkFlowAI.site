@@ -4,7 +4,6 @@ import { getCollection } from 'astro:content';
 
 const workflows = await getCollection('workflows');
 
-// Gather lists of all categories, tools, and personas for the filter sidebar
 const categories = [...new Set(workflows.map(w => w.data.category))];
 const tools = [...new Set(workflows.map(w => w.data.primaryTool))];
 const personas = [...new Set(workflows.map(w => w.data.persona))];
@@ -13,41 +12,41 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
 <Layout title="AI Automation Workflow Library & Recipes - WorkFlowAI" description="Browse our complete list of verified automation blueprints, JSON configurations, and prompt scripts for n8n, Make.com, and Claude.">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Header Section -->
-    <div class="border-b border-gray-800 pb-8 mb-10">
-      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Automation Blueprints</h1>
-      <p class="text-gray-400 text-lg max-w-3xl">
+    <div class="border-b border-gray-800/80 pb-8 mb-10">
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-3">Automation Blueprints</h1>
+      <p class="text-gray-400 text-base max-w-3xl">
         Filter by department, primary automation tool, or search for specific integrations to find your recipe.
       </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
       
-      <!-- Filters Sidebar (Client-side control) -->
-      <aside class="col-span-1 space-y-8">
+      <!-- Filters Sidebar -->
+      <aside class="col-span-1 space-y-6">
         <!-- Search Widget -->
-        <div class="glass-panel p-5 rounded-2xl border border-gray-800">
-          <h3 class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-3">Search</h3>
+        <div class="glass-panel p-5 rounded-2xl border border-gray-800/80">
+          <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Search</h3>
           <div class="relative">
             <input 
               type="text" 
               id="search-input" 
-              placeholder="Search blueprints..." 
-              class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500/80 transition-colors"
+              placeholder="Filter blueprints..." 
+              class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none"
             />
           </div>
         </div>
 
         <!-- Tool Filter -->
-        <div class="glass-panel p-5 rounded-2xl border border-gray-800">
-          <h3 class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-3">Automation Tool</h3>
+        <div class="glass-panel p-5 rounded-2xl border border-gray-800/80">
+          <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Automation Tool</h3>
           <div class="space-y-2.5">
-            <label class="flex items-center gap-3 text-sm text-gray-400 hover:text-white cursor-pointer select-none">
-              <input type="radio" name="tool-filter" value="all" checked class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0" />
+            <label class="flex items-center gap-3 text-xs text-gray-400 hover:text-white cursor-pointer select-none">
+              <input type="radio" name="tool-filter" value="all" checked class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0 focus:ring-offset-0" />
               All Tools
             </label>
             {tools.map(tool => (
-              <label class="flex items-center gap-3 text-sm text-gray-400 hover:text-white cursor-pointer select-none">
-                <input type="radio" name="tool-filter" value={tool} class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0" />
+              <label class="flex items-center gap-3 text-xs text-gray-400 hover:text-white cursor-pointer select-none">
+                <input type="radio" name="tool-filter" value={tool} class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0 focus:ring-offset-0" />
                 {tool}
               </label>
             ))}
@@ -55,16 +54,16 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
         </div>
 
         <!-- Category Filter -->
-        <div class="glass-panel p-5 rounded-2xl border border-gray-800">
-          <h3 class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-3">Category</h3>
+        <div class="glass-panel p-5 rounded-2xl border border-gray-800/80">
+          <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Category</h3>
           <div class="space-y-2.5">
-            <label class="flex items-center gap-3 text-sm text-gray-400 hover:text-white cursor-pointer select-none">
-              <input type="radio" name="category-filter" value="all" checked class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0" />
+            <label class="flex items-center gap-3 text-xs text-gray-400 hover:text-white cursor-pointer select-none">
+              <input type="radio" name="category-filter" value="all" checked class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0 focus:ring-offset-0" />
               All Categories
             </label>
             {categories.map(cat => (
-              <label class="flex items-center gap-3 text-sm text-gray-400 hover:text-white cursor-pointer select-none">
-                <input type="radio" name="category-filter" value={cat} class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0" />
+              <label class="flex items-center gap-3 text-xs text-gray-400 hover:text-white cursor-pointer select-none">
+                <input type="radio" name="category-filter" value={cat} class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0 focus:ring-offset-0" />
                 {cat}
               </label>
             ))}
@@ -72,16 +71,16 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
         </div>
 
         <!-- Persona Filter -->
-        <div class="glass-panel p-5 rounded-2xl border border-gray-800">
-          <h3 class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-3">Persona</h3>
+        <div class="glass-panel p-5 rounded-2xl border border-gray-800/80">
+          <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Persona</h3>
           <div class="space-y-2.5">
-            <label class="flex items-center gap-3 text-sm text-gray-400 hover:text-white cursor-pointer select-none">
-              <input type="radio" name="persona-filter" value="all" checked class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0" />
+            <label class="flex items-center gap-3 text-xs text-gray-400 hover:text-white cursor-pointer select-none">
+              <input type="radio" name="persona-filter" value="all" checked class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0 focus:ring-offset-0" />
               All Roles
             </label>
             {personas.map(pers => (
-              <label class="flex items-center gap-3 text-sm text-gray-400 hover:text-white cursor-pointer select-none">
-                <input type="radio" name="persona-filter" value={pers} class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0" />
+              <label class="flex items-center gap-3 text-xs text-gray-400 hover:text-white cursor-pointer select-none">
+                <input type="radio" name="persona-filter" value={pers} class="rounded bg-gray-950 border-gray-800 text-indigo-600 focus:ring-0 focus:ring-offset-0" />
                 For {pers}
               </label>
             ))}
@@ -93,8 +92,8 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
       <main class="col-span-1 lg:col-span-3">
         <!-- Results Counter -->
         <div class="flex justify-between items-center mb-6">
-          <span id="results-count" class="text-sm text-gray-500 font-semibold">Showing {workflows.length} workflows</span>
-          <button id="clear-filters" class="hidden text-xs text-indigo-400 hover:text-indigo-300 hover:underline font-semibold">Clear Filters</button>
+          <span id="results-count" class="text-xs text-gray-500 font-semibold uppercase tracking-wider">Showing {workflows.length} workflows</span>
+          <button id="clear-filters" class="hidden text-xs text-indigo-400 hover:text-indigo-300 hover:underline font-semibold btn-scale">Clear Filters</button>
         </div>
 
         <!-- Cards Container -->
@@ -111,7 +110,7 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
               <div>
                 <!-- Metadata header badges -->
                 <div class="flex justify-between items-center mb-4">
-                  <span class="px-2.5 py-0.5 bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold rounded-md">
+                  <span class="px-2.5 py-0.5 bg-indigo-950/45 border border-indigo-500/20 text-indigo-300 text-[11px] font-semibold rounded-md">
                     {item.data.primaryTool}
                   </span>
                   <span class="text-xs text-emerald-400 font-medium">
@@ -125,13 +124,13 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
                 </h3>
 
                 <!-- Description -->
-                <p class="text-xs text-gray-400 leading-relaxed mb-6 line-clamp-3">
+                <p class="text-sm text-gray-400 leading-relaxed mb-6 line-clamp-3">
                   {item.data.description}
                 </p>
               </div>
 
               <!-- Footer values -->
-              <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between">
+              <div class="pt-4 border-t border-slate-800/60 flex items-center justify-between">
                 <span class="text-[11px] text-gray-500 font-medium">
                   💰 Run cost: {item.data.costToRun}
                 </span>
@@ -152,7 +151,6 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
     </div>
   </div>
 
-  <!-- Client side logic to perform instant, hardware-accelerated searches & filters -->
   <script>
     const searchInput = document.getElementById('search-input') as HTMLInputElement;
     const toolRadios = document.querySelectorAll('input[name="tool-filter"]');
@@ -163,14 +161,12 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
     const noResultsEl = document.getElementById('no-results') as HTMLDivElement;
     const cards = document.querySelectorAll('.workflow-card') as NodeListOf<HTMLElement>;
 
-    // Read initial URL params (e.g. ?category=Sales&search=linkedin)
     const urlParams = new URLSearchParams(window.location.search);
     const initialSearch = urlParams.get('search') || '';
     const initialCategory = urlParams.get('category') || '';
     const initialTool = urlParams.get('tool') || '';
     const initialPersona = urlParams.get('persona') || '';
 
-    // Apply URL params to elements
     if (initialSearch && searchInput) searchInput.value = initialSearch;
     if (initialCategory) setRadioValue('category-filter', initialCategory);
     if (initialTool) setRadioValue('tool-filter', initialTool);
@@ -214,17 +210,14 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
         }
       });
 
-      // Update counter
       resultsCountEl.textContent = `Showing ${visibleCount} workflow${visibleCount === 1 ? '' : 's'}`;
 
-      // Toggle no results state
       if (visibleCount === 0) {
         noResultsEl.classList.remove('hidden');
       } else {
         noResultsEl.classList.add('hidden');
       }
 
-      // Show/hide Clear button
       const hasActiveFilters = query !== '' || selectedTool !== 'all' || selectedCategory !== 'all' || selectedPersona !== 'all';
       if (hasActiveFilters) {
         clearBtn.classList.remove('hidden');
@@ -233,7 +226,6 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
       }
     }
 
-    // Bind event listeners
     if (searchInput) searchInput.addEventListener('input', filterWorkflows);
     toolRadios.forEach(radio => radio.addEventListener('change', filterWorkflows));
     categoryRadios.forEach(radio => radio.addEventListener('change', filterWorkflows));
@@ -249,7 +241,6 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
       });
     }
 
-    // Initial run
     filterWorkflows();
   </script>
 </Layout>

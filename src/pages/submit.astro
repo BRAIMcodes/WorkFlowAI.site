@@ -15,14 +15,14 @@ import Layout from '../layouts/Layout.astro';
           📥 Open Source Contributions
         </div>
         <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Submit an AI Workflow</h1>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p class="text-gray-400 text-base max-w-2xl mx-auto">
           Share your recipes with the community. You can submit either by opening a pre-formatted GitHub Issue or by emailing us directly.
         </p>
       </div>
 
       <!-- Submission Choice -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <div class="glass-panel p-6 rounded-3xl border border-gray-800 flex flex-col justify-between items-start">
+        <div class="glass-panel p-6 rounded-3xl border border-gray-800/80 flex flex-col justify-between items-start">
           <div>
             <span class="text-3xl block mb-3">💻</span>
             <h3 class="text-lg font-bold text-white mb-2">Submit via GitHub</h3>
@@ -33,13 +33,13 @@ import Layout from '../layouts/Layout.astro';
           <a 
             href="https://github.com/BRAIMcodes/WorkFlowAI.site/issues/new?title=[Submission]+New+Workflow+Recipe&body=Describe+your+workflow+here..." 
             target="_blank" 
-            class="px-5 py-3 bg-gray-900 hover:bg-gray-850 border border-gray-800 text-white text-xs font-bold rounded-xl transition-all shadow-md"
+            class="px-5 py-3 bg-gray-900 hover:bg-gray-850 border border-gray-800 text-white text-xs font-bold rounded-xl transition-all shadow-md btn-scale"
           >
             Open GitHub Issue &rarr;
           </a>
         </div>
 
-        <div class="glass-panel p-6 rounded-3xl border border-gray-800 flex flex-col justify-between items-start">
+        <div class="glass-panel p-6 rounded-3xl border border-gray-800/80 flex flex-col justify-between items-start">
           <div>
             <span class="text-3xl block mb-3">✉️</span>
             <h3 class="text-lg font-bold text-white mb-2">Submit via Form / Email</h3>
@@ -49,7 +49,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <a 
             href="#form-builder" 
-            class="px-5 py-3 bg-indigo-600 hover:bg-indigo-550 text-white text-xs font-bold rounded-xl transition-all shadow-md shadow-indigo-600/10"
+            class="px-5 py-3 bg-indigo-600 hover:bg-indigo-550 text-white text-xs font-bold rounded-xl transition-all shadow-md shadow-indigo-600/10 btn-scale"
           >
             Go to Form Builder &darr;
           </a>
@@ -57,13 +57,13 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <!-- Form Builder Widget -->
-      <div id="form-builder" class="glass-panel rounded-3xl p-8 border border-gray-800 scroll-mt-24">
-        <h2 class="text-2xl font-bold text-white mb-6">Recipe Builder Form</h2>
+      <div id="form-builder" class="glass-panel rounded-3xl p-8 border border-gray-800/80 scroll-mt-24">
+        <h2 class="text-xl font-bold text-white mb-6">Recipe Builder Form</h2>
         
         <form class="space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label for="recipe-title" class="block text-xs font-semibold text-gray-300 mb-2">Workflow Title</label>
+              <label for="recipe-title" class="block text-[10px] font-semibold text-gray-450 uppercase tracking-wider mb-2">Workflow Title</label>
               <input 
                 type="text" 
                 id="recipe-title" 
@@ -72,10 +72,10 @@ import Layout from '../layouts/Layout.astro';
               />
             </div>
             <div>
-              <label for="recipe-tool" class="block text-xs font-semibold text-gray-300 mb-2">Primary Automation Tool</label>
+              <label for="recipe-tool" class="block text-[10px] font-semibold text-gray-455 uppercase tracking-wider mb-2">Primary Automation Tool</label>
               <select 
                 id="recipe-tool" 
-                class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-400 focus:outline-none focus:border-indigo-500/80 transition-colors"
+                class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-450 focus:outline-none focus:border-indigo-500/80 transition-colors"
               >
                 <option value="n8n">n8n</option>
                 <option value="Make.com">Make.com</option>
@@ -88,7 +88,7 @@ import Layout from '../layouts/Layout.astro';
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label for="recipe-apps" class="block text-xs font-semibold text-gray-300 mb-2">Connected Apps (Comma Separated)</label>
+              <label for="recipe-apps" class="block text-[10px] font-semibold text-gray-450 uppercase tracking-wider mb-2">Connected Apps (Comma Separated)</label>
               <input 
                 type="text" 
                 id="recipe-apps" 
@@ -97,7 +97,7 @@ import Layout from '../layouts/Layout.astro';
               />
             </div>
             <div>
-              <label for="recipe-saved" class="block text-xs font-semibold text-gray-300 mb-2">Estimated Time Saved per Week</label>
+              <label for="recipe-saved" class="block text-[10px] font-semibold text-gray-455 uppercase tracking-wider mb-2">Estimated Time Saved per Week</label>
               <input 
                 type="text" 
                 id="recipe-saved" 
@@ -108,7 +108,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
 
           <div>
-            <label for="recipe-desc" class="block text-xs font-semibold text-gray-300 mb-2">Description / Pain Point Solved</label>
+            <label for="recipe-desc" class="block text-[10px] font-semibold text-gray-450 uppercase tracking-wider mb-2">Description / Pain Point Solved</label>
             <textarea 
               id="recipe-desc" 
               rows="3"
@@ -118,7 +118,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
 
           <div>
-            <label for="recipe-prompt" class="block text-xs font-semibold text-gray-300 mb-2">System AI Prompt (Optional)</label>
+            <label for="recipe-prompt" class="block text-[10px] font-semibold text-gray-450 uppercase tracking-wider mb-2">System AI Prompt (Optional)</label>
             <textarea 
               id="recipe-prompt" 
               rows="3"
@@ -128,7 +128,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
 
           <div>
-            <label for="recipe-blueprint" class="block text-xs font-semibold text-gray-300 mb-2">Link to JSON / Blueprint File (Optional)</label>
+            <label for="recipe-blueprint" class="block text-[10px] font-semibold text-gray-450 uppercase tracking-wider mb-2">Link to JSON / Blueprint File (Optional)</label>
             <input 
               type="text" 
               id="recipe-blueprint" 
@@ -140,7 +140,7 @@ import Layout from '../layouts/Layout.astro';
           <button 
             type="button" 
             id="emailSubmitBtn"
-            class="w-full py-4 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold rounded-xl shadow-lg shadow-indigo-600/10 hover:shadow-indigo-500/20 transition-all"
+            class="w-full py-4 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold rounded-xl shadow-lg shadow-indigo-600/10 hover:shadow-indigo-500/20 transition-all btn-scale"
           >
             Draft Email Submission
           </button>
