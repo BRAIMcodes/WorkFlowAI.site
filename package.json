@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "generate:sitemap": "node ./scripts/generate-sitemap.js",
-    "predeploy": "npm run build && npm run generate:sitemap"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",

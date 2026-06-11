@@ -18,7 +18,7 @@ connectedApps:
   - "Webhook"
   - "If"
   - "Baserow"
-downloadUrl: "https://raw.githubusercontent.com/Zie619/n8n-workflows/main/workflows/Telegram/1305_Telegram_Splitout_Export_Webhook.json"
+downloadUrl: "/blueprints/imported/all-in-one-telegrambaserow-ai-assistant-voicephotosave-noteslong-term-mem.json"
 category: "Operations"
 persona: "Operations Managers"
 difficulty: "Advanced"
@@ -74,7 +74,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
 2. API access keys and credentials for: Sticky Note, Set, Telegram, Aggregate, Merge, Convert To File, Extract From File, Switch, Split Out, Baserow Tool, Webhook, If, Baserow
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to get the raw JSON file.
 2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
 3. **Configure Node Credentials:** Double-click each node representing Sticky Note, Set, Telegram, Aggregate, Merge, Convert To File, Extract From File, Switch, Split Out, Baserow Tool, Webhook, If, Baserow and authenticate with your account credentials.
 4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.

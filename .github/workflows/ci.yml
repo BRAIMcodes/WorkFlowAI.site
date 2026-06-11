@@ -19,8 +19,6 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Generate sitemap
-        run: npm run generate:sitemap
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

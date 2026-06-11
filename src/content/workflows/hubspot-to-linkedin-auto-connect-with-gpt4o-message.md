@@ -8,7 +8,7 @@ connectedApps:
   - "HubSpot"
   - "OpenAI"
   - "Custom js"
-downloadUrl: "https://raw.githubusercontent.com/nateshelly/make-ai-automation-agents-blueprints/main/Browser_Automation_Chrome_or_Chromium_Based/HubSpot to LinkedIn Auto-Connect With GPT4o Message"
+downloadUrl: "/blueprints/imported/hubspot-to-linkedin-auto-connect-with-gpt4o-message.json"
 category: "Sales"
 persona: "Sales Reps"
 difficulty: "Beginner"
@@ -44,7 +44,7 @@ This verified AI integration blueprint runs on Make.com and enables real-time da
 2. Credentials and API connections for: HubSpot, OpenAI, Custom js
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to retrieve the raw JSON blueprint from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to retrieve the raw JSON blueprint.
 2. **Import to Make:** Open your Make.com dashboard, create a new scenario, click the three dots in the bottom toolbar, and select **Import Blueprint**. Upload the downloaded file.
 3. **Link Connections:** Authenticate the modules representing HubSpot, OpenAI, Custom js using your custom API keys or OAuth credentials.
 4. **Verify and Run:** Run a single execution test, audit the values, and flip the scenario switch to **ON** to start running the automation.

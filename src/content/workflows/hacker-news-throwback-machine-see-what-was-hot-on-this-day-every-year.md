@@ -16,7 +16,7 @@ connectedApps:
   - "Merge"
   - "Aggregate"
   - "Telegram"
-downloadUrl: "https://raw.githubusercontent.com/enescingoz/awesome-n8n-templates/main/Other_Integrations_and_Use_Cases/Hacker News Throwback Machine - See What Was Hot on This Day, Every Year!.json"
+downloadUrl: "/blueprints/imported/hacker-news-throwback-machine-see-what-was-hot-on-this-day-every-year.json"
 category: "Operations"
 persona: "Operations Managers"
 difficulty: "Advanced"
@@ -72,7 +72,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
 2. API access keys and credentials for: LangChain, Gemini, Schedule Trigger, Code, Set, Split Out, Http Request, Html, Merge, Aggregate, Telegram
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to get the raw JSON file.
 2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
 3. **Configure Node Credentials:** Double-click each node representing LangChain, Gemini, Schedule Trigger, Code, Set, Split Out, Http Request, Html, Merge, Aggregate, Telegram and authenticate with your account credentials.
 4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.

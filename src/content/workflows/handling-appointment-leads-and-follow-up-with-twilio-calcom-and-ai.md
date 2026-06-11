@@ -13,7 +13,7 @@ connectedApps:
   - "Schedule Trigger"
   - "Switch"
   - "LangChain"
-downloadUrl: "https://raw.githubusercontent.com/enescingoz/awesome-n8n-templates/main/Other_Integrations_and_Use_Cases/Handling Appointment Leads and Follow-up With Twilio, Cal.com and AI.json"
+downloadUrl: "/blueprints/imported/handling-appointment-leads-and-follow-up-with-twilio-calcom-and-ai.json"
 category: "Operations"
 persona: "Operations Managers"
 difficulty: "Advanced"
@@ -69,7 +69,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
 2. API access keys and credentials for: Twilio Trigger, OpenAI, Airtable, Twilio, Sticky Note, Schedule Trigger, Switch, LangChain
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to get the raw JSON file.
 2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
 3. **Configure Node Credentials:** Double-click each node representing Twilio Trigger, OpenAI, Airtable, Twilio, Sticky Note, Schedule Trigger, Switch, LangChain and authenticate with your account credentials.
 4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.

@@ -1,9 +1,102 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
 const TEMP_DIR = path.join(__dirname, '..', '.temp');
 const WORKFLOWS_DIR = path.join(__dirname, '..', 'src', 'content', 'workflows');
+const BLUEPRINTS_DIR = path.join(__dirname, '..', 'public', 'blueprints', 'imported');
+
+// Ensure directories exist
+if (!fs.existsSync(TEMP_DIR)) {
+  fs.mkdirSync(TEMP_DIR, { recursive: true });
+}
+if (!fs.existsSync(BLUEPRINTS_DIR)) {
+  fs.mkdirSync(BLUEPRINTS_DIR, { recursive: true });
+}
+
+const REPOS = [
+  {
+    owner: 'Zie619',
+    repo: 'n8n-workflows',
+    branch: 'main',
+    zipName: 'zie619.zip',
+    extractDir: 'zie619'
+  },
+  {
+    owner: 'enescingoz',
+    repo: 'awesome-n8n-templates',
+    branch: 'main',
+    zipName: 'enescingoz.zip',
+    extractDir: 'enescingoz'
+  },
+  {
+    owner: 'nateshelly',
+    repo: 'make-ai-automation-agents-blueprints',
+    branch: 'main',
+    zipName: 'nateshelly-make.zip',
+    extractDir: 'nateshelly-make'
+  },
+  {
+    owner: 'emretasss',
+    repo: 'AI-Workflow-Hub-2000-',
+    branch: 'main',
+    zipName: 'emretasss.zip',
+    extractDir: 'emretasss'
+  }
+];
+
+function downloadFile(url, dest) {
+  try {
+    if (os.platform() === 'win32') {
+      execSync(`powershell -Command "Invoke-WebRequest -Uri '${url}' -OutFile '${dest}'"`, { stdio: 'inherit' });
+    } else {
+      execSync(`curl -L -o "${dest}" "${url}"`, { stdio: 'inherit' });
+    }
+  } catch (err) {
+    console.error(`Error downloading file from ${url}:`, err);
+  }
+}
+
+function extractZip(zipPath, destDir) {
+  try {
+    fs.mkdirSync(destDir, { recursive: true });
+    if (os.platform() === 'win32') {
+      execSync(`powershell -Command "Expand-Archive -Path '${zipPath}' -DestinationPath '${destDir}' -Force"`, { stdio: 'inherit' });
+    } else {
+      execSync(`unzip -o "${zipPath}" -d "${destDir}"`, { stdio: 'inherit' });
+    }
+  } catch (err) {
+    console.error(`Error extracting zip ${zipPath}:`, err);
+  }
+}
+
+function downloadAndExtractAll() {
+  REPOS.forEach(repo => {
+    const zipPath = path.join(TEMP_DIR, repo.zipName);
+    const destDir = path.join(TEMP_DIR, repo.extractDir);
+
+    console.log(`Processing ${repo.owner}/${repo.repo}...`);
+
+    if (fs.existsSync(destDir)) {
+      console.log(`Directory ${destDir} already exists, skipping download.`);
+      return;
+    }
+
+    const zipUrl = `https://github.com/${repo.owner}/${repo.repo}/archive/refs/heads/${repo.branch}.zip`;
+    console.log(`Downloading ${zipUrl} to ${zipPath}...`);
+    downloadFile(zipUrl, zipPath);
+
+    console.log(`Extracting ${zipPath} to ${destDir}...`);
+    extractZip(zipPath, destDir);
+
+    // Delete the zip to save space
+    if (fs.existsSync(zipPath)) {
+      fs.unlinkSync(zipPath);
+    }
+    console.log(`Successfully processed ${repo.owner}/${repo.repo}.\n`);
+  });
+}
 
 // Helper to find all files recursively
 function getFilesRecursively(dir, fileList = []) {
@@ -153,7 +246,11 @@ function cleanDescription(desc, title) {
 
 // Main logic
 function importWorkflows() {
-  console.log('Loading existing workflows list...');
+  // Download zip files first
+  console.log('Downloading and extracting all repositories...');
+  downloadAndExtractAll();
+
+  console.log('\nLoading existing workflows list...');
   const existingSlugs = new Set(
     fs.readdirSync(WORKFLOWS_DIR)
       .filter(f => f.endsWith('.md'))
@@ -167,23 +264,22 @@ function importWorkflows() {
     {
       repo: 'Zie619/n8n-workflows',
       path: path.join(TEMP_DIR, 'zie619', 'n8n-workflows-main', 'workflows'),
-      splitKey: 'n8n-workflows-main/',
-      rawBaseUrl: 'https://raw.githubusercontent.com/Zie619/n8n-workflows/main/',
       primaryTool: 'n8n'
     },
     {
       repo: 'enescingoz/awesome-n8n-templates',
       path: path.join(TEMP_DIR, 'enescingoz', 'awesome-n8n-templates-main'),
-      splitKey: 'awesome-n8n-templates-main/',
-      rawBaseUrl: 'https://raw.githubusercontent.com/enescingoz/awesome-n8n-templates/main/',
       primaryTool: 'n8n'
     },
     {
       repo: 'nateshelly/make-ai-automation-agents-blueprints',
       path: path.join(TEMP_DIR, 'nateshelly-make', 'make-ai-automation-agents-blueprints-main'),
-      splitKey: 'make-ai-automation-agents-blueprints-main/',
-      rawBaseUrl: 'https://raw.githubusercontent.com/nateshelly/make-ai-automation-agents-blueprints/main/',
       primaryTool: 'Make.com'
+    },
+    {
+      repo: 'emretasss/AI-Workflow-Hub-2000-',
+      path: path.join(TEMP_DIR, 'emretasss', 'AI-Workflow-Hub-2000--main'),
+      primaryTool: 'n8n'
     }
   ];
 
@@ -266,15 +362,13 @@ function importWorkflows() {
           }
         });
 
-        // Add primary tool itself to connected apps if it has AI components
         const connectedApps = Array.from(connectedAppsSet);
         if (connectedApps.length === 0) return; // skip if no recognizable apps
 
-        // Get relative path for raw download URL
-        const parts = filePath.replace(/\\/g, '/').split(target.splitKey);
-        const relativePath = parts[1];
-        if (!relativePath) return;
-        const downloadUrl = target.rawBaseUrl + relativePath;
+        // Save JSON blueprint locally to public folder
+        const localDownloadUrl = `/blueprints/imported/${slug}.json`;
+        const blueprintPath = path.join(BLUEPRINTS_DIR, `${slug}.json`);
+        fs.writeFileSync(blueprintPath, JSON.stringify(json, null, 2), 'utf8');
 
         // Auto-categorize based on apps
         let category = 'Operations';
@@ -316,7 +410,7 @@ function importWorkflows() {
           costToRun: 'Free Tier',
           primaryTool: 'n8n',
           connectedApps,
-          downloadUrl,
+          downloadUrl: localDownloadUrl,
           category,
           persona,
           difficulty,
@@ -360,7 +454,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
 2. API access keys and credentials for: ${connectedApps.join(', ')}
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to get the raw JSON file.
 2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
 3. **Configure Node Credentials:** Double-click each node representing ${connectedApps.join(', ')} and authenticate with your account credentials.
 4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.
@@ -402,10 +496,10 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
         const connectedApps = Array.from(connectedAppsSet);
         if (connectedApps.length === 0) return;
 
-        const parts = filePath.replace(/\\/g, '/').split(target.splitKey);
-        const relativePath = parts[1];
-        if (!relativePath) return;
-        const downloadUrl = target.rawBaseUrl + relativePath;
+        // Save JSON blueprint locally to public folder
+        const localDownloadUrl = `/blueprints/imported/${slug}.json`;
+        const blueprintPath = path.join(BLUEPRINTS_DIR, `${slug}.json`);
+        fs.writeFileSync(blueprintPath, JSON.stringify(json, null, 2), 'utf8');
 
         let category = 'Operations';
         let persona = 'Operations Managers';
@@ -445,7 +539,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
           costToRun: 'Free Tier',
           primaryTool: 'Make.com',
           connectedApps,
-          downloadUrl,
+          downloadUrl: localDownloadUrl,
           category,
           persona,
           difficulty,
@@ -489,7 +583,7 @@ This verified AI integration blueprint runs on Make.com and enables real-time da
 2. Credentials and API connections for: ${connectedApps.join(', ')}
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to retrieve the raw JSON blueprint from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to retrieve the raw JSON blueprint.
 2. **Import to Make:** Open your Make.com dashboard, create a new scenario, click the three dots in the bottom toolbar, and select **Import Blueprint**. Upload the downloaded file.
 3. **Link Connections:** Authenticate the modules representing ${connectedApps.join(', ')} using your custom API keys or OAuth credentials.
 4. **Verify and Run:** Run a single execution test, audit the values, and flip the scenario switch to **ON** to start running the automation.
@@ -501,6 +595,12 @@ This verified AI integration blueprint runs on Make.com and enables real-time da
       }
     });
   });
+
+  // Clean up extracted temp directory to keep repo lightweight
+  console.log('Cleaning up temporary files...');
+  if (fs.existsSync(TEMP_DIR)) {
+    fs.rmSync(TEMP_DIR, { recursive: true, force: true });
+  }
 
   console.log(`\nImport complete!`);
   console.log(`Parsed ${totalParsed} JSON files.`);

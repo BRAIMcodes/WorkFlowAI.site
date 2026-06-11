@@ -17,7 +17,7 @@ connectedApps:
   - "Json"
   - "Math"
   - "Google email"
-downloadUrl: "https://raw.githubusercontent.com/nateshelly/make-ai-automation-agents-blueprints/main/Gmail_and_Email_Automation/Outbound SDR Engagement 1"
+downloadUrl: "/blueprints/imported/b2b-ai-prospecting-engagement-1.json"
 category: "Operations"
 persona: "Operations Managers"
 difficulty: "Advanced"
@@ -73,7 +73,7 @@ This verified AI integration blueprint runs on Make.com and enables real-time da
 2. Credentials and API connections for: Google Sheets, Builtin, Quickemailverification, Util, OpenAI, Airtable, Perplexity ai, Regexp, Http, Json, Math, Google email
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to retrieve the raw JSON blueprint from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to retrieve the raw JSON blueprint.
 2. **Import to Make:** Open your Make.com dashboard, create a new scenario, click the three dots in the bottom toolbar, and select **Import Blueprint**. Upload the downloaded file.
 3. **Link Connections:** Authenticate the modules representing Google Sheets, Builtin, Quickemailverification, Util, OpenAI, Airtable, Perplexity ai, Regexp, Http, Json, Math, Google email using your custom API keys or OAuth credentials.
 4. **Verify and Run:** Run a single execution test, audit the values, and flip the scenario switch to **ON** to start running the automation.

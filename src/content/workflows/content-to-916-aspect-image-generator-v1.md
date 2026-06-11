@@ -16,7 +16,7 @@ connectedApps:
   - "Http Request"
   - "Wait"
   - "Split In Batches"
-downloadUrl: "https://raw.githubusercontent.com/Zie619/n8n-workflows/main/workflows/Wait/1469_Wait_Splitout_Automation_Webhook.json"
+downloadUrl: "/blueprints/imported/content-to-916-aspect-image-generator-v1.json"
 category: "Operations"
 persona: "Operations Managers"
 difficulty: "Advanced"
@@ -72,7 +72,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
 2. API access keys and credentials for: Manual Trigger, Sticky Note, Set, Airtable, Remove Duplicates, Filter, Split Out, Limit, Http Request, Wait, Split In Batches
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to get the raw JSON file.
 2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
 3. **Configure Node Credentials:** Double-click each node representing Manual Trigger, Sticky Note, Set, Airtable, Remove Duplicates, Filter, Split Out, Limit, Http Request, Wait, Split In Batches and authenticate with your account credentials.
 4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.

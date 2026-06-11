@@ -15,7 +15,7 @@ connectedApps:
   - "OpenAI"
   - "Split In Batches"
   - "Limit"
-downloadUrl: "https://raw.githubusercontent.com/enescingoz/awesome-n8n-templates/main/Gmail_and_Email_Automation/Compose reply draft in Gmail with OpenAI Assistant.json"
+downloadUrl: "/blueprints/imported/compose-reply-draft-in-gmail-with-openai-assistant.json"
 category: "Operations"
 persona: "Operations Managers"
 difficulty: "Advanced"
@@ -71,7 +71,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
 2. API access keys and credentials for: Code, Http Request, Gmail, Schedule Trigger, Set, Markdown, Sticky Note, OpenAI, Split In Batches, Limit
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to get the raw JSON file.
 2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
 3. **Configure Node Credentials:** Double-click each node representing Code, Http Request, Gmail, Schedule Trigger, Set, Markdown, Sticky Note, OpenAI, Split In Batches, Limit and authenticate with your account credentials.
 4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.

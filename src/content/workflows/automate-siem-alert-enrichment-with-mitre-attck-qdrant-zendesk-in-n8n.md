@@ -14,7 +14,7 @@ connectedApps:
   - "Sticky Note"
   - "Google Drive"
   - "Zendesk"
-downloadUrl: "https://raw.githubusercontent.com/enescingoz/awesome-n8n-templates/main/Other_Integrations_and_Use_Cases/Automate SIEM Alert Enrichment with MITRE ATT&CK, Qdrant & Zendesk in n8n.json"
+downloadUrl: "/blueprints/imported/automate-siem-alert-enrichment-with-mitre-attck-qdrant-zendesk-in-n8n.json"
 category: "Customer Support"
 persona: "Support Teams"
 difficulty: "Advanced"
@@ -70,7 +70,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
 2. API access keys and credentials for: LangChain, OpenAI, Split Out, Extract From File, Manual Trigger, Split In Batches, Sticky Note, Google Drive, Zendesk
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to get the raw JSON file.
 2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
 3. **Configure Node Credentials:** Double-click each node representing LangChain, OpenAI, Split Out, Extract From File, Manual Trigger, Split In Batches, Sticky Note, Google Drive, Zendesk and authenticate with your account credentials.
 4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.

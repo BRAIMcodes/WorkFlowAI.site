@@ -12,7 +12,7 @@ connectedApps:
   - "Aggregate"
   - "LangChain"
   - "Manual Trigger"
-downloadUrl: "https://raw.githubusercontent.com/enescingoz/awesome-n8n-templates/main/AI_Research_RAG_and_Data_Analysis/Generate SEO Seed Keywords Using AI.json"
+downloadUrl: "/blueprints/imported/generate-seo-seed-keywords-using-ai.json"
 category: "Operations"
 persona: "Operations Managers"
 difficulty: "Advanced"
@@ -68,7 +68,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
 2. API access keys and credentials for: Sticky Note, Anthropic, Split Out, Set, Aggregate, LangChain, Manual Trigger
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to get the raw JSON file.
 2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
 3. **Configure Node Credentials:** Double-click each node representing Sticky Note, Anthropic, Split Out, Set, Aggregate, LangChain, Manual Trigger and authenticate with your account credentials.
 4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.

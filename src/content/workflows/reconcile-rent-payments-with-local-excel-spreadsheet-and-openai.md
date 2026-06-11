@@ -14,7 +14,7 @@ connectedApps:
   - "Set"
   - "Code"
   - "OpenAI"
-downloadUrl: "https://raw.githubusercontent.com/enescingoz/awesome-n8n-templates/main/AI_Research_RAG_and_Data_Analysis/Reconcile Rent Payments with Local Excel Spreadsheet and OpenAI.json"
+downloadUrl: "/blueprints/imported/reconcile-rent-payments-with-local-excel-spreadsheet-and-openai.json"
 category: "Operations"
 persona: "Operations Managers"
 difficulty: "Advanced"
@@ -70,7 +70,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
 2. API access keys and credentials for: Local File Trigger, LangChain, Read Write File, Extract From File, Split Out, Sticky Note, Set, Code, OpenAI
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to get the raw JSON file.
 2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
 3. **Configure Node Credentials:** Double-click each node representing Local File Trigger, LangChain, Read Write File, Extract From File, Split Out, Sticky Note, Set, Code, OpenAI and authenticate with your account credentials.
 4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.

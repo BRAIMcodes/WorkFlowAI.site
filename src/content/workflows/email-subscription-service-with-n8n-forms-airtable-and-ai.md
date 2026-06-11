@@ -19,7 +19,7 @@ connectedApps:
   - "LangChain"
   - "OpenAI"
   - "Edit Image"
-downloadUrl: "https://raw.githubusercontent.com/enescingoz/awesome-n8n-templates/main/Forms_and_Surveys/Email Subscription Service with n8n Forms, Airtable and AI.json"
+downloadUrl: "/blueprints/imported/email-subscription-service-with-n8n-forms-airtable-and-ai.json"
 category: "Operations"
 persona: "Operations Managers"
 difficulty: "Advanced"
@@ -75,7 +75,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
 2. API access keys and credentials for: Schedule Trigger, Airtable, Gmail, Execute Workflow, Set, Execute Workflow Trigger, Form Trigger, Filter, Code, Sticky Note, Execution Data, LangChain, OpenAI, Edit Image
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to get the raw JSON file.
 2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
 3. **Configure Node Credentials:** Double-click each node representing Schedule Trigger, Airtable, Gmail, Execute Workflow, Set, Execute Workflow Trigger, Form Trigger, Filter, Code, Sticky Note, Execution Data, LangChain, OpenAI, Edit Image and authenticate with your account credentials.
 4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.

@@ -15,7 +15,7 @@ connectedApps:
   - "Form"
   - "Form Trigger"
   - "Merge"
-downloadUrl: "https://raw.githubusercontent.com/Zie619/n8n-workflows/main/workflows/Code/1313_Code_HTTP_Automation_Webhook.json"
+downloadUrl: "/blueprints/imported/analyze-youtube-video-for-summaries-transcripts-content-google-gemini-ai.json"
 category: "Operations"
 persona: "Operations Managers"
 difficulty: "Advanced"
@@ -71,7 +71,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
 2. API access keys and credentials for: Set, Sticky Note, Http Request, Code, Google Drive, Gmail, Markdown, Form, Form Trigger, Merge
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to get the raw JSON file.
 2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
 3. **Configure Node Credentials:** Double-click each node representing Set, Sticky Note, Http Request, Code, Google Drive, Gmail, Markdown, Form, Form Trigger, Merge and authenticate with your account credentials.
 4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.

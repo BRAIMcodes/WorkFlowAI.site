@@ -58,7 +58,7 @@ connectedApps:
   - "Respond To Webhook"
   - "Rss Feed Read"
   - "Ai Transform"
-downloadUrl: "https://raw.githubusercontent.com/Zie619/n8n-workflows/main/workflows/Bitly/0910_Bitly_Datetime_Update_Webhook.json"
+downloadUrl: "/blueprints/imported/agent-workflow.json"
 category: "Operations"
 persona: "Operations Managers"
 difficulty: "Advanced"
@@ -114,7 +114,7 @@ This verified AI automation workflow blueprint runs on n8n and enables real-time
 2. API access keys and credentials for: Bitly, Dropbox, Gmail, Google Calendar, Google Docs, Google Sheets, Pushbullet, You Tube, Eleven Labs, Reddit, Sticky Note, PostgreSQL, Redis, Email Send Tool, Google Docs Tool, Twitter, Calendly Trigger, Email Read Imap, Google Drive, Gumroad Trigger, Local File Trigger, Form Trigger, Schedule Trigger, Webhook, Manual Trigger, Execute Workflow Trigger, Code, Date Time, Set, Filter, Limit, Remove Duplicates, Split Out, Aggregate, Merge, Summarize, Convert To File, Extract From File, Html, Markdown, Rename Keys, Sort, If, Split In Batches, Execute Workflow, Wait, Execute Command, Http Request, Execution Data, Ftp, Respond To Webhook, Rss Feed Read, Ai Transform
 
 ### Setup Guide
-1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+1. **Download Blueprint:** Click the download button above to get the raw JSON file.
 2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
 3. **Configure Node Credentials:** Double-click each node representing Bitly, Dropbox, Gmail, Google Calendar, Google Docs, Google Sheets, Pushbullet, You Tube, Eleven Labs, Reddit, Sticky Note, PostgreSQL, Redis, Email Send Tool, Google Docs Tool, Twitter, Calendly Trigger, Email Read Imap, Google Drive, Gumroad Trigger, Local File Trigger, Form Trigger, Schedule Trigger, Webhook, Manual Trigger, Execute Workflow Trigger, Code, Date Time, Set, Filter, Limit, Remove Duplicates, Split Out, Aggregate, Merge, Summarize, Convert To File, Extract From File, Html, Markdown, Rename Keys, Sort, If, Split In Batches, Execute Workflow, Wait, Execute Command, Http Request, Execution Data, Ftp, Respond To Webhook, Rss Feed Read, Ai Transform and authenticate with your account credentials.
 4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.
