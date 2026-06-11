@@ -25,6 +25,7 @@ const workflows = defineCollection({
     setupTime: z.string().optional().default("~30 minutes"),
     verifiedBy: z.string().optional().default("WorkflowAI Team"),
     tags: z.array(z.string()).optional().default([]),
+    contributor: z.string().optional(),
     steps: z.array(z.object({
       stepNumber: z.number(),
       title: z.string(),

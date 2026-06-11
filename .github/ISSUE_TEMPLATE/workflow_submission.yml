@@ -1,0 +1,92 @@
+name: "📥 Suggest/Submit a Workflow Recipe"
+description: "Submit a new AI workflow recipe to the library. Structured forms help automate review and publishing."
+title: "[Submission] New Workflow"
+labels: ["recipe-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to **WorkflowAI.site**! 
+        Please fill out this form to submit your recipe. Our automation will parse this issue, validate the JSON config, and generate a pull request automatically.
+  - type: input
+    id: title
+    attributes:
+      label: Workflow Title
+      placeholder: "e.g. Lead Qualification with n8n and OpenAI"
+    validations:
+      required: true
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Primary Orchestration Tool
+      options:
+        - n8n
+        - Make.com
+        - Zapier
+        - LangChain
+        - Custom Code
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Workflow Category
+      options:
+        - Sales
+        - Marketing
+        - Recruiting
+        - Customer Support
+        - Operations
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: persona
+    attributes:
+      label: Persona / Target Role
+      placeholder: "e.g. Sales Reps, Marketers, Operations Teams"
+    validations:
+      required: true
+  - type: input
+    id: apps
+    attributes:
+      label: Connected Apps (comma-separated)
+      placeholder: "e.g. OpenAI GPT-4o, HubSpot, Slack"
+    validations:
+      required: false
+  - type: input
+    id: saved
+    attributes:
+      label: Est. Time Saved (per week)
+      placeholder: "e.g. 5 hours/week"
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: Description / Problem Solved
+      placeholder: "Describe the bottleneck this solves and how it helps..."
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: System AI Prompt (optional)
+      placeholder: "Paste the LLM system prompt instructions here..."
+    validations:
+      required: false
+  - type: textarea
+    id: json
+    attributes:
+      label: Raw JSON Blueprint Config
+      placeholder: "Paste the raw n8n JSON or Make.com blueprint structure here..."
+      render: json
+    validations:
+      required: true
+  - type: input
+    id: contributor
+    attributes:
+      label: Contributor GitHub Username (optional)
+      placeholder: "Your GitHub username to receive credit on the site!"
+    validations:
+      required: false

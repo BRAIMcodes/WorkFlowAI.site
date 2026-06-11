@@ -99,6 +99,20 @@ const difficultyClass =
       <p class="text-gray-400 text-base leading-relaxed mb-7 max-w-2xl">
         {data.description}
       </p>
+      
+      {data.contributor && (
+        <div class="flex items-center gap-2.5 mb-7">
+          <img 
+            src={`https://github.com/${data.contributor}.png`} 
+            alt={data.contributor} 
+            class="w-6 h-6 rounded-full border border-white/10" 
+            loading="lazy" 
+          />
+          <span class="text-xs text-gray-500">
+            Contributed by <a href={`https://github.com/${data.contributor}`} target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">@{data.contributor}</a>
+          </span>
+        </div>
+      )}
 
       <!-- Key Metrics — 4 pillars -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5">
@@ -132,17 +146,32 @@ const difficultyClass =
           <h2 id="download-heading" class="font-display font-bold text-white text-base mb-1">Download Integration Assets</h2>
           <p class="text-xs text-gray-500">Import this verified blueprint directly into your {data.primaryTool} dashboard.</p>
         </div>
-        <a 
-          href={data.downloadUrl} 
-          download 
-          class="btn btn-primary text-xs flex-shrink-0"
-          aria-label={`Download ${data.primaryTool} blueprint for ${data.title}`}
-        >
-          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-          </svg>
-          Download Blueprint
-        </a>
+        <div class="flex flex-wrap gap-2.5 flex-shrink-0 w-full sm:w-auto">
+          <!-- Copy JSON Button -->
+          <button 
+            id="copyJsonBtn" 
+            data-url={data.downloadUrl}
+            class="btn btn-secondary text-xs flex-1 sm:flex-none justify-center gap-1.5 py-3 sm:py-2.5 px-4"
+            aria-label={`Copy JSON blueprint for ${data.title}`}
+          >
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            <span id="copyJsonLabel">Copy JSON</span>
+          </button>
+          
+          <a 
+            href={data.downloadUrl} 
+            download 
+            class="btn btn-primary text-xs flex-1 sm:flex-none justify-center gap-1.5 py-3 sm:py-2.5 px-4"
+            aria-label={`Download ${data.primaryTool} blueprint for ${data.title}`}
+          >
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download Blueprint
+          </a>
+        </div>
       </div>
     </section>
 
@@ -399,6 +428,41 @@ const difficultyClass =
       }).catch(err => {
         console.error('Failed to copy:', err);
       });
+    });
+  }
+
+  // Copy JSON Blueprint Handler
+  const copyJsonBtn = document.getElementById('copyJsonBtn') as HTMLButtonElement;
+  if (copyJsonBtn) {
+    copyJsonBtn.addEventListener('click', () => {
+      const url = copyJsonBtn.getAttribute('data-url') || '';
+      const label = document.getElementById('copyJsonLabel');
+      
+      if (!url) return;
+      if (label) label.textContent = 'Fetching...';
+      
+      fetch(url)
+        .then(res => {
+          if (!res.ok) throw new Error('Network error');
+          return res.text();
+        })
+        .then(text => {
+          navigator.clipboard.writeText(text).then(() => {
+            if (label) label.textContent = 'Copied!';
+            copyJsonBtn.classList.add('border-emerald-500/25', 'text-emerald-400');
+            setTimeout(() => {
+              if (label) label.textContent = 'Copy JSON';
+              copyJsonBtn.classList.remove('border-emerald-500/25', 'text-emerald-400');
+            }, 2000);
+          });
+        })
+        .catch(err => {
+          if (label) label.textContent = 'Failed!';
+          console.error('Failed to copy JSON:', err);
+          setTimeout(() => {
+            if (label) label.textContent = 'Copy JSON';
+          }, 2000);
+        });
     });
   }
 </script>
