@@ -1,6 +1,6 @@
 ---
 title: "Bulk CRM Data Enrichment with Apollo.io and n8n"
-description: "Automatically enrich stale HubSpot contacts with Apollo.io data — job title, phone, LinkedIn, headcount, and funding — then flag high-value prospects in Slack."
+description: "Automatically enrich stale HubSpot contacts with updated titles, phone, LinkedIn, and company data using Apollo.io and n8n."
 timeSaved: "6 hours/week"
 costToRun: "Free Tier (Apollo free plan)"
 primaryTool: "n8n"
@@ -69,27 +69,27 @@ difficulty: "Beginner"
 steps:
   - stepNumber: 1
     title: "Read Stale Contacts from HubSpot"
-    description: "HubSpot node queries contacts where the last modified date is older than 90 days AND the Apollo enrichment date property is blank or also older than 90 days. Returns up to 100 contacts per run."
+    description: "Automatically enrich stale HubSpot contacts with updated titles, phone, LinkedIn, and company data using Apollo.io and n8n."
     tool: "HubSpot"
   - stepNumber: 2
     title: "Loop Through Each Contact"
-    description: "n8n's SplitInBatches node processes contacts one at a time to respect Apollo's rate limit of 1 request per second on free plans."
+    description: "Automatically enrich stale HubSpot contacts with updated titles, phone, LinkedIn, and company data using Apollo.io and n8n."
     tool: "n8n"
   - stepNumber: 3
     title: "Apollo.io People Match API Call"
-    description: "HTTP Request node calls Apollo's /v1/people/match endpoint with email + name + company. Returns enriched profile including title, phone, LinkedIn URL, company headcount, and funding data."
+    description: "Automatically enrich stale HubSpot contacts with updated titles, phone, LinkedIn, and company data using Apollo.io and n8n."
     tool: "Apollo.io"
   - stepNumber: 4
     title: "Update HubSpot Contact"
-    description: "HubSpot Update Contact node writes enriched fields back: Job Title, Phone Number, LinkedIn URL, Company Headcount, Total Funding, Last Enriched Date (today)."
+    description: "Automatically enrich stale HubSpot contacts with updated titles, phone, LinkedIn, and company data using Apollo.io and n8n."
     tool: "HubSpot"
   - stepNumber: 5
     title: "Log to Google Sheets"
-    description: "Google Sheets node appends a row with the enriched contact's data plus a timestamp, creating an audit trail of all enrichment runs."
+    description: "Automatically enrich stale HubSpot contacts with updated titles, phone, LinkedIn, and company data using Apollo.io and n8n."
     tool: "Google Sheets"
   - stepNumber: 6
     title: "Flag High-Value Prospects in Slack"
-    description: "A conditional node checks if the contact's company has headcount > 200 OR total funding > $10M. If true, a Slack message alerts the account owner with the contact's details and a direct HubSpot link."
+    description: "Automatically enrich stale HubSpot contacts with updated titles, phone, LinkedIn, and company data using Apollo.io and n8n."
     tool: "Slack"
 ---
 

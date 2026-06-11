@@ -1,6 +1,6 @@
 ---
 title: "Multi-Platform Content Repurposer with n8n and Claude"
-description: "Turn every new blog post into LinkedIn posts, a Twitter thread, and an email newsletter intro automatically using Claude 3.5 Sonnet and Buffer scheduling."
+description: "Turn a single blog post into LinkedIn posts, Twitter threads, and newsletter intros automatically using Claude and n8n."
 timeSaved: "5 hours/week"
 costToRun: "~$0.02 per piece"
 primaryTool: "n8n"
@@ -98,23 +98,23 @@ difficulty: "Beginner"
 steps:
   - stepNumber: 1
     title: "Notion Webhook Triggers on New Published Post"
-    description: "A Notion database webhook fires when a blog post page's Status property changes to 'Published'. Captures the page ID, title, and content."
+    description: "Turn a single blog post into LinkedIn posts, Twitter threads, and newsletter intros automatically using Claude and n8n."
     tool: "Notion"
   - stepNumber: 2
     title: "Fetch Full Blog Post Content"
-    description: "n8n's Notion node retrieves the full page content using the page ID, converting blocks to plain text for the Claude prompt."
+    description: "Turn a single blog post into LinkedIn posts, Twitter threads, and newsletter intros automatically using Claude and n8n."
     tool: "Notion"
   - stepNumber: 3
     title: "Claude Extracts Insights and Writes All Three Formats"
-    description: "Claude 3.5 Sonnet receives the full blog post and writes a LinkedIn post (1,200 chars), a 10-tweet Twitter thread, and an email newsletter intro (150 words) in a single API call."
+    description: "Turn a single blog post into LinkedIn posts, Twitter threads, and newsletter intros automatically using Claude and n8n."
     tool: "Claude 3.5 Sonnet"
   - stepNumber: 4
     title: "Parse Claude's Structured Output"
-    description: "A Function node splits Claude's response by FORMAT delimiters, extracting the LinkedIn post, Twitter thread (split into individual tweets), and email intro as separate variables."
+    description: "Turn a single blog post into LinkedIn posts, Twitter threads, and newsletter intros automatically using Claude and n8n."
     tool: "n8n"
   - stepNumber: 5
     title: "Schedule All Formats via Buffer"
-    description: "Three Buffer API calls schedule the content across platforms: LinkedIn post in 2 hours, Twitter thread as a scheduled thread post for tomorrow morning, email intro added to the newsletter draft queue."
+    description: "Turn a single blog post into LinkedIn posts, Twitter threads, and newsletter intros automatically using Claude and n8n."
     tool: "Buffer"
 ---
 

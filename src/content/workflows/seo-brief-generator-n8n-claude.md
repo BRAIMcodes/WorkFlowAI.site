@@ -1,6 +1,6 @@
 ---
 title: "AI SEO Content Brief Generator with n8n and Claude"
-description: "Automatically generate comprehensive SEO content briefs from a keyword list using Ahrefs SERP data and Claude 3.5 Sonnet analysis."
+description: "Generate comprehensive SEO content briefs with Claude by analyzing Ahrefs SERP data and top-ranking competitor content."
 timeSaved: "5 hours/week"
 costToRun: "~$0.04 per brief"
 primaryTool: "n8n"
@@ -59,23 +59,23 @@ difficulty: "Intermediate"
 steps:
   - stepNumber: 1
     title: "Read Keyword List from Notion"
-    description: "A manual trigger or weekly schedule reads rows from a Notion database where the 'Brief Status' property is set to 'Needs Brief'. Each row must contain a keyword, monthly search volume, and keyword difficulty score (imported from Ahrefs or manually entered)."
+    description: "Generate comprehensive SEO content briefs with Claude by analyzing Ahrefs SERP data and top-ranking competitor content."
     tool: "n8n Notion node"
   - stepNumber: 2
     title: "Fetch SERP Data from Ahrefs API"
-    description: "For each keyword, an HTTP Request node calls the Ahrefs SERP Overview API endpoint, retrieving the top 10 organic results including URL, domain rating, estimated traffic, title, and word count. The response is parsed and the top 5 results are formatted into a structured summary string."
+    description: "Generate comprehensive SEO content briefs with Claude by analyzing Ahrefs SERP data and top-ranking competitor content."
     tool: "n8n HTTP Request node (Ahrefs API)"
   - stepNumber: 3
     title: "Claude 3.5 Sonnet Analyzes Top-Ranking Content"
-    description: "The keyword metadata and Ahrefs SERP data are injected into the system prompt. Claude 3.5 Sonnet analyzes patterns across the top 5 results — content format, typical structure, word count ranges, and topic gaps — using its extended context window to process all data in a single call."
+    description: "Generate comprehensive SEO content briefs with Claude by analyzing Ahrefs SERP data and top-ranking competitor content."
     tool: "n8n HTTP Request node (Anthropic API)"
   - stepNumber: 4
     title: "Generate Comprehensive Content Brief"
-    description: "Claude outputs the full brief in structured markdown covering search intent classification, recommended format, target word count, three title options, a full H2/H3 outline, semantic keywords, a unique differentiation angle, and internal linking suggestions. The n8n Code node formats this into Notion-compatible rich text blocks."
+    description: "Generate comprehensive SEO content briefs with Claude by analyzing Ahrefs SERP data and top-ranking competitor content."
     tool: "n8n Code node + Anthropic API"
   - stepNumber: 5
     title: "Post Brief to Notion and Alert via Slack"
-    description: "The formatted brief is written to a new Notion page linked back to the original keyword row, and the keyword row status is updated to 'Brief Ready'. A Slack message is sent to the #content-team channel with the keyword, a brief summary, and a direct link to the Notion brief."
+    description: "Generate comprehensive SEO content briefs with Claude by analyzing Ahrefs SERP data and top-ranking competitor content."
     tool: "n8n Notion node + Slack node"
 ---
 

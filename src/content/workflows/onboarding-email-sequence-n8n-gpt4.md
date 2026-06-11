@@ -1,6 +1,6 @@
 ---
 title: "Personalized Customer Onboarding Email Sequence with n8n"
-description: "Generate a 5-email onboarding sequence personalized to each customer's plan type and early product actions using GPT-4o and HubSpot behavioral data."
+description: "Generate personalized 5-email onboarding sequences for new customers using HubSpot, Mixpanel usage data, and GPT-4o."
 timeSaved: "7 hours/week"
 costToRun: "~$0.03 per sequence"
 primaryTool: "n8n"
@@ -97,23 +97,23 @@ difficulty: "Intermediate"
 steps:
   - stepNumber: 1
     title: "New Customer Trigger from HubSpot"
-    description: "HubSpot trigger node fires when a new contact is created with lifecycle stage set to 'Customer', capturing name, email, plan type, company, and industry."
+    description: "Generate personalized 5-email onboarding sequences for new customers using HubSpot, Mixpanel usage data, and GPT-4o."
     tool: "HubSpot"
   - stepNumber: 2
     title: "Fetch First-Week Usage Data from Mixpanel"
-    description: "n8n HTTP Request node calls Mixpanel's Query API to retrieve the customer's event history from the past 7 days — specifically which core features they have and haven't touched."
+    description: "Generate personalized 5-email onboarding sequences for new customers using HubSpot, Mixpanel usage data, and GPT-4o."
     tool: "Mixpanel"
   - stepNumber: 3
     title: "GPT-4o Generates All 5 Emails"
-    description: "A loop node calls GPT-4o five times, once per email in the sequence. Each call receives the full customer context plus the specific goal and timing for that email position."
+    description: "Generate personalized 5-email onboarding sequences for new customers using HubSpot, Mixpanel usage data, and GPT-4o."
     tool: "GPT-4o"
   - stepNumber: 4
     title: "Parse Email Content"
-    description: "A Function node parses GPT-4o's structured output (SUBJECT, PREVIEW, BODY) into separate fields for clean mapping to Gmail."
+    description: "Generate personalized 5-email onboarding sequences for new customers using HubSpot, Mixpanel usage data, and GPT-4o."
     tool: "n8n"
   - stepNumber: 5
     title: "Schedule Gmail Sends at Optimal Intervals"
-    description: "Gmail nodes send each email with a scheduled delay: Email 1 at 1 hour, Email 2 at Day 3, Email 3 at Day 7, Email 4 at Day 14, Email 5 at Day 21 post-signup."
+    description: "Generate personalized 5-email onboarding sequences for new customers using HubSpot, Mixpanel usage data, and GPT-4o."
     tool: "Gmail"
 ---
 

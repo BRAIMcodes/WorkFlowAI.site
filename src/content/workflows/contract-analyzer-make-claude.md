@@ -1,6 +1,6 @@
 ---
 title: "AI Contract Risk Analyzer with Make.com and Claude"
-description: "Automatically extract and analyze contracts from Google Drive using Claude 3.5 Sonnet â€” flags liability clauses, gaps, and risk scores before legal review."
+description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions — with plain-English summaries."
 timeSaved: "4 hours/week"
 costToRun: "~$0.08 per contract"
 primaryTool: "Make.com"
@@ -75,23 +75,23 @@ difficulty: "Advanced"
 steps:
   - stepNumber: 1
     title: "Watch Google Drive Folder for New PDFs"
-    description: "Make.com's Google Drive Watch Files module monitors a designated 'Contracts Inbox' folder and triggers when a new file is added."
+    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions — with plain-English summaries."
     tool: "Google Drive"
   - stepNumber: 2
     title: "Download and Extract PDF Text"
-    description: "The PDF is downloaded via Google Drive's export API. A PDF Parser module (using Adobe PDF Services or PDF.co) extracts the full text content while preserving section structure."
+    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions — with plain-English summaries."
     tool: "Make.com"
   - stepNumber: 3
     title: "Claude 3.5 Sonnet Analyzes the Contract"
-    description: "The full contract text is sent to Claude 3.5 Sonnet with a detailed system prompt. Claude returns a structured risk report including a 1â€“10 risk score, flagged clauses, missing terms, and financial summary."
+    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions — with plain-English summaries."
     tool: "Claude 3.5 Sonnet"
   - stepNumber: 4
     title: "Create Notion Page with Full Analysis"
-    description: "A Notion page is created in the 'Contract Reviews' database with the full Claude analysis, the risk score as a Select property, contract metadata, and a link back to the original Google Drive PDF."
+    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions — with plain-English summaries."
     tool: "Notion"
   - stepNumber: 5
     title: "Email Summary to Legal Team"
-    description: "Gmail sends a formatted email to your legal team with the risk score, executive summary, and high-risk clause count, plus a direct link to the Notion page for the full report."
+    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions — with plain-English summaries."
     tool: "Gmail"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "AI Customer Support Ticket Escalation with n8n and OpenAI"
-description: "Automatically classify Zendesk tickets by urgency and sentiment, auto-reply to low-priority tickets, and page on-call staff for critical issues."
+description: "Classify Zendesk tickets by urgency with GPT-4o and auto-route: auto-reply low, queue medium, Slack+PagerDuty for critical."
 timeSaved: "4 hours/week"
 costToRun: "~$0.01 per ticket"
 primaryTool: "n8n"
@@ -70,23 +70,23 @@ difficulty: "Intermediate"
 steps:
   - stepNumber: 1
     title: "New Zendesk Ticket Webhook"
-    description: "A Zendesk webhook fires to n8n on every new ticket creation. The payload includes ticket subject, full body text, requester email, organization name, and any existing tags. The n8n Webhook node receives this and passes it downstream. A duplicate-prevention check using n8n's built-in deduplication prevents re-processing if Zendesk retries."
+    description: "Classify Zendesk tickets by urgency with GPT-4o and auto-route: auto-reply low, queue medium, Slack+PagerDuty for critical."
     tool: "n8n Webhook node"
   - stepNumber: 2
     title: "GPT-4o Classifies Urgency and Sentiment"
-    description: "The ticket subject, body, and customer tier (looked up from the Zendesk organization's custom field 'Customer Plan') are injected into the classification prompt. GPT-4o returns a structured JSON object with urgency level, sentiment, category, a draft response (for low/medium), and an escalation reason (for high/critical). The n8n JSON Parse node validates the structure."
+    description: "Classify Zendesk tickets by urgency with GPT-4o and auto-route: auto-reply low, queue medium, Slack+PagerDuty for critical."
     tool: "n8n OpenAI node"
   - stepNumber: 3
     title: "Route by Urgency: Low — Auto-Reply via Zendesk"
-    description: "For 'low' urgency tickets, the n8n Zendesk node posts GPT-4o's suggested_response as a public reply and sets the ticket status to 'Pending'. A tag 'ai-responded' is added for tracking. This handles ~40% of typical ticket volume without human intervention."
+    description: "Classify Zendesk tickets by urgency with GPT-4o and auto-route: auto-reply low, queue medium, Slack+PagerDuty for critical."
     tool: "n8n Zendesk node"
   - stepNumber: 4
     title: "Route by Urgency: Medium — Assign to Queue"
-    description: "For 'medium' urgency tickets, the workflow assigns the ticket to the appropriate Zendesk group based on the 'category' field (e.g., 'billing' → Billing Team group, 'bug' → Tier 2 group). A Zendesk internal note is added with the full GPT-4o classification JSON so agents have context before opening the ticket."
+    description: "Classify Zendesk tickets by urgency with GPT-4o and auto-route: auto-reply low, queue medium, Slack+PagerDuty for critical."
     tool: "n8n Zendesk node"
   - stepNumber: 5
     title: "Route by Urgency: High/Critical — Alert Slack and PagerDuty"
-    description: "For 'high' or 'critical' tickets, the workflow fires in parallel: a Slack message posts to #support-escalations with ticket link, urgency, sentiment, and escalation reason; a PagerDuty incident is created (critical only) with the ticket URL and escalation reason as the incident summary. The Zendesk ticket is tagged 'escalated' and assigned to the senior support queue."
+    description: "Classify Zendesk tickets by urgency with GPT-4o and auto-route: auto-reply low, queue medium, Slack+PagerDuty for critical."
     tool: "n8n Slack node + HTTP Request node (PagerDuty API)"
 ---
 

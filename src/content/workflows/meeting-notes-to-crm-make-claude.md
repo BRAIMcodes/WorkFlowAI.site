@@ -1,6 +1,6 @@
 ---
 title: "Auto-Sync Meeting Notes to CRM with Make.com and Claude"
-description: "After every Google Calendar meeting, Claude extracts action items and deal updates from Notion notes and syncs them directly to HubSpot."
+description: "Sync Google Calendar meeting notes to HubSpot automatically — Claude extracts action items, deal updates, and next steps."
 timeSaved: "3 hours/week"
 costToRun: "~$0.02 per meeting"
 primaryTool: "Make.com"
@@ -76,23 +76,23 @@ difficulty: "Beginner"
 steps:
   - stepNumber: 1
     title: "Google Calendar Meeting End Trigger"
-    description: "Make.com watches your Google Calendar for meeting end events. A filter checks that the meeting title or description contains a linked Notion page URL (teams add Notion note links to calendar invites as part of their meeting prep workflow). Meetings without a Notion link are skipped."
+    description: "Sync Google Calendar meeting notes to HubSpot automatically — Claude extracts action items, deal updates, and next steps."
     tool: "Make.com Google Calendar module"
   - stepNumber: 2
     title: "Fetch Notion Meeting Notes"
-    description: "Make.com's Notion module retrieves the page content from the linked Notion URL. The full page text (blocks flattened to plain text) is passed downstream. If the Notion page content is fewer than 50 words, a filter stops the scenario â€” indicating notes weren't taken â€” and a Slack notification alerts the meeting organizer."
+    description: "Sync Google Calendar meeting notes to HubSpot automatically — Claude extracts action items, deal updates, and next steps."
     tool: "Make.com Notion module"
   - stepNumber: 3
     title: "Claude Extracts Action Items, Next Steps, and Deal Changes"
-    description: "The meeting title, date, attendees (from Google Calendar), and Notion notes are injected into the Claude 3.5 Sonnet prompt via an HTTP Request module (Anthropic API). Claude returns a structured JSON object with action items, deal stage changes, amount updates, key concerns, follow-up date, and a CRM-ready summary."
+    description: "Sync Google Calendar meeting notes to HubSpot automatically — Claude extracts action items, deal updates, and next steps."
     tool: "Make.com HTTP Request (Anthropic API)"
   - stepNumber: 4
     title: "Update HubSpot Deal and Contact Notes"
-    description: "Make.com's HubSpot module looks up the deal using the company name extracted from the meeting title (using a naming convention like 'Meeting Title â€” Company Name'). It updates the deal's stage if a stage change was detected, updates the deal amount if specified, and adds a new engagement note to the associated contact with the contact_notes_summary."
+    description: "Sync Google Calendar meeting notes to HubSpot automatically — Claude extracts action items, deal updates, and next steps."
     tool: "Make.com HubSpot module"
   - stepNumber: 5
     title: "Create Follow-Up Tasks in HubSpot"
-    description: "For each action item returned by Claude with an identified owner, Make.com creates a HubSpot Task associated with the deal. Task name, due date, and priority are mapped directly from Claude's JSON output. The task owner is matched to a HubSpot user by name using a pre-configured lookup table."
+    description: "Sync Google Calendar meeting notes to HubSpot automatically — Claude extracts action items, deal updates, and next steps."
     tool: "Make.com HubSpot module (iterator)"
 ---
 

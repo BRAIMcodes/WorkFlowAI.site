@@ -1,6 +1,6 @@
 ---
 title: "CRM Deal Intelligence Enricher with Make.com and Claude"
-description: "Automatically write a Claude-powered deal brief for every new HubSpot deal using Clearbit company intelligence — buying signals, risks, and suggested approach."
+description: "Enrich every new HubSpot deal with Clearbit company intelligence and a Claude-written deal brief with buying signals."
 timeSaved: "5 hours/week"
 costToRun: "~$0.03 per deal"
 primaryTool: "Make.com"
@@ -131,23 +131,23 @@ difficulty: "Intermediate"
 steps:
   - stepNumber: 1
     title: "New Deal Created in HubSpot"
-    description: "Make.com's HubSpot Watch Records module triggers the moment a new deal is created, capturing deal name, value, stage, associated contact, and company."
+    description: "Enrich every new HubSpot deal with Clearbit company intelligence and a Claude-written deal brief with buying signals."
     tool: "HubSpot"
   - stepNumber: 2
     title: "Clearbit Fetches Company Intelligence"
-    description: "Clearbit's Company Enrichment API is called with the contact's email domain. Returns funding history, headcount, headcount growth, technology stack, and revenue estimate."
+    description: "Enrich every new HubSpot deal with Clearbit company intelligence and a Claude-written deal brief with buying signals."
     tool: "Clearbit"
   - stepNumber: 3
     title: "Claude Writes Deal Intelligence Brief"
-    description: "All company intelligence and deal context is passed to Claude 3.5 Sonnet, which writes a deal-specific brief covering buying signals, competitive context, risk factors, and suggested approach."
+    description: "Enrich every new HubSpot deal with Clearbit company intelligence and a Claude-written deal brief with buying signals."
     tool: "Claude 3.5 Sonnet"
   - stepNumber: 4
     title: "Attach Brief to HubSpot Deal"
-    description: "The Claude-generated brief is saved as a HubSpot Note attached to the deal record, where the account owner sees it immediately upon opening the deal."
+    description: "Enrich every new HubSpot deal with Clearbit company intelligence and a Claude-written deal brief with buying signals."
     tool: "HubSpot"
   - stepNumber: 5
     title: "Notify Account Owner in Slack"
-    description: "A direct Slack message is sent to the deal owner containing the company name, deal value, risk score summary, and a direct link to the HubSpot deal."
+    description: "Enrich every new HubSpot deal with Clearbit company intelligence and a Claude-written deal brief with buying signals."
     tool: "Slack"
 ---
 

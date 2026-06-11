@@ -1,6 +1,6 @@
 ---
 title: "Automated Interview Scheduling and Prep with Zapier and GPT-4"
-description: "Automatically send personalized interview invites with Calendly links when a candidate advances in Greenhouse, using GPT-4o and Gmail."
+description: "Automatically send personalized interview invites with Calendly links when candidates advance in Greenhouse ATS via Zapier."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"
 primaryTool: "Zapier"
@@ -78,23 +78,23 @@ difficulty: "Beginner"
 steps:
   - stepNumber: 1
     title: "Detect Stage Change in Greenhouse ATS"
-    description: "Zapier's Greenhouse trigger fires whenever a candidate is moved to a new stage. The Zap filters specifically for stages that require scheduling (e.g., 'Phone Screen', 'Technical Interview', 'Final Round') using Zapier's built-in Filter step. Other stage changes are ignored."
+    description: "Automatically send personalized interview invites with Calendly links when candidates advance in Greenhouse ATS via Zapier."
     tool: "Zapier Greenhouse trigger"
   - stepNumber: 2
     title: "GPT-4o Writes Personalized Interview Invite"
-    description: "Candidate name, job title, department, hiring manager, and interview format are pulled from the Greenhouse payload and injected into the GPT-4o prompt via Zapier's OpenAI action. The model returns a complete, personalized email body under 180 words."
+    description: "Automatically send personalized interview invites with Calendly links when candidates advance in Greenhouse ATS via Zapier."
     tool: "Zapier OpenAI action"
   - stepNumber: 3
     title: "Auto-Attach Calendly Link"
-    description: "A Zapier Lookup Table or Formatter step maps the Greenhouse job ID or department to the correct Calendly scheduling link (each hiring manager has their own Calendly URL stored in the lookup table). This ensures candidates always receive the right link for the right interviewer."
+    description: "Automatically send personalized interview invites with Calendly links when candidates advance in Greenhouse ATS via Zapier."
     tool: "Zapier Formatter (Lookup Table)"
   - stepNumber: 4
     title: "Send via Gmail with Recruiter's Address"
-    description: "Zapier's Gmail action sends the GPT-4o-generated email from the recruiter's Gmail account (not a noreply address). The subject line is auto-generated as 'Your [Stage Name] with [Company Name] — [First Name]'. A BCC copy is sent to the recruiter's inbox for tracking."
+    description: "Automatically send personalized interview invites with Calendly links when candidates advance in Greenhouse ATS via Zapier."
     tool: "Zapier Gmail action"
   - stepNumber: 5
     title: "Log Activity in Greenhouse"
-    description: "Zapier's Greenhouse 'Create Note' action logs the sent email text back to the candidate's profile as an activity note, timestamped and tagged with the stage name. This keeps the ATS as the system of record without manual copy-paste by recruiters."
+    description: "Automatically send personalized interview invites with Calendly links when candidates advance in Greenhouse ATS via Zapier."
     tool: "Zapier Greenhouse action"
 ---
 

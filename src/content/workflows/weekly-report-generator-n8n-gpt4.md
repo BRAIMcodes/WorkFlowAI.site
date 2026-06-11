@@ -1,6 +1,6 @@
 ---
 title: "Automated Weekly Business Report Generator with n8n"
-description: "Pull GA4, HubSpot, and Stripe data every Friday and let GPT-4o write a leadership-ready executive summary posted to Slack and saved to Google Docs."
+description: "Compile GA4 traffic, HubSpot pipeline, and Stripe revenue into a GPT-4o executive summary every Friday automatically."
 timeSaved: "4 hours/week"
 costToRun: "~$0.06 per report"
 primaryTool: "n8n"
@@ -139,31 +139,31 @@ difficulty: "Intermediate"
 steps:
   - stepNumber: 1
     title: "Friday 4PM Schedule Trigger"
-    description: "n8n Schedule node fires every Friday at 16:00 in your company's local timezone. Reports arrive before end-of-day so the exec team can review over the weekend."
+    description: "Compile GA4 traffic, HubSpot pipeline, and Stripe revenue into a GPT-4o executive summary every Friday automatically."
     tool: "n8n"
   - stepNumber: 2
     title: "Fetch Traffic Data from Google Analytics 4"
-    description: "GA4 Data API call retrieves the current week's sessions, new users, session duration, and channel breakdown using a date range of Monday to today."
+    description: "Compile GA4 traffic, HubSpot pipeline, and Stripe revenue into a GPT-4o executive summary every Friday automatically."
     tool: "Google Analytics"
   - stepNumber: 3
     title: "Fetch Pipeline Data from HubSpot"
-    description: "Two HubSpot API calls: one for deals created this week, one for deals closed won/lost. Calculates pipeline value added and win rate on the fly using n8n expressions."
+    description: "Compile GA4 traffic, HubSpot pipeline, and Stripe revenue into a GPT-4o executive summary every Friday automatically."
     tool: "HubSpot"
   - stepNumber: 4
     title: "Fetch Revenue Data from Stripe"
-    description: "Stripe API retrieves current MRR (via subscription list), new subscriptions created this week, cancellations, and expansion revenue from upgrade events."
+    description: "Compile GA4 traffic, HubSpot pipeline, and Stripe revenue into a GPT-4o executive summary every Friday automatically."
     tool: "n8n"
   - stepNumber: 5
     title: "GPT-4o Writes Executive Summary"
-    description: "All three data sets are combined into the prompt template. GPT-4o returns a formatted markdown report with highlights, watch items, metric table, analysis, and next week's focus."
+    description: "Compile GA4 traffic, HubSpot pipeline, and Stripe revenue into a GPT-4o executive summary every Friday automatically."
     tool: "GPT-4o"
   - stepNumber: 6
     title: "Post to #leadership Slack Channel"
-    description: "A formatted Slack message posts the highlights section and watch items with a link to the full Google Doc. The full report is intentionally not dumped into Slack."
+    description: "Compile GA4 traffic, HubSpot pipeline, and Stripe revenue into a GPT-4o executive summary every Friday automatically."
     tool: "Slack"
   - stepNumber: 7
     title: "Create Google Doc with Full Report"
-    description: "The complete GPT-4o markdown report is saved to a 'Weekly Reports' Google Drive folder as a dated Google Doc, creating a searchable archive."
+    description: "Compile GA4 traffic, HubSpot pipeline, and Stripe revenue into a GPT-4o executive summary every Friday automatically."
     tool: "Google Docs"
 ---
 

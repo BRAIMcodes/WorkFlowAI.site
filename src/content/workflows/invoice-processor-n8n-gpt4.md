@@ -1,6 +1,6 @@
 ---
 title: "Automated Invoice Processing and Approval with n8n and GPT-4o"
-description: "Automatically extract vendor, amount, and line items from email-attached invoices, create QuickBooks draft bills, and route high-value invoices for Slack approval."
+description: "Extract invoice data from email PDFs with GPT-4o, create QuickBooks draft bills, and route approvals via Slack."
 timeSaved: "5 hours/week"
 costToRun: "~$0.04 per invoice"
 primaryTool: "n8n"
@@ -70,31 +70,31 @@ difficulty: "Intermediate"
 steps:
   - stepNumber: 1
     title: "Detect Invoice Email Attachment in Gmail"
-    description: "The n8n Gmail trigger polls every 15 minutes for emails with PDF attachments in a designated Gmail label (e.g., 'invoices'). A filter checks that the email subject or body contains keywords like 'invoice', 'bill', 'payment due', or 'remittance'. Emails with no PDF attachment or non-invoice keywords are skipped. The Gmail label is applied by a separate Gmail filter rule set up manually once."
+    description: "Extract invoice data from email PDFs with GPT-4o, create QuickBooks draft bills, and route approvals via Slack."
     tool: "n8n Gmail trigger node"
   - stepNumber: 2
     title: "Save PDF to Google Drive"
-    description: "The PDF attachment binary data is extracted and saved to a Google Drive folder named 'Invoices/[YEAR]/[MONTH]' using n8n's Google Drive node. The filename is standardized as `[YYYY-MM-DD]_[sender-domain]_[original-filename].pdf`. The Drive file ID is stored for later reference in the QuickBooks bill."
+    description: "Extract invoice data from email PDFs with GPT-4o, create QuickBooks draft bills, and route approvals via Slack."
     tool: "n8n Google Drive node"
   - stepNumber: 3
     title: "Extract Invoice Text via PDF Parsing"
-    description: "The PDF is sent to a PDF-to-text extraction service (the blueprint uses the free PDF.co API, which includes 1,000 pages/month free). The returned plain text is cleaned by an n8n Code node that removes repeated whitespace, page headers/footers, and common OCR artifacts. The cleaned text is then passed to GPT-4o."
+    description: "Extract invoice data from email PDFs with GPT-4o, create QuickBooks draft bills, and route approvals via Slack."
     tool: "n8n HTTP Request node (PDF.co API) + Code node"
   - stepNumber: 4
     title: "GPT-4o Extracts Vendor, Amount, Due Date, and Line Items"
-    description: "The cleaned invoice text is sent to GPT-4o with the extraction prompt. The model returns a structured JSON object with all invoice fields. The n8n JSON Parse node validates the structure. If extraction_confidence is 'low', the workflow routes to a separate Slack alert requesting human review rather than continuing to QuickBooks."
+    description: "Extract invoice data from email PDFs with GPT-4o, create QuickBooks draft bills, and route approvals via Slack."
     tool: "n8n OpenAI node"
   - stepNumber: 5
     title: "Validate Against Vendor Database"
-    description: "The extracted vendor_name is checked against a vendor allowlist stored in a Google Sheet ('Approved Vendors'). The n8n Google Sheets node does a VLOOKUP-style search for the vendor name (fuzzy matching via an n8n Code node using Levenshtein distance). Unknown vendors are flagged for review; known vendors have their QuickBooks Vendor ID retrieved for the next step."
+    description: "Extract invoice data from email PDFs with GPT-4o, create QuickBooks draft bills, and route approvals via Slack."
     tool: "n8n Google Sheets node + Code node"
   - stepNumber: 6
     title: "Create QuickBooks Draft Bill"
-    description: "Using the QuickBooks Online API (via n8n HTTP Request), the workflow creates a draft Bill object with the vendor ID, invoice number, invoice date, due date, line items, and total amount. The bill is created in 'Draft' status — it does not post to the ledger until approved. The Google Drive file URL is added to the bill's AttachableRef for document linking."
+    description: "Extract invoice data from email PDFs with GPT-4o, create QuickBooks draft bills, and route approvals via Slack."
     tool: "n8n HTTP Request node (QuickBooks API)"
   - stepNumber: 7
     title: "Slack Approval Request for Amounts Over $1,000"
-    description: "An n8n IF node checks whether total_amount > 1000. If yes, a formatted Slack message is sent to #finance-approvals containing: vendor name, invoice number, due date, total amount, line item summary, and a direct link to the QuickBooks draft bill and Google Drive PDF. Invoices under $1,000 are auto-approved and the bill status is updated to 'Approved' via a follow-up API call."
+    description: "Extract invoice data from email PDFs with GPT-4o, create QuickBooks draft bills, and route approvals via Slack."
     tool: "n8n Slack node"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Turn Any Podcast or Meeting Transcript into a Blog Post with Make.com"
-description: "Automatically convert Rev.com transcripts into structured, SEO-ready blog posts in Google Docs using Make.com and GPT-4o."
+description: "Convert any podcast transcript or meeting recording into a full SEO blog post automatically using GPT-4o and Make.com."
 timeSaved: "4 hours/week"
 costToRun: "~$0.05 per post"
 primaryTool: "Make.com"
@@ -60,23 +60,23 @@ difficulty: "Beginner"
 steps:
   - stepNumber: 1
     title: "Trigger from Rev.com Transcript Webhook"
-    description: "Rev.com fires a webhook when a transcript order is complete. The Make.com webhook module receives the payload containing the transcript text, order ID, and metadata. A filter ensures only 'transcription' type orders (not caption orders) proceed."
+    description: "Convert any podcast transcript or meeting recording into a full SEO blog post automatically using GPT-4o and Make.com."
     tool: "Make.com Webhooks"
   - stepNumber: 2
     title: "Clean and Chunk the Transcript"
-    description: "A Make.com Text Parser module strips speaker labels (e.g., 'John:'), timestamps, and filler words using regex. If the transcript exceeds 3,000 words, a custom iterator splits it into chunks. For most podcasts under 60 minutes, the full transcript fits in a single GPT-4o call."
+    description: "Convert any podcast transcript or meeting recording into a full SEO blog post automatically using GPT-4o and Make.com."
     tool: "Make.com Text Parser"
   - stepNumber: 3
     title: "Generate Blog Post Structure with GPT-4o"
-    description: "The cleaned transcript is sent to GPT-4o with the system prompt. This first pass generates the title, meta description, H2 outline, and key quotes to feature — giving GPT-4o a structural plan before writing prose."
+    description: "Convert any podcast transcript or meeting recording into a full SEO blog post automatically using GPT-4o and Make.com."
     tool: "Make.com OpenAI module"
   - stepNumber: 4
     title: "Write the Full Blog Post"
-    description: "A second GPT-4o call receives both the transcript and the generated outline, writing the full post section by section. Using two sequential calls dramatically improves coherence and reduces hallucination versus single-shot generation."
+    description: "Convert any podcast transcript or meeting recording into a full SEO blog post automatically using GPT-4o and Make.com."
     tool: "Make.com OpenAI module"
   - stepNumber: 5
     title: "Create Google Doc and Update Notion"
-    description: "Make.com creates a new Google Doc in your designated 'Blog Drafts' folder with the post title as the filename and the full post body. It simultaneously creates a linked Notion page in your editorial calendar database with status 'Draft', the Doc URL, and the Rev.com order ID for traceability."
+    description: "Convert any podcast transcript or meeting recording into a full SEO blog post automatically using GPT-4o and Make.com."
     tool: "Make.com Google Docs + Notion modules"
 ---
 

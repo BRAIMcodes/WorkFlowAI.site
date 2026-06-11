@@ -1,6 +1,6 @@
 ---
 title: "AI Social Media Content Scheduler with n8n and OpenAI"
-description: "Turn a single Notion content calendar entry into LinkedIn, Twitter, and Instagram posts automatically, then schedule them via Buffer."
+description: "Auto-generate and schedule LinkedIn, Twitter, and Instagram posts from your Notion content calendar using GPT-4o and Buffer."
 timeSaved: "6 hours/week"
 costToRun: "~$0.02 per post"
 primaryTool: "n8n"
@@ -52,19 +52,19 @@ difficulty: "Beginner"
 steps:
   - stepNumber: 1
     title: "Read from Notion Content Calendar"
-    description: "A scheduled n8n trigger runs every weekday morning at 7 AM. It queries a Notion database filtered by a 'Status = Ready to Post' property, pulling the topic, target audience, key message, and scheduled date fields."
+    description: "Auto-generate and schedule LinkedIn, Twitter, and Instagram posts from your Notion content calendar using GPT-4o and Buffer."
     tool: "n8n Notion node"
   - stepNumber: 2
     title: "Generate 3 Platform-Specific Post Variations with GPT-4o"
-    description: "The content fields are injected into the system prompt. GPT-4o returns a structured JSON object with LinkedIn, Twitter, and Instagram versions. The n8n JSON Parse node extracts each field separately for downstream routing."
+    description: "Auto-generate and schedule LinkedIn, Twitter, and Instagram posts from your Notion content calendar using GPT-4o and Buffer."
     tool: "n8n OpenAI node"
   - stepNumber: 3
     title: "Schedule Posts to Buffer"
-    description: "Three parallel n8n HTTP Request nodes send each platform post to the Buffer API with the scheduled publish time derived from the Notion 'Scheduled Date' field. Buffer handles platform-specific publishing queues."
+    description: "Auto-generate and schedule LinkedIn, Twitter, and Instagram posts from your Notion content calendar using GPT-4o and Buffer."
     tool: "n8n HTTP Request node (Buffer API)"
   - stepNumber: 4
     title: "Log Results to Google Sheets"
-    description: "After successful scheduling, the n8n Google Sheets node appends a row logging the Notion page ID, all three post texts, the scheduled date, Buffer post IDs, and a timestamp. This audit trail is used for performance tracking."
+    description: "Auto-generate and schedule LinkedIn, Twitter, and Instagram posts from your Notion content calendar using GPT-4o and Buffer."
     tool: "n8n Google Sheets node"
 ---
 
