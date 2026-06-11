@@ -240,7 +240,7 @@ const trustLogos = ['n8n', 'Make.com', 'Claude', 'ChatGPT', 'Zapier'];
               <Icon name={step.icon} class="w-4 h-4 text-gray-400 group-hover:text-indigo-400 transition-colors" />
             </div>
             <h3 class="text-base font-bold text-white mb-2">{step.title}</h3>
-            <p class="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+            <p class="text-sm text-slate-300 leading-relaxed">{step.desc}</p>
           </div>
         ))}
       </div>
@@ -283,7 +283,7 @@ const trustLogos = ['n8n', 'Make.com', 'Claude', 'ChatGPT', 'Zapier'];
               <h3 class="text-sm font-bold text-white mb-1 group-hover:text-indigo-300 transition-colors">
                 {cat.name}
               </h3>
-              <p class="text-[11px] text-gray-600 leading-relaxed mb-3">
+              <p class="text-[11px] text-slate-300 leading-relaxed mb-3">
                 {cat.desc}
               </p>
 
@@ -291,9 +291,9 @@ const trustLogos = ['n8n', 'Make.com', 'Claude', 'ChatGPT', 'Zapier'];
               {cat.workflows.length > 0 && (
                 <ul class="space-y-1.5 mb-3">
                   {cat.workflows.map(wf => (
-                    <li class="flex items-start gap-1.5 text-[10px] text-gray-500 leading-tight">
+                    <li class="flex items-start gap-1.5 text-[10px] text-slate-400 leading-tight">
                       <span class="text-indigo-500/60 mt-0.5 flex-shrink-0">→</span>
-                      <span class="line-clamp-1 group-hover:text-gray-400 transition-colors">{wf.data.title.replace(/with (n8n|Make\.com|Zapier|GPT-4o|Claude|OpenAI|GPT-4).*/i, '').trim()}</span>
+                      <span class="line-clamp-1 group-hover:text-slate-300 transition-colors">{wf.data.title.replace(/with (n8n|Make\.com|Zapier|GPT-4o|Claude|OpenAI|GPT-4).*/i, '').trim()}</span>
                     </li>
                   ))}
                 </ul>
@@ -301,7 +301,7 @@ const trustLogos = ['n8n', 'Make.com', 'Claude', 'ChatGPT', 'Zapier'];
             </div>
 
             <div class="flex items-center justify-between mt-2">
-              <span class="text-[10px] text-gray-600">{cat.count} recipe{cat.count !== 1 ? 's' : ''}</span>
+              <span class="text-[10px] text-slate-400 font-semibold">{cat.count} recipe{cat.count !== 1 ? 's' : ''}</span>
               <span class="text-xs text-indigo-400 font-bold group-hover:text-indigo-300 flex items-center gap-1 transition-colors">
                 Browse
                 <Icon name="arrow-right" class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
@@ -361,7 +361,7 @@ const trustLogos = ['n8n', 'Make.com', 'Claude', 'ChatGPT', 'Zapier'];
                 </h3>
 
                 <!-- Description -->
-                <p class="text-xs text-gray-500 leading-relaxed mb-4 line-clamp-2">
+                <p class="text-xs text-slate-300 leading-relaxed mb-4 line-clamp-2">
                   {item.data.description}
                 </p>
 

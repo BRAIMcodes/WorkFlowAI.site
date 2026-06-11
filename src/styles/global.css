@@ -503,14 +503,14 @@ input:focus, select:focus, textarea:focus {
 
 .step-connector {
   position: absolute;
-  left: -1px;
-  top: 28px;
+  left: 15px;
+  top: 36px;
   bottom: -24px;
   width: 2px;
   background: linear-gradient(
     to bottom,
-    rgba(99, 102, 241, 0.55),
-    rgba(99, 102, 241, 0.2),
+    rgba(99, 102, 241, 0.45),
+    rgba(99, 102, 241, 0.1),
     transparent
   );
 }
@@ -660,19 +660,43 @@ input:focus, select:focus, textarea:focus {
    ========================================================= */
 
 .category-card-sales {
-  border-top: 2px solid rgba(245, 158, 11, 0.4);
+  border: 1px solid var(--border-subtle) !important;
 }
+.category-card-sales:hover {
+  border-color: rgba(245, 158, 11, 0.45) !important;
+  box-shadow: 0 8px 32px -8px rgba(245, 158, 11, 0.15) !important;
+}
+
 .category-card-marketing {
-  border-top: 2px solid rgba(244, 63, 94, 0.4);
+  border: 1px solid var(--border-subtle) !important;
 }
+.category-card-marketing:hover {
+  border-color: rgba(244, 63, 94, 0.45) !important;
+  box-shadow: 0 8px 32px -8px rgba(244, 63, 94, 0.15) !important;
+}
+
 .category-card-recruiting {
-  border-top: 2px solid rgba(124, 58, 237, 0.4);
+  border: 1px solid var(--border-subtle) !important;
 }
+.category-card-recruiting:hover {
+  border-color: rgba(124, 58, 237, 0.45) !important;
+  box-shadow: 0 8px 32px -8px rgba(124, 58, 237, 0.15) !important;
+}
+
 .category-card-customer-support {
-  border-top: 2px solid rgba(14, 165, 233, 0.4);
+  border: 1px solid var(--border-subtle) !important;
 }
+.category-card-customer-support:hover {
+  border-color: rgba(14, 165, 233, 0.45) !important;
+  box-shadow: 0 8px 32px -8px rgba(14, 165, 233, 0.15) !important;
+}
+
 .category-card-operations {
-  border-top: 2px solid rgba(16, 185, 129, 0.4);
+  border: 1px solid var(--border-subtle) !important;
+}
+.category-card-operations:hover {
+  border-color: rgba(16, 185, 129, 0.45) !important;
+  box-shadow: 0 8px 32px -8px rgba(16, 185, 129, 0.15) !important;
 }
 
 /* =========================================================
@@ -1019,4 +1043,71 @@ article.glass-card:hover {
   opacity: 1;
   transform: translateY(0);
   position: relative;
+}
+
+/* =========================================================
+   CUSTOM HIGH-CONTRAST CHECKBOX & RADIO FILTER STYLES
+   ========================================================= */
+
+input[type="radio"], input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--surface-3);
+  border: 1px solid var(--text-muted);
+  border-radius: var(--radius-sm);
+  width: 14px;
+  height: 14px;
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-top: 1px;
+}
+
+input[type="radio"] {
+  border-radius: var(--radius-full);
+}
+
+input[type="radio"]::before, input[type="checkbox"]::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: var(--brand-indigo);
+  box-shadow: 0 0 6px var(--brand-indigo);
+}
+
+input[type="checkbox"]::before {
+  border-radius: 1px;
+  width: 5px;
+  height: 5px;
+}
+
+input[type="radio"]:checked::before, input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:checked, input[type="checkbox"]:checked {
+  border-color: var(--brand-indigo);
+  background-color: rgba(99, 102, 241, 0.15);
+}
+
+input[type="radio"]:hover, input[type="checkbox"]:hover {
+  border-color: var(--text-secondary);
+}
+
+/* Faint Border Glow on Hover for All Cards */
+.glass-card {
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base) !important;
+}
+
+.glass-card:hover {
+  border-color: rgba(99, 102, 241, 0.35) !important;
+  box-shadow: 
+    0 8px 32px -8px rgba(99, 102, 241, 0.2),
+    0 0 0 0.5px rgba(99, 102, 241, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
 }

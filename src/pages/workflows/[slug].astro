@@ -147,23 +147,24 @@ const difficultyClass =
           <p class="text-xs text-gray-500">Import this verified blueprint directly into your {data.primaryTool} dashboard.</p>
         </div>
         <div class="flex flex-wrap gap-2.5 flex-shrink-0 w-full sm:w-auto">
-          <!-- Copy JSON Button -->
+          <!-- Copy JSON Button (Primary CTA) -->
           <button 
             id="copyJsonBtn" 
             data-url={data.downloadUrl}
-            class="btn btn-secondary text-xs flex-1 sm:flex-none justify-center gap-1.5 py-3 sm:py-2.5 px-4"
+            class="btn btn-primary text-xs flex-1 sm:flex-none justify-center gap-1.5 py-3 sm:py-2.5 px-5 shadow-[0_4px_16px_-4px_rgba(99,102,241,0.4)]"
             aria-label={`Copy JSON blueprint for ${data.title}`}
           >
-            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2" />
+            <svg class="w-3.5 h-3.5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
             <span id="copyJsonLabel">Copy JSON</span>
           </button>
           
+          <!-- Download Blueprint Button (Secondary CTA) -->
           <a 
             href={data.downloadUrl} 
             download 
-            class="btn btn-primary text-xs flex-1 sm:flex-none justify-center gap-1.5 py-3 sm:py-2.5 px-4"
+            class="btn btn-secondary text-xs flex-1 sm:flex-none justify-center gap-1.5 py-3 sm:py-2.5 px-4"
             aria-label={`Download ${data.primaryTool} blueprint for ${data.title}`}
           >
             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -195,9 +196,9 @@ const difficultyClass =
     <section class="mb-14" aria-labelledby="steps-heading">
       <h2 id="steps-heading" class="font-display text-xl md:text-2xl font-bold text-white mb-8">Execution Steps</h2>
 
-      <ol class="relative space-y-4 ml-3" aria-label="Workflow steps">
+      <ol class="relative space-y-6 ml-4" aria-label="Workflow steps">
         {data.steps.map((step: any, index: number) => (
-          <li class="relative pl-12" itemscope itemtype="https://schema.org/HowToStep">
+          <li class="relative pl-12 pb-6 group" itemscope itemtype="https://schema.org/HowToStep">
             <!-- Timeline left-side vertical line -->
             {index < data.steps.length - 1 && (
               <div class="step-connector" aria-hidden="true"></div>
@@ -205,26 +206,24 @@ const difficultyClass =
             
             <!-- Step number bubble -->
             <div 
-              class="absolute left-0 top-0 w-8 h-8 bg-gradient-to-br from-indigo-600 to-violet-600 rounded-xl flex items-center justify-center text-[10px] font-extrabold text-white shadow-lg shadow-indigo-600/20 z-10"
+              class="absolute left-0 top-0.5 w-8 h-8 bg-[#0B0F19] border-2 border-slate-700 rounded-full flex items-center justify-center text-xs font-bold text-slate-300 group-hover:border-indigo-500 group-hover:text-white transition-all duration-300 z-10"
               aria-hidden="true"
             >
               {step.stepNumber}
             </div>
 
-            <!-- Step card -->
-            <div class="glass-card rounded-2xl p-5 border border-white/4 group">
-              <div class="flex items-start justify-between gap-4">
-                <div class="flex-1 min-w-0">
-                  <h3 class="text-sm font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors" itemprop="name">
-                    {step.title}
-                  </h3>
-                  <p class="text-xs text-gray-500 leading-relaxed" itemprop="text">
-                    {step.description}
-                  </p>
-                </div>
+            <!-- Step text -->
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+              <div class="flex-1 min-w-0">
+                <h3 class="text-sm font-bold text-white mb-1.5 group-hover:text-indigo-400 transition-colors" itemprop="name">
+                  {step.title}
+                </h3>
+                <p class="text-xs text-slate-400 leading-relaxed max-w-2xl" itemprop="text">
+                  {step.description}
+                </p>
               </div>
               {step.tool && (
-                <div class="mt-3 pt-3 border-t border-white/4">
+                <div class="flex-shrink-0 self-start md:self-center">
                   <span class="badge badge-slate"><Icon name="wrench" class="w-3 h-3" /> {step.tool}</span>
                 </div>
               )}
@@ -449,10 +448,15 @@ const difficultyClass =
         .then(text => {
           navigator.clipboard.writeText(text).then(() => {
             if (label) label.textContent = 'Copied!';
-            copyJsonBtn.classList.add('border-emerald-500/25', 'text-emerald-400');
+            
+            // satisfies copy micro-interactions (scale down and green background)
+            copyJsonBtn.classList.remove('btn-primary');
+            copyJsonBtn.classList.add('bg-emerald-600', 'border-emerald-500', 'text-white', 'scale-95');
+            
             setTimeout(() => {
               if (label) label.textContent = 'Copy JSON';
-              copyJsonBtn.classList.remove('border-emerald-500/25', 'text-emerald-400');
+              copyJsonBtn.classList.add('btn-primary');
+              copyJsonBtn.classList.remove('bg-emerald-600', 'border-emerald-500', 'text-white', 'scale-95');
             }, 2000);
           });
         })
