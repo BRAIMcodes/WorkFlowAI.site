@@ -1,0 +1,68 @@
+---
+title: "Siri AI Agent_ Apple Shortcuts powered voice template"
+description: "Integrate OpenAI and Sticky Note and Respond To Webhook and LangChain and Webhook automatically using n8n."
+timeSaved: "5 hours/week"
+costToRun: "Free Tier"
+primaryTool: "n8n"
+connectedApps:
+  - "OpenAI"
+  - "Sticky Note"
+  - "Respond To Webhook"
+  - "LangChain"
+  - "Webhook"
+downloadUrl: "https://raw.githubusercontent.com/enescingoz/awesome-n8n-templates/main/Other_Integrations_and_Use_Cases/Siri AI Agent_ Apple Shortcuts powered voice template.json"
+category: "Operations"
+persona: "Operations Managers"
+difficulty: "Intermediate"
+lastVerified: "June 2026"
+setupTime: "~20 minutes"
+verifiedBy: "WorkflowAI Team"
+tags:
+  - "Operations"
+  - "n8n"
+  - "OpenAI"
+  - "Sticky Note"
+steps:
+  - stepNumber: 1
+    title: "OpenAI Chat Model"
+    description: "Processes and automates operations via the OpenAI integration."
+    tool: "OpenAI"
+  - stepNumber: 2
+    title: "Sticky Note"
+    description: "Processes and automates operations via the Sticky Note integration."
+    tool: "Sticky Note"
+  - stepNumber: 3
+    title: "Respond to Apple Shortcut"
+    description: "Processes and automates operations via the Respond To Webhook integration."
+    tool: "Respond To Webhook"
+  - stepNumber: 4
+    title: "Sticky Note1"
+    description: "Processes and automates operations via the Sticky Note integration."
+    tool: "Sticky Note"
+  - stepNumber: 5
+    title: "Sticky Note2"
+    description: "Processes and automates operations via the Sticky Note integration."
+    tool: "Sticky Note"
+  - stepNumber: 6
+    title: "AI Agent"
+    description: "Processes and automates operations via the LangChain integration."
+    tool: "LangChain"
+  - stepNumber: 7
+    title: "When called by Apple Shortcut"
+    description: "Processes and automates operations via the Webhook integration."
+    tool: "Webhook"
+---
+
+Optimize your tech stack and automate workflows between OpenAI, Sticky Note, Respond To Webhook, LangChain, Webhook natively. 
+
+This verified AI automation workflow blueprint runs on n8n and enables real-time data syncs, content generation, or notifications without writing complex code.
+
+### Prerequisites
+1. An **n8n** account (self-hosted or Cloud)
+2. API access keys and credentials for: OpenAI, Sticky Note, Respond To Webhook, LangChain, Webhook
+
+### Setup Guide
+1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
+3. **Configure Node Credentials:** Double-click each node representing OpenAI, Sticky Note, Respond To Webhook, LangChain, Webhook and authenticate with your account credentials.
+4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.

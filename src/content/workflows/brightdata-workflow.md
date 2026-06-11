@@ -1,0 +1,70 @@
+---
+title: "Brightdata Workflow"
+description: "Automated workflow: Brightdata Workflow. This workflow processes data and performs automated tasks."
+timeSaved: "5 hours/week"
+costToRun: "Free Tier"
+primaryTool: "n8n"
+connectedApps:
+  - "Bright Data"
+  - "Document Generator"
+  - "Split Out"
+  - "Email Send"
+  - "Form"
+  - "Html"
+  - "Form Trigger"
+downloadUrl: "https://raw.githubusercontent.com/Zie619/n8n-workflows/main/workflows/Form/0805_Form_Html_Create_Triggered.json"
+category: "Operations"
+persona: "Operations Managers"
+difficulty: "Intermediate"
+lastVerified: "June 2026"
+setupTime: "~20 minutes"
+verifiedBy: "WorkflowAI Team"
+tags:
+  - "Operations"
+  - "n8n"
+  - "Bright Data"
+  - "Document Generator"
+steps:
+  - stepNumber: 1
+    title: "Get MediaMarkt Offers Website"
+    description: "Processes and automates operations via the Bright Data integration."
+    tool: "Bright Data"
+  - stepNumber: 2
+    title: "Create HTML for Email"
+    description: "Processes and automates operations via the Document Generator integration."
+    tool: "Document Generator"
+  - stepNumber: 3
+    title: "Extract items from results"
+    description: "Processes and automates operations via the Split Out integration."
+    tool: "Split Out"
+  - stepNumber: 4
+    title: "Notify End User by Email"
+    description: "Processes and automates operations via the Email Send integration."
+    tool: "Email Send"
+  - stepNumber: 5
+    title: "Show Form Results Page"
+    description: "Processes and automates operations via the Form integration."
+    tool: "Form"
+  - stepNumber: 6
+    title: "Extract Body and Title from Website"
+    description: "Processes and automates operations via the Html integration."
+    tool: "Html"
+  - stepNumber: 7
+    title: "When User Completes Form"
+    description: "Processes and automates operations via the Form Trigger integration."
+    tool: "Form Trigger"
+---
+
+Optimize your tech stack and automate workflows between Bright Data, Document Generator, Split Out, Email Send, Form, Html, Form Trigger natively. 
+
+This verified AI automation workflow blueprint runs on n8n and enables real-time data syncs, content generation, or notifications without writing complex code.
+
+### Prerequisites
+1. An **n8n** account (self-hosted or Cloud)
+2. API access keys and credentials for: Bright Data, Document Generator, Split Out, Email Send, Form, Html, Form Trigger
+
+### Setup Guide
+1. **Download Blueprint:** Click the download button above to get the raw JSON file from the GitHub repository.
+2. **Import to n8n:** Open your n8n canvas, click settings in the top-right, and choose **Import from File**. Upload the JSON file.
+3. **Configure Node Credentials:** Double-click each node representing Bright Data, Document Generator, Split Out, Email Send, Form, Html, Form Trigger and authenticate with your account credentials.
+4. **Activate Scenario:** Test the flow manually by clicking **Test step** on the trigger, verify the output, then toggle the workflow to **Active** to start running.
