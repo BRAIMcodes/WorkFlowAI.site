@@ -1,5 +1,5 @@
 ---
-title: "Bulk CRM Data Enrichment with Apollo.io and n8n"
+title: "Bulk CRM Data Enrichment With Apollo.io And n8n"
 description: "Automatically enrich stale HubSpot contacts with updated titles, phone, LinkedIn, and company data using Apollo.io and n8n."
 timeSaved: "6 hours/week"
 costToRun: "Free Tier (Apollo free plan)"

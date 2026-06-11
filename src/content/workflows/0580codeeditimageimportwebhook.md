@@ -1,5 +1,5 @@
 ---
-title: "0580_Code_Editimage_Import_Webhook"
+title: "Code Editimage Import Webhook"
 description: "Integrate Manual Trigger and Gemini and Sort and Sticky Note and Google Drive and Http Request and Compression and Code and Edit Image and Aggregate and Lang..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Travel AssistantAgent"
+title: "Travel Assistant Agent"
 description: "Automated workflow: Travel AssistantAgent. This workflow integrates 11 different services: webhook, stickyNote, textSplitterRecursiveCharacterTextSplitter, l..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

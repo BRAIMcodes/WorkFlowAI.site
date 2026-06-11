@@ -1,5 +1,5 @@
 ---
-title: "Automated Interview Scheduling and Prep with Zapier and GPT-4"
+title: "Automated Interview Scheduling And Prep With Zapier And GPT 4"
 description: "Automatically send personalized interview invites with Calendly links when candidates advance in Greenhouse ATS via Zapier."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

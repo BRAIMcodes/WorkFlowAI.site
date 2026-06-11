@@ -1,5 +1,5 @@
 ---
-title: "1405_Wait_Splitout_Automation_Webhook"
+title: "Wait Splitout Automation Webhook"
 description: "Integrate Gmail and Http Request and Set and Split Out and Code and Html and Sticky Note and OpenAI and Schedule Trigger and Wait and If automatically using..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

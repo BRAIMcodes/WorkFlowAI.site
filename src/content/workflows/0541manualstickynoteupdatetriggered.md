@@ -1,5 +1,5 @@
 ---
-title: "0541_Manual_Stickynote_Update_Triggered"
+title: "Manual Stickynote Update Triggered"
 description: "Integrate Manual Trigger and Google Drive and Edit Image and LangChain and Sticky Note and Merge and Set and OpenAI automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

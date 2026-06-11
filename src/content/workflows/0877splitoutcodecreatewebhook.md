@@ -1,5 +1,5 @@
 ---
-title: "0877_Splitout_Code_Create_Webhook"
+title: "Splitout Code Create Webhook"
 description: "Integrate Sticky Note and LangChain and Execute Workflow Trigger and Switch and Http Request and Code and Aggregate and If and Set and OpenAI and Split Out a..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

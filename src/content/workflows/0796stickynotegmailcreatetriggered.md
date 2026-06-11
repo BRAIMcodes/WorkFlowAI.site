@@ -1,5 +1,5 @@
 ---
-title: "0796_Stickynote_Gmail_Create_Triggered"
+title: "Stickynote Gmail Create Triggered"
 description: "Integrate Gmail and LangChain and Gemini and Email Send and Send In Blue and If and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "1293_Wait_Splitout_Automation_Webhook"
+title: "Wait Splitout Automation Webhook"
 description: "Integrate Manual Trigger and Http Request and Split Out and LangChain and Set and Execute Workflow Trigger and Execution Data and Switch and Gemini and Filte..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

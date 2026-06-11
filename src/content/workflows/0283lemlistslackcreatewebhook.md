@@ -1,5 +1,5 @@
 ---
-title: "0283_Lemlist_Slack_Create_Webhook"
+title: "Lemlist Slack Create Webhook"
 description: "Integrate Lemlist and HubSpot and Switch and Merge and Http Request and Slack and Lemlist Trigger and OpenAI automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

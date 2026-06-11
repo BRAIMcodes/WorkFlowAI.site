@@ -1,5 +1,5 @@
 ---
-title: "LLM Chaining examples"
+title: "LLM Chaining Examples"
 description: "Automated workflow: LLM Chaining examples. This workflow integrates 15 different services: webhook, stickyNote, httpRequest, markdown, agent. It contains 44..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

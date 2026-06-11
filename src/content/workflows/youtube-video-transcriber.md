@@ -1,5 +1,5 @@
 ---
-title: "YouTube Video Transcriber"
+title: "You Tube Video Transcriber"
 description: "Automated workflow: YouTube Video Transcriber. This workflow integrates 9 different services: stickyNote, httpRequest, code, respondToWebhook, set. It contai..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

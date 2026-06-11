@@ -1,5 +1,5 @@
 ---
-title: "2045_Schedule_HTTP_Create_Scheduled"
+title: "Schedule HTTP Create Scheduled"
 description: "Integrate Html and Http Request and Schedule Trigger and Gemini and Set and LangChain and Sticky Note and Microsoft Outlook automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

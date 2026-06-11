@@ -1,5 +1,5 @@
 ---
-title: "0755_Stickynote_Send_Webhook"
+title: "Stickynote Send Webhook"
 description: "Integrate OpenAI and LangChain and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

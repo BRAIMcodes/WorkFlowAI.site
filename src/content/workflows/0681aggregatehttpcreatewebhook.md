@@ -1,5 +1,5 @@
 ---
-title: "0681_Aggregate_HTTP_Create_Webhook"
+title: "Aggregate HTTP Create Webhook"
 description: "Integrate OpenAI and LangChain and Sticky Note and Execute Workflow Trigger and Set and Switch and Aggregate and Merge and If and Airtable and Http Request a..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

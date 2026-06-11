@@ -1,5 +1,5 @@
 ---
-title: "1321_Filter_Manual_Send_Triggered"
+title: "Filter Manual Send Triggered"
 description: "Integrate Manual Trigger and Sticky Note and Ollama and Microsoft Outlook and Split In Batches and Markdown and Set and Filter and If and LangChain and Merge..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

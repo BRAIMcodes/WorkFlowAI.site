@@ -1,5 +1,5 @@
 ---
-title: "AI chat with any data source (using the n8n workflow tool)"
+title: "AI Chat With Any Data Source (using The n8n Workflow Tool)"
 description: "Integrate LangChain and Execute Workflow Trigger and Hacker News and Set and OpenAI and Code and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

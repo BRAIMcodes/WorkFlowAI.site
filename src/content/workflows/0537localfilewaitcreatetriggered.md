@@ -1,5 +1,5 @@
 ---
-title: "0537_Localfile_Wait_Create_Triggered"
+title: "Localfile Wait Create Triggered"
 description: "Integrate Local File Trigger and LangChain and Set and Merge and Split Out and Split In Batches and Aggregate and Wait and Convert To File and Read Write Fil..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

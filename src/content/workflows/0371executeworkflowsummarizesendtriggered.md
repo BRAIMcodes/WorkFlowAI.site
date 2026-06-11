@@ -1,5 +1,5 @@
 ---
-title: "0371_Executeworkflow_Summarize_Send_Triggered"
+title: "Executeworkflow Summarize Send Triggered"
 description: "Integrate Sticky Note and LangChain and OpenAI and Execute Workflow Trigger and If and Code and Summarize and Set and Merge automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

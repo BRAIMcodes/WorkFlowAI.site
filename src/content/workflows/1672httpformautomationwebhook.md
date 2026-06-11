@@ -1,5 +1,5 @@
 ---
-title: "1672_HTTP_Form_Automation_Webhook"
+title: "HTTP Form Automation Webhook"
 description: "Integrate Sticky Note and Http Request and LangChain and Form Trigger and OpenAI automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

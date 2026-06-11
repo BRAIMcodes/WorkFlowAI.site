@@ -1,5 +1,5 @@
 ---
-title: "0839_GoogleDrive_GoogleSheets_Create_Triggered"
+title: "Google Drive Google Sheets Create Triggered"
 description: "Integrate Sticky Note and Facebook Graph Api and Google Drive and OpenAI and Google Sheets automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

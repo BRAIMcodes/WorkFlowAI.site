@@ -1,5 +1,5 @@
 ---
-title: "0828_Extractfromfile_Gmail_Send_Triggered"
+title: "Extractfromfile Gmail Send Triggered"
 description: "Integrate If and Code and LangChain and OpenAI and Gmail and Sticky Note and Extract From File automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "AI Powered Web Scraping with Jina, Google Sheets and OpenAI _ the EASY way"
+title: "AI Powered Web Scraping With Jina, Google Sheets And Open AI The Easy Way"
 description: "Integrate Manual Trigger and Split Out and Google Sheets and OpenAI and Http Request and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

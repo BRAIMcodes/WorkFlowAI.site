@@ -1,5 +1,5 @@
 ---
-title: "Printify Automation - Update Title and Description - AlexK1919"
+title: "Printify Automation Update Title And Description Alex K1919"
 description: "Automated workflow: Printify Automation - Update Title and Description - AlexK1919. This workflow integrates 14 different services: stickyNote, httpRequest,..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

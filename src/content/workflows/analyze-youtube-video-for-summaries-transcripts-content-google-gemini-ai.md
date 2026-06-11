@@ -1,5 +1,5 @@
 ---
-title: "🎥 Analyze YouTube Video for Summaries, Transcripts & Content + Google Gemini AI"
+title: "🎥 Analyze You Tube Video For Summaries, Transcripts & Content + Google Gemini AI"
 description: "Automated workflow: 🎥 Analyze YouTube Video for Summaries, Transcripts & Content + Google Gemini AI. This workflow integrates 11 different services: stickyN..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

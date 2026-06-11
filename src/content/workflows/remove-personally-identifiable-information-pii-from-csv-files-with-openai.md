@@ -1,5 +1,5 @@
 ---
-title: "Remove Personally Identifiable Information (PII) from CSV Files with OpenAI"
+title: "Remove Personally Identifiable Information (pii) From Csv Files With Open AI"
 description: "Integrate Google Drive and Extract From File and OpenAI and Merge and Split Out and Code and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

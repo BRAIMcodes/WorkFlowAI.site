@@ -1,5 +1,5 @@
 ---
-title: "Make OpenAI Citation for File Retrieval RAG"
+title: "Make Open AI Citation For File Retrieval RAG"
 description: "Automated workflow: Make OpenAI Citation for File Retrieval RAG. This workflow integrates 11 different services: stickyNote, httpRequest, markdown, code, spl..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

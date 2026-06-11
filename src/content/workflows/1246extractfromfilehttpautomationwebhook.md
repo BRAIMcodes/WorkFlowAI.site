@@ -1,5 +1,5 @@
 ---
-title: "1246_Extractfromfile_HTTP_Automation_Webhook"
+title: "Extractfromfile HTTP Automation Webhook"
 description: "Integrate Http Request and LangChain and Extract From File and OpenAI and Supabase and If and Split In Batches and Manual Trigger and Aggregate and Switch an..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

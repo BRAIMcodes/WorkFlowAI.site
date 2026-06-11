@@ -1,5 +1,5 @@
 ---
-title: "YogiAI"
+title: "Yogi AI"
 description: "Automated workflow: YogiAI. This workflow integrates 14 different services: stickyNote, httpRequest, code, scheduleTrigger, agent. It contains 44 nodes and f..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

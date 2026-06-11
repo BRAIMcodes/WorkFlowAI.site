@@ -1,5 +1,5 @@
 ---
-title: "Send specific PDF attachments from Gmail to Google Drive using OpenAI"
+title: "Send Specific PDF Attachments From Gmail To Google Drive Using Open AI"
 description: "Integrate Read P D F and Sticky Note and Set and If and Code and OpenAI and Merge and Google Drive and Gmail automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

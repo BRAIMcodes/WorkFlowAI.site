@@ -1,5 +1,5 @@
 ---
-title: "0878_HTTP_Aggregate_Import_Webhook"
+title: "HTTP Aggregate Import Webhook"
 description: "Integrate Execute Workflow Trigger and Switch and Sticky Note and LangChain and Http Request and Set and Aggregate automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

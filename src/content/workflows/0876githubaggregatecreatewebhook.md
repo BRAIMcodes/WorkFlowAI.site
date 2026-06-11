@@ -1,5 +1,5 @@
 ---
-title: "0876_GitHub_Aggregate_Create_Webhook"
+title: "Git Hub Aggregate Create Webhook"
 description: "Integrate Execute Workflow Trigger and Switch and Sticky Note and LangChain and Set and Aggregate and Http Request and GitHub automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

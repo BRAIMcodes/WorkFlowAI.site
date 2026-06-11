@@ -1,5 +1,5 @@
 ---
-title: "1256_Openai_Form_Automation_Triggered"
+title: "Openai Form Automation Triggered"
 description: "Integrate Sticky Note and Google Sheets and Merge and OpenAI and Form Trigger automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0898_Code_Schedule_Create_Scheduled"
+title: "Code Schedule Create Scheduled"
 description: "Integrate LangChain and Sticky Note and OpenAI and Html and Email Send and Code and Set and Http Request and Execute Workflow Trigger and Merge and Schedule..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

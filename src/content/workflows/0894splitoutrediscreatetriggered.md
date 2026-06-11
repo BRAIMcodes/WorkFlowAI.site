@@ -1,5 +1,5 @@
 ---
-title: "0894_Splitout_Redis_Create_Triggered"
+title: "Splitout Redis Create Triggered"
 description: "Integrate Set and Execute Workflow Trigger and Switch and N8n and Filter and Redis and Split Out and Aggregate and LangChain and If and Sticky Note and Execu..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "AI Data Extraction with Dynamic Prompts and Airtable"
+title: "AI Data Extraction With Dynamic Prompts And Airtable"
 description: "Integrate Switch and Code and Http Request and Extract From File and Set and Split In Batches and LangChain and Filter and Sticky Note and OpenAI and Airtabl..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

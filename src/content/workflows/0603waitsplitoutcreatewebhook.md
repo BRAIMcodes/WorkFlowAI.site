@@ -1,5 +1,5 @@
 ---
-title: "0603_Wait_Splitout_Create_Webhook"
+title: "Wait Splitout Create Webhook"
 description: "Integrate OpenAI and Code and Split Out and Http Request and Convert To File and Manual Trigger and Aggregate and Google Drive and Sticky Note and Wait and S..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

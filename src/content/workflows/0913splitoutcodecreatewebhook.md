@@ -1,5 +1,5 @@
 ---
-title: "0913_Splitout_Code_Create_Webhook"
+title: "Splitout Code Create Webhook"
 description: "Integrate LangChain and Http Request and Sticky Note and Manual Trigger and Split In Batches and Google Sheets and Code and Split Out automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

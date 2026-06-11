@@ -1,5 +1,5 @@
 ---
-title: "Enhance Chat Responses with Real-Time Search Data via Bright Data & Gemini AI"
+title: "Enhance Chat Responses With Real Time Search Data Via Bright Data & Gemini AI"
 description: "Automated workflow: Enhance Chat Responses with Real-Time Search Data via Bright Data & Gemini AI. This workflow integrates 11 different services: stickyNote..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Text to Speech (OpenAI)"
+title: "Text To Speech (open Ai)"
 description: "Automated workflow: Text to Speech (OpenAI). This workflow integrates 5 different services: stickyNote, httpRequest, set, stopAndError, manualTrigger. It con..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Dynamically generate HTML page from user request using OpenAI Structured Output"
+title: "Dynamically Generate HTML Page From User Request Using Open AI Structured Output"
 description: "Automated workflow: Dynamically generate HTML page from user request using OpenAI Structured Output. This workflow integrates 7 different services: webhook,..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

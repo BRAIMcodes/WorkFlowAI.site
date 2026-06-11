@@ -1,5 +1,5 @@
 ---
-title: "0778_HTTP_Stickynote_Import_Webhook"
+title: "HTTP Stickynote Import Webhook"
 description: "Integrate Http Request and Manual Trigger and Google Drive and Set and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

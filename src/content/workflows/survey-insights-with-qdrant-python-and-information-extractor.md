@@ -1,5 +1,5 @@
 ---
-title: "Survey Insights with Qdrant, Python and Information Extractor"
+title: "Survey Insights With Qdrant, Python And Information Extractor"
 description: "Integrate OpenAI and LangChain and Set and Google Sheets and Split Out and Http Request and Split In Batches and Execute Workflow and Execute Workflow Trigge..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

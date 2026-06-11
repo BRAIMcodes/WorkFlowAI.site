@@ -1,5 +1,5 @@
 ---
-title: "New OpenAI Image Generation"
+title: "New Open AI Image Generation"
 description: "Automated workflow: New OpenAI Image Generation. This workflow integrates 7 different services: convertToFile, stickyNote, httpRequest, splitOut, set. It con..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

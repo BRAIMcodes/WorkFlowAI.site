@@ -1,5 +1,5 @@
 ---
-title: "0429_Splitout_GoogleCalendar_Send_Webhook"
+title: "Splitout Google Calendar Send Webhook"
 description: "Integrate Set and Schedule Trigger and Google Calendar and Split Out and Http Request and Clearbit and Gmail and Merge and Html and Sticky Note and Filter an..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

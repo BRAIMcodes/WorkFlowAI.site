@@ -1,5 +1,5 @@
 ---
-title: "1584_Manual_HTTP_Automation_Webhook"
+title: "Manual HTTP Automation Webhook"
 description: "Integrate Manual Trigger and Function Item and Http Request and Airtable and Set automatically using n8n."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

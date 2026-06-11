@@ -1,5 +1,5 @@
 ---
-title: "1434_Strapi_Splitout_Automation_Webhook"
+title: "Strapi Splitout Automation Webhook"
 description: "Integrate Manual Trigger and OpenAI and Set and Split In Batches and Split Out and Aggregate and Google Drive and Google Sheets and Execute Workflow Trigger..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

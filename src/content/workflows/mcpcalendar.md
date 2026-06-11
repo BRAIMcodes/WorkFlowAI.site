@@ -1,5 +1,5 @@
 ---
-title: "MCP_CALENDAR"
+title: "Mcp Calendar"
 description: "Integrate LangChain and Google Calendar automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

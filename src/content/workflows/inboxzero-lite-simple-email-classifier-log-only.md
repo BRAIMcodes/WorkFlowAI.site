@@ -1,5 +1,5 @@
 ---
-title: "InboxZero Lite — Simple Email Classifier (Log Only)"
+title: "Inbox Zero Lite — Simple Email Classifier (log Only)"
 description: "Integrate Gmail and Code and OpenAI and Google Sheets and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

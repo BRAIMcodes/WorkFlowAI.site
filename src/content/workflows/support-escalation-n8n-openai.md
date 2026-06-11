@@ -1,5 +1,5 @@
 ---
-title: "AI Customer Support Ticket Escalation with n8n and OpenAI"
+title: "AI Customer Support Ticket Escalation With n8n And Open AI"
 description: "Classify Zendesk tickets by urgency with GPT-4o and auto-route: auto-reply low, queue medium, Slack+PagerDuty for critical."
 timeSaved: "4 hours/week"
 costToRun: "~$0.01 per ticket"
@@ -64,8 +64,8 @@ promptVariables:
     placeholder: "Reporting, Billing, API, etc."
     defaultValue: "Unknown"
 downloadUrl: "/blueprints/support-escalation-n8n-openai.json"
-category: "Customer Support"
-persona: "Support Teams"
+category: "Sales"
+persona: "Sales Reps"
 difficulty: "Intermediate"
 steps:
   - stepNumber: 1

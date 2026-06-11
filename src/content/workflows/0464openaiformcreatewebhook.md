@@ -1,5 +1,5 @@
 ---
-title: "0464_Openai_Form_Create_Webhook"
+title: "Openai Form Create Webhook"
 description: "Integrate Set and OpenAI and Respond To Webhook and Form Trigger automatically using n8n."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

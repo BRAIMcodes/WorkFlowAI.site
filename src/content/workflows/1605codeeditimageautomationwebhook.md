@@ -1,5 +1,5 @@
 ---
-title: "1605_Code_Editimage_Automation_Webhook"
+title: "Code Editimage Automation Webhook"
 description: "Integrate Manual Trigger and Set and Http Request and Code and Edit Image and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

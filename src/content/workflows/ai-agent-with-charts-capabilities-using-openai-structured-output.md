@@ -1,5 +1,5 @@
 ---
-title: "AI Agent with charts capabilities using OpenAI Structured Output"
+title: "AI Agent With Charts Capabilities Using Open AI Structured Output"
 description: "Automated workflow: AI Agent with charts capabilities using OpenAI Structured Output. This workflow integrates 10 different services: stickyNote, httpRequest..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

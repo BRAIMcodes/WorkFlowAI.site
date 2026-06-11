@@ -1,5 +1,5 @@
 ---
-title: "modelo do chatbot"
+title: "Modelo Do Chatbot"
 description: "Automated workflow: modelo do chatbot. This workflow integrates 9 different services: stickyNote, toolHttpRequest, mySqlTool, memoryPostgresChat, set. It con..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "AI Resume Screener with Make.com and Claude"
+title: "AI Resume Screener With Make.com And Claude"
 description: "Download the Make.com blueprint to scan PDF resumes uploaded to Google Drive, screen them against a job description, and log them in Google Sheets."
 timeSaved: "8 hours/week"
 costToRun: "~$0.03 per candidate"

@@ -1,5 +1,5 @@
 ---
-title: "0826_Wait_Splitout_Automation_Webhook"
+title: "Wait Splitout Automation Webhook"
 description: "Integrate Http Request and Execute Workflow Trigger and Code and If and Sticky Note and Wait and Manual Trigger and Set and Aggregate and Execute Workflow an..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

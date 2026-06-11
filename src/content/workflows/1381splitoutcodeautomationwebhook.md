@@ -1,5 +1,5 @@
 ---
-title: "1381_Splitout_Code_Automation_Webhook"
+title: "Splitout Code Automation Webhook"
 description: "Integrate Sticky Note and Webhook and Code and Split Out and OpenAI and Http Request and If and LangChain automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

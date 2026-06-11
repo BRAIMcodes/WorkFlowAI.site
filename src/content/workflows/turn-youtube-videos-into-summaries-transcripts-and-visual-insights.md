@@ -1,5 +1,5 @@
 ---
-title: "Turn YouTube Videos into Summaries, Transcripts, and Visual Insights"
+title: "Turn You Tube Videos Into Summaries, Transcripts, And Visual Insights"
 description: "Automated workflow: Turn YouTube Videos into Summaries, Transcripts, and Visual Insights. This workflow integrates 8 different services: stickyNote, httpRequ..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Obsidian Notes Read Aloud: Available as a Podcast Feed"
+title: "Obsidian Notes Read Aloud: Available As A Podcast Feed"
 description: "Automated workflow: Obsidian Notes Read Aloud: Available as a Podcast Feed. This workflow integrates 11 different services: webhook, stickyNote, httpRequest,..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

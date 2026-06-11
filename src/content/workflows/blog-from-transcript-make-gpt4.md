@@ -1,5 +1,5 @@
 ---
-title: "Turn Any Podcast or Meeting Transcript into a Blog Post with Make.com"
+title: "Turn Any Podcast Or Meeting Transcript Into A Blog Post With Make.com"
 description: "Convert any podcast transcript or meeting recording into a full SEO blog post automatically using GPT-4o and Make.com."
 timeSaved: "4 hours/week"
 costToRun: "~$0.05 per post"

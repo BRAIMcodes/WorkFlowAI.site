@@ -1,5 +1,5 @@
 ---
-title: "0473_Limit_Code_Create_Scheduled"
+title: "Limit Code Create Scheduled"
 description: "Integrate Sticky Note and Gmail and Http Request and Code and Set and Markdown and OpenAI and Limit and Split In Batches and Schedule Trigger automatically u..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

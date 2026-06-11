@@ -1,5 +1,5 @@
 ---
-title: "0646_Extractfromfile_Form_Export_Webhook"
+title: "Extractfromfile Form Export Webhook"
 description: "Integrate Extract From File and OpenAI and LangChain and Form Trigger and Airtable and Http Request and Form and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

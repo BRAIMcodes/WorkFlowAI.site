@@ -1,5 +1,5 @@
 ---
-title: "spy tool"
+title: "Spy Tool"
 description: "Automated workflow: spy tool. This workflow integrates 9 different services: stickyNote, httpRequest, formTrigger, wait, code. It contains 21 nodes and follo..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

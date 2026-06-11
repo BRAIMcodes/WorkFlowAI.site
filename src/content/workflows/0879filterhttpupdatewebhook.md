@@ -1,5 +1,5 @@
 ---
-title: "0879_Filter_HTTP_Update_Webhook"
+title: "Filter HTTP Update Webhook"
 description: "Integrate Execute Workflow Trigger and Switch and Sticky Note and LangChain and Http Request and Google Sheets and Filter and Aggregate and Set and If automa..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

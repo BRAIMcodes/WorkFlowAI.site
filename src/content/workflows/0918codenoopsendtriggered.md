@@ -1,5 +1,5 @@
 ---
-title: "0918_Code_Noop_Send_Triggered"
+title: "Code Noop Send Triggered"
 description: "Integrate OpenAI and If and Google Sheets and Code and Split In Batches and Sticky Note and Execute Workflow Trigger and LangChain automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "LinkedIn Web Scraping with Bright Data MCP Server & Google Gemini"
+title: "Linked In Web Scraping With Bright Data Mcp Server & Google Gemini"
 description: "Automated workflow: LinkedIn Web Scraping with Bright Data MCP Server & Google Gemini. This workflow integrates 13 different services: stickyNote, httpReques..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

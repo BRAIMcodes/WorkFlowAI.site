@@ -1,5 +1,5 @@
 ---
-title: "CoinMarketCap_DEXScan_Agent_Tool"
+title: "Coin Market Cap Dexscan Agent Tool"
 description: "Automated workflow: CoinMarketCap_DEXScan_Agent_Tool. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChat..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

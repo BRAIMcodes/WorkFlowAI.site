@@ -1,5 +1,5 @@
 ---
-title: "Auto-label incoming Gmail messages with AI nodes"
+title: "Auto Label Incoming Gmail Messages With AI Nodes"
 description: "Integrate Gmail and Set and Split Out and Merge and Aggregate and LangChain and Sticky Note and OpenAI automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

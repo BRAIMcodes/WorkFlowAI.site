@@ -1,5 +1,5 @@
 ---
-title: "0472_Aggregate_Gmail_Create_Triggered"
+title: "Aggregate Gmail Create Triggered"
 description: "Integrate Sticky Note and Gmail and LangChain and OpenAI and Set and Split Out and Merge and Aggregate automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

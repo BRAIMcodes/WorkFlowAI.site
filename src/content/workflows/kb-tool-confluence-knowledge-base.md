@@ -1,5 +1,5 @@
 ---
-title: "KB Tool - Confluence Knowledge Base"
+title: "Kb Tool Confluence Knowledge Base"
 description: "Integrate Execute Workflow Trigger and Http Request and Set and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

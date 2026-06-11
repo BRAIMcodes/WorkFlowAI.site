@@ -1,5 +1,5 @@
 ---
-title: "0326_Manual_Stickynote_Send_Triggered"
+title: "Manual Stickynote Send Triggered"
 description: "Integrate Sticky Note and Manual Trigger and LangChain and Set and Google Drive and OpenAI automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

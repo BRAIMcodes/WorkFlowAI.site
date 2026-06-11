@@ -1,5 +1,5 @@
 ---
-title: "0840_Splitout_HTTP_Send_Webhook"
+title: "Splitout HTTP Send Webhook"
 description: "Integrate LangChain and OpenAI and Http Request and Set and Split Out and If and Aggregate and Sticky Note and Execute Workflow Trigger automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

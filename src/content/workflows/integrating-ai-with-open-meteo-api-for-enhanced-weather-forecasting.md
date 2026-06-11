@@ -1,5 +1,5 @@
 ---
-title: "Integrating AI with Open-Meteo API for Enhanced Weather Forecasting"
+title: "Integrating AI With Open Meteo API For Enhanced Weather Forecasting"
 description: "Automated workflow: Integrating AI with Open-Meteo API for Enhanced Weather Forecasting. This workflow integrates 7 different services: stickyNote, toolHttpR..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

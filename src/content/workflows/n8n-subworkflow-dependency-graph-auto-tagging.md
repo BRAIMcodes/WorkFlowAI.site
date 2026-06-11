@@ -1,5 +1,5 @@
 ---
-title: "n8n Subworkflow Dependency Graph & Auto-Tagging"
+title: "n8n Subworkflow Dependency Graph & Auto Tagging"
 description: "Automated workflow: n8n Subworkflow Dependency Graph & Auto-Tagging. This workflow integrates 17 different services: webhook, filter, httpRequest, stickyNote..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

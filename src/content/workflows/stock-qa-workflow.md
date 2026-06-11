@@ -1,5 +1,5 @@
 ---
-title: "Stock Q&A Workflow"
+title: "Stock Q&a Workflow"
 description: "Automated workflow: Stock Q&A Workflow. This workflow integrates 14 different services: webhook, stickyNote, textSplitterRecursiveCharacterTextSplitter, chai..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

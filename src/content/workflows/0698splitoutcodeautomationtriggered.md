@@ -1,5 +1,5 @@
 ---
-title: "0698_Splitout_Code_Automation_Triggered"
+title: "Splitout Code Automation Triggered"
 description: "Integrate Google Drive and Extract From File and OpenAI and Merge and Split Out and Code and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

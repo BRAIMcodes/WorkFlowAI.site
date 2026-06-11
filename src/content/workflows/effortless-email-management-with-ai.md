@@ -1,5 +1,5 @@
 ---
-title: "Effortless Email Management with AI"
+title: "Effortless Email Management With AI"
 description: "Automated workflow: Effortless Email Management with AI. This workflow integrates 19 different services: stickyNote, vectorStoreQdrant, lmChatOpenAi, emailSe..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

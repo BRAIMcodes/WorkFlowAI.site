@@ -1,5 +1,5 @@
 ---
-title: "CRM Deal Intelligence Enricher with Make.com and Claude"
+title: "CRM Deal Intelligence Enricher With Make.com And Claude"
 description: "Enrich every new HubSpot deal with Clearbit company intelligence and a Claude-written deal brief with buying signals."
 timeSaved: "5 hours/week"
 costToRun: "~$0.03 per deal"

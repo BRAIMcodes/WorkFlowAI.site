@@ -1,5 +1,5 @@
 ---
-title: "0672_Webhook_Schedule_Update_Webhook"
+title: "Webhook Schedule Update Webhook"
 description: "Integrate Manual Trigger and Sticky Note and LangChain and OpenAI and Switch and If and Split In Batches and N8n and Http Request and Webhook and Respond To..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0833_Splitout_Schedule_Create_Webhook"
+title: "Splitout Schedule Create Webhook"
 description: "Integrate Schedule Trigger and Microsoft Excel and Set and OpenAI and Aggregate and Split Out and Split In Batches and LangChain and Merge and Http Request a..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

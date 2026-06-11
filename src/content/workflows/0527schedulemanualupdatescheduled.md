@@ -1,5 +1,5 @@
 ---
-title: "0527_Schedule_Manual_Update_Scheduled"
+title: "Schedule Manual Update Scheduled"
 description: "Integrate Manual Trigger and Set and OpenAI and LangChain and Split In Batches and Google Sheets and Merge and Sticky Note and Schedule Trigger automatically..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0912_Schedule_Removeduplicates_Create_Scheduled"
+title: "Schedule Removeduplicates Create Scheduled"
 description: "Integrate Schedule Trigger and OpenAI and LangChain and Sticky Note and Markdown and Remove Duplicates and Gmail and Linear automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

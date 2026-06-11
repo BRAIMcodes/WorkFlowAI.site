@@ -1,5 +1,5 @@
 ---
-title: "Automated Content Generation & Publishing - Wordpress"
+title: "Automated Content Generation & Publishing Wordpress"
 description: "Automated workflow: Automated Content Generation & Publishing - Wordpress. This workflow integrates 10 different services: stickyNote, wordpress, httpRequest..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

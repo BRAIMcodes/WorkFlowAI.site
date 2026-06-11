@@ -1,5 +1,5 @@
 ---
-title: "1269_Stickynote_Automate_Triggered"
+title: "Stickynote Automate Triggered"
 description: "Integrate Sticky Note and LangChain and OpenAI automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

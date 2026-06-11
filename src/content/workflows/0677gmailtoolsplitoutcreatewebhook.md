@@ -1,5 +1,5 @@
 ---
-title: "0677_Gmailtool_Splitout_Create_Webhook"
+title: "Gmailtool Splitout Create Webhook"
 description: "Integrate LangChain and OpenAI and Gmail and Execute Workflow Trigger and Split Out and Airtable and Google Calendar and Webhook and Http Request and Sticky..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

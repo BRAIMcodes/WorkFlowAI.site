@@ -1,5 +1,5 @@
 ---
-title: "1587_Executecommand_Localfile_Automation_Triggered"
+title: "Executecommand Localfile Automation Triggered"
 description: "Integrate Local File Trigger and Execute Command and Set and LangChain and Sticky Note and If and Split Out automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "1718_Schedule_Filter_Automation_Scheduled"
+title: "Schedule Filter Automation Scheduled"
 description: "Integrate Todoist and Schedule Trigger and Sticky Note and Set and OpenAI and Filter automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

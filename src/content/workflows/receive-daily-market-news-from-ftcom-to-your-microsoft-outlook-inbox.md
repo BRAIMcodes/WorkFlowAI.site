@@ -1,5 +1,5 @@
 ---
-title: "📈 Receive Daily Market News from FT.com to your Microsoft outlook inbox"
+title: "📈 Receive Daily Market News From Ft.com To Your Microsoft Outlook Inbox"
 description: "Integrate Html and Http Request and Schedule Trigger and Gemini and Set and LangChain and Sticky Note and Microsoft Outlook automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

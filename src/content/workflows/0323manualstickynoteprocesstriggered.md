@@ -1,5 +1,5 @@
 ---
-title: "0323_Manual_Stickynote_Process_Triggered"
+title: "Manual Stickynote Process Triggered"
 description: "Integrate Manual Trigger and Sticky Note and LangChain and Set and OpenAI automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

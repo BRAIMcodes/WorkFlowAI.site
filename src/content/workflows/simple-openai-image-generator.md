@@ -1,5 +1,5 @@
 ---
-title: "Simple OpenAI Image Generator"
+title: "Simple Open AI Image Generator"
 description: "Automated workflow: Simple OpenAI Image Generator. This workflow integrates 6 different services: convertToFile, stickyNote, httpRequest, formTrigger, stopAn..."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

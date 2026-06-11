@@ -1,5 +1,5 @@
 ---
-title: "Code Review workflow"
+title: "Code Review Workflow"
 description: "Automated workflow: Code Review workflow. This workflow integrates 9 different services: stickyNote, httpRequest, code, agent, githubTrigger. It contains 18..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

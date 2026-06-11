@@ -1,5 +1,5 @@
 ---
-title: "1386_Limit_Code_Automation_Scheduled"
+title: "Limit Code Automation Scheduled"
 description: "Integrate Code and Http Request and Gmail and Schedule Trigger and Set and Markdown and Sticky Note and OpenAI and Split In Batches and Limit automatically u..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

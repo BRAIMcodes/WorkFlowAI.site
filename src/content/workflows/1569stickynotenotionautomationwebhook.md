@@ -1,5 +1,5 @@
 ---
-title: "1569_Stickynote_Notion_Automation_Webhook"
+title: "Stickynote Notion Automation Webhook"
 description: "Integrate OpenAI and LangChain and Notion and Set and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

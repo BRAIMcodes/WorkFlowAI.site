@@ -1,5 +1,5 @@
 ---
-title: "MiniBear Webhook"
+title: "Mini Bear Webhook"
 description: "Automated workflow: MiniBear Webhook. This workflow integrates 12 different services: webhook, stickyNote, httpRequest, microsoftToDo, agent. It contains 69..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

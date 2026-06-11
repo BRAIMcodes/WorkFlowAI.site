@@ -1,5 +1,5 @@
 ---
-title: "1268_Stickynote_Hackernews_Automate_Triggered"
+title: "Stickynote Hackernews Automate Triggered"
 description: "Integrate LangChain and Execute Workflow Trigger and Hacker News and Set and OpenAI and Code and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

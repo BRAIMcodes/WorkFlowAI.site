@@ -1,5 +1,5 @@
 ---
-title: "Automated Weekly Business Report Generator with n8n"
+title: "Automated Weekly Business Report Generator With n8n"
 description: "Compile GA4 traffic, HubSpot pipeline, and Stripe revenue into a GPT-4o executive summary every Friday automatically."
 timeSaved: "4 hours/week"
 costToRun: "~$0.06 per report"
@@ -133,8 +133,8 @@ promptVariables:
     placeholder: "Week of June 9, 2026"
     defaultValue: ""
 downloadUrl: "/blueprints/weekly-report-generator-n8n-gpt4.json"
-category: "Operations"
-persona: "Operations Teams"
+category: "Sales"
+persona: "Sales Reps"
 difficulty: "Intermediate"
 steps:
   - stepNumber: 1

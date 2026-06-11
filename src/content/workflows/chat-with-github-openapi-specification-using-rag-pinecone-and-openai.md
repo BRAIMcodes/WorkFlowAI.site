@@ -1,5 +1,5 @@
 ---
-title: "Chat with GitHub OpenAPI Specification using RAG (Pinecone and OpenAI)"
+title: "Chat With Git Hub Open API Specification Using RAG (pinecone And Open Ai)"
 description: "Automated workflow: Chat with GitHub OpenAPI Specification using RAG (Pinecone and OpenAI). This workflow integrates 13 different services: stickyNote, httpR..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

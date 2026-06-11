@@ -1,5 +1,5 @@
 ---
-title: "Structured Data Extract, Data Mining with Bright Data & Google Gemini"
+title: "Structured Data Extract, Data Mining With Bright Data & Google Gemini"
 description: "Automated workflow: Structured Data Extract, Data Mining with Bright Data & Google Gemini. This workflow integrates 10 different services: stickyNote, httpRe..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

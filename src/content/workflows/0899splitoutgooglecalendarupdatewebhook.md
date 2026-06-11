@@ -1,5 +1,5 @@
 ---
-title: "0899_Splitout_GoogleCalendar_Update_Webhook"
+title: "Splitout Google Calendar Update Webhook"
 description: "Integrate Http Request and Google Calendar and Filter and Split Out and Split In Batches and If and Aggregate and Set and Sticky Note and Markdown and Gmail..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "YouTube Video to SEO Blog Post with n8n and Llama 3"
+title: "You Tube Video To SEO Blog Post With n8n And Llama 3"
 description: "Download the n8n JSON blueprint to automatically extract transcripts from YouTube video URLs and rewrite them into long-form SEO blog posts."
 timeSaved: "4 hours/post"
 costToRun: "Free (using Llama 3 via Groq Free Tier)"

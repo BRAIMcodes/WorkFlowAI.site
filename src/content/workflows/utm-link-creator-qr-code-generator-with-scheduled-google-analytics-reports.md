@@ -1,5 +1,5 @@
 ---
-title: "UTM Link Creator & QR Code Generator with Scheduled Google Analytics Reports"
+title: "Utm Link Creator & Qr Code Generator With Scheduled Google Analytics Reports"
 description: "Automated workflow: UTM Link Creator & QR Code Generator with Scheduled Google Analytics Reports. This workflow integrates 13 different services: stickyNote,..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

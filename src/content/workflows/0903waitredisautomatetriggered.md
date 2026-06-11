@@ -1,5 +1,5 @@
 ---
-title: "0903_Wait_Redis_Automate_Triggered"
+title: "Wait Redis Automate Triggered"
 description: "Integrate Manual Trigger and OpenAI and Code and Redis and Set and If and LangChain and Wait and Execute Workflow Trigger and Sticky Note automatically using..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0905_Wait_Schedule_Create_Webhook"
+title: "Wait Schedule Create Webhook"
 description: "Integrate Schedule Trigger and Google Sheets and Set and LangChain and Gemini and Http Request and Facebook Graph Api and Wait and Sticky Note automatically..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Generate Company Stories from LinkedIn with Bright Data & Google Gemini"
+title: "Generate Company Stories From Linked In With Bright Data & Google Gemini"
 description: "Automated workflow: Generate Company Stories from LinkedIn with Bright Data & Google Gemini. This workflow integrates 12 different services: stickyNote, http..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

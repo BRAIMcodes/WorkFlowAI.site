@@ -1,5 +1,5 @@
 ---
-title: "YouTube to Airtable Anonym"
+title: "You Tube To Airtable Anonym"
 description: "Automated workflow: YouTube to Airtable Anonym. This workflow integrates 8 different services: stickyNote, httpRequest, airtable, code, scheduleTrigger. It c..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "AI Summarizer (LLM-ready)"
+title: "AI Summarizer (llm Ready)"
 description: "Integrate Webhook and Sticky Note and Set and OpenAI and Function and Respond To Webhook automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

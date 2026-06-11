@@ -1,5 +1,5 @@
 ---
-title: "0607_Splitout_Aggregate_Automate_Triggered"
+title: "Splitout Aggregate Automate Triggered"
 description: "Integrate Sticky Note and Anthropic and Split Out and Set and Aggregate and LangChain and Manual Trigger automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

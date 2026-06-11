@@ -1,5 +1,5 @@
 ---
-title: "0329_Manual_Send_Triggered"
+title: "Manual Send Triggered"
 description: "Integrate Manual Trigger and LangChain and Set and OpenAI automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Siri AI Agent_ Apple Shortcuts powered voice template"
+title: "Siri AI Agent Apple Shortcuts Powered Voice Template"
 description: "Integrate OpenAI and Sticky Note and Respond To Webhook and LangChain and Webhook automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "1332_Splitout_Zendesk_Send_Triggered"
+title: "Splitout Zendesk Send Triggered"
 description: "Integrate LangChain and OpenAI and Split Out and Extract From File and Manual Trigger and Split In Batches and Sticky Note and Google Drive and Zendesk autom..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

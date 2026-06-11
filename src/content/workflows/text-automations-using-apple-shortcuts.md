@@ -1,5 +1,5 @@
 ---
-title: "Text automations using Apple Shortcuts"
+title: "Text Automations Using Apple Shortcuts"
 description: "Integrate Sticky Note and Switch and Respond To Webhook and Webhook and OpenAI automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

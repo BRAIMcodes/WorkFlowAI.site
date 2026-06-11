@@ -1,5 +1,5 @@
 ---
-title: "🔍🛠️ Tavily Search & Extract - Template"
+title: "🔍🛠️ Tavily Search & Extract Template"
 description: "Automated workflow: 🔍🛠️ Tavily Search & Extract - Template. This workflow integrates 7 different services: stickyNote, httpRequest, chainLlm, set, stopAndE..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

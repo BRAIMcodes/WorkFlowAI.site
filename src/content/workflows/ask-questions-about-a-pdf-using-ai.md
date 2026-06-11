@@ -1,5 +1,5 @@
 ---
-title: "Ask questions about a PDF using AI"
+title: "Ask Questions About A PDF Using AI"
 description: "Integrate Google Drive and LangChain and OpenAI and Sticky Note and Manual Trigger and Set automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Compose reply draft in Gmail with OpenAI Assistant"
+title: "Compose Reply Draft In Gmail With Open AI Assistant"
 description: "Integrate Code and Http Request and Gmail and Schedule Trigger and Set and Markdown and Sticky Note and OpenAI and Split In Batches and Limit automatically u..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

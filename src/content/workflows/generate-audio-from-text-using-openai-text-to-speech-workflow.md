@@ -1,5 +1,5 @@
 ---
-title: "Generate audio from text using OpenAI - text-to-speech Workflow"
+title: "Generate Audio From Text Using Open AI Text To Speech Workflow"
 description: "Automated workflow: Generate audio from text using OpenAI - text-to-speech Workflow. This workflow integrates 5 different services: webhook, stickyNote, resp..."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

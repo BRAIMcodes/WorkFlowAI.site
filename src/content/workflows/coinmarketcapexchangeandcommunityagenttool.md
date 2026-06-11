@@ -1,5 +1,5 @@
 ---
-title: "CoinMarketCap_Exchange_and_Community_Agent_Tool"
+title: "Coin Market Cap Exchange And Community Agent Tool"
 description: "Automated workflow: CoinMarketCap_Exchange_and_Community_Agent_Tool. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopA..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

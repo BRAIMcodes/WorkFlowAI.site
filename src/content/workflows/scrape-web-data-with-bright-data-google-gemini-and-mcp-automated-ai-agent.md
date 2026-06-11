@@ -1,5 +1,5 @@
 ---
-title: "Scrape Web Data with Bright Data, Google Gemini and MCP Automated AI Agent"
+title: "Scrape Web Data With Bright Data, Google Gemini And Mcp Automated AI Agent"
 description: "Automated workflow: Scrape Web Data with Bright Data, Google Gemini and MCP Automated AI Agent. This workflow integrates 12 different services: stickyNote, h..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

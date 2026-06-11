@@ -1,5 +1,5 @@
 ---
-title: "0401_Code_Filter_Send_Triggered"
+title: "Code Filter Send Triggered"
 description: "Integrate Sticky Note and LangChain and OpenAI and Execute Workflow Trigger and Set and Google Sheets and Switch and Filter and Code automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

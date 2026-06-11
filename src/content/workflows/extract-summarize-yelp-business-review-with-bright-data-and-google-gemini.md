@@ -1,5 +1,5 @@
 ---
-title: "Extract & Summarize Yelp Business Review with Bright Data and Google Gemini"
+title: "Extract & Summarize Yelp Business Review With Bright Data And Google Gemini"
 description: "Automated workflow: Extract & Summarize Yelp Business Review with Bright Data and Google Gemini. This workflow integrates 10 different services: stickyNote,..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

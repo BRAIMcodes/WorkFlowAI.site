@@ -1,5 +1,5 @@
 ---
-title: "1736_Wait_Schedule_Automation_Webhook"
+title: "Wait Schedule Automation Webhook"
 description: "Integrate Google Drive and Gemini and LangChain and Sticky Note and Split In Batches and Wait and Http Request and Google Sheets and Merge and Schedule Trigg..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

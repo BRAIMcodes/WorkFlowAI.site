@@ -1,5 +1,5 @@
 ---
-title: "0577_Code_Editimage_Update_Webhook"
+title: "Code Editimage Update Webhook"
 description: "Integrate Manual Trigger and Gemini and LangChain and Edit Image and Code and Sticky Note and Merge and Http Request automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

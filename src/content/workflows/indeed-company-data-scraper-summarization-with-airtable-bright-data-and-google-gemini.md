@@ -1,5 +1,5 @@
 ---
-title: "Indeed Company Data Scraper & Summarization with Airtable, Bright Data and Google Gemini"
+title: "Indeed Company Data Scraper & Summarization With Airtable, Bright Data And Google Gemini"
 description: "Automated workflow: Indeed Company Data Scraper & Summarization with Airtable, Bright Data and Google Gemini. This workflow integrates 15 different services:..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

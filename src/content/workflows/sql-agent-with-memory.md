@@ -1,5 +1,5 @@
 ---
-title: "SQL agent with memory"
+title: "SQL Agent With Memory"
 description: "Automated workflow: SQL agent with memory. This workflow integrates 11 different services: stickyNote, httpRequest, compression, readWriteFile, agent. It con..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

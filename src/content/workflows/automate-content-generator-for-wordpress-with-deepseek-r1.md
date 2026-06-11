@@ -1,5 +1,5 @@
 ---
-title: "Automate Content Generator for WordPress with DeepSeek R1"
+title: "Automate Content Generator For Word Press With Deep Seek R1"
 description: "Automated workflow: Automate Content Generator for WordPress with DeepSeek R1. This workflow integrates 8 different services: wordpress, httpRequest, stickyN..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "1374_Aggregate_Stickynote_Create_Triggered"
+title: "Aggregate Stickynote Create Triggered"
 description: "Integrate OpenAI and LangChain and Aggregate and Set and Limit and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "OpenSea Marketplace Agent Tool"
+title: "Open Sea Marketplace Agent Tool"
 description: "Automated workflow: OpenSea Marketplace Agent Tool. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOp..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0783_GoogleCalendar_Schedule_Create_Scheduled"
+title: "Google Calendar Schedule Create Scheduled"
 description: "Integrate Schedule Trigger and Google Calendar and Split In Batches and Set and Filter and Gmail and LangChain and OpenAI and Remove Duplicates and Sticky No..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

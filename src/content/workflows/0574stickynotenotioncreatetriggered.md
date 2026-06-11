@@ -1,5 +1,5 @@
 ---
-title: "0574_Stickynote_Notion_Create_Triggered"
+title: "Stickynote Notion Create Triggered"
 description: "Integrate Sticky Note and Notion and Set and LangChain and Anthropic and Code and Switch automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

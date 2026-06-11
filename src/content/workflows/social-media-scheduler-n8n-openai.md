@@ -1,5 +1,5 @@
 ---
-title: "AI Social Media Content Scheduler with n8n and OpenAI"
+title: "AI Social Media Content Scheduler With n8n And Open AI"
 description: "Auto-generate and schedule LinkedIn, Twitter, and Instagram posts from your Notion content calendar using GPT-4o and Buffer."
 timeSaved: "6 hours/week"
 costToRun: "~$0.02 per post"

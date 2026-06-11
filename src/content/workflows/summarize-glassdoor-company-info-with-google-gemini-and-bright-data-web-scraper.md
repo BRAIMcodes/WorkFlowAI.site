@@ -1,5 +1,5 @@
 ---
-title: "Summarize Glassdoor Company Info with Google Gemini and Bright Data Web Scraper"
+title: "Summarize Glassdoor Company Info With Google Gemini And Bright Data Web Scraper"
 description: "Automated workflow: Summarize Glassdoor Company Info with Google Gemini and Bright Data Web Scraper. This workflow integrates 11 different services: stickyNo..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

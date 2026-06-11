@@ -1,5 +1,5 @@
 ---
-title: "0875_Googledrivetool_Extractfromfile_Import_Triggered"
+title: "Googledrivetool Extractfromfile Import Triggered"
 description: "Integrate Sticky Note and Execute Workflow Trigger and LangChain and Google Drive and Switch and Extract From File and Set and OpenAI automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Build a Financial Documents Assistant using Qdrant and Mistral.ai"
+title: "Build A Financial Documents Assistant Using Qdrant And Mistral.ai"
 description: "Integrate Local File Trigger and Manual Trigger and Set and Sticky Note and Read Write File and LangChain and Http Request and If and Switch automatically us..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

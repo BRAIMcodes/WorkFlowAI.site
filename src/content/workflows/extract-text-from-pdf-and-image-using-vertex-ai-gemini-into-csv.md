@@ -1,5 +1,5 @@
 ---
-title: "Extract text from PDF and image using Vertex AI (Gemini) into CSV"
+title: "Extract Text From PDF And Image Using Vertex AI (gemini) Into Csv"
 description: "Automated workflow: Extract text from PDF and image using Vertex AI (Gemini) into CSV. This workflow integrates 10 different services: convertToFile, stickyN..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

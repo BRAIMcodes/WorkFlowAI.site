@@ -1,5 +1,5 @@
 ---
-title: "0459_Splitout_Webhook_Update_Webhook"
+title: "Splitout Webhook Update Webhook"
 description: "Integrate Sticky Note and If and Http Request and Split Out and Code and LangChain and OpenAI and Webhook automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

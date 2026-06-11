@@ -1,5 +1,5 @@
 ---
-title: "0814_GoogleSheets_Gmail_Send_Triggered"
+title: "Google Sheets Gmail Send Triggered"
 description: "Integrate Sticky Note and LangChain and OpenAI and Google Sheets and Gmail and If and Code automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

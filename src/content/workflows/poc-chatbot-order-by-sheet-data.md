@@ -1,5 +1,5 @@
 ---
-title: "POC - Chatbot Order by Sheet Data"
+title: "Poc Chatbot Order By Sheet Data"
 description: "Automated workflow: POC - Chatbot Order by Sheet Data. This workflow processes data and performs automated tasks."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

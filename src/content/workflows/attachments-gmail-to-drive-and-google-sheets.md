@@ -1,5 +1,5 @@
 ---
-title: "Attachments Gmail to drive and google sheets"
+title: "Attachments Gmail To Drive And Google Sheets"
 description: "Automated workflow: Attachments Gmail to drive and google sheets. This workflow integrates 13 different services: stickyNote, httpRequest, gmailTrigger, chai..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

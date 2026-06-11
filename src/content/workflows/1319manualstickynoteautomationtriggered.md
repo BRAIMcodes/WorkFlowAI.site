@@ -1,5 +1,5 @@
 ---
-title: "1319_Manual_Stickynote_Automation_Triggered"
+title: "Manual Stickynote Automation Triggered"
 description: "Integrate Google Drive and LangChain and OpenAI and Sticky Note and Manual Trigger and Set automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

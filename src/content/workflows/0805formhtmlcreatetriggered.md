@@ -1,5 +1,5 @@
 ---
-title: "0805_Form_Html_Create_Triggered"
+title: "Form HTML Create Triggered"
 description: "Integrate Bright Data and Document Generator and Split Out and Email Send and Form and Html and OpenAI and Form Trigger automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

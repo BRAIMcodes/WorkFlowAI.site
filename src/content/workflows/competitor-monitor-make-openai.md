@@ -1,5 +1,5 @@
 ---
-title: "Automated Competitor Price and Feature Monitor with Make.com"
+title: "Automated Competitor Price And Feature Monitor With Make.com"
 description: "Scrape competitor pricing pages weekly with Apify, detect changes using GPT-4o, and alert your team in Slack before they alert your customers."
 timeSaved: "6 hours/week"
 costToRun: "~$0.05 per run"

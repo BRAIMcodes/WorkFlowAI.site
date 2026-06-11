@@ -1,5 +1,5 @@
 ---
-title: "1436_Manual_HTTP_Automation_Webhook"
+title: "Manual HTTP Automation Webhook"
 description: "Integrate Manual Trigger and OpenAI and Airtable and Execute Workflow Trigger and Set and Http Request and LangChain and If and Sticky Note and Switch automa..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

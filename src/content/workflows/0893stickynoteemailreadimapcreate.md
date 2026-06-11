@@ -1,5 +1,5 @@
 ---
-title: "0893_Stickynote_Emailreadimap_Create"
+title: "Stickynote Emailreadimap Create"
 description: "Integrate HubSpot and OpenAI and LangChain and Email Read Imap and Sticky Note and If and Set automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

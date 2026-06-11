@@ -1,5 +1,5 @@
 ---
-title: "1428_Code_Schedule_Send_Scheduled"
+title: "Code Schedule Send Scheduled"
 description: "Integrate Schedule Trigger and Airtable and Gmail and Execute Workflow and Set and Execute Workflow Trigger and Form Trigger and Filter and Code and Sticky N..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

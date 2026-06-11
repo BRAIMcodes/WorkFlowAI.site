@@ -1,5 +1,5 @@
 ---
-title: "InstaTest"
+title: "Insta Test"
 description: "Automated workflow: InstaTest. This workflow integrates 8 different services: webhook, stickyNote, agent, respondToWebhook, set. It contains 16 nodes and fol..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

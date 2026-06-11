@@ -1,5 +1,5 @@
 ---
-title: "Automated LinkedIn Lead Qualification with n8n and Claude"
+title: "Automated Linked In Lead Qualification With n8n And Claude"
 description: "Download the n8n JSON blueprint to instantly qualify inbound leads using Claude 3.5 Sonnet and update your HubSpot CRM dynamically."
 timeSaved: "5 hours/week"
 costToRun: "~$0.02 per lead"

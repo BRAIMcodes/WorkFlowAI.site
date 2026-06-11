@@ -1,5 +1,5 @@
 ---
-title: "Deduplicate Scraping AI Grants for Eligibility using AI"
+title: "Deduplicate Scraping AI Grants For Eligibility Using AI"
 description: "Integrate Split Out and Http Request and OpenAI and Merge and Airtable and Remove Duplicates and Html and Schedule Trigger and Sticky Note and Gmail automati..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

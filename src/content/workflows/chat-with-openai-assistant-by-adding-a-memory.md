@@ -1,5 +1,5 @@
 ---
-title: "Chat with OpenAI Assistant (by adding a memory)"
+title: "Chat With Open AI Assistant (by Adding A Memory)"
 description: "Integrate OpenAI and LangChain and Aggregate and Set and Limit and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

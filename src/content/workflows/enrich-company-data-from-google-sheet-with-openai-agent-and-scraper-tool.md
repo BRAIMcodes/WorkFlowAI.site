@@ -1,5 +1,5 @@
 ---
-title: "Enrich Company Data from Google Sheet with OpenAI Agent and Scraper Tool"
+title: "Enrich Company Data From Google Sheet With Open AI Agent And Scraper Tool"
 description: "Automated workflow: Enrich Company Data from Google Sheet with OpenAI Agent and Scraper Tool. This workflow integrates 13 different services: webhook, sticky..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

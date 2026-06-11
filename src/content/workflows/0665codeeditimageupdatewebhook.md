@@ -1,5 +1,5 @@
 ---
-title: "0665_Code_Editimage_Update_Webhook"
+title: "Code Editimage Update Webhook"
 description: "Integrate Manual Trigger and Set and Http Request and Code and Edit Image and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

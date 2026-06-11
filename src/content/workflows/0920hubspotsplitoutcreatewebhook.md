@@ -1,5 +1,5 @@
 ---
-title: "0920_HubSpot_Splitout_Create_Webhook"
+title: "Hub Spot Splitout Create Webhook"
 description: "Integrate Webhook and Sticky Note and Set and LangChain and Google Calendar and Execute Workflow Trigger and OpenAI and Http Request and Split Out and Filter..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

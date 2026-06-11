@@ -1,5 +1,5 @@
 ---
-title: "0887_Manual_Stickynote_Create_Webhook"
+title: "Manual Stickynote Create Webhook"
 description: "Integrate Manual Trigger and Http Request and Convert To File and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

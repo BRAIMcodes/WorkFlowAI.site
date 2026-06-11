@@ -1,5 +1,5 @@
 ---
-title: "HubSpot CRM Deep Research Enrichment"
+title: "Hub Spot CRM Deep Research Enrichment"
 description: "Automate processes between HubSpot and Perplexity ai and OpenAI via Make.com."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

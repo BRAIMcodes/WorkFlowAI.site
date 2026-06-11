@@ -1,5 +1,5 @@
 ---
-title: "OpenAI-model-examples"
+title: "Open AI Model Examples"
 description: "Automated workflow: OpenAI-model-examples. This workflow integrates 9 different services: stickyNote, httpRequest, code, set, stopAndError. It contains 41 no..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

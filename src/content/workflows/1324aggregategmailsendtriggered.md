@@ -1,5 +1,5 @@
 ---
-title: "1324_Aggregate_Gmail_Send_Triggered"
+title: "Aggregate Gmail Send Triggered"
 description: "Integrate Gmail and Set and Split Out and Merge and Aggregate and LangChain and Sticky Note and OpenAI automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

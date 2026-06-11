@@ -1,5 +1,5 @@
 ---
-title: "Analyze_email_headers_for_IPs_and_spoofing__3"
+title: "Analyze Email Headers For Ips And Spoofing 3"
 description: "Automated workflow: Analyze_email_headers_for_IPs_and_spoofing__3. This workflow integrates 11 different services: webhook, stickyNote, itemLists, httpReques..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

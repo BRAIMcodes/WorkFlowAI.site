@@ -1,5 +1,5 @@
 ---
-title: "0847_Linkedin_Splitout_Create_Triggered"
+title: "Linkedin Splitout Create Triggered"
 description: "Integrate Manual Trigger and Gmail and Split Out and OpenAI and Linked In and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

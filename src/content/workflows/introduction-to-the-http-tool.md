@@ -1,5 +1,5 @@
 ---
-title: "Introduction to the HTTP Tool"
+title: "Introduction To The HTTP Tool"
 description: "Integrate Sticky Note and OpenAI and LangChain and Set and Manual Trigger automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

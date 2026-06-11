@@ -1,5 +1,5 @@
 ---
-title: "Docsify example"
+title: "Docsify Example"
 description: "Automated workflow: Docsify example. This workflow integrates 21 different services: convertToFile, stickyNote, merge, switch, outputParserAutofixing. It con..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

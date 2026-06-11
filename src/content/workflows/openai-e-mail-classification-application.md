@@ -1,5 +1,5 @@
 ---
-title: "OpenAI e-mail classification - application"
+title: "Open AI E Mail Classification Application"
 description: "Automated workflow: OpenAI e-mail classification - application. This workflow integrates 8 different services: textClassifier, stickyNote, informationExtract..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

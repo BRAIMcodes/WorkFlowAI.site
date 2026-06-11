@@ -1,5 +1,5 @@
 ---
-title: "OpenAI ImageGen1 Template"
+title: "Open AI Image Gen1 Template"
 description: "Automated workflow: OpenAI ImageGen1 Template. This workflow integrates 6 different services: convertToFile, stickyNote, httpRequest, set, stopAndError. It c..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

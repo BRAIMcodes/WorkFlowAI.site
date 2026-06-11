@@ -1,5 +1,5 @@
 ---
-title: "0680_Splitout_HTTP_Send_Webhook"
+title: "Splitout HTTP Send Webhook"
 description: "Integrate Gemini and LangChain and Hacker News and Http Request and Aggregate and Split Out and Form Trigger and Email Send and Markdown automatically using..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

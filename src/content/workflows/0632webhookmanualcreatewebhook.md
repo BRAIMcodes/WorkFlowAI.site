@@ -1,5 +1,5 @@
 ---
-title: "0632_Webhook_Manual_Create_Webhook"
+title: "Webhook Manual Create Webhook"
 description: "Integrate Manual Trigger and Set and Sticky Note and Http Request and If and Supabase and Webhook automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

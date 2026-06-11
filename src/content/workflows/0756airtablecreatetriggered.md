@@ -1,5 +1,5 @@
 ---
-title: "0756_Airtable_Create_Triggered"
+title: "Airtable Create Triggered"
 description: "Integrate LangChain and Gemini and Set and Airtable automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

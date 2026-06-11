@@ -1,5 +1,5 @@
 ---
-title: "0458_Manual_Code_Create_Triggered"
+title: "Manual Code Create Triggered"
 description: "Integrate Manual Trigger and Sticky Note and LangChain and OpenAI and Set and Google Drive and Code automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0534_Executecommand_Localfile_Process_Triggered"
+title: "Executecommand Localfile Process Triggered"
 description: "Integrate Local File Trigger and Execute Command and Set and LangChain and Sticky Note and If and Split Out automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

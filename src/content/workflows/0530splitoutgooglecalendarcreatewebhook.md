@@ -1,5 +1,5 @@
 ---
-title: "0530_Splitout_GoogleCalendar_Create_Webhook"
+title: "Splitout Google Calendar Create Webhook"
 description: "Integrate OpenAI and Http Request and Google Drive and Manual Trigger and Extract From File and Google Calendar and LangChain and Execute Workflow Trigger an..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

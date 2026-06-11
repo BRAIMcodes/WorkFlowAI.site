@@ -1,5 +1,5 @@
 ---
-title: "Inbound SDR Agent"
+title: "Inbound Sdr Agent"
 description: "Automate processes between Email and OpenAI and Builtin via Make.com."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

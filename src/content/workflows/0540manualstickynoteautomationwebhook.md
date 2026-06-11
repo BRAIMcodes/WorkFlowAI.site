@@ -1,5 +1,5 @@
 ---
-title: "0540_Manual_Stickynote_Automation_Webhook"
+title: "Manual Stickynote Automation Webhook"
 description: "Integrate Sticky Note and OpenAI and LangChain and Set and Manual Trigger automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

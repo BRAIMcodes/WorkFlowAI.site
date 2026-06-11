@@ -1,5 +1,5 @@
 ---
-title: "1662_Respondtowebhook_Stickynote_Automation_Webhook"
+title: "Respondtowebhook Stickynote Automation Webhook"
 description: "Integrate OpenAI and Sticky Note and Respond To Webhook and LangChain and Webhook automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

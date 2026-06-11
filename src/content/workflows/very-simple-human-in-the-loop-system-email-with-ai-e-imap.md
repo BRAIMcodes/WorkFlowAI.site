@@ -1,5 +1,5 @@
 ---
-title: "Very simple Human in the loop system email with AI e IMAP"
+title: "Very Simple Human In The Loop System Email With AI E Imap"
 description: "Automated workflow: Very simple Human in the loop system email with AI e IMAP. This workflow integrates 10 different services: stickyNote, markdown, agent, s..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "DataForge Lite — Single URL AI Scraper"
+title: "Data Forge Lite — Single URL AI Scraper"
 description: "Integrate Webhook and Code and Http Request and OpenAI and Respond To Webhook and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

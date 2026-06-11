@@ -1,5 +1,5 @@
 ---
-title: "AI product Images"
+title: "AI Product Images"
 description: "Integrate Manual Trigger and Google Drive and OpenAI and LangChain and Split Out and Http Request and Split In Batches and Wait and Convert To File automatic..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

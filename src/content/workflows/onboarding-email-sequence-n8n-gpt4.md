@@ -1,5 +1,5 @@
 ---
-title: "Personalized Customer Onboarding Email Sequence with n8n"
+title: "Personalized Customer Onboarding Email Sequence With n8n"
 description: "Generate personalized 5-email onboarding sequences for new customers using HubSpot, Mixpanel usage data, and GPT-4o."
 timeSaved: "7 hours/week"
 costToRun: "~$0.03 per sequence"
@@ -91,8 +91,8 @@ promptVariables:
     placeholder: "Head of Customer Success"
     defaultValue: "Head of Customer Success"
 downloadUrl: "/blueprints/onboarding-email-sequence-n8n-gpt4.json"
-category: "Marketing"
-persona: "Marketers"
+category: "Sales"
+persona: "Sales Reps"
 difficulty: "Intermediate"
 steps:
   - stepNumber: 1

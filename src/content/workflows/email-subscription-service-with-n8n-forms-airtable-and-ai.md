@@ -1,5 +1,5 @@
 ---
-title: "Email Subscription Service with n8n Forms, Airtable and AI"
+title: "Email Subscription Service With n8n Forms, Airtable And AI"
 description: "Integrate Schedule Trigger and Airtable and Gmail and Execute Workflow and Set and Execute Workflow Trigger and Form Trigger and Filter and Code and Sticky N..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

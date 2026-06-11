@@ -1,5 +1,5 @@
 ---
-title: "Bitrix24 Open Chanel RAG Chatbot Application Workflow example with Webhook Integration"
+title: "Bitrix24 Open Chanel RAG Chatbot Application Workflow Example With Webhook Integration"
 description: "Automated workflow: Bitrix24 Open Chanel RAG Chatbot Application Workflow example with Webhook Integration. This workflow integrates 22 different services: s..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

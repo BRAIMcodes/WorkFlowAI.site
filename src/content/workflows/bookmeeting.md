@@ -1,5 +1,5 @@
 ---
-title: "book_meeting"
+title: "Book Meeting"
 description: "Automate processes between Gateway and OpenAI and Json and Google Calendar and Onesaas via Make.com."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

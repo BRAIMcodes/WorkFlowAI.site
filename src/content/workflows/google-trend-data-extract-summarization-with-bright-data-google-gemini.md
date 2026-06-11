@@ -1,5 +1,5 @@
 ---
-title: "Google Trend Data Extract, Summarization with Bright Data & Google Gemini"
+title: "Google Trend Data Extract, Summarization With Bright Data & Google Gemini"
 description: "Automated workflow: Google Trend Data Extract, Summarization with Bright Data & Google Gemini. This workflow integrates 12 different services: stickyNote, ht..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

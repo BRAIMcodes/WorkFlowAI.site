@@ -1,5 +1,5 @@
 ---
-title: "(G) LineChatBot + Google Sheets (as a memory)"
+title: "(g) Line Chat Bot + Google Sheets (as A Memory)"
 description: "Automated workflow: (G) LineChatBot + Google Sheets (as a memory). This workflow integrates 9 different services: webhook, stickyNote, httpRequest, code, lmC..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

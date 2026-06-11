@@ -1,5 +1,5 @@
 ---
-title: "Automate SIEM Alert Enrichment with MITRE ATT&CK, Qdrant & Zendesk in n8n"
+title: "Automate SIEM Alert Enrichment With MITRE Att&ck, Qdrant & Zendesk In n8n"
 description: "Integrate LangChain and OpenAI and Split Out and Extract From File and Manual Trigger and Split In Batches and Sticky Note and Google Drive and Zendesk autom..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

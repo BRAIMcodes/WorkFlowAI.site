@@ -1,5 +1,5 @@
 ---
-title: "0290_Wait_Code_Update_Webhook"
+title: "Wait Code Update Webhook"
 description: "Integrate Manual Trigger and Http Request and Html Extract and OpenAI and Merge and Code and Google Sheets and Split In Batches and Wait automatically using..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

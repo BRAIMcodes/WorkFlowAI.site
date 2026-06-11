@@ -1,5 +1,5 @@
 ---
-title: "YouTube Comment Sentiment Analyzer"
+title: "You Tube Comment Sentiment Analyzer"
 description: "Automated workflow: YouTube Comment Sentiment Analyzer. This workflow integrates 11 different services: stickyNote, httpRequest, splitOut, noOp, set. It cont..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

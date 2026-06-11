@@ -1,5 +1,5 @@
 ---
-title: "HubSpot to LinkedIn Auto-Connect With GPT4o Message"
+title: "Hub Spot To Linked In Auto Connect With Gpt4o Message"
 description: "Automate processes between HubSpot and OpenAI and Custom js via Make.com."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

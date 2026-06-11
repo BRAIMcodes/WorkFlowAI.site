@@ -1,5 +1,5 @@
 ---
-title: "0846_Splitout_Code_Create_Webhook"
+title: "Splitout Code Create Webhook"
 description: "Integrate Manual Trigger and Http Request and Set and Gemini and Convert To File and Code and Sort and Sticky Note and Split Out and Gmail automatically usin..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

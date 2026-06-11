@@ -1,5 +1,5 @@
 ---
-title: "0372_Executeworkflow_Hackernews_Create_Triggered"
+title: "Executeworkflow Hackernews Create Triggered"
 description: "Integrate Sticky Note and LangChain and Execute Workflow Trigger and Hacker News and Set and Code and OpenAI automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Line Chatbot Handling AI Responses with Groq and Llama3"
+title: "Line Chatbot Handling AI Responses With Groq And Llama3"
 description: "Automated workflow: Line Chatbot Handling AI Responses with Groq and Llama3. This workflow integrates 5 different services: webhook, stickyNote, httpRequest,..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

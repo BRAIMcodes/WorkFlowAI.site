@@ -1,5 +1,5 @@
 ---
-title: "0587_Splitout_Filter_Send_Webhook"
+title: "Splitout Filter Send Webhook"
 description: "Integrate Http Request and Split Out and Email Read Imap and Set and OpenAI and Filter and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

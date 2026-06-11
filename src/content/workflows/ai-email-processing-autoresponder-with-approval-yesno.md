@@ -1,5 +1,5 @@
 ---
-title: "AI Email processing autoresponder with approval (Yes/No)"
+title: "AI Email Processing Autoresponder With Approval (yes/no)"
 description: "Automated workflow: AI Email processing autoresponder with approval (Yes/No). This workflow integrates 13 different services: stickyNote, markdown, vectorSto..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

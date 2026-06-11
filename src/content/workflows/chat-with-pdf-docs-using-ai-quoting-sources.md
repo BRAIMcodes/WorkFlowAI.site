@@ -1,5 +1,5 @@
 ---
-title: "Chat with PDF docs using AI (quoting sources)"
+title: "Chat With PDF Docs Using AI (quoting Sources)"
 description: "Integrate Manual Trigger and OpenAI and Sticky Note and LangChain and Set and Code and Google Drive automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

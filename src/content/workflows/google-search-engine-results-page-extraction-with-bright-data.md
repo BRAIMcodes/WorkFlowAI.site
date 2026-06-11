@@ -1,5 +1,5 @@
 ---
-title: "Google Search Engine Results Page Extraction with Bright Data"
+title: "Google Search Engine Results Page Extraction With Bright Data"
 description: "Automated workflow: Google Search Engine Results Page Extraction with Bright Data. This workflow integrates 10 different services: stickyNote, httpRequest, t..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

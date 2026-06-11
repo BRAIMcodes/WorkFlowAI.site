@@ -1,5 +1,5 @@
 ---
-title: "1283_Splitout_Webhook_Automation_Webhook"
+title: "Splitout Webhook Automation Webhook"
 description: "Integrate Sticky Note and Set and If and Merge and Split Out and Aggregate and LangChain and Execute Workflow Trigger and Woo Commerce and Http Request and D..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

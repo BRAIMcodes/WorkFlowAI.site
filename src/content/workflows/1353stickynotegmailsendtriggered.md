@@ -1,5 +1,5 @@
 ---
-title: "1353_Stickynote_Gmail_Send_Triggered"
+title: "Stickynote Gmail Send Triggered"
 description: "Integrate Gmail and OpenAI and LangChain and Wait and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

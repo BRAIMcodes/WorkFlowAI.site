@@ -1,5 +1,5 @@
 ---
-title: "Publish Videos & Images - Blotato"
+title: "Publish Videos & Images Blotato"
 description: "Automated workflow: Publish Videos & Images - Blotato. This workflow integrates 9 different services: stickyNote, httpRequest, formTrigger, airtable, code. I..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

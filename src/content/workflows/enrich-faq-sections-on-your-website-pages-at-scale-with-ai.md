@@ -1,5 +1,5 @@
 ---
-title: "Enrich FAQ sections on your website pages at scale with AI"
+title: "Enrich FAQ Sections On Your Website Pages At Scale With AI"
 description: "Integrate Manual Trigger and OpenAI and Set and Split In Batches and Split Out and Aggregate and Google Drive and Google Sheets and Execute Workflow Trigger..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

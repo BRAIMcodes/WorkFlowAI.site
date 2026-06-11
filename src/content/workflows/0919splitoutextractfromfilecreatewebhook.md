@@ -1,5 +1,5 @@
 ---
-title: "0919_Splitout_Extractfromfile_Create_Webhook"
+title: "Splitout Extractfromfile Create Webhook"
 description: "Integrate Split Out and Http Request and Set and Form Trigger and If and Form and Sticky Note and Convert To File and Html and Gmail and Extract From File au..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "YouTube Video Analyzer with AI"
+title: "You Tube Video Analyzer With AI"
 description: "Automated workflow: YouTube Video Analyzer with AI. This workflow integrates 13 different services: stickyNote, httpRequest, code, chainLlm, outputParserStru..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

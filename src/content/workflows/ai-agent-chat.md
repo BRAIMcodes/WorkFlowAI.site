@@ -1,5 +1,5 @@
 ---
-title: "AI agent chat"
+title: "AI Agent Chat"
 description: "Integrate OpenAI and LangChain automatically using n8n."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

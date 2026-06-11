@@ -1,5 +1,5 @@
 ---
-title: "Extract & Summarize Indeed Company Info with Bright Data and Google Gemini"
+title: "Extract & Summarize Indeed Company Info With Bright Data And Google Gemini"
 description: "Automated workflow: Extract & Summarize Indeed Company Info with Bright Data and Google Gemini. This workflow integrates 11 different services: stickyNote, h..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

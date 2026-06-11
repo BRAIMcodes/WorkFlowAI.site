@@ -1,5 +1,5 @@
 ---
-title: "1647_Splitout_Limit_Automation_Webhook"
+title: "Splitout Limit Automation Webhook"
 description: "Integrate Manual Trigger and Http Request and Html and Set and Sticky Note and Split Out and Limit and LangChain and OpenAI and Merge automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

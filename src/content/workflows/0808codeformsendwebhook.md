@@ -1,5 +1,5 @@
 ---
-title: "0808_Code_Form_Send_Webhook"
+title: "Code Form Send Webhook"
 description: "Integrate Form Trigger and Http Request and OpenAI and LangChain and Merge and Aggregate and Code and Gmail and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

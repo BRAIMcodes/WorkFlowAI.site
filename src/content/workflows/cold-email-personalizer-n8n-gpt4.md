@@ -1,5 +1,5 @@
 ---
-title: "AI Cold Email Personalizer with n8n and GPT-4o"
+title: "AI Cold Email Personalizer With n8n And GPT 4o"
 description: "Automatically write hyper-personalized cold emails for each prospect using GPT-4o, pulling live company data and recent news via n8n."
 timeSaved: "8 hours/week"
 costToRun: "~$0.03 per email"

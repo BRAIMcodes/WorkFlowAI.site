@@ -1,5 +1,5 @@
 ---
-title: "OpenAI Personal Shopper with RAG and WooCommerce"
+title: "Open AI Personal Shopper With RAG And Woo Commerce"
 description: "Automated workflow: OpenAI Personal Shopper with RAG and WooCommerce. This workflow integrates 18 different services: stickyNote, httpRequest, textSplitterTo..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

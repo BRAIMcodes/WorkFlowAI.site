@@ -1,5 +1,5 @@
 ---
-title: "0600_Code_Extractfromfile_Create_Webhook"
+title: "Code Extractfromfile Create Webhook"
 description: "Integrate Manual Trigger and Sort and Http Request and Compression and Code and Sticky Note and Edit Image and Aggregate and LangChain and OpenAI and Merge a..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

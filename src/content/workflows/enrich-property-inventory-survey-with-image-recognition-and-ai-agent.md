@@ -1,5 +1,5 @@
 ---
-title: "Enrich Property Inventory Survey with Image Recognition and AI Agent"
+title: "Enrich Property Inventory Survey With Image Recognition And AI Agent"
 description: "Integrate Manual Trigger and OpenAI and Airtable and Execute Workflow Trigger and Set and Http Request and LangChain and If and Sticky Note and Switch automa..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

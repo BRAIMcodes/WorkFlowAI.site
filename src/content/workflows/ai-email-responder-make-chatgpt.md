@@ -1,5 +1,5 @@
 ---
-title: "AI Email Inbox Auto-Responder with Make.com and ChatGPT"
+title: "AI Email Inbox Auto Responder With Make.com And Chat GPT"
 description: "Download the Make.com blueprint to build an automated email answering system that drafts context-aware replies using ChatGPT."
 timeSaved: "6 hours/week"
 costToRun: "~$0.01 per email"
@@ -37,7 +37,7 @@ promptVariables:
     placeholder: "9 AM to 5 PM EST, Monday-Friday"
     defaultValue: "9 AM to 5 PM EST, Monday-Friday"
 downloadUrl: "/blueprints/ai-email-responder-make-chatgpt.blueprint"
-category: "Customer Support"
+category: "Operations"
 persona: "Operations Managers"
 difficulty: "Beginner"
 steps:

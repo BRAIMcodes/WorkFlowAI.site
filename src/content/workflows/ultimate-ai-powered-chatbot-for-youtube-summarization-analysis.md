@@ -1,5 +1,5 @@
 ---
-title: "⚡📽️ Ultimate AI-Powered Chatbot for YouTube Summarization & Analysis"
+title: "⚡📽️ Ultimate AI Powered Chatbot For You Tube Summarization & Analysis"
 description: "Automated workflow: ⚡📽️ Ultimate AI-Powered Chatbot for YouTube Summarization & Analysis. This workflow integrates 15 different services: stickyNote, httpRe..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "AirQuality Scheduler"
+title: "Air Quality Scheduler"
 description: "Automated workflow: AirQuality Scheduler. This workflow integrates 9 different services: stickyNote, httpRequest, gmailTool, agent, scheduleTrigger. It conta..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

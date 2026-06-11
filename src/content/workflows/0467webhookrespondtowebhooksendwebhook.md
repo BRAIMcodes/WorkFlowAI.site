@@ -1,5 +1,5 @@
 ---
-title: "0467_Webhook_Respondtowebhook_Send_Webhook"
+title: "Webhook Respondtowebhook Send Webhook"
 description: "Integrate Sticky Note and Manual Trigger and Google Drive and LangChain and Webhook and OpenAI and Respond To Webhook automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

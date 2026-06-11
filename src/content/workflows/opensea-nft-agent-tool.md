@@ -1,5 +1,5 @@
 ---
-title: "OpenSea NFT Agent Tool"
+title: "Open Sea Nft Agent Tool"
 description: "Automated workflow: OpenSea NFT Agent Tool. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOpenAi. It..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

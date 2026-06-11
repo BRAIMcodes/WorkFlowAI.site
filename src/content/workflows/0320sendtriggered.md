@@ -1,5 +1,5 @@
 ---
-title: "0320_Send_Triggered"
+title: "Send Triggered"
 description: "Integrate LangChain and OpenAI automatically using n8n."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "1325_Splitout_Limit_Automate_Webhook"
+title: "Splitout Limit Automate Webhook"
 description: "Integrate Manual Trigger and OpenAI and Http Request and Html and Split Out and Limit and Aggregate and Merge and Wordpress and Sticky Note and LangChain and..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

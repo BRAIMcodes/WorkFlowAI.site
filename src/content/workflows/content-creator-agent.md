@@ -1,5 +1,5 @@
 ---
-title: "🤖Content Creator Agent"
+title: "🤖content Creator Agent"
 description: "Automated workflow: 🤖Content Creator Agent. This workflow processes data and performs automated tasks."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

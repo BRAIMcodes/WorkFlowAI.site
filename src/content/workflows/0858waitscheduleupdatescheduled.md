@@ -1,5 +1,5 @@
 ---
-title: "0858_Wait_Schedule_Update_Scheduled"
+title: "Wait Schedule Update Scheduled"
 description: "Integrate Manual Trigger and Sticky Note and Google Sheets and Anthropic and LangChain and Http Request and Set and Wait and If and Schedule Trigger and Spli..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

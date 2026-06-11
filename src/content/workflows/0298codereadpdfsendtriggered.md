@@ -1,5 +1,5 @@
 ---
-title: "0298_Code_Readpdf_Send_Triggered"
+title: "Code Readpdf Send Triggered"
 description: "Integrate Read P D F and Sticky Note and Set and If and Code and OpenAI and Merge and Google Drive and Gmail automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

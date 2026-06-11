@@ -1,5 +1,5 @@
 ---
-title: "Transform Image to Lego Style Using Line and Dall-E"
+title: "Transform Image To Lego Style Using Line And Dall E"
 description: "Automated workflow: Transform Image to Lego Style Using Line and Dall-E. This workflow processes data and performs automated tasks."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

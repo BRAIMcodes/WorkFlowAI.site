@@ -1,5 +1,5 @@
 ---
-title: "0866_Wait_Splitout_Create_Webhook"
+title: "Wait Splitout Create Webhook"
 description: "Integrate Sticky Note and Http Request and Form Trigger and Wait and If and Google Sheets and Split Out and OpenAI and LangChain automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

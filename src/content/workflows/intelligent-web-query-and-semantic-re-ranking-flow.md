@@ -1,5 +1,5 @@
 ---
-title: "Intelligent Web Query and Semantic Re-Ranking Flow"
+title: "Intelligent Web Query And Semantic Re Ranking Flow"
 description: "Automated workflow: Intelligent Web Query and Semantic Re-Ranking Flow. This workflow integrates 13 different services: webhook, stickyNote, httpRequest, cod..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "template-demo-chatgpt-image-1-with-drive-and-sheet copy"
+title: "Template Demo Chatgpt Image 1 With Drive And Sheet Copy"
 description: "Automated workflow: template-demo-chatgpt-image-1-with-drive-and-sheet copy. This workflow integrates 12 different services: convertToFile, stickyNote, httpR..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "1329_Splitout_Editimage_Automate_Triggered"
+title: "Splitout Editimage Automate Triggered"
 description: "Integrate Manual Trigger and LangChain and Set and Split Out and Google Drive and Edit Image and Sticky Note and Gemini automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

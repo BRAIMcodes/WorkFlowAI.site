@@ -1,5 +1,5 @@
 ---
-title: "AI Voice Chat using Webhook, Memory Manager, OpenAI, Google Gemini & ElevenLabs"
+title: "AI Voice Chat Using Webhook, Memory Manager, Open Ai, Google Gemini & Eleven Labs"
 description: "Automated workflow: AI Voice Chat using Webhook, Memory Manager, OpenAI, Google Gemini & ElevenLabs. This workflow integrates 12 different services: webhook,..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

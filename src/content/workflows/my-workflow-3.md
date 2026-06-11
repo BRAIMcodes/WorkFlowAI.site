@@ -1,5 +1,5 @@
 ---
-title: "My workflow 3"
+title: "My Workflow 3"
 description: "Automated workflow: My workflow 3. This workflow integrates 21 different services: convertToFile, stickyNote, embeddingsMistralCloud, textSplitterRecursiveCh..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

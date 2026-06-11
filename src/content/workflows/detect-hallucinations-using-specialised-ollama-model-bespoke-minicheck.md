@@ -1,5 +1,5 @@
 ---
-title: "Detect hallucinations using specialised Ollama model bespoke-minicheck"
+title: "Detect Hallucinations Using Specialised Ollama Model Bespoke Minicheck"
 description: "Integrate Code and Split Out and LangChain and Ollama and Manual Trigger and Set and Merge and Filter and Execute Workflow Trigger and Aggregate and Sticky N..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

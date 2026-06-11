@@ -1,5 +1,5 @@
 ---
-title: "Extract and process information directly from PDF using Claude and Gemini"
+title: "Extract And Process Information Directly From PDF Using Claude And Gemini"
 description: "Integrate Manual Trigger and Extract From File and Google Drive and Http Request and Sticky Note and Set automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

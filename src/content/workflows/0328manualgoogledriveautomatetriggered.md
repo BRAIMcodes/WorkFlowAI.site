@@ -1,5 +1,5 @@
 ---
-title: "0328_Manual_GoogleDrive_Automate_Triggered"
+title: "Manual Google Drive Automate Triggered"
 description: "Integrate Manual Trigger and OpenAI and LangChain and Google Drive automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

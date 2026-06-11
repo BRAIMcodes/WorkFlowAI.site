@@ -1,5 +1,5 @@
 ---
-title: "Contact Form Text Classifier for eCommerce"
+title: "Contact Form Text Classifier For E Commerce"
 description: "Automated workflow: Contact Form Text Classifier for eCommerce. This workflow integrates 7 different services: textClassifier, stickyNote, formTrigger, stopA..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

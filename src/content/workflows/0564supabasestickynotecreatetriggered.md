@@ -1,5 +1,5 @@
 ---
-title: "0564_Supabase_Stickynote_Create_Triggered"
+title: "Supabase Stickynote Create Triggered"
 description: "Integrate Google Drive and LangChain and Sticky Note and OpenAI and Set and Supabase automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

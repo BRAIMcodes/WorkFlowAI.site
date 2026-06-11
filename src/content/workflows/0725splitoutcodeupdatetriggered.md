@@ -1,5 +1,5 @@
 ---
-title: "0725_Splitout_Code_Update_Triggered"
+title: "Splitout Code Update Triggered"
 description: "Integrate Code and Split Out and LangChain and Ollama and Manual Trigger and Set and Merge and Filter and Execute Workflow Trigger and Aggregate and Sticky N..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

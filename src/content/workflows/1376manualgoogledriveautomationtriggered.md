@@ -1,5 +1,5 @@
 ---
-title: "1376_Manual_GoogleDrive_Automation_Triggered"
+title: "Manual Google Drive Automation Triggered"
 description: "Integrate Manual Trigger and OpenAI and Sticky Note and LangChain and Set and Code and Google Drive automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

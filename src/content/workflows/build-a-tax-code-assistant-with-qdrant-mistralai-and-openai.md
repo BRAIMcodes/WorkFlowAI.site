@@ -1,5 +1,5 @@
 ---
-title: "Build a Tax Code Assistant with Qdrant, Mistral.ai and OpenAI"
+title: "Build A Tax Code Assistant With Qdrant, Mistral.ai And Open AI"
 description: "Integrate Manual Trigger and LangChain and Http Request and Compression and Split Out and Extract From File and Set and Execute Workflow Trigger and Split In..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

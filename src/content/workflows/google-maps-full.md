@@ -1,5 +1,5 @@
 ---
-title: "Google Maps FULL"
+title: "Google Maps Full"
 description: "Automated workflow: Google Maps FULL. This workflow integrates 12 different services: stickyNote, httpRequest, toolSerpApi, agent, stopAndError. It contains..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

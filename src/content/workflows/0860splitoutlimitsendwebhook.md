@@ -1,5 +1,5 @@
 ---
-title: "0860_Splitout_Limit_Send_Webhook"
+title: "Splitout Limit Send Webhook"
 description: "Integrate OpenAI and Manual Trigger and Http Request and Html and Split Out and Limit and Sticky Note and LangChain automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

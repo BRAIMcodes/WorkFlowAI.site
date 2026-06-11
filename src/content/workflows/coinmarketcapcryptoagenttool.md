@@ -1,5 +1,5 @@
 ---
-title: "CoinMarketCap_Crypto_Agent_Tool"
+title: "Coin Market Cap Crypto Agent Tool"
 description: "Automated workflow: CoinMarketCap_Crypto_Agent_Tool. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatO..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

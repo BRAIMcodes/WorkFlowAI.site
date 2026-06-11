@@ -1,5 +1,5 @@
 ---
-title: "Basic Automatic Gmail Email Labelling with OpenAI and Gmail API"
+title: "Basic Automatic Gmail Email Labelling With Open AI And Gmail API"
 description: "Integrate Gmail and OpenAI and LangChain and Wait and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

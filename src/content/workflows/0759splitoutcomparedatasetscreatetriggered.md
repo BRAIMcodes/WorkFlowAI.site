@@ -1,5 +1,5 @@
 ---
-title: "0759_Splitout_Comparedatasets_Create_Triggered"
+title: "Splitout Comparedatasets Create Triggered"
 description: "Integrate Manual Trigger and Gong and Sticky Note and Execute Workflow and Execute Workflow Trigger and Aggregate and Google Sheets and Set and Notion and Me..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

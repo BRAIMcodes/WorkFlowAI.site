@@ -1,5 +1,5 @@
 ---
-title: "create e-mail responses with fastmail and OpenAI"
+title: "Create E Mail Responses With Fastmail And Open AI"
 description: "Integrate Http Request and Split Out and Email Read Imap and Set and OpenAI and Filter and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

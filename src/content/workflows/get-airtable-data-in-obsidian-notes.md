@@ -1,5 +1,5 @@
 ---
-title: "Get Airtable data in Obsidian Notes"
+title: "Get Airtable Data In Obsidian Notes"
 description: "Automated workflow: Get Airtable data in Obsidian Notes. This workflow integrates 7 different services: webhook, stickyNote, agent, respondToWebhook, stopAnd..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

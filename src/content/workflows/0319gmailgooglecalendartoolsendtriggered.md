@@ -1,5 +1,5 @@
 ---
-title: "0319_Gmail_Googlecalendartool_Send_Triggered"
+title: "Gmail Googlecalendartool Send Triggered"
 description: "Integrate Sticky Note and OpenAI and Gmail and LangChain and Google Calendar automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

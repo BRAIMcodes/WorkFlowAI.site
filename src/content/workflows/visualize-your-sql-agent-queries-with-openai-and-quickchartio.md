@@ -1,5 +1,5 @@
 ---
-title: "Visualize your SQL Agent queries with OpenAI and Quickchart.io"
+title: "Visualize Your SQL Agent Queries With Open AI And Quickchart.io"
 description: "Integrate OpenAI and Execute Workflow and Execute Workflow Trigger and Http Request and Set and LangChain and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

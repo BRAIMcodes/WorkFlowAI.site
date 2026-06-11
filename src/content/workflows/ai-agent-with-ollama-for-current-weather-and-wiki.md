@@ -1,5 +1,5 @@
 ---
-title: "AI Agent with Ollama for current weather and wiki"
+title: "AI Agent With Ollama For Current Weather And Wiki"
 description: "Integrate Sticky Note and LangChain and Ollama automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

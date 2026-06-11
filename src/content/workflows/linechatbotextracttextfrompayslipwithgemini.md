@@ -1,5 +1,5 @@
 ---
-title: "Line_Chatbot_Extract_Text_from_Pay_Slip_with_Gemini"
+title: "Line Chatbot Extract Text From Pay Slip With Gemini"
 description: "Automated workflow: Line_Chatbot_Extract_Text_from_Pay_Slip_with_Gemini. This workflow integrates 11 different services: webhook, stickyNote, httpRequest, lm..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

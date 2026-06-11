@@ -1,5 +1,5 @@
 ---
-title: "Agent with custom HTTP Request"
+title: "Agent With Custom HTTP Request"
 description: "Automated workflow: Agent with custom HTTP Request. This workflow integrates 11 different services: stickyNote, httpRequest, markdown, agent, set. It contain..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

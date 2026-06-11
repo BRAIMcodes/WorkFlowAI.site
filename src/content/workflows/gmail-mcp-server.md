@@ -1,5 +1,5 @@
 ---
-title: "Gmail MCP Server"
+title: "Gmail Mcp Server"
 description: "Integrate Gmail and Sticky Note and LangChain automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0728_Manual_GoogleSheets_Update_Triggered"
+title: "Manual Google Sheets Update Triggered"
 description: "Integrate Manual Trigger and LangChain and OpenAI and Google Sheets and Split In Batches and Wait automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

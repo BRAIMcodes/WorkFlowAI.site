@@ -1,5 +1,5 @@
 ---
-title: "0647_GoogleCalendar_Form_Create_Triggered"
+title: "Google Calendar Form Create Triggered"
 description: "Integrate Form Trigger and Form and Set and OpenAI and If and Gmail and Google Calendar and Sticky Note and Execute Workflow and Execute Workflow Trigger and..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

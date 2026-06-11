@@ -1,5 +1,5 @@
 ---
-title: "Content to 9:16 Aspect Image Generator v1"
+title: "Content To 9:16 Aspect Image Generator V1"
 description: "Automated workflow: Content to 9:16 Aspect Image Generator v1. This workflow integrates 14 different services: stickyNote, filter, httpRequest, wait, airtabl..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

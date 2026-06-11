@@ -1,5 +1,5 @@
 ---
-title: "Agent Milvus tool"
+title: "Agent Milvus Tool"
 description: "Automated workflow: Agent Milvus tool. This workflow integrates 14 different services: stickyNote, httpRequest, textSplitterRecursiveCharacterTextSplitter, a..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

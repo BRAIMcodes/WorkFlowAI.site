@@ -1,5 +1,5 @@
 ---
-title: "0622_HTTP_Stickynote_Create_Webhook"
+title: "HTTP Stickynote Create Webhook"
 description: "Integrate Http Request and Sticky Note and Set and OpenAI automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0948_Filter_Schedule_Create_Scheduled"
+title: "Filter Schedule Create Scheduled"
 description: "Integrate Schedule Trigger and Google Sheets and Filter and If and Split In Batches and LangChain and Gemini and Gmail and Set and Sticky Note automatically..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

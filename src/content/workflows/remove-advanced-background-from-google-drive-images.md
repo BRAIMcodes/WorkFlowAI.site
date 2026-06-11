@@ -1,5 +1,5 @@
 ---
-title: "Remove Advanced Background from Google Drive Images"
+title: "Remove Advanced Background From Google Drive Images"
 description: "Automated workflow: Remove Advanced Background from Google Drive Images. This workflow integrates 11 different services: stickyNote, httpRequest, googleDrive..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

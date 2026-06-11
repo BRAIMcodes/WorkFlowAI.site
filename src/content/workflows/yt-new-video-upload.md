@@ -1,5 +1,5 @@
 ---
-title: "YT New Video Upload"
+title: "Yt New Video Upload"
 description: "Automated workflow: YT New Video Upload. This workflow integrates 11 different services: stickyNote, httpRequest, youTube, googleDriveTrigger, code. It conta..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Automate PDF Image Extraction & Analysis with GPT-4o and Google Drive"
+title: "Automate PDF Image Extraction & Analysis With GPT 4o And Google Drive"
 description: "Automated workflow: Automate PDF Image Extraction & Analysis with GPT-4o and Google Drive. This workflow integrates 10 different services: convertToFile, sti..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0872_Executeworkflow_Executecommandtool_Create_Triggered"
+title: "Executeworkflow Executecommandtool Create Triggered"
 description: "Integrate Sticky Note and LangChain and Execute Command Tool and Execute Workflow Trigger and Switch and Execute Command automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

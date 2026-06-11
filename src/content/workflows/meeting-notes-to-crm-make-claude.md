@@ -1,6 +1,6 @@
 ---
-title: "Auto-Sync Meeting Notes to CRM with Make.com and Claude"
-description: "Sync Google Calendar meeting notes to HubSpot automatically — Claude extracts action items, deal updates, and next steps."
+title: "Auto Sync Meeting Notes To CRM With Make.com And Claude"
+description: "Sync Google Calendar meeting notes to HubSpot automatically ï¿½ Claude extracts action items, deal updates, and next steps."
 timeSaved: "3 hours/week"
 costToRun: "~$0.02 per meeting"
 primaryTool: "Make.com"
@@ -70,29 +70,29 @@ promptVariables:
     placeholder: "Paste Notion meeting notes here"
     defaultValue: ""
 downloadUrl: "/blueprints/meeting-notes-to-crm-make-claude.json"
-category: "Operations"
-persona: "Operations Teams"
+category: "Sales"
+persona: "Sales Reps"
 difficulty: "Beginner"
 steps:
   - stepNumber: 1
     title: "Google Calendar Meeting End Trigger"
-    description: "Sync Google Calendar meeting notes to HubSpot automatically — Claude extracts action items, deal updates, and next steps."
+    description: "Sync Google Calendar meeting notes to HubSpot automatically ï¿½ Claude extracts action items, deal updates, and next steps."
     tool: "Make.com Google Calendar module"
   - stepNumber: 2
     title: "Fetch Notion Meeting Notes"
-    description: "Sync Google Calendar meeting notes to HubSpot automatically — Claude extracts action items, deal updates, and next steps."
+    description: "Sync Google Calendar meeting notes to HubSpot automatically ï¿½ Claude extracts action items, deal updates, and next steps."
     tool: "Make.com Notion module"
   - stepNumber: 3
     title: "Claude Extracts Action Items, Next Steps, and Deal Changes"
-    description: "Sync Google Calendar meeting notes to HubSpot automatically — Claude extracts action items, deal updates, and next steps."
+    description: "Sync Google Calendar meeting notes to HubSpot automatically ï¿½ Claude extracts action items, deal updates, and next steps."
     tool: "Make.com HTTP Request (Anthropic API)"
   - stepNumber: 4
     title: "Update HubSpot Deal and Contact Notes"
-    description: "Sync Google Calendar meeting notes to HubSpot automatically — Claude extracts action items, deal updates, and next steps."
+    description: "Sync Google Calendar meeting notes to HubSpot automatically ï¿½ Claude extracts action items, deal updates, and next steps."
     tool: "Make.com HubSpot module"
   - stepNumber: 5
     title: "Create Follow-Up Tasks in HubSpot"
-    description: "Sync Google Calendar meeting notes to HubSpot automatically — Claude extracts action items, deal updates, and next steps."
+    description: "Sync Google Calendar meeting notes to HubSpot automatically ï¿½ Claude extracts action items, deal updates, and next steps."
     tool: "Make.com HubSpot module (iterator)"
 ---
 

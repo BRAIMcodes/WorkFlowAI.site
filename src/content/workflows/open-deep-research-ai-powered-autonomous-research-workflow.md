@@ -1,5 +1,5 @@
 ---
-title: "Open Deep Research - AI-Powered Autonomous Research Workflow"
+title: "Open Deep Research AI Powered Autonomous Research Workflow"
 description: "Automated workflow: Open Deep Research - AI-Powered Autonomous Research Workflow. This workflow integrates 11 different services: stickyNote, httpRequest, co..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

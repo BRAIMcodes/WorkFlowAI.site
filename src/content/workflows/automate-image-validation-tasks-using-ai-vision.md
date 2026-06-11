@@ -1,5 +1,5 @@
 ---
-title: "Automate Image Validation Tasks using AI Vision"
+title: "Automate Image Validation Tasks Using AI Vision"
 description: "Integrate Manual Trigger and LangChain and Set and Split Out and Google Drive and Edit Image and Sticky Note and Gemini automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

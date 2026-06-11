@@ -1,5 +1,5 @@
 ---
-title: "1344_Splitout_Filter_Automation_Webhook"
+title: "Splitout Filter Automation Webhook"
 description: "Integrate LangChain and OpenAI and Set and Manual Trigger and Supabase and Merge and Markdown and Sticky Note and Html and Split Out and Remove Duplicates an..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

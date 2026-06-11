@@ -1,5 +1,5 @@
 ---
-title: "mails2notion V2"
+title: "Mails2notion V2"
 description: "Automated workflow: mails2notion V2. This workflow integrates 15 different services: filter, httpRequest, stickyNote, airtable, code. It contains 42 nodes an..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

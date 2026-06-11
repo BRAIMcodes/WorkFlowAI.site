@@ -1,5 +1,5 @@
 ---
-title: "1830_Splitout_Filter_Create_Webhook"
+title: "Splitout Filter Create Webhook"
 description: "Integrate Http Request and Split Out and Email Read Imap and Set and OpenAI and Filter and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

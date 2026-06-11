@@ -1,5 +1,5 @@
 ---
-title: "Monthly Spotify Track Archiving and Playlist Classification"
+title: "Monthly Spotify Track Archiving And Playlist Classification"
 description: "Integrate Set and Code and Http Request and Split Out and Anthropic and Spotify and LangChain and Filter and Merge and Limit and Google Sheets and Sticky Not..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

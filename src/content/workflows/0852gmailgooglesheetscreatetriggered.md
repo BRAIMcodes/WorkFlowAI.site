@@ -1,5 +1,5 @@
 ---
-title: "0852_Gmail_GoogleSheets_Create_Triggered"
+title: "Gmail Google Sheets Create Triggered"
 description: "Integrate LangChain and Sticky Note and Extract From File and OpenAI and Google Sheets and Gmail automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

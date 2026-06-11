@@ -1,5 +1,5 @@
 ---
-title: "0642_HTTP_Extractfromfile_Process_Webhook"
+title: "HTTP Extractfromfile Process Webhook"
 description: "Integrate Extract From File and Http Request and Manual Trigger and Sticky Note and Set automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Extract & Summarize Bing Copilot Search Results with Gemini AI and Bright Data"
+title: "Extract & Summarize Bing Copilot Search Results With Gemini AI And Bright Data"
 description: "Automated workflow: Extract & Summarize Bing Copilot Search Results with Gemini AI and Bright Data. This workflow integrates 13 different services: stickyNot..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

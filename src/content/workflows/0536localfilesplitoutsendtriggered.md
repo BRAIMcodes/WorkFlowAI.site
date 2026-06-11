@@ -1,5 +1,5 @@
 ---
-title: "0536_Localfile_Splitout_Send_Triggered"
+title: "Localfile Splitout Send Triggered"
 description: "Integrate Local File Trigger and LangChain and Read Write File and Extract From File and Split Out and Sticky Note and Set and Code and OpenAI automatically..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

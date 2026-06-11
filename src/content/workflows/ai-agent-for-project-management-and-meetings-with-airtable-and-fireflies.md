@@ -1,5 +1,5 @@
 ---
-title: "AI Agent for project management and meetings with Airtable and Fireflies"
+title: "AI Agent For Project Management And Meetings With Airtable And Fireflies"
 description: "Integrate LangChain and OpenAI and Gmail and Execute Workflow Trigger and Split Out and Airtable and Google Calendar and Webhook and Http Request and Sticky..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

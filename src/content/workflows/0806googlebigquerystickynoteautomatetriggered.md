@@ -1,5 +1,5 @@
 ---
-title: "0806_Googlebigquery_Stickynote_Automate_Triggered"
+title: "Googlebigquery Stickynote Automate Triggered"
 description: "Integrate OpenAI and LangChain and Sticky Note and Google Big Query and Execute Workflow Trigger and Code automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

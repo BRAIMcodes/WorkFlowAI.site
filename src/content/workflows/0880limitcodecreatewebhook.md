@@ -1,5 +1,5 @@
 ---
-title: "0880_Limit_Code_Create_Webhook"
+title: "Limit Code Create Webhook"
 description: "Integrate Sticky Note and Manual Trigger and Split In Batches and Set and Google Sheets and If and Limit and OpenAI and Http Request and Code automatically u..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

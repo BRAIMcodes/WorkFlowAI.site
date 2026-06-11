@@ -1,5 +1,5 @@
 ---
-title: "Building RAG Chatbot for Movie Recommendations with Qdrant and Open AI"
+title: "Building RAG Chatbot For Movie Recommendations With Qdrant And Open AI"
 description: "Automated workflow: Building RAG Chatbot for Movie Recommendations with Qdrant and Open AI. This workflow integrates 20 different services: stickyNote, vecto..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "1513_Wait_Splitout_Process_Webhook"
+title: "Wait Splitout Process Webhook"
 description: "Integrate OpenAI and LangChain and Http Request and Sticky Note and Gmail and Google Sheets and Wait and Switch and Set and If and Split Out and Aggregate an..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

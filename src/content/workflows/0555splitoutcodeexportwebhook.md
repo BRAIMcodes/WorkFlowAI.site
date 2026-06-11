@@ -1,5 +1,5 @@
 ---
-title: "0555_Splitout_Code_Export_Webhook"
+title: "Splitout Code Export Webhook"
 description: "Integrate Manual Trigger and Set and Html and Split Out and LangChain and OpenAI and Http Request and Filter and Google Sheets and Execute Workflow and Execu..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

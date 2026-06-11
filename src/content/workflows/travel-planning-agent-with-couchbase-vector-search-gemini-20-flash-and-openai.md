@@ -1,5 +1,5 @@
 ---
-title: "Travel Planning Agent with Couchbase Vector Search, Gemini 2.0 Flash and OpenAI"
+title: "Travel Planning Agent With Couchbase Vector Search, Gemini 2.0 Flash And Open AI"
 description: "Automated workflow: Travel Planning Agent with Couchbase Vector Search, Gemini 2.0 Flash and OpenAI. This workflow integrates 11 different services: webhook,..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

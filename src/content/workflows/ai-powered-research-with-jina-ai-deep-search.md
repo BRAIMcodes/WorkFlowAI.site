@@ -1,5 +1,5 @@
 ---
-title: "AI-Powered Research with Jina AI Deep Search"
+title: "AI Powered Research With Jina AI Deep Search"
 description: "Integrate Sticky Note and Http Request and LangChain and Code automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

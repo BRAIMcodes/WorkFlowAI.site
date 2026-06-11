@@ -1,5 +1,5 @@
 ---
-title: "0332_Stickynote_Send_Triggered"
+title: "Stickynote Send Triggered"
 description: "Integrate Sticky Note and LangChain and Hugging Face automatically using n8n."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

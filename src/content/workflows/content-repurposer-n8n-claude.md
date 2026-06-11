@@ -1,5 +1,5 @@
 ---
-title: "Multi-Platform Content Repurposer with n8n and Claude"
+title: "Multi Platform Content Repurposer With n8n And Claude"
 description: "Turn a single blog post into LinkedIn posts, Twitter threads, and newsletter intros automatically using Claude and n8n."
 timeSaved: "5 hours/week"
 costToRun: "~$0.02 per piece"

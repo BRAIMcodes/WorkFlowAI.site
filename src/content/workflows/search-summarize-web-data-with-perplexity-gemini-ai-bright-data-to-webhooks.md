@@ -1,5 +1,5 @@
 ---
-title: "Search & Summarize Web Data with Perplexity, Gemini AI & Bright Data to Webhooks"
+title: "Search & Summarize Web Data With Perplexity, Gemini AI & Bright Data To Webhooks"
 description: "Automated workflow: Search & Summarize Web Data with Perplexity, Gemini AI & Bright Data to Webhooks. This workflow integrates 12 different services: stickyN..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

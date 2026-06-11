@@ -1,5 +1,5 @@
 ---
-title: "Simple LinkedIn profile collector"
+title: "Simple Linked In Profile Collector"
 description: "Automated workflow: Simple LinkedIn profile collector. This workflow integrates 10 different services: convertToFile, stickyNote, httpRequest, splitOut, merg..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

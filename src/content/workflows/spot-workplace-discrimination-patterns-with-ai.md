@@ -1,5 +1,5 @@
 ---
-title: "Spot Workplace Discrimination Patterns with AI"
+title: "Spot Workplace Discrimination Patterns With AI"
 description: "Automated workflow: Spot Workplace Discrimination Patterns with AI. This workflow integrates 12 different services: stickyNote, httpRequest, code, chainLlm,..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

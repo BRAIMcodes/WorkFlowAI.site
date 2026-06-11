@@ -1,5 +1,5 @@
 ---
-title: "Voice RAG Chatbot with ElevenLabs and OpenAI"
+title: "Voice RAG Chatbot With Eleven Labs And Open AI"
 description: "Automated workflow: Voice RAG Chatbot with ElevenLabs and OpenAI. This workflow integrates 15 different services: webhook, stickyNote, httpRequest, textSplit..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "[2/3] Set up medoids (2 types) for anomaly detection (crops dataset)"
+title: "[2/3] Set Up Medoids (2 Types) For Anomaly Detection (crops Dataset)"
 description: "Automated workflow: [2/3] Set up medoids (2 types) for anomaly detection (crops dataset). This workflow integrates 8 different services: stickyNote, httpRequ..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Email mailbox as Todoist tasks"
+title: "Email Mailbox As Todoist Tasks"
 description: "Automated workflow: Email mailbox as Todoist tasks. This workflow integrates 13 different services: stickyNote, scheduleTrigger, agent, outputParserStructure..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

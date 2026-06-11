@@ -1,5 +1,5 @@
 ---
-title: "LINE Assistant with Google Calendar and Gmail Integration"
+title: "Line Assistant With Google Calendar And Gmail Integration"
 description: "Automated workflow: LINE Assistant with Google Calendar and Gmail Integration. This workflow processes data and performs automated tasks."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0767_Code_Filter_Send_Webhook"
+title: "Code Filter Send Webhook"
 description: "Integrate LangChain and OpenAI and Code and Execute Workflow Trigger and Aggregate and Sticky Note and Http Request and Google Sheets and Filter automaticall..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

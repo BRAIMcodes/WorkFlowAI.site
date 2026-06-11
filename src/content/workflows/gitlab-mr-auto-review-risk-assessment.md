@@ -1,5 +1,5 @@
 ---
-title: "GitLab MR Auto-Review & Risk Assessment"
+title: "Git Lab Mr Auto Review & Risk Assessment"
 description: "Automated workflow: GitLab MR Auto-Review & Risk Assessment. This workflow integrates 12 different services: stickyNote, httpRequest, code, agent, merge. It..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

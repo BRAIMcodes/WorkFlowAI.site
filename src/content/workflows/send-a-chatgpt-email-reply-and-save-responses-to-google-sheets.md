@@ -1,5 +1,5 @@
 ---
-title: "Send a ChatGPT email reply and save responses to Google Sheets"
+title: "Send A Chat GPT Email Reply And Save Responses To Google Sheets"
 description: "Integrate OpenAI and Gmail and If and Set and Sticky Note and Crypto and Html and Code and Google Sheets and Webhook and Respond To Webhook and Switch automa..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

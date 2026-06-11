@@ -1,5 +1,5 @@
 ---
-title: "1369_Editimage_Manual_Automation_Webhook"
+title: "Editimage Manual Automation Webhook"
 description: "Integrate Manual Trigger and Sticky Note and LangChain and If and Google Drive and Http Request and Edit Image and Gemini automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

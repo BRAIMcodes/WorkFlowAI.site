@@ -1,5 +1,5 @@
 ---
-title: "1438_Extractfromfile_Manual_Process_Webhook"
+title: "Extractfromfile Manual Process Webhook"
 description: "Integrate Manual Trigger and Extract From File and Google Drive and Http Request and Sticky Note and Set automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

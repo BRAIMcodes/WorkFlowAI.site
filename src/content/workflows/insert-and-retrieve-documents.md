@@ -1,5 +1,5 @@
 ---
-title: "Insert and retrieve documents"
+title: "Insert And Retrieve Documents"
 description: "Automated workflow: Insert and retrieve documents. This workflow integrates 16 different services: stickyNote, httpRequest, textSplitterRecursiveCharacterTex..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

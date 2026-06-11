@@ -1,5 +1,5 @@
 ---
-title: "Qualifying Appointment Requests with AI & n8n Forms"
+title: "Qualifying Appointment Requests With AI & n8n Forms"
 description: "Integrate Form Trigger and Form and Set and OpenAI and If and Gmail and Google Calendar and Sticky Note and Execute Workflow and Execute Workflow Trigger and..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

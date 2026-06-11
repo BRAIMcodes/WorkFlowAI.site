@@ -1,5 +1,5 @@
 ---
-title: "1359_Wait_Splitout_Create_Webhook"
+title: "Wait Splitout Create Webhook"
 description: "Integrate Manual Trigger and LangChain and Http Request and Compression and Split Out and Extract From File and Set and Execute Workflow Trigger and Split In..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

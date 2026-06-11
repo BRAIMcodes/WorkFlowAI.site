@@ -1,5 +1,5 @@
 ---
-title: "🦙👁️👁️ Find the Best Local Ollama Vision Models by Comparison"
+title: "🦙👁️👁️ Find The Best Local Ollama Vision Models By Comparison"
 description: "Automated workflow: 🦙👁️👁️ Find the Best Local Ollama Vision Models by Comparison. This workflow integrates 10 different services: stickyNote, httpRequest,..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

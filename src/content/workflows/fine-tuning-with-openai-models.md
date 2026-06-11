@@ -1,5 +1,5 @@
 ---
-title: "Fine-tuning with OpenAI models"
+title: "Fine Tuning With Open AI Models"
 description: "Automated workflow: Fine-tuning with OpenAI models. This workflow integrates 9 different services: stickyNote, httpRequest, agent, googleDrive, stopAndError...."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Automate Etsy Data Mining with Bright Data Scrape & Google Gemini"
+title: "Automate Etsy Data Mining With Bright Data Scrape & Google Gemini"
 description: "Automated workflow: Automate Etsy Data Mining with Bright Data Scrape & Google Gemini. This workflow integrates 12 different services: stickyNote, httpReques..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

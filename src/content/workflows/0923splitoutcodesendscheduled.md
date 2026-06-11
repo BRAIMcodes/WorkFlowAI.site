@@ -1,5 +1,5 @@
 ---
-title: "0923_Splitout_Code_Send_Scheduled"
+title: "Splitout Code Send Scheduled"
 description: "Integrate Schedule Trigger and Microsoft Teams and OpenAI and LangChain and Set and Aggregate and Markdown and Sticky Note and Code and Split Out automatical..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

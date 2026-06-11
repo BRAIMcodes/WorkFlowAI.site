@@ -1,5 +1,5 @@
 ---
-title: "Analyze Screenshots with AI"
+title: "Analyze Screenshots With AI"
 description: "Automated workflow: Analyze Screenshots with AI. This workflow integrates 7 different services: stickyNote, httpRequest, merge, set, stopAndError. It contain..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

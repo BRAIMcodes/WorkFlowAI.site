@@ -1,5 +1,5 @@
 ---
-title: "FlowScribe Lite — Quick 4-Platform Repurpose"
+title: "Flow Scribe Lite — Quick 4 Platform Repurpose"
 description: "Integrate Webhook and Code and OpenAI and Google Sheets and Respond To Webhook and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0869_Wait_Datetime_Send_Scheduled"
+title: "Wait Datetime Send Scheduled"
 description: "Integrate Schedule Trigger and MySQL and Split In Batches and Set and Date Time and Code and Filter and Html and Merge and Microsoft Outlook and Wait and Lan..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

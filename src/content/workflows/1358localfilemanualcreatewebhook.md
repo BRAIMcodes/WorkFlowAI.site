@@ -1,5 +1,5 @@
 ---
-title: "1358_Localfile_Manual_Create_Webhook"
+title: "Localfile Manual Create Webhook"
 description: "Integrate Local File Trigger and Manual Trigger and Set and Sticky Note and Read Write File and LangChain and Http Request and If and Switch automatically us..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

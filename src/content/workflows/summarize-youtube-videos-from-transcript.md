@@ -1,5 +1,5 @@
 ---
-title: "Summarize YouTube Videos from Transcript"
+title: "Summarize You Tube Videos From Transcript"
 description: "Integrate Sticky Note and Http Request and LangChain and Form Trigger and OpenAI automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

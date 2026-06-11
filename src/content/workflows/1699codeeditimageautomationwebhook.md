@@ -1,5 +1,5 @@
 ---
-title: "1699_Code_Editimage_Automation_Webhook"
+title: "Code Editimage Automation Webhook"
 description: "Integrate Manual Trigger and Gemini and Sort and Sticky Note and Google Drive and Http Request and Compression and Code and Edit Image and Aggregate and Lang..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

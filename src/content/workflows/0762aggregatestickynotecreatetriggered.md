@@ -1,5 +1,5 @@
 ---
-title: "0762_Aggregate_Stickynote_Create_Triggered"
+title: "Aggregate Stickynote Create Triggered"
 description: "Integrate Execute Workflow Trigger and LangChain and Execute Workflow and Set and OpenAI and Sticky Note and Merge and Aggregate automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

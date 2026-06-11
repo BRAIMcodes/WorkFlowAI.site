@@ -1,5 +1,5 @@
 ---
-title: "0634_Splitout_Manual_Export_Webhook"
+title: "Splitout Manual Export Webhook"
 description: "Integrate Manual Trigger and Split Out and Google Sheets and OpenAI and Http Request and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

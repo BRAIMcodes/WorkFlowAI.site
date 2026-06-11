@@ -1,5 +1,5 @@
 ---
-title: "Notion knowledge base AI assistant"
+title: "Notion Knowledge Base AI Assistant"
 description: "Integrate OpenAI and LangChain and Notion and Set and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

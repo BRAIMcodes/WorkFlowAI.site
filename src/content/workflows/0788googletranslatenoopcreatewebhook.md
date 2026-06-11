@@ -1,5 +1,5 @@
 ---
-title: "0788_Googletranslate_Noop_Create_Webhook"
+title: "Googletranslate Noop Create Webhook"
 description: "Integrate Sticky Note and Google Translate and LangChain and OpenAI and Merge and Google Sheets and Google Drive and Http Request and Set and If automaticall..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

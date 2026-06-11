@@ -1,5 +1,5 @@
 ---
-title: "Visual Regression Testing with Apify and AI Vision Model"
+title: "Visual Regression Testing With Apify And AI Vision Model"
 description: "Integrate Google Drive and Gemini and LangChain and Sticky Note and Split In Batches and Wait and Http Request and Google Sheets and Merge and Schedule Trigg..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

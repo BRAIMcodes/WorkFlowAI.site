@@ -1,5 +1,5 @@
 ---
-title: "Prompt-based Object Detection with Gemini 2.0"
+title: "Prompt Based Object Detection With Gemini 2.0"
 description: "Integrate Manual Trigger and Set and Http Request and Code and Edit Image and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

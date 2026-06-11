@@ -1,5 +1,5 @@
 ---
-title: "Breakdown Documents into Study Notes using Templating MistralAI and Qdrant"
+title: "Breakdown Documents Into Study Notes Using Templating Mistral AI And Qdrant"
 description: "Integrate Local File Trigger and LangChain and Set and Merge and Split Out and Split In Batches and Aggregate and Wait and Convert To File and Read Write Fil..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

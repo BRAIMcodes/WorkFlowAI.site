@@ -1,5 +1,5 @@
 ---
-title: "Extract & Summarize Wikipedia Data with Bright Data and Gemini AI"
+title: "Extract & Summarize Wikipedia Data With Bright Data And Gemini AI"
 description: "Automated workflow: Extract & Summarize Wikipedia Data with Bright Data and Gemini AI. This workflow integrates 8 different services: stickyNote, httpRequest..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

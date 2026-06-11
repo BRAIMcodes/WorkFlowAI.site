@@ -1,5 +1,5 @@
 ---
-title: "Learn Anything from HN - Get Top Resource Recommendations from Hacker News"
+title: "Learn Anything From Hn Get Top Resource Recommendations From Hacker News"
 description: "Integrate Gemini and LangChain and Hacker News and Http Request and Aggregate and Split Out and Form Trigger and Email Send and Markdown automatically using..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0821_Manual_Noop_Create_Triggered"
+title: "Manual Noop Create Triggered"
 description: "Integrate Manual Trigger and Set and Gemini and Gmail and Sticky Note and HubSpot and Split In Batches automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

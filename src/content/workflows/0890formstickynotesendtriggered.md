@@ -1,5 +1,5 @@
 ---
-title: "0890_Form_Stickynote_Send_Triggered"
+title: "Form Stickynote Send Triggered"
 description: "Integrate HubSpot and Sticky Note and LangChain and Form Trigger and Form and OpenAI and Set and Gmail automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

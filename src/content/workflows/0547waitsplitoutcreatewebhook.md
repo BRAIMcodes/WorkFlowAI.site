@@ -1,5 +1,5 @@
 ---
-title: "0547_Wait_Splitout_Create_Webhook"
+title: "Wait Splitout Create Webhook"
 description: "Integrate Sticky Note and Manual Trigger and OpenAI and LangChain and Remove Duplicates and Set and Split Out and Notion and Limit and Split In Batches and H..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

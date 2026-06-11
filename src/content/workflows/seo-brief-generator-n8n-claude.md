@@ -1,5 +1,5 @@
 ---
-title: "AI SEO Content Brief Generator with n8n and Claude"
+title: "AI SEO Content Brief Generator With n8n And Claude"
 description: "Generate comprehensive SEO content briefs with Claude by analyzing Ahrefs SERP data and top-ranking competitor content."
 timeSaved: "5 hours/week"
 costToRun: "~$0.04 per brief"

@@ -1,5 +1,5 @@
 ---
-title: "🎦🚀 YouTube Video Comment Analysis Agent"
+title: "🎦🚀 You Tube Video Comment Analysis Agent"
 description: "Automated workflow: 🎦🚀 YouTube Video Comment Analysis Agent. This workflow integrates 16 different services: stickyNote, httpRequest, markdown, code, agent..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0849_Filter_Extractfromfile_Create_Triggered"
+title: "Filter Extractfromfile Create Triggered"
 description: "Integrate Manual Trigger and Extract From File and If and OpenAI and Filter and Sticky Note and Google Drive and Split In Batches and LangChain and Set and G..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

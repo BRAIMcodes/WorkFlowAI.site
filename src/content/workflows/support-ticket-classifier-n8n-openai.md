@@ -1,5 +1,5 @@
 ---
-title: "AI Support Ticket Classifier with n8n and ChatGPT"
+title: "AI Support Ticket Classifier With n8n And Chat GPT"
 description: "Download the n8n JSON blueprint to analyze support tickets using ChatGPT, classify them into priority levels, and draft responses in Intercom."
 timeSaved: "7 hours/week"
 costToRun: "~$0.01 per ticket"
@@ -27,7 +27,7 @@ promptSnippet: |
   }
 downloadUrl: "/blueprints/support-ticket-classifier-n8n-openai.json"
 category: "Customer Support"
-persona: "Support Agents"
+persona: "Support Teams"
 difficulty: "Intermediate"
 steps:
   - stepNumber: 1

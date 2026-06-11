@@ -1,5 +1,5 @@
 ---
-title: "Translate audio using AI"
+title: "Translate Audio Using AI"
 description: "Integrate OpenAI and Manual Trigger and Http Request and Set and LangChain and Sticky Note automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

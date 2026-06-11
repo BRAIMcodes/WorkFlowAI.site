@@ -1,5 +1,5 @@
 ---
-title: "AI Agent to chat with Airtable and analyze data"
+title: "AI Agent To Chat With Airtable And Analyze Data"
 description: "Integrate OpenAI and LangChain and Sticky Note and Execute Workflow Trigger and Set and Switch and Aggregate and Merge and If and Airtable and Http Request a..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

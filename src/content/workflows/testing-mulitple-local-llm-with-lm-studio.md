@@ -1,5 +1,5 @@
 ---
-title: "Testing Mulitple Local LLM with LM Studio"
+title: "Testing Mulitple Local LLM With Lm Studio"
 description: "Automated workflow: Testing Mulitple Local LLM with LM Studio. This workflow integrates 11 different services: stickyNote, httpRequest, code, splitOut, chain..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

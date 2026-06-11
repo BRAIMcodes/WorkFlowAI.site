@@ -1,5 +1,5 @@
 ---
-title: "MCP_GMAIL"
+title: "Mcp Gmail"
 description: "Integrate Gmail and LangChain automatically using n8n."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

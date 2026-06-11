@@ -1,5 +1,5 @@
 ---
-title: "0871_Wait_HTTP_Create_Webhook"
+title: "Wait HTTP Create Webhook"
 description: "Integrate Sticky Note and Http Request and Wait and If and OpenAI and Google Sheets and Form Trigger and Aggregate and LangChain and Gmail automatically usin..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

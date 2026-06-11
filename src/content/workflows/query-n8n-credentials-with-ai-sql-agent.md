@@ -1,5 +1,5 @@
 ---
-title: "Query n8n Credentials with AI SQL Agent"
+title: "Query n8n Credentials With AI SQL Agent"
 description: "Integrate Manual Trigger and Set and Sticky Note and Code and LangChain and OpenAI and N8n automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

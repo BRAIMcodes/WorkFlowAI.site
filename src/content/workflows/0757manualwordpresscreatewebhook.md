@@ -1,5 +1,5 @@
 ---
-title: "0757_Manual_Wordpress_Create_Webhook"
+title: "Manual Wordpress Create Webhook"
 description: "Integrate Manual Trigger and Wordpress and LangChain and Http Request and Sticky Note and OpenAI and Set automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0596_Wait_Code_Import_Webhook"
+title: "Wait Code Import Webhook"
 description: "Integrate Code and Gmail and Split In Batches and Wait and Filter and Set and Http Request and Sticky Note and Schedule Trigger automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

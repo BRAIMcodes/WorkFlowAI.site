@@ -1,5 +1,5 @@
 ---
-title: "AI chatbot that can search the web"
+title: "AI Chatbot That Can Search The Web"
 description: "Integrate Sticky Note and LangChain and OpenAI automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

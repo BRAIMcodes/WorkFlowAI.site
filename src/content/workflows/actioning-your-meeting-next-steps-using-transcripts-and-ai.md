@@ -1,5 +1,5 @@
 ---
-title: "Actioning Your Meeting Next Steps using Transcripts and AI"
+title: "Actioning Your Meeting Next Steps Using Transcripts And AI"
 description: "Integrate OpenAI and Http Request and Google Drive and Manual Trigger and Extract From File and Google Calendar and LangChain and Execute Workflow Trigger an..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

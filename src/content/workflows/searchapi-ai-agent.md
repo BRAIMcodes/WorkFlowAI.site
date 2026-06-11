@@ -1,5 +1,5 @@
 ---
-title: "SearchApi AI Agent"
+title: "Search API AI Agent"
 description: "Automated workflow: SearchApi AI Agent. This workflow integrates 7 different services: stickyNote, agent, stopAndError, lmChatOpenAi, memoryBufferWindow. It..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

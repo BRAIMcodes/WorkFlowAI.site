@@ -1,5 +1,5 @@
 ---
-title: "1370_HTTP_Extractfromfile_Automation_Webhook"
+title: "HTTP Extractfromfile Automation Webhook"
 description: "Integrate Extract From File and Http Request and Manual Trigger and Sticky Note and Set automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Invoice data extraction with LlamaParse and OpenAI"
+title: "Invoice Data Extraction With Llama Parse And Open AI"
 description: "Integrate OpenAI and LangChain and Http Request and Sticky Note and Gmail and Google Sheets and Wait and Switch and Set and If and Split Out and Aggregate an..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

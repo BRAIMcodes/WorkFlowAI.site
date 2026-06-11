@@ -1,5 +1,5 @@
 ---
-title: "0727_Stickynote_Create_Webhook"
+title: "Stickynote Create Webhook"
 description: "Integrate Sticky Note and LangChain and Ollama automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

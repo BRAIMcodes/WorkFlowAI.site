@@ -1,5 +1,5 @@
 ---
-title: "Reconcile Rent Payments with Local Excel Spreadsheet and OpenAI"
+title: "Reconcile Rent Payments With Local Excel Spreadsheet And Open AI"
 description: "Integrate Local File Trigger and LangChain and Read Write File and Extract From File and Split Out and Sticky Note and Set and Code and OpenAI automatically..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

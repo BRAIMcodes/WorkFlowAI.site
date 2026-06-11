@@ -1,5 +1,5 @@
 ---
-title: "0874_Stickynote_Executeworkflow_Create_Triggered"
+title: "Stickynote Executeworkflow Create Triggered"
 description: "Integrate Execute Workflow Trigger and Switch and Sticky Note and LangChain and Code automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

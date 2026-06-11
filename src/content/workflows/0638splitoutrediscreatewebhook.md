@@ -1,5 +1,5 @@
 ---
-title: "0638_Splitout_Redis_Create_Webhook"
+title: "Splitout Redis Create Webhook"
 description: "Integrate If and Set and LangChain and Sticky Note and Form Trigger and Form and Crypto and Redis and Respond To Webhook and Webhook and Html and Google Shee..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

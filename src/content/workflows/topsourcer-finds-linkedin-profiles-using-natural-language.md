@@ -1,5 +1,5 @@
 ---
-title: "TopSourcer - Finds LinkedIn Profiles using natural language"
+title: "Top Sourcer Finds Linked In Profiles Using Natural Language"
 description: "Automated workflow: TopSourcer - Finds LinkedIn Profiles using natural language. This workflow integrates 9 different services: stickyNote, httpRequest, wait..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

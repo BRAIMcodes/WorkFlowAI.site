@@ -1,5 +1,5 @@
 ---
-title: "Email AI Auto-responder. Summerize and send email"
+title: "Email AI Auto Responder. Summerize And Send Email"
 description: "Automated workflow: Email AI Auto-responder. Summerize and send email. This workflow integrates 18 different services: textClassifier, stickyNote, markdown,..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "1265_Automation_Triggered"
+title: "Automation Triggered"
 description: "Integrate OpenAI and LangChain automatically using n8n."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

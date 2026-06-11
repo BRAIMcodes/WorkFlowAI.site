@@ -1,5 +1,5 @@
 ---
-title: "Create AI-Ready Vector Datasets for LLMs with Bright Data, Gemini & Pinecone"
+title: "Create AI Ready Vector Datasets For Llms With Bright Data, Gemini & Pinecone"
 description: "Automated workflow: Create AI-Ready Vector Datasets for LLMs with Bright Data, Gemini & Pinecone. This workflow integrates 14 different services: stickyNote,..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

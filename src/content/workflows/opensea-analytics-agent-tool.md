@@ -1,5 +1,5 @@
 ---
-title: "OpenSea Analytics Agent Tool"
+title: "Open Sea Analytics Agent Tool"
 description: "Automated workflow: OpenSea Analytics Agent Tool. This workflow integrates 7 different services: stickyNote, toolHttpRequest, agent, stopAndError, lmChatOpen..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

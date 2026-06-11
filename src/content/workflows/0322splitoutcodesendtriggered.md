@@ -1,5 +1,5 @@
 ---
-title: "0322_Splitout_Code_Send_Triggered"
+title: "Splitout Code Send Triggered"
 description: "Integrate Manual Trigger and Sticky Note and LangChain and OpenAI and Code and Split Out and Gmail automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0780_Splitout_Filter_Process_Webhook"
+title: "Splitout Filter Process Webhook"
 description: "Integrate Manual Trigger and Filter and LangChain and Merge and Split Out and Html and Http Request and Anthropic and Set and Airtable and Sticky Note and Ex..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

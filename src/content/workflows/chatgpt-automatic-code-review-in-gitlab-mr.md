@@ -1,5 +1,5 @@
 ---
-title: "ChatGPT Automatic Code Review in Gitlab MR"
+title: "Chat GPT Automatic Code Review In Gitlab Mr"
 description: "Integrate Sticky Note and Webhook and Code and Split Out and OpenAI and Http Request and If and LangChain automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "AI T-Shirt Redesign Workflow from any Mockup Image"
+title: "AI T Shirt Redesign Workflow From Any Mockup Image"
 description: "Automated workflow: AI T-Shirt Redesign Workflow from any Mockup Image. This workflow integrates 11 different services: convertToFile, stickyNote, httpReques..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

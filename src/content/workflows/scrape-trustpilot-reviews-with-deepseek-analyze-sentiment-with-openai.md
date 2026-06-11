@@ -1,5 +1,5 @@
 ---
-title: "Scrape Trustpilot Reviews with DeepSeek, Analyze Sentiment with OpenAI"
+title: "Scrape Trustpilot Reviews With Deep Seek, Analyze Sentiment With Open AI"
 description: "Automated workflow: Scrape Trustpilot Reviews with DeepSeek, Analyze Sentiment with OpenAI. This workflow integrates 13 different services: stickyNote, httpR..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

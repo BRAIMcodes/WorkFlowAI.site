@@ -1,5 +1,5 @@
 ---
-title: "chrome extension backend with AI"
+title: "Chrome Extension Backend With AI"
 description: "Automated workflow: chrome extension backend with AI. This workflow integrates 5 different services: webhook, stickyNote, respondToWebhook, stopAndError, ope..."
 timeSaved: "3 hours/week"
 costToRun: "Free Tier"

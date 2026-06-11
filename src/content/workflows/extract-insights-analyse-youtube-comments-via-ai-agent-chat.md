@@ -1,5 +1,5 @@
 ---
-title: "Extract insights & analyse YouTube comments via AI Agent chat"
+title: "Extract Insights & Analyse You Tube Comments Via AI Agent Chat"
 description: "Integrate Sticky Note and OpenAI and LangChain and Http Request and Execute Workflow Trigger and Set and Switch automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

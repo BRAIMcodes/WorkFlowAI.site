@@ -1,5 +1,5 @@
 ---
-title: "Build a Chatbot, Voice Agent and Phone Agent with Voiceflow, Google Calendar and RAG"
+title: "Build A Chatbot, Voice Agent And Phone Agent With Voiceflow, Google Calendar And RAG"
 description: "Automated workflow: Build a Chatbot, Voice Agent and Phone Agent with Voiceflow, Google Calendar and RAG. This workflow integrates 18 different services: web..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "WordPress Contact Form (CF7) Responses and Classification"
+title: "Word Press Contact Form (cf7) Responses And Classification"
 description: "Automated workflow: WordPress Contact Form (CF7) Responses and Classification. This workflow integrates 10 different services: textClassifier, webhook, stick..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

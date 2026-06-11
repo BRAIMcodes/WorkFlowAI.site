@@ -1,5 +1,5 @@
 ---
-title: "Html Workflow"
+title: "HTML Workflow"
 description: "Automated workflow: Html Workflow. This workflow integrates 9 different services: stickyNote, httpRequest, microsoftOutlook, scheduleTrigger, lmChatGoogleGem..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

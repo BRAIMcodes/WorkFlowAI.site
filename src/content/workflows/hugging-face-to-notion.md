@@ -1,5 +1,5 @@
 ---
-title: "Hugging Face to Notion"
+title: "Hugging Face To Notion"
 description: "Automated workflow: Hugging Face to Notion. This workflow processes data and performs automated tasks."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

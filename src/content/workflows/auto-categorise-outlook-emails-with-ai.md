@@ -1,5 +1,5 @@
 ---
-title: "Auto Categorise Outlook Emails with AI"
+title: "Auto Categorise Outlook Emails With AI"
 description: "Integrate Manual Trigger and Sticky Note and Ollama and Microsoft Outlook and Split In Batches and Markdown and Set and Filter and If and LangChain and Merge..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

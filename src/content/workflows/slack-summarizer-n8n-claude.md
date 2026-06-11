@@ -1,5 +1,5 @@
 ---
-title: "Daily Slack Channel Summarizer with n8n and Claude"
+title: "Daily Slack Channel Summarizer With n8n And Claude"
 description: "Automatically summarize key decisions, action items, and open questions from Slack channels into a daily digest using Claude 3.5 Sonnet."
 timeSaved: "2 hours/week"
 costToRun: "Free Tier"
@@ -43,8 +43,8 @@ promptVariables:
     placeholder: "Paste or map raw Slack messages here"
     defaultValue: ""
 downloadUrl: "/blueprints/slack-summarizer-n8n-claude.json"
-category: "Operations"
-persona: "Operations Teams"
+category: "Customer Support"
+persona: "Support Teams"
 difficulty: "Beginner"
 steps:
   - stepNumber: 1

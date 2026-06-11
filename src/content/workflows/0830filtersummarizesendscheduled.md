@@ -1,5 +1,5 @@
 ---
-title: "0830_Filter_Summarize_Send_Scheduled"
+title: "Filter Summarize Send Scheduled"
 description: "Integrate Google Sheets and Set and Form Trigger and LangChain and Sticky Note and Form and Filter and Summarize and Schedule Trigger and Gmail and Extract F..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

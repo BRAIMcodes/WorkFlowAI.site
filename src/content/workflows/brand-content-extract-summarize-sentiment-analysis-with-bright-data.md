@@ -1,5 +1,5 @@
 ---
-title: "Brand Content Extract, Summarize & Sentiment Analysis with Bright Data"
+title: "Brand Content Extract, Summarize & Sentiment Analysis With Bright Data"
 description: "Automated workflow: Brand Content Extract, Summarize & Sentiment Analysis with Bright Data. This workflow integrates 11 different services: stickyNote, httpR..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

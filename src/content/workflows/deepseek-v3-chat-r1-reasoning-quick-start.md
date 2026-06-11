@@ -1,5 +1,5 @@
 ---
-title: "🐋DeepSeek V3 Chat & R1 Reasoning Quick Start"
+title: "🐋deep Seek V3 Chat & R1 Reasoning Quick Start"
 description: "Automated workflow: 🐋DeepSeek V3 Chat & R1 Reasoning Quick Start. This workflow integrates 9 different services: stickyNote, httpRequest, agent, chainLlm, s..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

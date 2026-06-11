@@ -1,5 +1,5 @@
 ---
-title: "0772_Splitout_Filter_Process_Webhook"
+title: "Splitout Filter Process Webhook"
 description: "Integrate Manual Trigger and Gemini and LangChain and Http Request and Split Out and Extract From File and Split In Batches and Set and Sticky Note and Filte..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

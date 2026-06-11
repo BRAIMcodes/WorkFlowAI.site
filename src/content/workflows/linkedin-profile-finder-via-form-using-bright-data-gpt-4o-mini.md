@@ -1,5 +1,5 @@
 ---
-title: "LinkedIn Profile Finder via Form using Bright Data & GPT-4o-mini"
+title: "Linked In Profile Finder Via Form Using Bright Data & GPT 4o Mini"
 description: "Automated workflow: LinkedIn Profile Finder via Form using Bright Data & GPT-4o-mini. This workflow processes data and performs automated tasks."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0556_Splitout_Code_Create_Webhook"
+title: "Splitout Code Create Webhook"
 description: "Integrate Manual Trigger and Hacker News and Split Out and Set and LangChain and OpenAI and Http Request and Filter and Google Sheets and Execute Workflow Tr..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

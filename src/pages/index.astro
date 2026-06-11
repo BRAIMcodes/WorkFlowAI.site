@@ -142,6 +142,57 @@ const trustLogos = ['n8n', 'Make.com', 'Claude', 'ChatGPT', 'Zapier'];
         ))}
       </div>
 
+      <!-- Quick Platform & Persona Filters -->
+      <div 
+        class="glass-panel rounded-3xl p-6 md:p-8 border border-white/5 relative overflow-hidden text-left mt-8 max-w-4xl mx-auto animate-fade-in-up" 
+        style="animation-delay:500ms"
+      >
+        <!-- Decorative glow -->
+        <div class="glow-orb glow-orb-violet absolute -top-10 -right-10 w-60 h-60 opacity-60 pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start relative z-10">
+          <div class="md:col-span-2">
+            <p class="text-[11px] font-bold text-indigo-400 uppercase tracking-widest mb-2.5">Integrations</p>
+            <h2 id="integrations-heading" class="font-display text-lg md:text-xl font-extrabold text-white mb-2 leading-tight">
+              Find recipes by platform or role
+            </h2>
+            <p class="text-xs text-gray-500 leading-relaxed">
+              Every blueprint is tagged by the tool it runs on and the role that benefits most. Click to filter instantly.
+            </p>
+          </div>
+
+          <div class="md:col-span-3 space-y-5">
+            <div>
+              <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Automation Tools</h3>
+              <div class="flex flex-wrap gap-2">
+                {uniqueTools.map(tool => (
+                  <a 
+                    href={`/tools/${tool.toLowerCase().replace(/\s+/g, '-')}`}
+                    class="px-3 py-1.5 bg-white/4 hover:bg-indigo-600/10 border border-white/6 hover:border-indigo-500/25 text-[11px] font-semibold rounded-xl text-gray-400 hover:text-indigo-300 transition-all"
+                  >
+                    {tool}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Target Roles</h3>
+              <div class="flex flex-wrap gap-2">
+                {uniquePersonas.map(persona => (
+                  <a 
+                    href={`/personas/${persona.toLowerCase().replace(/\s+/g, '-')}`}
+                    class="px-3 py-1.5 bg-white/4 hover:bg-indigo-600/10 border border-white/6 hover:border-indigo-500/25 text-[11px] font-semibold rounded-xl text-gray-400 hover:text-indigo-300 transition-all"
+                  >
+                    For {persona}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -354,60 +405,6 @@ const trustLogos = ['n8n', 'Make.com', 'Claude', 'ChatGPT', 'Zapier'];
           View all {workflows.length}+ blueprints
           <Icon name="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       TOOLS & PERSONAS CROSS-LINKS (SEO Hub)
-       ============================================================ -->
-  <section class="py-20 border-t border-white/5" aria-labelledby="integrations-heading">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-panel rounded-3xl p-8 md:p-12 border border-white/5 relative overflow-hidden">
-        <!-- Decorative glow -->
-        <div class="glow-orb glow-orb-violet absolute -top-10 -right-10 w-60 h-60 opacity-60 pointer-events-none"></div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start relative z-10">
-          <div class="lg:col-span-2">
-            <p class="text-[11px] font-bold text-indigo-400 uppercase tracking-widest mb-3">Integrations</p>
-            <h2 id="integrations-heading" class="font-display text-xl md:text-2xl font-extrabold text-white mb-3">
-              Find recipes by platform or role
-            </h2>
-            <p class="text-sm text-gray-500 leading-relaxed">
-              Every blueprint is tagged by the tool it runs on and the role that benefits most. Click to filter instantly.
-            </p>
-          </div>
-
-          <div class="lg:col-span-3 space-y-7">
-            <div>
-              <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Automation Tools</h3>
-              <div class="flex flex-wrap gap-2">
-                {uniqueTools.map(tool => (
-                  <a 
-                    href={`/tools/${tool.toLowerCase().replace(/\s+/g, '-')}`}
-                    class="px-3.5 py-1.5 bg-white/4 hover:bg-indigo-600/10 border border-white/6 hover:border-indigo-500/25 text-[11px] font-semibold rounded-xl text-gray-400 hover:text-indigo-300 transition-all"
-                  >
-                    {tool}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Target Roles</h3>
-              <div class="flex flex-wrap gap-2">
-                {uniquePersonas.map(persona => (
-                  <a 
-                    href={`/personas/${persona.toLowerCase().replace(/\s+/g, '-')}`}
-                    class="px-3.5 py-1.5 bg-white/4 hover:bg-indigo-600/10 border border-white/6 hover:border-indigo-500/25 text-[11px] font-semibold rounded-xl text-gray-400 hover:text-indigo-300 transition-all"
-                  >
-                    For {persona}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>

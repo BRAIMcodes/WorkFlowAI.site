@@ -1,5 +1,5 @@
 ---
-title: "1530_HTTP_Stickynote_Automation_Webhook"
+title: "HTTP Stickynote Automation Webhook"
 description: "Integrate Execute Workflow Trigger and Http Request and Set and Sticky Note automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

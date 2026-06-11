@@ -1,5 +1,5 @@
 ---
-title: "0533_Wait_Code_Export_Webhook"
+title: "Wait Code Export Webhook"
 description: "Integrate Manual Trigger and Http Request and Code and Html and Set and LangChain and Merge and Execute Workflow Trigger and Wait and Sticky Note automatical..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

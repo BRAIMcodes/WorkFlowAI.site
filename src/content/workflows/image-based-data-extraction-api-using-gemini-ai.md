@@ -1,5 +1,5 @@
 ---
-title: "Image-Based Data Extraction API using Gemini AI"
+title: "Image Based Data Extraction API Using Gemini AI"
 description: "Automated workflow: Image-Based Data Extraction API using Gemini AI. This workflow integrates 7 different services: webhook, stickyNote, httpRequest, set, re..."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

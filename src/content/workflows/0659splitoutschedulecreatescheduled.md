@@ -1,5 +1,5 @@
 ---
-title: "0659_Splitout_Schedule_Create_Scheduled"
+title: "Splitout Schedule Create Scheduled"
 description: "Integrate Split Out and Http Request and OpenAI and Merge and Airtable and Remove Duplicates and Html and Schedule Trigger and Sticky Note and Gmail automati..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

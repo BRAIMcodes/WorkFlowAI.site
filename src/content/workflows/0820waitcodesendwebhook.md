@@ -1,5 +1,5 @@
 ---
-title: "0820_Wait_Code_Send_Webhook"
+title: "Wait Code Send Webhook"
 description: "Integrate Code and Microsoft Outlook and Set and Split In Batches and LangChain and Extract From File and Markdown and Wait and Filter and If and Schedule Tr..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "0625_Splitout_Code_Create_Triggered"
+title: "Splitout Code Create Triggered"
 description: "Integrate Google Drive and Set and Merge and Sort and Aggregate and Form Trigger and Google Sheets and Convert To File and Split Out and If and Code and Open..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

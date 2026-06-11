@@ -1,5 +1,5 @@
 ---
-title: "Use AI to organize your Todoist Inbox"
+title: "Use AI To Organize Your Todoist Inbox"
 description: "Integrate Todoist and Schedule Trigger and Sticky Note and Set and OpenAI and Filter automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

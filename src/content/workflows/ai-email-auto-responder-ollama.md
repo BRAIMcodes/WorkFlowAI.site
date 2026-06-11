@@ -1,5 +1,5 @@
 ---
-title: "AI Email Auto-Responder (Ollama)"
+title: "AI Email Auto Responder (ollama)"
 description: "Integrate Schedule Trigger and Email Read Imap and Http Request and Filter and Set automatically using n8n."
 timeSaved: "5 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Vision-Based AI Agent Scraper - with Google Sheets, ScrapingBee, and Gemini"
+title: "Vision Based AI Agent Scraper With Google Sheets, Scraping Bee, And Gemini"
 description: "Automated workflow: Vision-Based AI Agent Scraper - with Google Sheets, ScrapingBee, and Gemini. This workflow integrates 13 different services: stickyNote,..."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

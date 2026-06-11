@@ -1,5 +1,5 @@
 ---
-title: "0400_Manual_Code_Create_Webhook"
+title: "Manual Code Create Webhook"
 description: "Integrate Manual Trigger and Sticky Note and Http Request and OpenAI and Set and LangChain and Code automatically using n8n."
 timeSaved: "8 hours/week"
 costToRun: "Free Tier"

@@ -1,5 +1,5 @@
 ---
-title: "Automated Invoice Processing and Approval with n8n and GPT-4o"
+title: "Automated Invoice Processing And Approval With n8n And GPT 4o"
 description: "Extract invoice data from email PDFs with GPT-4o, create QuickBooks draft bills, and route approvals via Slack."
 timeSaved: "5 hours/week"
 costToRun: "~$0.04 per invoice"
@@ -64,8 +64,8 @@ promptVariables:
     placeholder: "Auto-populated from PDF extraction"
     defaultValue: ""
 downloadUrl: "/blueprints/invoice-processor-n8n-gpt4.json"
-category: "Operations"
-persona: "Operations Teams"
+category: "Customer Support"
+persona: "Support Teams"
 difficulty: "Intermediate"
 steps:
   - stepNumber: 1

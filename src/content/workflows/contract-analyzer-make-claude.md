@@ -1,6 +1,6 @@
 ---
-title: "AI Contract Risk Analyzer with Make.com and Claude"
-description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions — with plain-English summaries."
+title: "AI Contract Risk Analyzer With Make.com And Claude"
+description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions ï¿½ with plain-English summaries."
 timeSaved: "4 hours/week"
 costToRun: "~$0.08 per contract"
 primaryTool: "Make.com"
@@ -70,28 +70,28 @@ promptVariables:
     defaultValue: ""
 downloadUrl: "/blueprints/contract-analyzer-make-claude.json"
 category: "Operations"
-persona: "Operations Teams"
+persona: "Operations Managers"
 difficulty: "Advanced"
 steps:
   - stepNumber: 1
     title: "Watch Google Drive Folder for New PDFs"
-    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions — with plain-English summaries."
+    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions ï¿½ with plain-English summaries."
     tool: "Google Drive"
   - stepNumber: 2
     title: "Download and Extract PDF Text"
-    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions — with plain-English summaries."
+    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions ï¿½ with plain-English summaries."
     tool: "Make.com"
   - stepNumber: 3
     title: "Claude 3.5 Sonnet Analyzes the Contract"
-    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions — with plain-English summaries."
+    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions ï¿½ with plain-English summaries."
     tool: "Claude 3.5 Sonnet"
   - stepNumber: 4
     title: "Create Notion Page with Full Analysis"
-    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions — with plain-English summaries."
+    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions ï¿½ with plain-English summaries."
     tool: "Notion"
   - stepNumber: 5
     title: "Email Summary to Legal Team"
-    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions — with plain-English summaries."
+    description: "Analyze PDF contracts with Claude to identify risk clauses, missing terms, and payment conditions ï¿½ with plain-English summaries."
     tool: "Gmail"
 ---
 
