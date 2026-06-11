@@ -18,7 +18,7 @@ import Icon from '../components/Icon.astro';
       </div>
 
       <div class="max-w-xl mx-auto glass-panel rounded-3xl p-8 border border-white/6">
-        <form class="space-y-6">
+        <form id="contact-form" class="space-y-6">
           <div>
             <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">Name</label>
             <input 
@@ -27,6 +27,7 @@ import Icon from '../components/Icon.astro';
               name="name" 
               class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500/80 transition-colors" 
               placeholder="Your Name"
+              required
             />
           </div>
           <div>
@@ -37,6 +38,7 @@ import Icon from '../components/Icon.astro';
               name="email" 
               class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500/80 transition-colors" 
               placeholder="you@company.com"
+              required
             />
           </div>
           <div>
@@ -47,15 +49,19 @@ import Icon from '../components/Icon.astro';
               rows="4" 
               class="w-full bg-[#0B0F19] border border-white/6 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500/80 transition-colors" 
               placeholder="Describe your automation goals..."
+              required
             ></textarea>
           </div>
+          
           <button 
-            type="button" 
-            onclick="alert('Thank you! This is a demo form. Please email us directly at hello@workflowai.site')" 
+            type="submit" 
+            id="contact-submit-btn" 
             class="btn btn-primary w-full justify-center py-4"
           >
             Send Message
           </button>
+          
+          <p id="contact-form-message" class="text-center text-xs mt-2 font-medium min-h-[1.25rem]"></p>
         </form>
 
         <div class="mt-8 pt-8 border-t border-white/6 text-center text-sm text-gray-500">
@@ -64,4 +70,49 @@ import Icon from '../components/Icon.astro';
       </div>
     </div>
   </div>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('contact-submit-btn') as HTMLButtonElement;
+    const messageEl = document.getElementById('contact-form-message');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!submitBtn || !messageEl) return;
+
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending Message...';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      messageEl.textContent = '';
+      messageEl.className = 'text-center text-xs mt-2 font-medium min-h-[1.25rem]';
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          messageEl.textContent = "Thank you! Your message was sent successfully.";
+          messageEl.className = 'text-center text-xs mt-2 font-medium text-emerald-400';
+          form.reset();
+        } else {
+          messageEl.textContent = data.message || 'Failed to send. Please try again.';
+          messageEl.className = 'text-center text-xs mt-2 font-medium text-red-400';
+        }
+      } catch (err) {
+        messageEl.textContent = 'Connection error. Please try again or email us directly.';
+        messageEl.className = 'text-center text-xs mt-2 font-medium text-red-400';
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+      }
+    });
+  </script>
 </Layout>
