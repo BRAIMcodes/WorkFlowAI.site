@@ -1,5 +1,10 @@
 import { Resend } from 'resend';
 
+const sanitizeError = (msg: string): string => {
+  if (!msg) return '';
+  return msg.replace(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g, '[redacted]');
+};
+
 export const onRequestPost = async ({ request, env }) => {
   if (!env.RESEND_API_KEY) {
     return new Response(JSON.stringify({ message: "RESEND_API_KEY is not configured in Cloudflare environment variables." }), { 
@@ -45,7 +50,7 @@ export const onRequestPost = async ({ request, env }) => {
       }
     } catch (audError: any) {
       console.error('Error fetching or creating Resend audience:', audError);
-      return new Response(JSON.stringify({ message: `Resend API Error: ${audError.message}. Please verify your Resend account has active domains.` }), {
+      return new Response(JSON.stringify({ message: `Resend API Error: ${sanitizeError(audError.message)}. Please verify your Resend account has active domains.` }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' }
       });
@@ -65,7 +70,7 @@ export const onRequestPost = async ({ request, env }) => {
     });
 
     if (response.error) {
-       return new Response(JSON.stringify({ message: response.error.message }), { 
+       return new Response(JSON.stringify({ message: sanitizeError(response.error.message) }), { 
          status: 500,
          headers: { 'Content-Type': 'application/json' }
        });
@@ -77,7 +82,7 @@ export const onRequestPost = async ({ request, env }) => {
     });
 
   } catch (error: any) {
-    return new Response(JSON.stringify({ message: "Server error: " + error.message }), { 
+    return new Response(JSON.stringify({ message: "Server error: " + sanitizeError(error.message) }), { 
       status: 500,
       headers: { 'Content-Type': 'application/json' }
     });

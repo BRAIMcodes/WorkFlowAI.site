@@ -1,5 +1,10 @@
 import { Resend } from 'resend';
 
+const sanitizeError = (msg: string): string => {
+  if (!msg) return '';
+  return msg.replace(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g, '[redacted]');
+};
+
 export const onRequestPost = async ({ request, env }) => {
   if (!env.RESEND_API_KEY) {
     return new Response(JSON.stringify({ message: "RESEND_API_KEY is not configured in Cloudflare environment variables." }), { 
@@ -21,8 +26,10 @@ export const onRequestPost = async ({ request, env }) => {
     const blueprint = formData.get('blueprint')?.toString() || 'None';
     const email = formData.get('email')?.toString() || 'Not provided';
 
-    const sender = env.RESEND_SENDER_EMAIL || 'WorkflowAI Submissions <onboarding@resend.dev>';
-    const recipient = env.RESEND_RECIPIENT_EMAIL || 'hello@workflowai.site';
+    // Default to the custom domain email. 
+    // Cloudflare email routing redirects these to the user's destination, and verifying the domain on Resend activates it.
+    const sender = env.RESEND_SENDER_EMAIL || 'WorkflowAI Submissions <submit@workflowai.site>';
+    const recipient = env.RESEND_RECIPIENT_EMAIL || 'submit@workflowai.site';
 
     const response = await resend.emails.send({
       from: sender,
@@ -73,7 +80,7 @@ export const onRequestPost = async ({ request, env }) => {
 
     if (response.error) {
       return new Response(JSON.stringify({ 
-        message: `Resend error: ${response.error.message}. If your Resend account is in sandbox mode, please ensure the recipient is your registered email, or verify your domain.` 
+        message: `Email delivery failed: ${sanitizeError(response.error.message)}. If your Resend account is in sandbox mode, please ensure the recipient is your registered email, or verify your domain.` 
       }), { 
         status: 500,
         headers: { 'Content-Type': 'application/json' }
@@ -86,7 +93,7 @@ export const onRequestPost = async ({ request, env }) => {
     });
 
   } catch (error: any) {
-    return new Response(JSON.stringify({ message: "Server error: " + error.message }), { 
+    return new Response(JSON.stringify({ message: "Server error: " + sanitizeError(error.message) }), { 
       status: 500,
       headers: { 'Content-Type': 'application/json' }
     });
