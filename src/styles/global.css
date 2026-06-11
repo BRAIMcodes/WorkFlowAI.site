@@ -927,3 +927,96 @@ article.glass-card:hover {
     height: 2.25rem;
   }
 }
+
+/* =========================================================
+   MARQUEE STRIP — infinite horizontal scroll
+   ========================================================= */
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* =========================================================
+   COMMAND PALETTE — animation
+   ========================================================= */
+
+#cmd-palette-overlay {
+  transition: opacity 0.15s ease;
+}
+
+#cmd-palette-overlay:not(.hidden) {
+  animation: palette-in 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes palette-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+#cmd-palette {
+  animation: palette-slide 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes palette-slide {
+  from { transform: translateY(-8px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* =========================================================
+   ANIMATED NUMBER COUNTER
+   ========================================================= */
+
+.stat-number[data-count] {
+  transition: color 0.3s ease;
+}
+
+/* Active nav link underline (animated) */
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* =========================================================
+   HERO WORD CYCLE
+   ========================================================= */
+
+.word-cycle {
+  display: inline-block;
+  position: relative;
+}
+
+.word-cycle span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.word-cycle span.visible {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+}

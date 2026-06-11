@@ -1,0 +1,264 @@
+---
+// CommandPalette.astro
+// Receives all searchable items from Layout via a JSON data attribute
+// Keyboard: Cmd/Ctrl+K to open, ↑↓ to navigate, Enter to go, Escape to close
+---
+
+<div 
+  id="cmd-palette-overlay"
+  class="fixed inset-0 z-[300] flex items-start justify-center pt-[15vh] hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Command palette"
+>
+  <!-- Backdrop -->
+  <div id="cmd-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+  <!-- Palette container -->
+  <div 
+    id="cmd-palette"
+    class="relative w-full max-w-2xl mx-4 bg-[#0F1525] border border-white/10 rounded-2xl shadow-[0_32px_80px_-12px_rgba(0,0,0,0.8),0_0_0_0.5px_rgba(255,255,255,0.06)] overflow-hidden"
+    style="max-height: min(560px, 80vh);"
+  >
+    <!-- Search Input Row -->
+    <div class="flex items-center gap-3 px-5 py-4 border-b border-white/6">
+      <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+      <input
+        id="cmd-input"
+        type="text"
+        placeholder="Search workflows, tools, pages..."
+        class="flex-1 bg-transparent text-white placeholder-gray-500 text-sm focus:outline-none"
+        autocomplete="off"
+        spellcheck="false"
+        aria-autocomplete="list"
+        aria-controls="cmd-results"
+      />
+      <kbd class="hidden sm:inline-flex items-center gap-1 px-2 py-1 bg-white/5 border border-white/8 rounded-md text-[10px] text-gray-500 font-mono">
+        ESC
+      </kbd>
+    </div>
+
+    <!-- Results -->
+    <div id="cmd-results" class="overflow-y-auto" style="max-height: 420px;" role="listbox">
+      <!-- Filled by JS -->
+    </div>
+
+    <!-- Footer -->
+    <div class="flex items-center justify-between px-5 py-3 border-t border-white/5 bg-black/20">
+      <div class="flex items-center gap-4 text-[10px] text-gray-600">
+        <span class="flex items-center gap-1.5">
+          <kbd class="px-1.5 py-0.5 bg-white/5 border border-white/8 rounded text-[9px] font-mono">↑↓</kbd>
+          Navigate
+        </span>
+        <span class="flex items-center gap-1.5">
+          <kbd class="px-1.5 py-0.5 bg-white/5 border border-white/8 rounded text-[9px] font-mono">↵</kbd>
+          Open
+        </span>
+        <span class="flex items-center gap-1.5">
+          <kbd class="px-1.5 py-0.5 bg-white/5 border border-white/8 rounded text-[9px] font-mono">ESC</kbd>
+          Close
+        </span>
+      </div>
+      <span class="text-[10px] text-gray-600">⌘K anywhere</span>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function() {
+  // --- Data Store ---
+  // This will be populated by Layout.astro when it injects the JSON
+  const CMD_DATA = window.__CMD_PALETTE_DATA__ || { workflows: [], pages: [] };
+
+  const overlay  = document.getElementById('cmd-palette-overlay');
+  const backdrop = document.getElementById('cmd-backdrop');
+  const input    = document.getElementById('cmd-input');
+  const results  = document.getElementById('cmd-results');
+
+  if (!overlay || !input || !results) return;
+
+  let activeIndex = -1;
+  let filteredItems = [];
+
+  // --- Pages to always show ---
+  const STATIC_PAGES = [
+    { type: 'page', label: 'All Workflows', sub: 'Browse the library', href: '/workflows', icon: 'grid' },
+    { type: 'page', label: 'All Tools',     sub: 'Automation platforms', href: '/tools',    icon: 'settings' },
+    { type: 'page', label: 'By Role',       sub: 'Find workflows for your role', href: '/personas', icon: 'user' },
+    { type: 'page', label: 'About',         sub: 'Our mission and philosophy',   href: '/about',    icon: 'info' },
+    { type: 'page', label: 'Submit a Recipe', sub: 'Contribute to the community', href: '/submit',  icon: 'plus-circle' },
+    { type: 'page', label: 'Contact',       sub: 'Get in touch',       href: '/contact',   icon: 'mail' },
+  ];
+
+  const ICONS = {
+    grid: '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>',
+    settings: '<path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>',
+    user: '<path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>',
+    info: '<path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>',
+    mail: '<path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>',
+    'plus-circle': '<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>',
+    bolt: '<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>',
+    tool: '<path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>',
+  };
+
+  function icon(name) {
+    const d = ICONS[name] || ICONS.bolt;
+    return `<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">${d}</svg>`;
+  }
+
+  function typeLabel(type) {
+    if (type === 'workflow') return '<span class="px-1.5 py-0.5 bg-indigo-500/15 text-indigo-400 rounded text-[9px] font-bold uppercase tracking-wider">Workflow</span>';
+    if (type === 'tool')     return '<span class="px-1.5 py-0.5 bg-violet-500/15 text-violet-400 rounded text-[9px] font-bold uppercase tracking-wider">Tool</span>';
+    return '<span class="px-1.5 py-0.5 bg-white/6 text-gray-500 rounded text-[9px] font-bold uppercase tracking-wider">Page</span>';
+  }
+
+  // --- Fuzzy match ---
+  function matches(item, q) {
+    const query = q.toLowerCase().trim();
+    if (!query) return true;
+    const searchable = (item.label + ' ' + (item.sub || '') + ' ' + (item.type || '')).toLowerCase();
+    return searchable.includes(query);
+  }
+
+  // --- Render ---
+  function render(query) {
+    const workflows = (CMD_DATA.workflows || []).map(w => ({
+      type: 'workflow',
+      label: w.title,
+      sub: w.tool,
+      href: `/workflows/${w.slug}`,
+      icon: 'bolt'
+    }));
+
+    const tools = (CMD_DATA.tools || []).map(t => ({
+      type: 'tool',
+      label: t,
+      sub: 'Automation tool',
+      href: `/tools/${t.toLowerCase().replace(/\s+/g, '-')}`,
+      icon: 'tool'
+    }));
+
+    const all = [...workflows, ...tools, ...STATIC_PAGES];
+    filteredItems = all.filter(item => matches(item, query));
+    activeIndex = filteredItems.length > 0 ? 0 : -1;
+
+    if (filteredItems.length === 0) {
+      results.innerHTML = `
+        <div class="py-12 text-center text-sm text-gray-500">
+          No results for "<span class="text-gray-300">${query}</span>"
+        </div>`;
+      return;
+    }
+
+    // Group by type
+    const groups = {};
+    filteredItems.forEach((item, i) => {
+      if (!groups[item.type]) groups[item.type] = [];
+      groups[item.type].push({ ...item, _idx: i });
+    });
+
+    const groupOrder = ['workflow', 'tool', 'page'];
+    const groupLabels = { workflow: 'Workflows', tool: 'Tools', page: 'Pages' };
+
+    results.innerHTML = groupOrder
+      .filter(g => groups[g] && groups[g].length > 0)
+      .map(g => `
+        <div>
+          <div class="px-5 pt-4 pb-1.5 text-[10px] font-bold text-gray-600 uppercase tracking-widest">${groupLabels[g]}</div>
+          ${groups[g].map(item => `
+            <a
+              href="${item.href}"
+              class="cmd-item flex items-center gap-4 px-5 py-3 text-sm transition-colors hover:bg-white/4 cursor-pointer ${item._idx === activeIndex ? 'bg-white/5' : ''}"
+              data-idx="${item._idx}"
+              role="option"
+              aria-selected="${item._idx === activeIndex}"
+            >
+              <span class="flex-shrink-0 w-8 h-8 bg-white/[0.04] border border-white/6 rounded-xl flex items-center justify-center text-gray-400">
+                ${icon(item.icon)}
+              </span>
+              <span class="flex-1 min-w-0">
+                <span class="block text-gray-200 font-medium truncate">${item.label}</span>
+                <span class="block text-[11px] text-gray-500 truncate">${item.sub || ''}</span>
+              </span>
+              ${typeLabel(item.type)}
+            </a>
+          `).join('')}
+        </div>
+      `).join('');
+
+    // Mouse hover → update active
+    results.querySelectorAll('.cmd-item').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        activeIndex = parseInt(el.dataset.idx);
+        highlight();
+      });
+    });
+  }
+
+  function highlight() {
+    results.querySelectorAll('.cmd-item').forEach(el => {
+      const isActive = parseInt(el.dataset.idx) === activeIndex;
+      el.classList.toggle('bg-white/5', isActive);
+      el.classList.toggle('bg-white/4', !isActive);
+      el.setAttribute('aria-selected', String(isActive));
+      if (isActive) el.scrollIntoView({ block: 'nearest' });
+    });
+  }
+
+  // --- Open / Close ---
+  function open() {
+    overlay.classList.remove('hidden');
+    overlay.removeAttribute('aria-hidden');
+    input.value = '';
+    render('');
+    requestAnimationFrame(() => input.focus());
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    overlay.classList.add('hidden');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // --- Keyboard ---
+  document.addEventListener('keydown', e => {
+    // Open on ⌘K / Ctrl+K
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      overlay.classList.contains('hidden') ? open() : close();
+      return;
+    }
+
+    if (overlay.classList.contains('hidden')) return;
+
+    if (e.key === 'Escape') { close(); return; }
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      activeIndex = Math.min(activeIndex + 1, filteredItems.length - 1);
+      highlight();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      activeIndex = Math.max(activeIndex - 1, 0);
+      highlight();
+    } else if (e.key === 'Enter') {
+      if (activeIndex >= 0 && filteredItems[activeIndex]) {
+        close();
+        window.location.href = filteredItems[activeIndex].href;
+      }
+    }
+  });
+
+  // Backdrop click → close
+  backdrop.addEventListener('click', close);
+
+  // Input → re-render
+  input.addEventListener('input', () => render(input.value));
+
+  // Expose global open
+  window.openCommandPalette = open;
+})();
+</script>

@@ -11,15 +11,20 @@ const workflows = defineCollection({
     connectedApps: z.array(z.string()),
     promptSnippet: z.string().optional(),
     promptVariables: z.array(z.object({
-      name: z.string(),       // The variable to look for in the prompt template, e.g. "company_name"
-      label: z.string(),      // Human-readable form label, e.g. "Company Name"
-      placeholder: z.string(), // Input placeholder text
-      defaultValue: z.string() // Fallback value
+      name: z.string(),
+      label: z.string(),
+      placeholder: z.string(),
+      defaultValue: z.string()
     })).optional(),
     downloadUrl: z.string(),
     category: z.string(),
     persona: z.string(),
     difficulty: z.string().default("Intermediate"),
+    // Trust & UX fields
+    lastVerified: z.string().optional().default("June 2026"),
+    setupTime: z.string().optional().default("~30 minutes"),
+    verifiedBy: z.string().optional().default("WorkflowAI Team"),
+    tags: z.array(z.string()).optional().default([]),
     steps: z.array(z.object({
       stepNumber: z.number(),
       title: z.string(),

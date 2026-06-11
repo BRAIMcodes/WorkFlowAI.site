@@ -1,7 +1,9 @@
 ---
 import '../styles/global.css';
 import SubscribeModal from '../components/SubscribeModal.astro';
+import CommandPalette from '../components/CommandPalette.astro';
 import Icon from '../components/Icon.astro';
+import { getCollection } from 'astro:content';
 
 interface Props {
   title?: string;
@@ -23,6 +25,20 @@ const navLinks = [
   { href: '/personas', label: 'Personas' },
   { href: '/about', label: 'About' },
 ];
+
+// Build command palette search data at build time
+let cmdPaletteData = { workflows: [], tools: [] };
+try {
+  const allWorkflows = await getCollection('workflows');
+  cmdPaletteData.workflows = allWorkflows.map(w => ({
+    title: w.data.title,
+    slug: w.id,
+    tool: w.data.primaryTool || '',
+  }));
+  cmdPaletteData.tools = [...new Set(allWorkflows.map(w => w.data.primaryTool).filter(Boolean))];
+} catch (e) {
+  // graceful fallback if collection not available on this page
+}
 ---
 
 <!DOCTYPE html>
@@ -58,6 +74,11 @@ const navLinks = [
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZ0.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Command Palette Data (injected at build time) -->
+    <script is:inline define:vars={{ cmdPaletteData }}>
+      window.__CMD_PALETTE_DATA__ = cmdPaletteData;
+    </script>
   </head>
   <body class="bg-[#070A13] text-gray-300 font-sans antialiased flex flex-col min-h-screen">
     
@@ -109,7 +130,21 @@ const navLinks = [
           </nav>
 
           <!-- CTA Button -->
-          <div class="hidden md:flex items-center gap-3">
+          <div class="hidden md:flex items-center gap-2">
+            <!-- ⌘K Search trigger -->
+            <button
+              onclick="window.openCommandPalette && window.openCommandPalette()"
+              class="flex items-center gap-2 px-3 py-2 bg-white/[0.04] hover:bg-white/[0.07] border border-white/7 hover:border-white/10 rounded-xl text-xs text-gray-500 hover:text-gray-300 transition-all duration-200 group"
+              aria-label="Search (Ctrl+K)"
+              title="Search (⌘K)"
+            >
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+              <span class="hidden lg:inline">Search</span>
+              <kbd class="hidden lg:inline-flex items-center gap-0.5 ml-1 px-1.5 py-0.5 bg-white/5 border border-white/8 rounded text-[9px] font-mono text-gray-600 group-hover:text-gray-400 transition-colors">⌘K</kbd>
+            </button>
+
             <a 
               href="https://github.com/BRAIMcodes/WorkFlowAI.site" 
               target="_blank"
@@ -328,6 +363,7 @@ const navLinks = [
     </div>
 
     <SubscribeModal />
+    <CommandPalette />
 
     <!-- Back to Top Button -->
     <button

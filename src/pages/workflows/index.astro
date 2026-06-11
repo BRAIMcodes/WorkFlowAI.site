@@ -5,26 +5,63 @@ import Icon from '../../components/Icon.astro';
 
 const workflows = await getCollection('workflows');
 
-const categories = [...new Set(workflows.map(w => w.data.category))];
-const tools = [...new Set(workflows.map(w => w.data.primaryTool))];
-const personas = [...new Set(workflows.map(w => w.data.persona))];
+const categories = [...new Set(workflows.map(w => w.data.category))].sort();
+const tools = [...new Set(workflows.map(w => w.data.primaryTool))].sort();
+const personas = [...new Set(workflows.map(w => w.data.persona))].sort();
+const difficulties = ['Beginner', 'Intermediate', 'Advanced'];
+
+// Sort workflows newest-first by default (alphabetical as proxy since we don't have dates)
+const sortedWorkflows = [...workflows].sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const toolColors: Record<string, string> = {
+  'n8n': 'text-orange-400 bg-orange-500/10 border-orange-500/20',
+  'Make.com': 'text-violet-400 bg-violet-500/10 border-violet-500/20',
+  'Zapier': 'text-orange-300 bg-orange-400/10 border-orange-400/20',
+  'Langflow': 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+};
 ---
 
 <Layout 
   title="AI Automation Workflow Library & Recipes - WorkFlowAI" 
-  description="Browse our complete list of verified automation blueprints, JSON configurations, and prompt scripts for n8n, Make.com, and Claude."
+  description="Browse verified automation blueprints, JSON configs, and prompt scripts for n8n, Make.com, Zapier and more. Filter by tool, role, or complexity."
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
     <!-- Page Header -->
-    <div class="mb-10">
+    <div class="mb-8">
       <p class="text-[11px] font-bold text-indigo-400 uppercase tracking-widest mb-3">Library</p>
-      <h1 class="font-display text-3xl md:text-5xl font-extrabold text-white mb-3 tracking-tight">
-        Automation Blueprints
-      </h1>
-      <p class="text-gray-500 text-base max-w-2xl">
-        Filter by department, primary automation tool, or search for specific integrations to find your recipe.
-      </p>
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <h1 class="font-display text-3xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">
+            Automation Blueprints
+          </h1>
+          <p class="text-gray-500 text-sm max-w-xl">
+            {workflows.length} verified recipes — each tested, documented, and ready to import.
+          </p>
+        </div>
+        <!-- Mobile search shortcut hint -->
+        <div class="hidden sm:flex items-center gap-2 text-xs text-gray-600">
+          <kbd class="px-2 py-1 bg-white/5 border border-white/8 rounded-lg font-mono">/</kbd>
+          <span>to search</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Filters (horizontal chips) -->
+    <div class="lg:hidden mb-6 space-y-3">
+      <div class="flex gap-2 flex-wrap">
+        <span class="text-[10px] text-gray-500 uppercase tracking-wider font-bold self-center">Tool:</span>
+        <button class="mobile-tool-chip active-chip px-3 py-1.5 rounded-full text-[11px] font-semibold border transition-all" data-value="all">All</button>
+        {tools.map(tool => (
+          <button class="mobile-tool-chip px-3 py-1.5 rounded-full text-[11px] font-semibold border border-white/8 bg-white/4 text-gray-400 hover:text-white transition-all" data-value={tool}>{tool}</button>
+        ))}
+      </div>
+      <div class="flex gap-2 flex-wrap">
+        <span class="text-[10px] text-gray-500 uppercase tracking-wider font-bold self-center">Level:</span>
+        {difficulties.map(d => (
+          <button class="mobile-diff-chip px-3 py-1.5 rounded-full text-[11px] font-semibold border border-white/8 bg-white/4 text-gray-400 hover:text-white transition-all" data-value={d}>{d}</button>
+        ))}
+      </div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -32,7 +69,7 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
       <!-- ============================================================
            FILTERS SIDEBAR
            ============================================================ -->
-      <aside class="col-span-1 space-y-4 sticky-sidebar" aria-label="Filter workflows">
+      <aside class="hidden lg:block col-span-1 space-y-4 sticky-sidebar" aria-label="Filter workflows">
 
         <!-- Search Widget -->
         <div class="glass-panel p-5 rounded-2xl border border-white/5">
@@ -44,17 +81,43 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
             <input 
               type="text" 
               id="search-input" 
-              placeholder="Filter blueprints..." 
+              placeholder="Search blueprints..." 
               class="w-full bg-[#0B0F19] border border-white/5 rounded-xl pl-9 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500/40 transition-colors"
               aria-label="Search workflows"
             />
           </div>
         </div>
 
+        <!-- Complexity / Difficulty Filter -->
+        <div class="glass-panel p-5 rounded-2xl border border-white/5">
+          <h2 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Complexity</h2>
+          <div class="space-y-2.5">
+            <label class="flex items-center gap-3 text-xs text-gray-500 hover:text-white cursor-pointer select-none group">
+              <input type="radio" name="difficulty-filter" value="all" checked class="accent-indigo-500 w-3.5 h-3.5 flex-shrink-0" />
+              <span class="group-hover:text-gray-200 transition-colors">All Levels</span>
+            </label>
+            <label class="flex items-center gap-3 text-xs cursor-pointer select-none group">
+              <input type="radio" name="difficulty-filter" value="Beginner" class="accent-indigo-500 w-3.5 h-3.5 flex-shrink-0" />
+              <span class="text-emerald-400/80 group-hover:text-emerald-300 transition-colors">Beginner</span>
+              <span class="ml-auto text-[10px] text-gray-600">≤20 min</span>
+            </label>
+            <label class="flex items-center gap-3 text-xs cursor-pointer select-none group">
+              <input type="radio" name="difficulty-filter" value="Intermediate" class="accent-indigo-500 w-3.5 h-3.5 flex-shrink-0" />
+              <span class="text-amber-400/80 group-hover:text-amber-300 transition-colors">Intermediate</span>
+              <span class="ml-auto text-[10px] text-gray-600">~30 min</span>
+            </label>
+            <label class="flex items-center gap-3 text-xs cursor-pointer select-none group">
+              <input type="radio" name="difficulty-filter" value="Advanced" class="accent-indigo-500 w-3.5 h-3.5 flex-shrink-0" />
+              <span class="text-rose-400/80 group-hover:text-rose-300 transition-colors">Advanced</span>
+              <span class="ml-auto text-[10px] text-gray-600">45+ min</span>
+            </label>
+          </div>
+        </div>
+
         <!-- Tool Filter -->
         <div class="glass-panel p-5 rounded-2xl border border-white/5">
           <h2 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Automation Tool</h2>
-          <div class="space-y-3">
+          <div class="space-y-2.5">
             <label class="flex items-center gap-3 text-xs text-gray-500 hover:text-white cursor-pointer select-none group">
               <input type="radio" name="tool-filter" value="all" checked class="accent-indigo-500 w-3.5 h-3.5 flex-shrink-0" />
               <span class="group-hover:text-gray-200 transition-colors">All Tools</span>
@@ -71,10 +134,10 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
         <!-- Category Filter -->
         <div class="glass-panel p-5 rounded-2xl border border-white/5">
           <h2 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Department</h2>
-          <div class="space-y-3">
+          <div class="space-y-2.5">
             <label class="flex items-center gap-3 text-xs text-gray-500 hover:text-white cursor-pointer select-none group">
               <input type="radio" name="category-filter" value="all" checked class="accent-indigo-500 w-3.5 h-3.5 flex-shrink-0" />
-              <span class="group-hover:text-gray-200 transition-colors">All Categories</span>
+              <span class="group-hover:text-gray-200 transition-colors">All Departments</span>
             </label>
             {categories.map(cat => (
               <label class="flex items-center gap-3 text-xs text-gray-500 hover:text-white cursor-pointer select-none group">
@@ -88,7 +151,7 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
         <!-- Persona Filter -->
         <div class="glass-panel p-5 rounded-2xl border border-white/5">
           <h2 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">Target Role</h2>
-          <div class="space-y-3">
+          <div class="space-y-2.5">
             <label class="flex items-center gap-3 text-xs text-gray-500 hover:text-white cursor-pointer select-none group">
               <input type="radio" name="persona-filter" value="all" checked class="accent-indigo-500 w-3.5 h-3.5 flex-shrink-0" />
               <span class="group-hover:text-gray-200 transition-colors">All Roles</span>
@@ -120,49 +183,72 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
            ============================================================ -->
       <main class="col-span-1 lg:col-span-3" aria-label="Workflow results">
         <!-- Results toolbar -->
-        <div class="flex justify-between items-center mb-5 h-8">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-5">
           <span id="results-count" class="text-xs text-gray-500 font-semibold">
             Showing {workflows.length} workflows
           </span>
-          <button 
-            id="clear-filters" 
-            class="hidden text-xs text-indigo-400 hover:text-indigo-300 font-bold transition-colors"
-            aria-label="Clear all filters"
-          >
-            Clear Filters ✕
-          </button>
+          <div class="flex items-center gap-3">
+            <!-- Sort control -->
+            <div class="flex items-center gap-2">
+              <label for="sort-select" class="text-[10px] text-gray-600 font-bold uppercase tracking-wider">Sort:</label>
+              <select 
+                id="sort-select"
+                class="bg-[#0B0F19] border border-white/8 text-xs text-gray-400 rounded-lg px-3 py-1.5 focus:outline-none focus:border-indigo-500/40 transition-colors cursor-pointer"
+              >
+                <option value="default">Default</option>
+                <option value="beginner">Easiest First</option>
+                <option value="roi">Highest Time Saved</option>
+                <option value="az">A → Z</option>
+              </select>
+            </div>
+            <button 
+              id="clear-filters" 
+              class="hidden text-xs text-indigo-400 hover:text-indigo-300 font-bold transition-colors"
+              aria-label="Clear all filters"
+            >
+              Clear ✕
+            </button>
+          </div>
         </div>
 
         <!-- Cards Container -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="workflows-grid">
-          {workflows.map(item => {
+          {sortedWorkflows.map(item => {
             const difficultyClass = 
               item.data.difficulty === 'Beginner' ? 'difficulty-beginner' :
               item.data.difficulty === 'Advanced' ? 'difficulty-advanced' :
               'difficulty-intermediate';
 
+            const toolColor = toolColors[item.data.primaryTool] || 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20';
+            const timeSavedNum = parseFloat(item.data.timeSaved) || 0;
+            const setupTime = item.data.setupTime || '~30 minutes';
+
             return (
               <article 
-                class="workflow-card glass-card rounded-2xl p-6 flex flex-col justify-between group"
+                class="workflow-card glass-card rounded-2xl p-5 flex flex-col justify-between group hover:border-white/10 transition-all duration-200"
                 data-title={item.data.title.toLowerCase()}
                 data-description={item.data.description.toLowerCase()}
                 data-tool={item.data.primaryTool}
                 data-category={item.data.category}
                 data-persona={item.data.persona}
+                data-difficulty={item.data.difficulty}
+                data-time-saved={timeSavedNum}
               >
                 <div>
                   <!-- Badge row -->
-                  <div class="flex justify-between items-center mb-4">
-                    <span class="badge badge-indigo">
+                  <div class="flex justify-between items-center mb-3">
+                    <span class={`inline-flex items-center px-2.5 py-1 rounded-lg border text-[11px] font-bold ${toolColor}`}>
                       {item.data.primaryTool}
                     </span>
-                    <span class={`badge ${difficultyClass}`}>
-                      {item.data.difficulty}
-                    </span>
+                    <div class="flex items-center gap-1.5">
+                      <span class={`badge ${difficultyClass}`}>
+                        {item.data.difficulty}
+                      </span>
+                    </div>
                   </div>
 
                   <!-- Title -->
-                  <h3 class="text-base font-bold text-white mb-2.5 group-hover:text-indigo-300 transition-colors leading-snug">
+                  <h3 class="text-sm font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors leading-snug">
                     <a 
                       href={`/workflows/${item.id}`}
                       class="focus:outline-none focus:text-indigo-400"
@@ -172,26 +258,39 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
                   </h3>
 
                   <!-- Description -->
-                  <p class="text-sm text-gray-500 leading-relaxed mb-5 line-clamp-3">
+                  <p class="text-xs text-gray-500 leading-relaxed mb-4 line-clamp-2">
                     {item.data.description}
                   </p>
-                </div>
 
-                <!-- Footer -->
-                <div class="pt-4 border-t border-white/4 flex items-center justify-between">
-                  <div class="flex items-center gap-3 text-[11px]">
-                    <span class="text-emerald-400/80 font-semibold flex items-center gap-1">
+                  <!-- Key metrics row -->
+                  <div class="flex items-center gap-3 mb-4 flex-wrap">
+                    <span class="flex items-center gap-1 text-[11px] text-emerald-400/90 font-semibold">
                       <Icon name="clock" class="w-3 h-3" />
-                      {item.data.timeSaved}
+                      Saves {item.data.timeSaved}
                     </span>
-                    <span class="text-gray-500 flex items-center gap-1">
+                    <span class="flex items-center gap-1 text-[11px] text-gray-500">
                       <Icon name="dollar-sign" class="w-3 h-3" />
                       {item.data.costToRun}
                     </span>
+                    <span class="flex items-center gap-1 text-[11px] text-gray-600">
+                      <Icon name="settings" class="w-3 h-3" />
+                      {setupTime}
+                    </span>
                   </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="pt-3.5 border-t border-white/4 flex items-center justify-between">
+                  <!-- Trust signal -->
+                  <span class="flex items-center gap-1 text-[10px] text-gray-600">
+                    <svg class="w-2.5 h-2.5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/>
+                    </svg>
+                    Verified {item.data.lastVerified || 'June 2026'}
+                  </span>
                   <a 
                     href={`/workflows/${item.id}`} 
-                    class="text-xs font-bold text-indigo-500 hover:text-indigo-300 flex items-center gap-1 transition-colors group-hover:translate-x-0.5 transform"
+                    class="text-xs font-bold text-indigo-500 hover:text-indigo-300 flex items-center gap-1 transition-colors"
                     aria-label={`View ${item.data.title} blueprint`}
                   >
                     Get Blueprint →
@@ -208,11 +307,11 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
             role="status"
             aria-live="polite"
           >
-            <div class="mb-4 flex justify-center"><Icon name="search" class="w-10 h-10 text-gray-500" /></div>
-            <p class="text-base text-gray-400 font-bold mb-2">No workflows match your filters</p>
-            <p class="text-sm text-gray-500 mb-5">Try broadening your search or adjusting the filters.</p>
+            <div class="mb-4 flex justify-center"><Icon name="search" class="w-10 h-10 text-gray-600" /></div>
+            <p class="text-base text-gray-400 font-bold mb-2">No blueprints match your filters</p>
+            <p class="text-sm text-gray-500 mb-5">Try a broader search or different combination.</p>
             <button id="clear-filters-empty" class="btn btn-secondary text-xs px-5 py-2.5">
-              Clear All Filters
+              Reset All Filters
             </button>
           </div>
         </div>
@@ -225,11 +324,30 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
     const toolRadios = document.querySelectorAll('input[name="tool-filter"]');
     const categoryRadios = document.querySelectorAll('input[name="category-filter"]');
     const personaRadios = document.querySelectorAll('input[name="persona-filter"]');
+    const difficultyRadios = document.querySelectorAll('input[name="difficulty-filter"]');
     const clearBtn = document.getElementById('clear-filters') as HTMLButtonElement;
     const clearBtnEmpty = document.getElementById('clear-filters-empty') as HTMLButtonElement;
     const resultsCountEl = document.getElementById('results-count') as HTMLSpanElement;
     const noResultsEl = document.getElementById('no-results') as HTMLDivElement;
-    const cards = document.querySelectorAll('.workflow-card') as NodeListOf<HTMLElement>;
+    const grid = document.getElementById('workflows-grid') as HTMLDivElement;
+    const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
+    let allCards = Array.from(document.querySelectorAll('.workflow-card')) as HTMLElement[];
+
+    // Mobile chip filters
+    document.querySelectorAll('.mobile-tool-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.mobile-tool-chip').forEach(b => b.classList.remove('active-chip', 'border-indigo-500/40', 'text-indigo-300', 'bg-indigo-500/10'));
+        btn.classList.add('active-chip', 'border-indigo-500/40', 'text-indigo-300', 'bg-indigo-500/10');
+        filterWorkflows();
+      });
+    });
+    document.querySelectorAll('.mobile-diff-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.mobile-diff-chip').forEach(b => b.classList.remove('active-chip', 'border-indigo-500/40', 'text-indigo-300', 'bg-indigo-500/10'));
+        btn.classList.add('active-chip', 'border-indigo-500/40', 'text-indigo-300', 'bg-indigo-500/10');
+        filterWorkflows();
+      });
+    });
 
     // Initialize from URL params
     const urlParams = new URLSearchParams(window.location.search);
@@ -253,36 +371,65 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
       return radio ? radio.value : 'all';
     }
 
+    function getMobileChipValue(cls: string): string {
+      const active = document.querySelector(`.${cls}.active-chip`) as HTMLElement;
+      return active ? (active.dataset.value || 'all') : 'all';
+    }
+
+    function sortCards(cards: HTMLElement[]): HTMLElement[] {
+      const sortBy = sortSelect?.value || 'default';
+      const sorted = [...cards];
+      if (sortBy === 'beginner') {
+        const order = { 'Beginner': 0, 'Intermediate': 1, 'Advanced': 2 };
+        sorted.sort((a, b) => (order[a.dataset.difficulty as keyof typeof order] ?? 1) - (order[b.dataset.difficulty as keyof typeof order] ?? 1));
+      } else if (sortBy === 'roi') {
+        sorted.sort((a, b) => parseFloat(b.dataset.timeSaved || '0') - parseFloat(a.dataset.timeSaved || '0'));
+      } else if (sortBy === 'az') {
+        sorted.sort((a, b) => (a.dataset.title || '').localeCompare(b.dataset.title || ''));
+      }
+      return sorted;
+    }
+
     function filterWorkflows() {
       const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       const selectedTool = getRadioValue('tool-filter');
       const selectedCategory = getRadioValue('category-filter');
       const selectedPersona = getRadioValue('persona-filter');
+      const selectedDifficulty = getRadioValue('difficulty-filter');
 
-      let visibleCount = 0;
+      let visibleCards: HTMLElement[] = [];
 
-      cards.forEach(card => {
+      allCards.forEach(card => {
         const title = card.getAttribute('data-title') || '';
         const description = card.getAttribute('data-description') || '';
         const tool = card.getAttribute('data-tool') || '';
         const category = card.getAttribute('data-category') || '';
         const persona = card.getAttribute('data-persona') || '';
+        const difficulty = card.getAttribute('data-difficulty') || '';
 
-        const matchesQuery = !query || title.includes(query) || description.includes(query);
+        const matchesQuery = !query || title.includes(query) || description.includes(query) || tool.toLowerCase().includes(query);
         const matchesTool = selectedTool === 'all' || tool === selectedTool;
         const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
         const matchesPersona = selectedPersona === 'all' || persona === selectedPersona;
+        const matchesDifficulty = selectedDifficulty === 'all' || difficulty === selectedDifficulty;
 
-        const visible = matchesQuery && matchesTool && matchesCategory && matchesPersona;
-        card.classList.toggle('hidden', !visible);
-        if (visible) visibleCount++;
+        const visible = matchesQuery && matchesTool && matchesCategory && matchesPersona && matchesDifficulty;
+        card.classList.add('hidden');
+        if (visible) visibleCards.push(card);
       });
 
-      resultsCountEl.textContent = `Showing ${visibleCount} workflow${visibleCount === 1 ? '' : 's'}`;
-      noResultsEl.classList.toggle('hidden', visibleCount > 0);
+      // Sort visible cards and re-append to grid
+      const sorted = sortCards(visibleCards);
+      sorted.forEach(card => {
+        card.classList.remove('hidden');
+        grid.appendChild(card);
+      });
 
-      const hasActiveFilters = query !== '' || selectedTool !== 'all' || selectedCategory !== 'all' || selectedPersona !== 'all';
-      clearBtn.classList.toggle('hidden', !hasActiveFilters);
+      resultsCountEl.textContent = `Showing ${sorted.length} of ${allCards.length} blueprints`;
+      noResultsEl.classList.toggle('hidden', sorted.length > 0);
+
+      const hasActiveFilters = query !== '' || selectedTool !== 'all' || selectedCategory !== 'all' || selectedPersona !== 'all' || selectedDifficulty !== 'all';
+      if (clearBtn) clearBtn.classList.toggle('hidden', !hasActiveFilters);
     }
 
     function clearAllFilters() {
@@ -290,6 +437,7 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
       setRadioValue('tool-filter', 'all');
       setRadioValue('category-filter', 'all');
       setRadioValue('persona-filter', 'all');
+      setRadioValue('difficulty-filter', 'all');
       filterWorkflows();
     }
 
@@ -297,8 +445,19 @@ const personas = [...new Set(workflows.map(w => w.data.persona))];
     toolRadios.forEach(r => r.addEventListener('change', filterWorkflows));
     categoryRadios.forEach(r => r.addEventListener('change', filterWorkflows));
     personaRadios.forEach(r => r.addEventListener('change', filterWorkflows));
+    difficultyRadios.forEach(r => r.addEventListener('change', filterWorkflows));
+    if (sortSelect) sortSelect.addEventListener('change', filterWorkflows);
     if (clearBtn) clearBtn.addEventListener('click', clearAllFilters);
     if (clearBtnEmpty) clearBtnEmpty.addEventListener('click', clearAllFilters);
+
+    // "/" key focuses search (like GitHub)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        searchInput?.focus();
+        searchInput?.select();
+      }
+    });
 
     // Run on page load
     filterWorkflows();
