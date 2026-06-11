@@ -115,6 +115,24 @@ import Icon from '../components/Icon.astro';
         </div>
         
         <form id="submission-form" class="space-y-5" novalidate aria-label="Recipe submission form">
+          <!-- Smart JSON Autofiller -->
+          <div>
+            <label for="recipe-json" class="block text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-2 flex items-center gap-1.5 cursor-pointer">
+              <span class="relative flex h-1.5 w-1.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-indigo-400"></span>
+              </span>
+              Paste JSON Blueprint (Autofills form!)
+            </label>
+            <textarea 
+              id="recipe-json" 
+              rows="3"
+              placeholder="Paste your raw n8n JSON or Make.com blueprint here. We will analyze the configuration and auto-populate the fields below..."
+              class="w-full bg-[#0B0F19] border border-indigo-500/20 rounded-xl px-4 py-3 text-xs text-gray-300 focus:outline-none focus:border-indigo-500/50 transition-all font-mono resize-none"
+            ></textarea>
+            <p id="json-feedback" class="text-[10px] text-gray-500 mt-1 min-h-[1rem]"></p>
+          </div>
+
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label for="recipe-title" class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Workflow Title *</label>
@@ -250,6 +268,116 @@ import Icon from '../components/Icon.astro';
     const emailBtn = document.getElementById('emailSubmitBtn');
     const messageEl = document.getElementById('submission-form-message');
     
+    // JSON Auto-fill Elements
+    const jsonTextarea = document.getElementById('recipe-json') as HTMLTextAreaElement;
+    const jsonFeedback = document.getElementById('json-feedback');
+    const titleInput = document.getElementById('recipe-title') as HTMLInputElement;
+    const toolSelect = document.getElementById('recipe-tool') as HTMLSelectElement;
+    const appsInput = document.getElementById('recipe-apps') as HTMLInputElement;
+
+    const APP_MAPPING: Record<string, string> = {
+      'slack': 'Slack',
+      'gmail': 'Gmail',
+      'google sheets': 'Google Sheets',
+      'googlesheets': 'Google Sheets',
+      'google calendar': 'Google Calendar',
+      'googlecalendar': 'Google Calendar',
+      'openai': 'OpenAI (ChatGPT)',
+      'chatgpt': 'OpenAI (ChatGPT)',
+      'anthropic': 'Anthropic (Claude)',
+      'claude': 'Anthropic (Claude)',
+      'hubspot': 'HubSpot',
+      'notion': 'Notion',
+      'stripe': 'Stripe',
+      'supabase': 'Supabase',
+      'trello': 'Trello',
+      'airtable': 'Airtable',
+      'github': 'GitHub',
+      'telegram': 'Telegram',
+      'discord': 'Discord',
+      'whatsapp': 'WhatsApp',
+      'twilio': 'Twilio',
+      'activecampaign': 'ActiveCampaign',
+      'brevo': 'Brevo',
+      'sendgrid': 'SendGrid',
+      'mailchimp': 'Mailchimp',
+      'salesforce': 'Salesforce',
+      'clickup': 'ClickUp',
+      'asana': 'Asana',
+      'jira': 'Jira'
+    };
+
+    if (jsonTextarea && jsonFeedback) {
+      jsonTextarea.addEventListener('input', () => {
+        const value = jsonTextarea.value.trim();
+        if (!value) {
+          jsonFeedback.textContent = '';
+          jsonFeedback.className = 'text-[10px] text-gray-500 mt-1';
+          return;
+        }
+
+        try {
+          const parsed = JSON.parse(value);
+          let tool = '';
+          const detectedApps = new Set<string>();
+
+          // Check for n8n format
+          const isN8n = parsed.nodes || (parsed.meta && parsed.nodes) || (Array.isArray(parsed) && parsed.some((n: any) => n.type && typeof n.type === 'string'));
+          
+          if (isN8n) {
+            tool = 'n8n';
+            const nodes = Array.isArray(parsed) ? parsed : (parsed.nodes || []);
+            
+            nodes.forEach((node: any) => {
+              const nodeType = (node.type || '').toLowerCase();
+              Object.keys(APP_MAPPING).forEach(key => {
+                if (nodeType.includes(key)) {
+                  detectedApps.add(APP_MAPPING[key]);
+                }
+              });
+            });
+          } 
+          // Check for Make.com format
+          else if (parsed.flow || parsed.scenario || (Array.isArray(parsed) && parsed.some((m: any) => m.module || m.mapper)) || parsed.version) {
+            tool = 'Make.com';
+            const stringified = JSON.stringify(parsed).toLowerCase();
+            Object.keys(APP_MAPPING).forEach(key => {
+              if (stringified.includes(key)) {
+                detectedApps.add(APP_MAPPING[key]);
+              }
+            });
+          }
+
+          if (tool) {
+            toolSelect.value = tool;
+            
+            if (detectedApps.size > 0) {
+              const appsList = Array.from(detectedApps).join(', ');
+              appsInput.value = appsList;
+              jsonFeedback.textContent = `✓ Detected ${tool} JSON! Autofilled Connected Apps: ${appsList}.`;
+              jsonFeedback.className = 'text-[10px] text-emerald-400 mt-1';
+            } else {
+              jsonFeedback.textContent = `✓ Detected ${tool} JSON! No specific apps detected in configuration.`;
+              jsonFeedback.className = 'text-[10px] text-indigo-400 mt-1';
+            }
+
+            // Autofill name if available
+            const name = parsed.name || (parsed.meta && parsed.meta.name);
+            if (name && titleInput && !titleInput.value) {
+              titleInput.value = name;
+            }
+          } else {
+            jsonFeedback.textContent = '⚠ Valid JSON, but could not detect standard n8n or Make.com structure.';
+            jsonFeedback.className = 'text-[10px] text-amber-400 mt-1';
+          }
+
+        } catch (e) {
+          jsonFeedback.textContent = 'Waiting for valid JSON blueprint...';
+          jsonFeedback.className = 'text-[10px] text-gray-500 mt-1';
+        }
+      });
+    }
+
     // Electronic API Submission
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -276,6 +404,7 @@ import Icon from '../components/Icon.astro';
           messageEl.textContent = "Success! Your workflow recipe has been submitted for review.";
           messageEl.className = 'text-center text-xs mt-2 font-medium text-emerald-400';
           form.reset();
+          if (jsonFeedback) jsonFeedback.textContent = '';
         } else {
           messageEl.textContent = data.message || 'Failed to submit. Please try again.';
           messageEl.className = 'text-center text-xs mt-2 font-medium text-red-400';
